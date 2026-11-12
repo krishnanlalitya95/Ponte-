@@ -8,8 +8,9 @@ Built with [`@grok/agent-sdk`](https://cursor.com/docs/bdk).
 
 ## Repo
 
-- Path: this directory (`ponte/`)
-- Remote: set `origin` to your empty GitHub/GitLab repo when ready
+- Path: `/agent/ponte` (this directory)
+- Remote `origin`: `https://github.com/krishnanlalitya95/Ponte-`
+- Branch: `cursor/scaffold-ponte-921c`
 
 ## Local loop
 
