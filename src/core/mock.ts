@@ -42,4 +42,11 @@ export class MockModelClient implements ModelClient {
       outputTokens: 0,
     };
   }
+
+  async batch(calls: Array<{ id: string; call: StructuredCall }>, onProgress: (m: string) => void = () => {}) {
+    const out = new Map<string, StructuredResult<unknown> | Error>();
+    for (const c of calls) out.set(c.id, await this.structured(c.call));
+    onProgress(`mock batch: ${calls.length} request(s)`);
+    return out;
+  }
 }

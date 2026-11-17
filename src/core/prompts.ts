@@ -27,17 +27,18 @@ Decide:
 - summary: 1–3 sentences on what the text is about and what it is trying to do.
 - glossary (at most 30 entries; the ones that matter most for consistency): proper nouns, names, brands, product names, technical jargon, coined terms and culturally loaded words, each with a treatment:
   keep = leave exactly as written (brand names, product names, code, acronyms like UX, KPI).
-  transliterate = write in the target script but don't translate the meaning (people's and place names, usually).
-  translate = translate with a fixed rendering so it stays consistent across the page.
-- translationNotes: concrete guidance for the translator into the target language — idioms to adapt rather than copy, metaphors and imagery to protect, rhythm/line breaks in verse, formality level (e.g. tu/vous, आप/तुम, です/ます), numbers and units, what must stay literal (quotes, defined terms, data) versus what should be adapted.
+  transliterate = write in the target language's script but don't translate the meaning (people's and place names, usually).
+  translate = translate consistently across the page.
+  Leave "rendering" empty: each translator chooses the rendering in their own language.
+- translationNotes: concrete guidance that holds for translating into ANY language (this brief is shared by translators into Indian, European and East Asian languages) — idioms to adapt rather than copy, metaphors and imagery to protect, rhythm/line breaks in verse, the level of formality and warmth to aim for, numbers and units, what must stay literal (quotes, defined terms, data) versus what should be adapted.
 - dominantLanguage: BCP-47 code of the main source language.
 
 Be specific to THIS text. Generic advice is useless.`;
 
-export function analyzeUser(req: TranslateRequest, target: Language, segments: Segment[]): string {
+export function analyzeUser(req: TranslateRequest, segments: Segment[]): string {
   const ctx = req.context ?? {};
   return [
-    `Target language: ${target.name} (${target.code}), written in ${target.script} script.`,
+    "This brief will be shared by translators into many languages.",
     ctx.title ? `Page title: ${ctx.title}` : "",
     ctx.url ? `Page URL: ${ctx.url}` : "",
     ctx.description ? `Page description: ${ctx.description}` : "",
