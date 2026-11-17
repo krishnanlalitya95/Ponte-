@@ -47,6 +47,7 @@ interface PublishedIndex {
 export interface AboutLink {
   title?: string;
   text?: string;
+  linkLabel?: string;
   url?: string;
 }
 
@@ -173,7 +174,6 @@ export function optionLabel(code: string): string {
 }
 
 const CHECK = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`;
-const CHEVRON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`;
 
 function mountPicker(
   ponte: PonteController,
@@ -237,15 +237,16 @@ function mountPicker(
       .o[aria-selected="true"] .k{visibility:visible}
       .o[aria-selected="true"] .n{font-weight:600}
       .o:hover,.o.active{background:rgba(${a},.08)}
-      .about{display:flex;align-items:center;gap:12px;margin:0;padding:14px 16px 16px;border-top:1px solid rgba(0,0,0,.07);
+      .about{display:block;margin:0;padding:14px 16px 16px;border-top:1px solid rgba(0,0,0,.07);
          text-decoration:none;color:inherit;background:rgba(${a},.05);-webkit-tap-highlight-color:transparent}
       .about:hover{background:rgba(${a},.10)}
       .about:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:-4px;border-radius:0 0 20px 20px}
       .about .t{flex:1;min-width:0}
       .about strong{display:block;font-size:13px;font-weight:600;color:rgb(${cardBg});margin-bottom:2px}
       .about span{display:block;font-size:12px;line-height:1.45;color:#5f5f5f}
-      .about svg{color:rgb(${cardBg});transition:transform .18s ease}
-      .about:hover svg{transform:translateX(3px)}
+      .about .cta{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:600;color:rgb(${cardBg})}
+      .about .cta i{font-style:normal;display:inline-block;transition:transform .18s ease}
+      .about:hover .cta i{transform:translateX(3px)}
 
       /* Callout: grows out of the button, which sits in its bottom-${side} corner. */
       .c{position:absolute;${side}:-10px;bottom:-10px;width:min(320px, calc(100vw - 12px));
@@ -286,8 +287,9 @@ function mountPicker(
           .join("")}
       </ul>
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
-        <span class="t"><strong>${esc(about.title ?? "About Ponte")}</strong><span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span></span>
-        ${CHEVRON}</a>` : ""}
+        <strong>${esc(about.title ?? "About Ponte")}</strong>
+        <span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span>
+        <b class="cta">${esc(about.linkLabel ?? "View case study")} <i aria-hidden="true">→</i></b></a>` : ""}
     </div>
     <button class="b" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="ponte-menu">
       ${ICON}

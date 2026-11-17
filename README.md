@@ -192,7 +192,7 @@ Your portfolio is static, so each piece of text only needs translating **once**.
 
 ### "About Ponte" in the language list
 
-The language menu ends with an **About Ponte** card: a short description in smaller text, with a chevron that opens your case study. Change its title, text or link in `widget.about` in `ponte.config.json`, or remove that block to hide it.
+The language menu ends with an **About Ponte** card: a short description in smaller text and a **View case study →** link, matching the landing note. The whole card opens your case study. Change its title, text, link label or URL in `widget.about` in `ponte.config.json`, or remove that block to hide it.
 
 ### The landing note around the picker
 
