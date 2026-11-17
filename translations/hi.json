@@ -4505,7 +4505,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3c2833555864e51f": {
     "source": "⟦0⟧03⟦1⟧Discover",
@@ -4515,7 +4516,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c24a49df0a833d97": {
     "source": "⟦0⟧04⟦1⟧Describe",
@@ -4525,7 +4527,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "ad744768a2a80de6": {
     "source": "⟦0⟧Introduction⟦1⟧Process⟦2⟧Discover⟦3⟧Describe",
@@ -4535,17 +4538,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3ba1749a3d85a542": {
     "source": "⟦0⟧Systems Thinking ⟦1⟧2022",
-    "text": "⟦0⟧सिस्टम्स थिंकिंग ⟦1⟧2022",
+    "text": "⟦0⟧सिस्टम थिंकिंग ⟦1⟧2022",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1e4700d124f74de7": {
     "source": "5D design",
@@ -4555,17 +4560,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "d5eb23e8dbdca8dd": {
     "source": "A systems study of a crisis hiding in plain sight",
-    "text": "आँखों के सामने छिपे एक संकट का सिस्टम अध्ययन",
+    "text": "नज़रों के सामने होकर भी अनदेखे संकट का एक प्रणालीगत अध्ययन",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "42fac7610a677a8f": {
     "source": "Air conditioner",
@@ -4575,77 +4582,85 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fb8150e447ef295d": {
     "source": "Area briefing",
-    "text": "क्षेत्र ब्रीफ़िंग",
+    "text": "क्षेत्र ब्रीफिंग",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9bfa82c056865a5e": {
     "source": "Before structures defined space,",
-    "text": "इमारतों के जगह को गढ़ने से पहले,",
-    "status": "translated",
-    "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
-    "page": "https://lalityakrishnan.in/e-waste-in-india",
-    "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
-  },
-  "e7ae5b01c02a19ab": {
-    "source": "Brainstorming",
-    "text": "विचार-मंथन",
+    "text": "इससे पहले कि संरचनाएँ अंतरिक्ष को परिभाषित करतीं,",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "e7ae5b01c02a19ab": {
+    "source": "Brainstorming",
+    "text": "ब्रेनस्टॉर्मिंग",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/e-waste-in-india",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2f75d2e1c15cf7ea": {
     "source": "Cables",
     "text": "केबल",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2124367fe1d7d4e5": {
     "source": "Causal loop diagram",
-    "text": "कारण-चक्र आरेख (Causal Loop Diagram)",
+    "text": "कारण-चक्र आरेख",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1b895d1fb41f5001": {
     "source": "Cellular phones",
-    "text": "मोबाइल फ़ोन",
+    "text": "सेल्युलर फ़ोन",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "409ad5c8dd88d6e5": {
     "source": "Choosing poetry over visual output was a deliberate act: language can hold ambiguity, interiority, and emotion in ways that images sometimes cannot.",
-    "text": "दृश्यों के बजाय कविता को चुनना सोच-समझकर लिया गया निर्णय था: भाषा अस्पष्टता, अंतर्मन और भावना को उस तरह थाम सकती है, जैसा चित्र कभी-कभी नहीं कर पाते।",
+    "text": "दृश्य आउटपुट की जगह कविता को चुनना सोच-समझकर उठाया गया क़दम था: भाषा अस्पष्टता, अंतर्मन और भावना को उस तरह थाम सकती है, जैसे चित्र कभी-कभी नहीं थाम पाते।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9ea90b048e32f17d": {
     "source": "Communication strategies",
@@ -4655,17 +4670,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5ccbc1872b92281d": {
     "source": "Composition Analysis",
-    "text": "संघटन विश्लेषण",
+    "text": "संरचना विश्लेषण",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "651d17df5c876b07": {
     "source": "Consumer electrical & electronics equipments",
@@ -4675,27 +4692,30 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "978f4ef02bbc655d": {
     "source": "CRT & LCD Monitors",
-    "text": "CRT और LCD मॉनिटर",
-    "status": "translated",
+    "text": "CRT & LCD Monitors",
+    "status": "unchanged",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "25d13419704f6041": {
     "source": "Current practices",
-    "text": "वर्तमान प्रथाएँ",
+    "text": "मौजूदा तौर-तरीके",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "7bcf032544c52f02": {
     "source": "Demographics",
@@ -4705,7 +4725,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "00f7e8c272e77d26": {
     "source": "Describe",
@@ -4715,27 +4736,30 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "be2f111b46c970cd": {
     "source": "Design brief",
-    "text": "डिज़ाइन ब्रीफ़",
+    "text": "डिज़ाइन ब्रीफ",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4120e38c46460cbe": {
     "source": "Design does not always end in a screen or a system. Sometimes it ends in a feeling, and finding the right medium to carry that feeling is itself a design decision.",
-    "text": "डिज़ाइन हमेशा किसी स्क्रीन या सिस्टम पर खत्म नहीं होता। कभी-कभी वह एक एहसास में खत्म होता है, और उस एहसास को आप तक पहुँचाने के लिए सही माध्यम ढूँढ़ना अपने आप में एक डिज़ाइन निर्णय है।",
+    "text": "डिज़ाइन का अंत हमेशा किसी स्क्रीन या सिस्टम में नहीं होता। कभी-कभी वह एक एहसास पर जाकर ख़त्म होता है, और उस एहसास को आगे ले जाने वाला सही माध्यम ढूँढ़ना अपने आप में एक डिज़ाइन-निर्णय है।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "537d970302eb3d07": {
     "source": "Design for Future",
@@ -4745,7 +4769,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c7aeb5c680fccd17": {
     "source": "Design Framework",
@@ -4755,7 +4780,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "77d8040c4828f0b7": {
     "source": "Determine",
@@ -4765,7 +4791,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "cf02a70b164c7a23": {
     "source": "Economical impact",
@@ -4775,37 +4802,41 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "088d191d7c46b988": {
     "source": "Electrical and electronic products are defined as any household or business item with circuitry, or electrical components with power or battery supply. Categories of Electrical and Electronic Equipments:",
-    "text": "विद्युत और इलेक्ट्रॉनिक उत्पाद वे सभी घरेलू या व्यावसायिक वस्तुएँ हैं जिनमें सर्किटरी हो, या बिजली अथवा बैटरी से चलने वाले विद्युत घटक हों। विद्युत और इलेक्ट्रॉनिक उपकरणों की श्रेणियाँ:",
+    "text": "विद्युत और इलेक्ट्रॉनिक उत्पाद वे सभी घरेलू या व्यावसायिक वस्तुएँ हैं जिनमें सर्किट हो, या बिजली अथवा बैटरी से चलने वाले विद्युत घटक हों। विद्युत और इलेक्ट्रॉनिक उपकरणों की श्रेणियाँ:",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2b56fcf3850ffd55": {
     "source": "Electronic goods and increased digital connectivity drive global development, supporting everything from education and healthcare to the 17 SDGs. This reliance has only intensified recently, as the pandemic permanently accelerated the global shift toward digitalization in business and daily life.",
-    "text": "इलेक्ट्रॉनिक सामान और बढ़ती डिजिटल कनेक्टिविटी वैश्विक विकास को गति देते हैं, शिक्षा और स्वास्थ्य सेवा से लेकर 17 सतत विकास लक्ष्यों (SDGs) तक हर क्षेत्र में सहारा देते हैं। हाल के वर्षों में यह निर्भरता और बढ़ी है, क्योंकि महामारी ने व्यापार और रोज़मर्रा के जीवन में डिजिटलीकरण की ओर वैश्विक बदलाव को स्थायी रूप से तेज़ कर दिया।",
+    "text": "इलेक्ट्रॉनिक सामान और बढ़ती डिजिटल कनेक्टिविटी दुनिया के विकास को गति देते हैं, शिक्षा और स्वास्थ्य सेवा से लेकर 17 SDG तक हर क्षेत्र में सहारा बनते हैं। हाल के दिनों में यह निर्भरता और गहरी हुई है, क्योंकि महामारी ने व्यापार और रोज़मर्रा के जीवन में डिजिटलीकरण की ओर वैश्विक बदलाव को स्थायी रूप से तेज़ कर दिया।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "53aa67ae454e17ad": {
     "source": "Electronic waste (e-waste) refers to all discarded electronic products and parts not intended for reuse. Because this waste stream contains toxic substances, such as lead, mercury, PCBs, and CFCs, it requires specialized treatment and cannot be safely dumped in landfills.",
-    "text": "इलेक्ट्रॉनिक कचरा (ई-कचरा) उन सभी फेंके गए इलेक्ट्रॉनिक उत्पादों और पुर्ज़ों को कहते हैं जिन्हें दोबारा इस्तेमाल करने का इरादा नहीं होता। इस कचरे में सीसा, पारा, PCBs और CFCs जैसे विषैले पदार्थ होते हैं, इसलिए इसे विशेष उपचार की ज़रूरत होती है और इसे लैंडफिल में सुरक्षित रूप से नहीं फेंका जा सकता।",
+    "text": "इलेक्ट्रॉनिक कचरा (ई-कचरा) उन सभी फेंके गए इलेक्ट्रॉनिक उत्पादों और पुर्ज़ों को कहते हैं जिन्हें दोबारा इस्तेमाल करने का इरादा नहीं होता। इस कचरे में सीसा, पारा, PCBs और CFCs जैसे ज़हरीले पदार्थ होते हैं, इसलिए इसे विशेष उपचार की ज़रूरत होती है और इसे लैंडफिल में सुरक्षित रूप से नहीं फेंका जा सकता।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a26d986aa00e0576": {
     "source": "Electronic waste in India",
@@ -4815,7 +4846,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "93a3a14c2caf6f04": {
     "source": "Facsimile & telex",
@@ -4825,27 +4857,30 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2b89c0c9be92f330": {
     "source": "Fluorescent  (mercury containing lamps)",
-    "text": "फ्लोरोसेंट (पारा युक्त) लैंप",
+    "text": "फ्लोरोसेंट (पारायुक्त लैंप)",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "615aa7e49c02e89b": {
     "source": "Future scope of the project",
-    "text": "परियोजना का भावी दायरा",
+    "text": "प्रोजेक्ट का भविष्य में दायरा",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "97f86bac167e1087": {
     "source": "Growing paradox",
@@ -4855,27 +4890,30 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "cac5b3be91fdcde1": {
     "source": "However, alongside these hazardous risks, e-waste also contains highly valuable materials like gold, silver, copper, and plastics that can be recovered through proper recycling.",
-    "text": "लेकिन इन ख़तरनाक जोखिमों के साथ-साथ ई-कचरे में सोना, चाँदी, तांबा और प्लास्टिक जैसी बेहद कीमती सामग्री भी होती है, जिसे उचित रीसाइक्लिंग से वापस पाया जा सकता है।",
+    "text": "लेकिन इन ख़तरों के साथ-साथ ई-कचरे में सोना, चाँदी, तांबा और प्लास्टिक जैसी बेहद क़ीमती सामग्रियाँ भी होती हैं, जिन्हें सही रीसाइक्लिंग से वापस हासिल किया जा सकता है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "70e4c38c53bd28b1": {
     "source": "However, the current lifecycle of electronics is highly unsustainable, demanding a major systemic reboot. The world now generates approximately 50 million tonnes of e-waste annually, yet only 20% is formally recycled. If production, consumption, and disposal habits remain unchanged, this waste is projected to more than double to 120 million tonnes per year by 2050.",
-    "text": "फिर भी इलेक्ट्रॉनिक्स का मौजूदा जीवन-चक्र बेहद अस्थायी और अस्थिर है, और व्यवस्था के एक बड़े रीबूट की माँग करता है। दुनिया में आज हर साल लगभग 5 करोड़ टन ई-कचरा पैदा होता है, लेकिन केवल 20% की ही औपचारिक रीसाइक्लिंग होती है। अगर उत्पादन, उपभोग और निपटान की आदतें नहीं बदलीं, तो अनुमान है कि 2050 तक यह कचरा दोगुने से भी ज़्यादा बढ़कर प्रति वर्ष 12 करोड़ टन हो जाएगा।",
+    "text": "लेकिन इलेक्ट्रॉनिक्स का मौजूदा जीवनचक्र बेहद अस्थायी और टिकाऊ नहीं है, और इसे एक बड़े प्रणालीगत रीबूट की ज़रूरत है। दुनिया आज हर साल लगभग 50 मिलियन टन ई-कचरा पैदा करती है, जबकि उसमें से सिर्फ़ 20% की औपचारिक रूप से रीसाइक्लिंग होती है। अगर उत्पादन, उपभोग और निपटान की आदतें नहीं बदलीं, तो अनुमान है कि यह कचरा 2050 तक दोगुने से भी ज़्यादा बढ़कर प्रति वर्ष 120 मिलियन टन हो जाएगा।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "955838029ae8b57e": {
     "source": "Identifying & understanding",
@@ -4885,7 +4923,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "23272c0626bc4652": {
     "source": "Identifying the area",
@@ -4895,7 +4934,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8af706ac9f66723f": {
     "source": "Identifying the challenges",
@@ -4905,7 +4945,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e7a361ccee30386e": {
     "source": "Identifying the potential areas",
@@ -4915,27 +4956,30 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c63006cffd4b6aea": {
     "source": "Improper e-waste disposal through burning or dumping poses severe risks to human health and the environment, directly hindering the UN’s Sustainable Development Goals.",
-    "text": "ई-कचरे को जलाकर या फेंककर ठिकाने लगाना मानव स्वास्थ्य और पर्यावरण के लिए गंभीर जोखिम पैदा करता है और संयुक्त राष्ट्र के सतत विकास लक्ष्यों (SDGs) की राह में सीधी रुकावट बनता है।",
+    "text": "ई-कचरे को जलाकर या फेंककर निपटाना मानव स्वास्थ्य और पर्यावरण के लिए गंभीर जोखिम पैदा करता है और UN के सतत विकास लक्ष्यों की राह में सीधी बाधा बनता है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "51123874b7cd4944": {
     "source": "India is the world's third largest e-waste generator, yet most of it disappears into an informal sector that recycles without regulation, safety, or accountability. This is a systems design study of why and where design can intervene.",
-    "text": "भारत दुनिया का तीसरा सबसे बड़ा ई-कचरा उत्पादक है, फिर भी इसका ज़्यादातर हिस्सा उस अनौपचारिक क्षेत्र में खो जाता है जो बिना नियमन, सुरक्षा और जवाबदेही के रीसाइक्लिंग करता है। यह एक सिस्टम डिज़ाइन अध्ययन है कि ऐसा क्यों होता है और डिज़ाइन कहाँ हस्तक्षेप कर सकता है।",
+    "text": "भारत दुनिया में ई-कचरा पैदा करने वाला तीसरा सबसे बड़ा देश है, फिर भी इसका ज़्यादातर हिस्सा एक अनौपचारिक क्षेत्र में गुम हो जाता है, जहाँ रीसाइक्लिंग बिना किसी नियमन, सुरक्षा या जवाबदेही के होती है। यह प्रणाली डिज़ाइन अध्ययन है कि ऐसा क्यों है और डिज़ाइन कहाँ हस्तक्षेप कर सकता है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "324ae921f83ee451": {
     "source": "Information technology & telecommunication equipments",
@@ -4945,37 +4989,41 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "7f93d2e9aeb3894a": {
     "source": "light and colour established boundaries.",
-    "text": "रोशनी और रंग ही सीमाएँ तय करते थे।",
-    "status": "translated",
-    "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
-    "page": "https://lalityakrishnan.in/e-waste-in-india",
-    "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
-  },
-  "b05a0a2edc83c06b": {
-    "source": "Major Contents of E-Waste",
-    "text": "ई-कचरे की प्रमुख सामग्री",
+    "text": "प्रकाश और रंग ने सीमाएँ खींच दी थीं।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "b05a0a2edc83c06b": {
+    "source": "Major Contents of E-Waste",
+    "text": "ई-कचरे के प्रमुख घटक",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/e-waste-in-india",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8710ce5b44a90233": {
     "source": "Metal Plastics Mixture",
     "text": "धातु-प्लास्टिक मिश्रण",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "946cf5f592c018eb": {
     "source": "Metals",
@@ -4985,7 +5033,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a40bba69028dab7f": {
     "source": "Microprocessors, minicomputers",
@@ -4995,7 +5044,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "95cc5f0820e0d084": {
     "source": "of electronics",
@@ -5005,17 +5055,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "971f99d8fc4537d6": {
     "source": "Opportunity mapping",
-    "text": "अवसर मानचित्रण",
+    "text": "अवसर मैपिंग",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "ebdad9ba4c5e3ce0": {
     "source": "Others",
@@ -5025,7 +5077,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "08db25d6cfac1f05": {
     "source": "Persona: challenges & goals",
@@ -5035,17 +5088,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a317873273f136cf": {
     "source": "Personal computer/ notebook/ laptop",
-    "text": "पर्सनल कंप्यूटर / नोटबुक / लैपटॉप",
+    "text": "पर्सनल कंप्यूटर/ नोटबुक/ लैपटॉप",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e7c7916e2b65d233": {
     "source": "Planning & execution",
@@ -5055,17 +5110,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "faee75075afb9d67": {
     "source": "Plastics",
     "text": "प्लास्टिक",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c12733e525929f44": {
     "source": "Policy Design",
@@ -5075,17 +5132,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "186723a22b89d931": {
     "source": "Pollutants",
     "text": "प्रदूषक",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a673867c4e62bf10": {
     "source": "Potential areas to work",
@@ -5095,27 +5154,30 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "33d250516d9d5c12": {
     "source": "Printed Circuit Board",
     "text": "प्रिंटेड सर्किट बोर्ड",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "841df9045ea70465": {
     "source": "Printing  included cartridges",
-    "text": "प्रिंटिंग (कार्ट्रिज सहित)",
+    "text": "प्रिंटर (कार्ट्रिज सहित)",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1532dfc7e1840020": {
     "source": "problem area",
@@ -5125,7 +5187,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "19ed40bf62c399b8": {
     "source": "process",
@@ -5135,7 +5198,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8c5e44e15aafb1f8": {
     "source": "Proposed solutions",
@@ -5145,17 +5209,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "7538c2135b030e4e": {
     "source": "Reflection",
-    "text": "चिंतन",
+    "text": "मनन",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "6e5f456f3ea77f3a": {
     "source": "Refrigerator",
@@ -5165,17 +5231,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "06172933ddcb17f0": {
     "source": "Research insights",
-    "text": "शोध अंतर्दृष्टियाँ",
+    "text": "शोध से मिली अंतर्दृष्टियाँ",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8e1bdddff1c1631e": {
     "source": "Scanning devices",
@@ -5185,17 +5253,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "d70513ab190c4fa4": {
     "source": "Sequence mapping",
-    "text": "क्रम मानचित्रण",
+    "text": "अनुक्रम मैपिंग",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "6dc26756d5e636f0": {
     "source": "Social impact",
@@ -5205,47 +5275,52 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "81cd99a95d577627": {
     "source": "Stakeholder mapping",
-    "text": "हितधारक मानचित्रण",
+    "text": "हितधारक मैपिंग",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "56cfdfd7befe05f9": {
     "source": "Systems mapping",
-    "text": "सिस्टम मानचित्रण",
+    "text": "प्रणाली मैपिंग",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "68438e50b8f9318a": {
     "source": "Systems thinking",
-    "text": "सिस्टम थिंकिंग",
+    "text": "प्रणालीगत सोच",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2b815cc2386937ce": {
     "source": "Systems understanding",
-    "text": "सिस्टम की समझ",
+    "text": "प्रणालियों की समझ",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e8edec972dba1165": {
     "source": "Target area",
@@ -5255,7 +5330,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "834eff922db9548c": {
     "source": "Target area: why & how?",
@@ -5265,17 +5341,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "d7cacd439ada0d7b": {
     "source": "taught me",
     "text": "मुझे क्या सिखाया",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "84ecd6328b8064e6": {
     "source": "Telephone",
@@ -5285,47 +5363,52 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0dfdada8807c0e63": {
     "source": "Television set",
-    "text": "टेलीविज़न",
+    "text": "टेलीविज़न सेट",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a53d57cb88191c03": {
     "source": "The 5D framework, Discover, Describe, Determine, Develop, Deliver, gave structure to a problem space that is vast, non-linear, and easy to get lost in. Each phase had a clear output that fed the next, turning open-ended research into a focused design intervention. For systems thinking work, that kind of staged discipline isn't a constraint,  it's what makes the complexity navigable.",
-    "text": "5D फ्रेमवर्क, यानी खोज (Discover), वर्णन (Describe), निर्धारण (Determine), विकास (Develop) और क्रियान्वयन (Deliver), ने एक ऐसे समस्या-क्षेत्र को संरचना दी जो विशाल और अरेखीय है, और जिसमें खो जाना आसान है। हर चरण का एक स्पष्ट परिणाम था जो अगले चरण में काम आया, और इस तरह खुले-ढीले शोध को एक केंद्रित डिज़ाइन हस्तक्षेप में बदला जा सका। सिस्टम थिंकिंग के काम में इस तरह का चरणबद्ध अनुशासन कोई बंदिश नहीं, बल्कि वही चीज़ है जो जटिलता की राह को चलने योग्य बनाती है।",
+    "text": "5D फ्रेमवर्क, यानी खोज, वर्णन, निर्धारण, विकास और प्रस्तुति, ने एक ऐसे समस्या-क्षेत्र को ढाँचा दिया जो विशाल है, रेखीय नहीं है और जिसमें राह भटक जाना आसान है। हर चरण का एक स्पष्ट परिणाम था जो अगले चरण का आधार बना, और खुले सिरे वाले शोध को एक केंद्रित डिज़ाइन हस्तक्षेप में बदलता गया। प्रणालीगत सोच के काम में इस तरह का चरणबद्ध अनुशासन कोई बंधन नहीं है, बल्कि वही है जो जटिलता के बीच रास्ता बनाता है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "cdc7a203a55c5395": {
     "source": "This project gave me permission to be a designer and a poet at the same time.",
-    "text": "इस प्रोजेक्ट ने मुझे एक ही समय में डिज़ाइनर और कवि होने की इजाज़त दी।",
-    "status": "translated",
-    "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
-    "page": "https://lalityakrishnan.in/e-waste-in-india",
-    "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
-  },
-  "1c520779ad6f1e2b": {
-    "source": "To combat this, better data and insights on e-waste are critical. Improved tracking helps protect health and the environment (SDGs 3, 6, 11, 12, and 14), while waste management unlocks new opportunities for employment and entrepreneurship (SDG 8).",
-    "text": "इससे निपटने के लिए ई-कचरे पर बेहतर डेटा और अंतर्दृष्टि बेहद ज़रूरी है। बेहतर ट्रैकिंग स्वास्थ्य और पर्यावरण की रक्षा में मदद करती है (SDGs 3, 6, 11, 12 और 14), जबकि कचरा प्रबंधन रोज़गार और उद्यमिता के नए अवसर खोलता है (SDG 8)।",
+    "text": "इस प्रोजेक्ट ने मुझे एक साथ डिज़ाइनर और कवि होने की छूट दी।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "1c520779ad6f1e2b": {
+    "source": "To combat this, better data and insights on e-waste are critical. Improved tracking helps protect health and the environment (SDGs 3, 6, 11, 12, and 14), while waste management unlocks new opportunities for employment and entrepreneurship (SDG 8).",
+    "text": "इससे निपटने के लिए ई-कचरे पर बेहतर डेटा और अंतर्दृष्टि बेहद ज़रूरी है। बेहतर ट्रैकिंग स्वास्थ्य और पर्यावरण की रक्षा में मदद करती है (SDG 3, 6, 11, 12 और 14), जबकि कचरा प्रबंधन रोज़गार और उद्यमिता के नए अवसर खोलता है (SDG 8)।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/e-waste-in-india",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5737dc46b8fca9fc": {
     "source": "Understanding area",
@@ -5335,7 +5418,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a44d3ea1602d00ba": {
     "source": "Understanding the end users",
@@ -5345,7 +5429,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "aeca7b714fbffd5d": {
     "source": "Understanding the focus area",
@@ -5355,17 +5440,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "15193d6bf3d70bd8": {
     "source": "Unfolding the systems",
-    "text": "सिस्टम की परतें खोलना",
+    "text": "प्रणालियों को खोलकर समझना",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0a768c4067a3c325": {
     "source": "Validating the hypothesis",
@@ -5375,7 +5462,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "6a2ddb70a7c06141": {
     "source": "Washing machine",
@@ -5385,7 +5473,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "6e134004c71c3709": {
     "source": "What are E-Products?",
@@ -5395,7 +5484,8 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4450b048c04ee188": {
     "source": "What is E-waste?",
@@ -5405,17 +5495,19 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "adb3974b6c2a1d69": {
     "source": "What this project",
     "text": "इस प्रोजेक्ट ने",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "portfolio_copy",
+    "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:16:41.230Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "dd14b154ed6baac9": {
     "source": "What, how & why?",
@@ -5425,6 +5517,7 @@
     "contentType": "case_study",
     "page": "https://lalityakrishnan.in/e-waste-in-india",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:08:56.471Z"
+    "savedAt": "2026-11-17T16:51:33.104Z",
+    "settings": "vl-kB7H5L3ux"
   }
 }
