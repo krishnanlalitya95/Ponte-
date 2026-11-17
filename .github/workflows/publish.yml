@@ -13,15 +13,26 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
+  # Pages only accepts deployments from main, so an edit on the ponte-translations branch
+  # starts this same workflow on main (which reads the translations from that branch).
+  relay:
+    if: ${{ github.ref == 'refs/heads/ponte-translations' }}
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish.yml --repo "${{ github.repository }}" --ref main
+
   publish:
     # GitHub Pages is free only for public repos; skip quietly while the repo is private.
-    if: ${{ !github.event.repository.private }}
+    if: ${{ !github.event.repository.private && github.ref != 'refs/heads/ponte-translations' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
