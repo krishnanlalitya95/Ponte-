@@ -165,7 +165,10 @@ function rgb(hex: string | undefined): string {
 export function optionLabel(code: string): string {
   const lang = LANGUAGES.find((l) => l.code === code);
   if (!lang) return code;
-  return lang.nativeName === lang.name ? lang.name : `${lang.nativeName} · ${lang.name}`;
+  if (lang.nativeName === lang.name) return lang.name;
+  // Start with a left-to-right mark so Arabic/Urdu labels don't flip the whole line
+  // ("Arabic · العربية"); the native name still comes first.
+  return `${lang.rtl ? "\u200E" : ""}${lang.nativeName} · ${lang.name}`;
 }
 
 function mountPicker(
