@@ -19,17 +19,17 @@
     "accent": "#6F9C16",
     "autoDetect": false,
     "about": {
-      "title": "About Ponte",
-      "text": "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "title": "About Gloss",
+      "text": "Gloss is an AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
       "linkLabel": "View case study",
-      "url": "/ponte"
+      "url": "/gloss"
     },
     "callout": {
       "enabled": true,
       "title": "Read this portfolio in your language",
-      "text": "Ponte is an AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "text": "Gloss is an AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
       "linkLabel": "View case study",
-      "linkUrl": "/ponte",
+      "linkUrl": "/gloss",
       "delayMs": 2000,
       "showForMs": 9000,
       "frequency": "session"
@@ -40,7 +40,9 @@
     "gender": "male",
     "notes": "Senior product designer from Mumbai, India. Writes about his own work and life in the first person."
   },
-  "doNotTranslate": [],
+  "doNotTranslate": [
+    "Gloss"
+  ],
   "glossary": {
     "hi": {
       "Lalitya Krishnan": "लालित्य कृष्णन",
