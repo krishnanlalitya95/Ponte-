@@ -106,6 +106,7 @@ for (const page of pages) {
       observe: false,
       remember: false,
       persist: false,
+      fonts: false, // fonts are a visitor-side concern; nothing to style here
       sourceLanguage: process.env.PONTE_SOURCE_LANGUAGE,
       onStatus: (s) => s.error && status.push(s.error),
     });
@@ -134,7 +135,7 @@ if (totals.failed) {
 function installGlobals(dom: JSDOM) {
   const w = dom.window as unknown as Record<string, unknown>;
   const g = globalThis as unknown as Record<string, unknown>;
-  for (const k of ["window", "document", "NodeFilter", "Node", "MutationObserver", "CustomEvent", "location", "localStorage"]) {
+  for (const k of ["window", "document", "NodeFilter", "Node", "MutationObserver", "CustomEvent", "location", "localStorage", "getComputedStyle"]) {
     Object.defineProperty(g, k, { value: k === "window" ? dom.window : w[k], configurable: true, writable: true });
   }
 }

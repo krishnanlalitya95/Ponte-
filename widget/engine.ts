@@ -281,7 +281,7 @@ export function createPonte(opts: PonteOptions): PonteController {
 
   /** Add a matching Noto font after each element's own font (see fonts.ts). */
   function applyFont(block: Block, lang: string) {
-    if (opts.fonts === false) return;
+    if (opts.fonts === false || typeof getComputedStyle !== "function") return;
     for (const p of block.pieces) {
       const el = p.node.parentElement;
       if (!el) continue;

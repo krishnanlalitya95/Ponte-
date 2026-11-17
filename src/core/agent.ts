@@ -209,7 +209,7 @@ export class Ponte {
       toolName: "write_brief",
       toolDescription: "Record your reading of the page as a brief for the translator.",
       schema: BRIEF_SCHEMA,
-      maxTokens: 3000,
+      maxTokens: 8000,
     });
     usage.modelCalls++;
     usage.inputTokens += res.inputTokens;
