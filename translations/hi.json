@@ -1029,6 +1029,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
   },
+  "4b60cf7519075273": {
+    "source": "⟦0⟧Guided by ⟦1⟧Mr. Shekhar Bhattacharya",
+    "text": "⟦0⟧मार्गदर्शन ⟦1⟧श्री शेखर भट्टाचार्य",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
   "3f2c8d8c6ffb9970": {
     "source": "⟦0⟧Introduction⟦1⟧Process⟦2⟧Deliverables⟦3⟧Reflection",
     "text": "⟦0⟧परिचय⟦1⟧प्रक्रिया⟦2⟧प्रस्तुत कार्य⟦3⟧चिंतन",
@@ -1038,6 +1048,26 @@
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "3749b17cb94fec05": {
+    "source": "⟦0⟧NID ⟦1⟧Gandhinagar",
+    "text": "⟦0⟧NID ⟦1⟧गांधीनगर",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "0cb365f081ccb2e5": {
+    "source": "⟦0⟧Open Elective ⟦1⟧2020",
+    "text": "⟦0⟧ओपन इलेक्टिव (वैकल्पिक पाठ्यक्रम) ⟦1⟧2020",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
   },
   "9fe763a2f48ee1c4": {
     "source": "*Based on survey done with 50+ participants during open elective 2020 at NID Gandhinagar Campus.",
@@ -1089,6 +1119,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
   },
+  "304e01c2e9b38f3b": {
+    "source": "2nd Poetry",
+    "text": "दूसरी कविता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
   "4be713d99f75d2e0": {
     "source": "3. Time-lapse videos & poetries",
     "text": "3. टाइम-लैप्स वीडियो और कविताएँ",
@@ -1098,6 +1138,26 @@
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "a9ac6a6d7cf67a6b": {
+    "source": "3rd Poetry",
+    "text": "तीसरी कविता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "78d27622fb49f7db": {
+    "source": "4th Poetry",
+    "text": "चौथी कविता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
   },
   "dfa4f7693b785c6c": {
     "source": "Alongside photography, we recorded time-lapses across the campus — letting the movement of light tell its own story across time, forming the visual backbone of the final deliverable.",
@@ -1279,6 +1339,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
   },
+  "61b1ba4f2bc2559d": {
+    "source": "Illusion",
+    "text": "माया",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
   "b8abe8fb6423070a": {
     "source": "is a result of our entire",
     "text": "वह हमारी पूरी",
@@ -1389,6 +1459,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
   },
+  "fa5172d8e857c82c": {
+    "source": "Plateau",
+    "text": "पठार",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
   "e083bd83e9d3e97e": {
     "source": "Process",
     "text": "प्रक्रिया",
@@ -1418,6 +1498,16 @@
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "ac43c8a867771cf7": {
+    "source": "Rains",
+    "text": "बारिशें",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
   },
   "c297e0f9bfd1ad76": {
     "source": "romance  ·  yearning  ·  sensitivity",
@@ -1559,6 +1649,116 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
   },
+  "fbc88713267ec0ef": {
+    "source": "इन शज़रों को महकाती सी,",
+    "text": "इन शज़रों को महकाती सी,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "4a987dda67ce06a9": {
+    "source": "उड़ा देती हवाएँ हैं वो भीतर के ख्यालों को",
+    "text": "उड़ा देती हवाएँ हैं वो भीतर के ख्यालों को",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "9f2aad3da0979209": {
+    "source": "एक धूप सुहानी हो काया,",
+    "text": "एक धूप सुहानी हो काया,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "0631edc290368551": {
+    "source": "कड़कती धूप को भी मैं तो वापस भेज देता हूँ,",
+    "text": "कड़कती धूप को भी मैं तो वापस भेज देता हूँ,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "91cc974508f3457e": {
+    "source": "कभी कोई किरण सी जीवन में,",
+    "text": "कभी कोई किरण सी जीवन में,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "68188a52e0b47d04": {
+    "source": "कभी पतझड़ को लाती हैं, कभी खामोश रहती हैं,",
+    "text": "कभी पतझड़ को लाती हैं, कभी खामोश रहती हैं,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "35c2e2ee8748de0d": {
+    "source": "कभी पानी को छूती हैं, कभी हैं भेदती मन को,",
+    "text": "कभी पानी को छूती हैं, कभी हैं भेदती मन को,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "58b23bcf0901c5b4": {
+    "source": "कभी सतत श्वेत निर्मल पाया,",
+    "text": "कभी सतत श्वेत निर्मल पाया,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "c5baa9d6a94e631d": {
+    "source": "किन्हीं झिलमिल पठारों सा कभी मैं रुप धरता हूँ,",
+    "text": "किन्हीं झिलमिल पठारों सा कभी मैं रुप धरता हूँ,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "16b0b56235b23916": {
+    "source": "कुदरत के इस मेल जोल में, धूप छाँव के खेल खेल में॥",
+    "text": "कुदरत के इस मेल जोल में, धूप छाँव के खेल खेल में॥",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "afda360452c92b7d": {
+    "source": "चट्टानों को पिघलाती सी,",
+    "text": "चट्टानों को पिघलाती सी,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
   "6254716bbba85d04": {
     "source": "जल ने रंग उछाल दिए हैं, प्रतिबिम्ब ने कई सवाल दिए हैं,",
     "text": "जल ने रंग उछाल दिए हैं, प्रतिबिम्ब ने कई सवाल दिए हैं,",
@@ -1579,6 +1779,46 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
   },
+  "e3d7f7e5ceaeaa2d": {
+    "source": "तुम किसके मन की हो माया।",
+    "text": "तुम किसके मन की हो माया।",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "4818a11c97631126": {
+    "source": "तुम दुविधा में चलती फिरती,",
+    "text": "तुम दुविधा में चलती फिरती,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "917d7979302b243a": {
+    "source": "तुम दुविधा में चलती फिरती॥",
+    "text": "तुम दुविधा में चलती फिरती॥",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "f9b55de1a2eb2601": {
+    "source": "तुम सरल स्वरूप समिपंत सी,",
+    "text": "तुम सरल स्वरूप समिपंत सी,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
   "bffc4a76fd5737ad": {
     "source": "धूप छाँव",
     "text": "धूप छाँव",
@@ -1588,6 +1828,26 @@
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "331a3fc11bb58ae9": {
+    "source": "पठार",
+    "text": "पठार",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "45a32ab79b028a90": {
+    "source": "पतंगे उड़ रहे हैं घास पर बरसात सी लेकर,",
+    "text": "पतंगे उड़ रहे हैं घास पर बरसात सी लेकर,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
   },
   "8680c8c31efd5fb6": {
     "source": "पवन पताका ठंडी ठंडी, हौले हौले मंडराए है,",
@@ -1609,6 +1869,106 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
   },
+  "1aea74f889c8328a": {
+    "source": "बारिशें",
+    "text": "बारिशें",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "0421675b30df2887": {
+    "source": "मगर अन्दर से मैं भी टूटता हूँ, मौन रहता हूँ।",
+    "text": "मगर अन्दर से मैं भी टूटता हूँ, मौन रहता हूँ।",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "3efb5b1dd1ec78f3": {
+    "source": "मगर अन्दर से मैं भी टूटता हूँ, मौन रहता हूँ॥",
+    "text": "मगर अन्दर से मैं भी टूटता हूँ, मौन रहता हूँ॥",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "feacdc9329c2221b": {
+    "source": "मगर ये बारिशें फिर से सभी कुछ बाँध देती हैं।",
+    "text": "मगर ये बारिशें फिर से सभी कुछ बाँध देती हैं।",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "ec607114d1bce2e1": {
+    "source": "मगर ये बारिशें फिर से सभी कुछ बाँध देती हैं॥",
+    "text": "मगर ये बारिशें फिर से सभी कुछ बाँध देती हैं॥",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "95fb0cd6ce20457f": {
+    "source": "मशहूर हैं मेरे चर्चे हमेशा डट के रहने के,",
+    "text": "मशहूर हैं मेरे चर्चे हमेशा डट के रहने के,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "9e6e07d560d8adb9": {
+    "source": "माया",
+    "text": "माया",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "8a54f62cf3f9dce8": {
+    "source": "मृग मरीचिका लाग रही हैं घास हमारे बगियाने की,",
+    "text": "मृग मरीचिका लाग रही हैं घास हमारे बगियाने की,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "7531e83633507a0a": {
+    "source": "ये जल भी बैर करता है, मैं इतना रौद्र लगता हूँ,",
+    "text": "ये जल भी बैर करता है, मैं इतना रौद्र लगता हूँ,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
+  "fba76c18f88aad75": {
+    "source": "ये मेरा शौर्य है, जो मैं सदा ही धैर्य देता हूँ,",
+    "text": "ये मेरा शौर्य है, जो मैं सदा ही धैर्य देता हूँ,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
+  },
   "fa6b5f5b685f6a07": {
     "source": "रंग पातियाँ बदल रही हैं, बादल भी संदर्भित से हैं,",
     "text": "रंग पातियाँ बदल रही हैं, बादल भी संदर्भित से हैं,",
@@ -1628,6 +1988,16 @@
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "29d5f2c04f26fcbe": {
+    "source": "हवाएँ घास को अक्सर ज़रा सा शुष्क करती हैं,",
+    "text": "हवाएँ घास को अक्सर ज़रा सा शुष्क करती हैं,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:09.818Z"
   },
   "339edd48e4f5ca91": {
     "source": "⟦0⟧01⟦1⟧Introduction",
