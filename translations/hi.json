@@ -1,4 +1,594 @@
 {
+  "5a1cd508aa53af10": {
+    "source": "⟦0⟧a hello⟦1⟧.",
+    "text": "⟦0⟧एक नमस्ते से⟦1⟧।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "866762f3a119badd": {
+    "source": "⟦0⟧By ⟦1⟧Lalitya Krishnan",
+    "text": "⟦0⟧द्वारा ⟦1⟧ललित्या कृष्णन",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "2ac2e97cbfc90516": {
+    "source": "⟦0⟧I design ⟦1⟧experiences⟦2⟧, write ⟦3⟧poetry ⟦4⟧& cook ⟦5⟧delicious food⟦6⟧.",
+    "text": "⟦0⟧मैं ⟦1⟧अनुभव⟦2⟧ डिज़ाइन करती हूँ, ⟦3⟧कविताएँ⟦4⟧ लिखती हूँ और ⟦5⟧स्वादिष्ट खाना⟦6⟧ पकाती हूँ।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "2eb6eaed982d4390": {
+    "source": "⟦0⟧I'm Lalitya ⟦1⟧Krishnan⟦2⟧.",
+    "text": "⟦0⟧मैं ललित्या ⟦1⟧कृष्णन⟦2⟧ हूँ।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "cf7dd3ab74c04401": {
+    "source": "⟦0⟧Master of ⟦1⟧Design ⟦2⟧from",
+    "text": "⟦0⟧⟦1⟧मास्टर ऑफ़ डिज़ाइन ⟦2⟧, यहाँ से",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "de139872a946c4d2": {
+    "source": "⟦0⟧Product ⟦1⟧Designer ⟦2⟧at",
+    "text": "⟦0⟧⟦1⟧प्रोडक्ट डिज़ाइनर ⟦2⟧, इसमें",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "00b6b6a71715ec3c": {
+    "source": "© 2026  All rights reserved",
+    "text": "© 2026  सर्वाधिकार सुरक्षित",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "e3f164d65ae59ec1": {
+    "source": "A pioneering app leveraging Gen-AI for planogramming in Reliance stores. Al will evaluate, provide feedback on potential corrections on planogrammy of store.",
+    "text": "Reliance स्टोर्स में प्लानोग्रामिंग के लिए Gen-AI का उपयोग करने वाला अग्रणी ऐप। AI स्टोर के प्लानोग्राम का मूल्यांकन करेगा और संभावित सुधारों पर फ़ीडबैक देगा।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "acbf46190cf8f52d": {
+    "source": "A systematic study on the psychological and spatial impact of natural light and colour in environmental perception.",
+    "text": "पर्यावरणीय बोध में प्राकृतिक प्रकाश और रंग के मनोवैज्ञानिक व स्थानिक प्रभाव का व्यवस्थित अध्ययन।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "4efca0d10c5feb8e": {
+    "source": "About",
+    "text": "परिचय",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "20a41b5bec99f604": {
+    "source": "Academic",
+    "text": "एकेडमिक",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "6991fda30b3df4ad": {
+    "source": "Aegis Design System",
+    "text": "Aegis Design System",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "eb2aaf28d7269913": {
+    "source": "B2B Enterprise SaaS InsureTech",
+    "text": "B2B एंटरप्राइज़ SaaS InsureTech",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "50770e1d4e9ddcc7": {
+    "source": "B2C HealthCare",
+    "text": "B2C हेल्थकेयर",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "8d1bee33dda4c2c8": {
+    "source": "B2C Retail Ecommerce",
+    "text": "B2C रिटेल ई-कॉमर्स",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "4fd285e49d302826": {
+    "source": "Bancasurrance",
+    "text": "Bancasurrance",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "a853ae025ec1a0c6": {
+    "source": "Colour & Light in Nature",
+    "text": "प्रकृति में रंग और प्रकाश",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "2c7e63313045bbdf": {
+    "source": "Creative",
+    "text": "क्रिएटिव",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "b59297d26c415acc": {
+    "source": "Design system for ICICI Lombard",
+    "text": "ICICI Lombard के लिए डिज़ाइन सिस्टम",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "f149f5044a84a7f1": {
+    "source": "Designed post order, help & support, family-linked health records, geo-specific and offers & coupons features  aligned to JDS 2.0.",
+    "text": "JDS 2.0 के अनुरूप पोस्ट-ऑर्डर, हेल्प और सपोर्ट, परिवार से जुड़े हेल्थ रिकॉर्ड, लोकेशन-आधारित फ़ीचर और ऑफ़र व कूपन डिज़ाइन किए।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "64bd21c2b381b66c": {
+    "source": "Designed SaaS-based configurator experiences for IL and partner banks, streamlining onboarding and unifying fragmented microsites.",
+    "text": "IL और पार्टनर बैंकों के लिए SaaS-आधारित कॉन्फ़िगरेटर अनुभव डिज़ाइन किए; ऑनबोर्डिंग आसान बनाई और बिखरी हुई माइक्रोसाइट्स को एक किया।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "0315cb824fad9c2c": {
+    "source": "Designed with",
+    "text": "डिज़ाइन किया गया",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "9d91c6040b3c4259": {
+    "source": "During Master's Program at",
+    "text": "मास्टर्स प्रोग्राम के दौरान, यहाँ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "d03ba2e41b4eaa29": {
+    "source": "E- waste and it's management in India. Proposal for Education Policy Reform considering neccessity of Domain Awareness.",
+    "text": "भारत में ई-कचरा और उसका प्रबंधन। डोमेन जागरूकता की आवश्यकता को देखते हुए शिक्षा नीति में सुधार का प्रस्ताव।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "8c26a95169aa37ca": {
+    "source": "Electronic Waste in India",
+    "text": "भारत में इलेक्ट्रॉनिक कचरा",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "f2488fd4ef4adbc6": {
+    "source": "Email address",
+    "text": "ईमेल पता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "f19dfdd618775101": {
+    "source": "Enrollment Portal",
+    "text": "एनरोलमेंट पोर्टल",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "660ce3fde85a9943": {
+    "source": "Enterprise unified Retail POS",
+    "text": "एंटरप्राइज़ यूनिफ़ाइड रिटेल POS",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "fd43e66edd40f03b": {
+    "source": "Established an end to end claims ecosystem for motor vertical catering Claim manager, Field Driver, Investigator & Garages through IL Vulcan mobile app.",
+    "text": "IL Vulcan मोबाइल ऐप के ज़रिए मोटर वर्टिकल के लिए एंड-टू-एंड क्लेम इकोसिस्टम तैयार किया, जो क्लेम मैनेजर, फ़ील्ड ड्राइवर, इन्वेस्टिगेटर और गैराज की ज़रूरतें पूरी करता है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "44bb010d207970e5": {
+    "source": "Established robust design system from foundations and components, standardized tokens, documentation, & component governance to accelerate delivery.",
+    "text": "फ़ाउंडेशन और कॉम्पोनेंट्स से एक मज़बूत डिज़ाइन सिस्टम स्थापित किया; डिलीवरी तेज़ करने के लिए मानकीकृत टोकन, डॉक्यूमेंटेशन और कॉम्पोनेंट गवर्नेंस जोड़े।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "3f867fbf66df8f39": {
+    "source": "explorations",
+    "text": "एक्सप्लोरेशन्स",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "c2f1251913a55afd": {
+    "source": "Feel free to reach out,",
+    "text": "बेझिझक संपर्क करें,",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "c19bf2136bb5bcfc": {
+    "source": "G2C Service & System Design",
+    "text": "G2C सर्विस और सिस्टम डिज़ाइन",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "717b7f365a214445": {
+    "source": "Gen-AI Plannogramy",
+    "text": "Gen-AI प्लानोग्राम",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "f2fd5ace2883f299": {
+    "source": "GHI Policy UI Configurator",
+    "text": "GHI पॉलिसी UI कॉन्फ़िगरेटर",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "d8a2bbaa8fc78f83": {
+    "source": "Good things start",
+    "text": "अच्छी चीज़ों की शुरुआत",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "bd3bab7b5c2f9f21": {
+    "source": "Hello, there.",
+    "text": "नमस्ते!",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "b44484a0fa28c471": {
+    "source": "Industry",
+    "text": "इंडस्ट्री",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "f175576d38c1c3f8": {
+    "source": "Introduced help & support, reduced post-order complaints; developed a chatbot interface and designed Cartzy India’s first counterless AI/ML in-store UX.",
+    "text": "हेल्प और सपोर्ट शुरू किया, जिससे पोस्ट-ऑर्डर शिकायतें घटीं; चैटबॉट इंटरफ़ेस विकसित किया और Cartzy के लिए भारत का पहला काउंटरलेस AI/ML इन-स्टोर UX डिज़ाइन किया।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "f0fbb76abfa113fd": {
+    "source": "Jio StoreAssist",
+    "text": "Jio StoreAssist",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "3947f76b71882a18": {
+    "source": "JioMart",
+    "text": "JioMart",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "782ba9e187905340": {
+    "source": "Laiba’s stalling. Click to skip",
+    "text": "लैबा देर लगा रही है। स्किप करने के लिए क्लिक करें",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "0f08c5de5b510373": {
+    "source": "Let's talk",
+    "text": "बात करते हैं",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "dcb7090b6d99a9dc": {
+    "source": "Loading portfolio",
+    "text": "पोर्टफ़ोलियो लोड हो रहा है",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "9095fe7a2dd82fee": {
+    "source": "Made it this far?",
+    "text": "यहाँ तक पहुँच ही गए?",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "42c6b818dcbcb4c3": {
+    "source": "Made with",
+    "text": "बनाया गया",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "9420a9214640be1e": {
+    "source": "Motor Claims",
+    "text": "मोटर क्लेम्स",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "92fcb5d53716aac3": {
+    "source": "NetMeds",
+    "text": "NetMeds",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "cfd6104f43e316b1": {
+    "source": "Panchatantra 2.0",
+    "text": "Panchatantra 2.0",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "16ce173795bbbbc5": {
+    "source": "Pentagon",
+    "text": "Pentagon",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "2577c0f557b2e4b5": {
+    "source": "projects",
+    "text": "प्रोजेक्ट्स",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "9c6f894639905a36": {
+    "source": "Revamped POS workflows, reducing transaction time by 30 secs; built a rebranding module and inventory catalogue for Urban Ladder.",
+    "text": "POS वर्कफ़्लो नए सिरे से बनाए, जिससे ट्रांज़ैक्शन का समय 30 सेकंड घटा; Urban Ladder के लिए रीब्रांडिंग मॉड्यूल और इन्वेंट्री कैटलॉग बनाया।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "ca6c10a0418c8fec": {
+    "source": "Revamped the portal with A/B testing and modern UX practices, reducing onboarding time",
+    "text": "A/B testing और आधुनिक UX प्रैक्टिस से पोर्टल को नया रूप दिया, जिससे ऑनबोर्डिंग का समय घटा",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "4c80f73cf93a838f": {
+    "source": "Scroll to experience",
+    "text": "अनुभव के लिए स्क्रॉल करें",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "5fd5421492e3bd40": {
+    "source": "The project integrated systems thinking and sustainability principles to create scalable, eco-friendly alternatives to single-use plastics.",
+    "text": "इस प्रोजेक्ट में सिस्टम्स थिंकिंग (प्रणालीगत सोच) और सस्टेनेबिलिटी के सिद्धांतों को जोड़कर एक बार उपयोग होने वाले प्लास्टिक के स्केलेबल, पर्यावरण-अनुकूल विकल्प तैयार किए गए।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "b85da1a1c688a90b": {
+    "source": "Visualised System Giga Map and Led user research initiatives for Bapuji Seva Kendra",
+    "text": "बापूजी सेवा केंद्र के लिए सिस्टम गीगा मैप तैयार किया और यूज़र रिसर्च पहलों का नेतृत्व किया",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "0695b563acde461f": {
+    "source": "with",
+    "text": "होती है",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "104ab9213e28e4ff": {
+    "source": "Work",
+    "text": "काम",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
+  "d0f502ec3bc25920": {
+    "source": "ᐧ",
+    "text": "ᐧ",
+    "status": "unchanged",
+    "sourceLanguage": "und",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:14:34.696Z"
+  },
   "0d9fdc335c951c50": {
     "source": "⟦0⟧2009–2013⟦1⟧·⟦2⟧Kanpur, Uttar Pradesh",
     "text": "⟦0⟧2009–2013⟦1⟧·⟦2⟧कानपुर, उत्तर प्रदेश",
