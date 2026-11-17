@@ -69,7 +69,7 @@ export const BRIEF_SCHEMA = {
         properties: {
           term: { type: "string" },
           treatment: { type: "string", enum: ["keep", "transliterate", "translate"] },
-          rendering: { type: "string", description: "Target-language rendering when treatment is translate or transliterate." },
+          rendering: { type: "string", description: "Target-language rendering when treatment is translate or transliterate; empty string for keep." },
         },
         required: ["term", "treatment"],
       },

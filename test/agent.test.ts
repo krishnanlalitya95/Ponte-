@@ -170,3 +170,26 @@ describe("helpers", () => {
     expect(chunkSegments(segs, 250).map((c) => c.length)).toEqual([2, 1]);
   });
 });
+
+describe("strictSchema", async () => {
+  const { strictSchema } = await import("../src/core/model.js");
+  const { BRIEF_SCHEMA, TRANSLATION_SCHEMA } = await import("../src/core/prompts.js");
+  it("closes every object, requires all properties and drops unsupported constraints", () => {
+    const s = strictSchema({
+      type: "object",
+      properties: { n: { type: "integer", minimum: 1, maximum: 5 }, list: { type: "array", items: { type: "object", properties: { a: { type: "string" } } } } },
+      required: ["n"],
+    }) as any;
+    expect(s.additionalProperties).toBe(false);
+    expect(s.required).toEqual(["n", "list"]);
+    expect(s.properties.n).toEqual({ type: "integer" });
+    expect(s.properties.list.items.additionalProperties).toBe(false);
+    expect(s.properties.list.items.required).toEqual(["a"]);
+  });
+  it("works on Ponte's schemas", () => {
+    const b = strictSchema(BRIEF_SCHEMA) as any;
+    expect(b.properties.glossary.items.required).toEqual(["term", "treatment", "rendering"]);
+    const t = strictSchema(TRANSLATION_SCHEMA) as any;
+    expect(t.properties.results.items.additionalProperties).toBe(false);
+  });
+});

@@ -65,7 +65,9 @@ jobs:
           PONTE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PONTE_GITHUB_REPO: ${{ github.repository }}
           PONTE_GITHUB_BRANCH: ponte-translations
-        run: npm run pretranslate -- --url "${{ inputs.url }}" --langs "${{ inputs.langs }}" --max-pages "${{ inputs.max_pages }}" | tee pretranslate.log
+        run: |
+          set -o pipefail
+          npm run pretranslate -- --url "${{ inputs.url }}" --langs "${{ inputs.langs }}" --max-pages "${{ inputs.max_pages }}" 2>&1 | tee pretranslate.log
 
       - name: Summary
         if: always()
