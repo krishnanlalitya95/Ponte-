@@ -111,6 +111,7 @@ for (const page of pages) {
     });
     await engine.translate(lang);
     totals.segments += segCount;
+    if (status.length) totals.failed += Math.max(segCount, 1); // the whole page failed for this language
     console.log(`  ${lang}  ${page.url}  (${segCount} blocks)${status.length ? "  ERROR: " + status.join("; ") : ""}`);
     dom.window.close();
   }
@@ -124,7 +125,10 @@ console.log(
     `${totals.translated} newly translated, ${totals.saved} already saved, ${totals.failed} failed. ` +
     `${totals.calls} agent calls, ${totals.inTok} in / ${totals.outTok} out tokens.`,
 );
-if (totals.failed) process.exitCode = 1;
+if (totals.failed) {
+  console.error(`\n${totals.failed} text block(s) could not be translated — see the errors above.`);
+  process.exitCode = 1;
+}
 
 // --- helpers -----------------------------------------------------------------
 function installGlobals(dom: JSDOM) {
