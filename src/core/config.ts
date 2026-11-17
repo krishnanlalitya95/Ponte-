@@ -17,6 +17,12 @@ import type { Author, TranslateRequest } from "./types.js";
 export interface PonteConfig {
   /** The language the site is written in (most of it). Default: the page's <html lang>. */
   sourceLanguage?: string;
+  /**
+   * Languages offered to visitors (besides the page language). Pre-translate translates
+   * these by default and only these are published. Saved translations for other
+   * languages stay in the repo, so a language can be brought back later.
+   */
+  languages?: string[];
   author?: Author;
   doNotTranslate?: string[];
   /** Fixed renderings per target language: { "<lang>": { "<source term>": "<rendering>" } }. */

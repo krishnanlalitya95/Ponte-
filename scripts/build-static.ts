@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import { LANGUAGES } from "../src/core/languages.js";
 import type { LanguageFile } from "../src/core/store.js";
 import { textHash } from "../widget/engine.js";
+import { loadConfig } from "../src/core/config.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -23,7 +24,7 @@ export interface StaticBuildResult {
   languages: Array<{ code: string; name: string; entries: number }>;
 }
 
-export async function buildStatic(translationsDir: string, outDir: string): Promise<StaticBuildResult> {
+export async function buildStatic(translationsDir: string, outDir: string, only?: string[]): Promise<StaticBuildResult> {
   await mkdir(join(outDir, "t"), { recursive: true });
   let files: string[] = [];
   try {
@@ -37,6 +38,7 @@ export async function buildStatic(translationsDir: string, outDir: string): Prom
     const code = f.replace(/\.json$/, "");
     const lang = LANGUAGES.find((l) => l.code === code);
     if (!lang) continue;
+    if (only && !only.includes(code)) continue; // not offered right now (kept in the repo)
     const data = JSON.parse(await readFile(join(translationsDir, f), "utf8")) as LanguageFile;
     const out: Record<string, string> = {};
     for (const e of Object.values(data)) {
@@ -75,7 +77,9 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     const i = args.indexOf(`--${k}`);
     return i >= 0 && args[i + 1] ? args[i + 1]! : d;
   };
-  const res = await buildStatic(resolve(get("translations", "translations")), resolve(get("out", "public")));
+  const site = loadConfig(root);
+  const only = site.languages?.length ? [...new Set([site.sourceLanguage ?? "en", ...site.languages])] : undefined;
+  const res = await buildStatic(resolve(get("translations", "translations")), resolve(get("out", "public")), only);
   console.log(
     `Built ${get("out", "public")}/: widget.js + ${res.languages.length} language(s)` +
       (res.languages.length ? ` — ${res.languages.map((l) => `${l.code} ${l.entries}`).join(", ")}` : ""),

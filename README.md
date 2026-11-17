@@ -186,6 +186,10 @@ Your portfolio is static, so each piece of text only needs translating **once**.
 - **Force a fresh translation:** delete the entry from the file.
 - **Return visitors:** the widget also keeps a copy in the visitor's browser. The page switches language instantly, then quietly checks the server for updates (including your edits).
 
+### Which languages are offered
+
+`"languages"` in [`ponte.config.json`](ponte.config.json) is the list visitors can pick from, besides your page's language. Currently it's Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, French, German, Arabic, Japanese and Korean. Pre-translate translates exactly these (plus English for the Hindi poems) when its Languages box is left empty, and only these are published. To drop a language, remove it from the list. Its saved translations stay in the repo, so adding it back later costs nothing.
+
 ### Your name, your voice: `ponte.config.json`
 
 Site-wide rules that apply to every translation live in [`ponte.config.json`](ponte.config.json). You can edit it on GitHub from your phone.

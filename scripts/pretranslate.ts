@@ -27,7 +27,14 @@ try {
 
 const args = parseArgs(process.argv.slice(2));
 const startUrls = (args.url ?? "").split(",").map((s) => s.trim()).filter(Boolean);
-const langs = (args.langs ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+const site = loadConfig(root);
+// Default: the languages in ponte.config.json, plus the page language (for text written in
+// other languages on the page, like Hindi poems on an English page).
+let langs = (args.langs ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+if (!langs.length && site.languages?.length) {
+  langs = [...new Set([site.sourceLanguage ?? "en", ...site.languages])];
+  console.log(`Languages from ponte.config.json: ${langs.join(", ")}`);
+}
 const maxPages = Number(args["max-pages"] ?? 30);
 const dryRun = "dry-run" in args;
 if (!startUrls.length || !langs.length) {
@@ -39,7 +46,6 @@ for (const l of langs) if (!getLanguage(l)) throw new Error(`Unsupported languag
 const mock = process.env.PONTE_MOCK === "1";
 const store = storeFromEnv(root, mock ? { ...process.env, PONTE_STORE: "memory" } : process.env);
 const ponte = new Ponte({ model: mock ? new MockModelClient() : new AnthropicModelClient(), store });
-const site = loadConfig(root);
 if (site.author || site.glossary || site.doNotTranslate) console.log("Using settings from ponte.config.json");
 const realFetch = globalThis.fetch;
 const FAKE_ENDPOINT = "http://ponte.internal";
