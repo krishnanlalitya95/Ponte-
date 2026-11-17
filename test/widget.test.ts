@@ -87,7 +87,7 @@ describe("visitor engine", () => {
     expect(requests[1]!.segments.some((s) => s.text.startsWith("hi:"))).toBe(false);
     ponte.restore();
     expect(document.querySelector("h1")!.textContent).toBe("  Calm software  ");
-    expect(localStorage.getItem("ponte:language")).toBeNull();
+    expect(localStorage.getItem("ponte:language")).toBe("original");
   });
 
   it("re-applies from cache without a network call", async () => {
@@ -174,5 +174,43 @@ describe("splitMarkers", () => {
     expect(splitMarkers("⟦1⟧b ⟦0⟧a", 2)).toEqual(["a", "b "]);
     expect(splitMarkers("⟦0⟧a", 2)).toBeNull();
     expect(splitMarkers("⟦0⟧a ⟦0⟧b", 2)).toBeNull();
+  });
+});
+
+describe("visitor language detection", async () => {
+  const { initialLanguage, pageLanguage } = await import("../widget/engine.js");
+  const base = { available: ["hi", "ta", "es"], source: "en" };
+
+  it("opens in the visitor's device language when it's published", () => {
+    expect(initialLanguage({ ...base, languages: ["hi-IN", "en-US"] })).toBe("hi");
+    expect(initialLanguage({ ...base, languages: ["es-MX"] })).toBe("es");
+  });
+
+  it("keeps the original when the visitor reads the page's language first, or theirs isn't published", () => {
+    expect(initialLanguage({ ...base, languages: ["en-IN", "hi"] })).toBeNull();
+    expect(initialLanguage({ ...base, languages: ["de-DE", "fr"] })).toBeNull();
+    expect(initialLanguage({ ...base, languages: ["hi"], auto: false })).toBeNull();
+  });
+
+  it("respects the visitor's own choice, including choosing the original", () => {
+    localStorage.setItem("ponte:language", "ta");
+    expect(initialLanguage({ ...base, languages: ["hi"] })).toBe("ta");
+    localStorage.setItem("ponte:language", "original");
+    expect(initialLanguage({ ...base, languages: ["hi"] })).toBeNull();
+  });
+
+  it("remembers 'Original' after restore so auto-detect doesn't flip it back", async () => {
+    mockServer(upper);
+    const ponte = createPonte({ endpoint: "http://api", observe: false });
+    await ponte.translate("hi");
+    ponte.restore();
+    expect(localStorage.getItem("ponte:language")).toBe("original");
+    expect(initialLanguage({ ...base, languages: ["hi"] })).toBeNull();
+  });
+
+  it("reads the page language from <html lang>", () => {
+    document.documentElement.setAttribute("lang", "en-GB");
+    expect(pageLanguage()).toBe("en");
+    expect(pageLanguage("hi")).toBe("hi");
   });
 });

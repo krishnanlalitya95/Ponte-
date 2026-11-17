@@ -11,11 +11,12 @@
  *
  * Optional attributes: data-languages="hi,ta,es" (default: every published language),
  * data-source-language="en", data-position ("bottom-right" | "bottom-left" | "none"),
- * data-fonts="off", data-static="…" (published translations elsewhere),
+ * data-fonts="off", data-auto="off" (don't switch to the visitor's device language),
+ * data-static="…" (published translations elsewhere),
  * data-do-not-translate, data-content-type, data-notes (server mode).
  * Add data-ponte-skip to any element Ponte should leave alone.
  */
-import { createPonte, preferredLanguage, type PonteController, type PonteOptions } from "./engine.js";
+import { createPonte, initialLanguage, pageLanguage, preferredLanguage, type PonteController, type PonteOptions } from "./engine.js";
 import { LANGUAGES } from "../src/core/languages.js";
 import type { ContentType } from "../src/core/types.js";
 
@@ -24,6 +25,8 @@ declare global {
     Ponte?: {
       createPonte: typeof createPonte;
       preferredLanguage: typeof preferredLanguage;
+      initialLanguage: typeof initialLanguage;
+      pageLanguage: typeof pageLanguage;
       languages: typeof LANGUAGES;
       /** Published languages for a static base (reads t/index.json). */
       publishedLanguages: typeof publishedLanguages;
@@ -47,7 +50,7 @@ async function publishedLanguages(staticBase: string): Promise<string[]> {
 
 const script = document.currentScript as HTMLScriptElement | null;
 const scriptBase = script?.src ? script.src.replace(/[^/]*$/, "").replace(/\/+$/, "") : undefined;
-window.Ponte = { ...(window.Ponte ?? {}), createPonte, preferredLanguage, publishedLanguages, languages: LANGUAGES, base: scriptBase };
+window.Ponte = { ...(window.Ponte ?? {}), createPonte, preferredLanguage, initialLanguage, pageLanguage, publishedLanguages, languages: LANGUAGES, base: scriptBase };
 
 // Auto-start unless the script was loaded by the Framer component (data-manual).
 if (script && !script.hasAttribute("data-manual")) {
@@ -56,10 +59,11 @@ if (script && !script.hasAttribute("data-manual")) {
   // Static by default: translations sit next to widget.js, unless only a server was given.
   const staticBase = d.static || (endpoint ? undefined : scriptBase);
   const start = async () => {
+    const source = pageLanguage(d.sourceLanguage);
     const opts: PonteOptions = {
       staticBase,
       endpoint,
-      sourceLanguage: d.sourceLanguage,
+      sourceLanguage: source,
       contentType: d.contentType as ContentType | undefined,
       doNotTranslate: d.doNotTranslate?.split(",").map((s) => s.trim()).filter(Boolean),
       notes: d.notes,
@@ -69,15 +73,20 @@ if (script && !script.hasAttribute("data-manual")) {
     window.Ponte!.instance = ponte;
     let codes = d.languages?.split(",").map((s) => s.trim()).filter(Boolean);
     if (!codes && staticBase && !endpoint) codes = await publishedLanguages(staticBase);
-    if (d.position !== "none") mountPicker(ponte, codes?.length ? codes : undefined, d.sourceLanguage, d.position ?? "bottom-right");
-    const pref = preferredLanguage();
-    if (pref && pref !== d.sourceLanguage) void ponte.translate(pref);
+    if (d.position !== "none") mountPicker(ponte, codes?.length ? codes : undefined, source, d.position ?? "bottom-right");
+    // Visitor's choice, else their device language if we've published it (data-auto="off" to disable).
+    const first = initialLanguage({
+      available: codes ?? LANGUAGES.map((l) => l.code),
+      source,
+      auto: d.auto !== "off",
+    });
+    if (first) void ponte.translate(first);
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => void start());
   else void start();
 }
 
-function mountPicker(ponte: PonteController, languages: string[] | undefined, source: string | undefined, position: string) {
+function mountPicker(ponte: PonteController, languages: string[] | undefined, source: string, position: string) {
   const codes = languages ?? LANGUAGES.map((l) => l.code);
   const host = document.createElement("div");
   host.setAttribute("data-ponte-skip", "");
@@ -102,7 +111,8 @@ function mountPicker(ponte: PonteController, languages: string[] | undefined, so
   const statusEl = shadow.querySelector(".s")!;
   const original = document.createElement("option");
   original.value = "";
-  original.textContent = "Original";
+  // Label the original by its language ("English"), not just "Original".
+  original.textContent = LANGUAGES.find((l) => l.code === source)?.nativeName ?? "Original";
   select.append(original);
   for (const code of codes) {
     const lang = LANGUAGES.find((l) => l.code === code);
