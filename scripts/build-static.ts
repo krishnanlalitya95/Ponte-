@@ -16,15 +16,22 @@ import { fileURLToPath } from "node:url";
 import { LANGUAGES } from "../src/core/languages.js";
 import type { LanguageFile } from "../src/core/store.js";
 import { textHash } from "../widget/engine.js";
-import { loadConfig } from "../src/core/config.js";
+import { loadConfig, withConfig, type PonteConfig } from "../src/core/config.js";
+import { settingsKey } from "../src/core/agent.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 export interface StaticBuildResult {
-  languages: Array<{ code: string; name: string; entries: number }>;
+  languages: Array<{ code: string; name: string; entries: number; waitingForRetranslation?: number }>;
 }
 
-export async function buildStatic(translationsDir: string, outDir: string, only?: string[]): Promise<StaticBuildResult> {
+export async function buildStatic(
+  translationsDir: string,
+  outDir: string,
+  only?: string[],
+  widget?: Record<string, unknown>,
+  site?: PonteConfig,
+): Promise<StaticBuildResult> {
   await mkdir(join(outDir, "t"), { recursive: true });
   let files: string[] = [];
   try {
@@ -41,17 +48,27 @@ export async function buildStatic(translationsDir: string, outDir: string, only?
     if (only && !only.includes(code)) continue; // not offered right now (kept in the repo)
     const data = JSON.parse(await readFile(join(translationsDir, f), "utf8")) as LanguageFile;
     const out: Record<string, string> = {};
+    let stale = 0;
+    const req = site ? withConfig({ targetLanguage: code, segments: [] }, site) : null;
     for (const e of Object.values(data)) {
       if (!e || typeof e.source !== "string" || typeof e.text !== "string") continue;
+      // Don't publish translations made under older settings (wrong name or grammar). Those
+      // lines show as written until Pre-translate redoes them. Hand-locked entries always publish.
+      if (req && !e.locked && e.settings !== settingsKey(req, code, e.source)) {
+        stale++;
+        continue;
+      }
       // Same key the widget computes from the text it finds on the page.
       out[textHash(e.source.trim())] = e.text;
     }
     await writeFile(join(outDir, "t", `${code}.json`), JSON.stringify(out));
-    languages.push({ code, name: lang.name, entries: Object.keys(out).length });
+    languages.push({ code, name: lang.name, entries: Object.keys(out).length, ...(stale ? { waitingForRetranslation: stale } : {}) });
   }
 
+  // Same order as the settings file, so the picker lists languages the way you listed them.
+  if (only) languages.sort((a, b) => only.indexOf(a.code) - only.indexOf(b.code));
   const updatedAt = new Date().toISOString();
-  await writeFile(join(outDir, "t", "index.json"), JSON.stringify({ updatedAt, languages }, null, 2));
+  await writeFile(join(outDir, "t", "index.json"), JSON.stringify({ updatedAt, languages, widget: widget ?? {} }, null, 2));
   await copyFile(join(root, "dist", "ponte-widget.js"), join(outDir, "widget.js"));
   await writeFile(
     join(outDir, "index.html"),
@@ -79,9 +96,11 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   };
   const site = loadConfig(root);
   const only = site.languages?.length ? [...new Set([site.sourceLanguage ?? "en", ...site.languages])] : undefined;
-  const res = await buildStatic(resolve(get("translations", "translations")), resolve(get("out", "public")), only);
+  const res = await buildStatic(resolve(get("translations", "translations")), resolve(get("out", "public")), only, site.widget, site);
   console.log(
     `Built ${get("out", "public")}/: widget.js + ${res.languages.length} language(s)` +
-      (res.languages.length ? ` — ${res.languages.map((l) => `${l.code} ${l.entries}`).join(", ")}` : ""),
+      (res.languages.length
+        ? ` — ${res.languages.map((l) => `${l.code} ${l.entries}${l.waitingForRetranslation ? ` (+${l.waitingForRetranslation} outdated, hidden)` : ""}`).join(", ")}`
+        : ""),
   );
 }

@@ -15,6 +15,9 @@
     "ja",
     "ko"
   ],
+  "widget": {
+    "accent": "#6F9C16"
+  },
   "author": {
     "name": "Lalitya Krishnan",
     "gender": "male",
@@ -26,6 +29,56 @@
       "Lalitya Krishnan": "लालित्य कृष्णन",
       "Lalitya": "लालित्य",
       "Krishnan": "कृष्णन"
+    },
+    "mr": {
+      "Lalitya Krishnan": "लालित्य कृष्णन",
+      "Lalitya": "लालित्य",
+      "Krishnan": "कृष्णन"
+    },
+    "gu": {
+      "Lalitya Krishnan": "લાલિત્ય કૃષ્ણન",
+      "Lalitya": "લાલિત્ય",
+      "Krishnan": "કૃષ્ણન"
+    },
+    "bn": {
+      "Lalitya Krishnan": "লালিত্য কৃষ্ণন",
+      "Lalitya": "লালিত্য",
+      "Krishnan": "কৃষ্ণন"
+    },
+    "ta": {
+      "Lalitya Krishnan": "லாலித்யா கிருஷ்ணன்",
+      "Lalitya": "லாலித்யா",
+      "Krishnan": "கிருஷ்ணன்"
+    },
+    "te": {
+      "Lalitya Krishnan": "లాలిత్య కృష్ణన్",
+      "Lalitya": "లాలిత్య",
+      "Krishnan": "కృష్ణన్"
+    },
+    "kn": {
+      "Lalitya Krishnan": "ಲಾಲಿತ್ಯ ಕೃಷ್ಣನ್",
+      "Lalitya": "ಲಾಲಿತ್ಯ",
+      "Krishnan": "ಕೃಷ್ಣನ್"
+    },
+    "ml": {
+      "Lalitya Krishnan": "ലാലിത്യ കൃഷ്ണൻ",
+      "Lalitya": "ലാലിത്യ",
+      "Krishnan": "കൃഷ്ണൻ"
+    },
+    "ar": {
+      "Lalitya Krishnan": "لاليتيا كريشنان",
+      "Lalitya": "لاليتيا",
+      "Krishnan": "كريشنان"
+    },
+    "ja": {
+      "Lalitya Krishnan": "ラリティヤ・クリシュナン",
+      "Lalitya": "ラリティヤ",
+      "Krishnan": "クリシュナン"
+    },
+    "ko": {
+      "Lalitya Krishnan": "랄리티야 크리슈난",
+      "Lalitya": "랄리티야",
+      "Krishnan": "크리슈난"
     }
   }
 }

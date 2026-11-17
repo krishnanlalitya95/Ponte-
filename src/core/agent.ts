@@ -86,7 +86,6 @@ export class Ponte {
     }
     validateSegments(req.segments);
 
-    const settings = settingsKey(req, target.code);
     const usage: Usage = { inputTokens: 0, outputTokens: 0, storedSegments: 0, modelCalls: 0 };
     const results = new Map<string, SegmentResult>();
     const contextKey = hashKey(req.context?.url, req.context?.title, req.contentType, JSON.stringify(req.glossary ?? {}), (req.doNotTranslate ?? []).join("|"), JSON.stringify(req.author ?? {}));
@@ -111,7 +110,7 @@ export class Ponte {
       }
       const saved = await this.store.get(target.code, seg.text);
       // Reuse a saved translation unless it was made with different settings (and isn't locked).
-      if (saved && (saved.locked || saved.settings === settings)) {
+      if (saved && (saved.locked || saved.settings === settingsKey(req, target.code, seg.text))) {
         results.set(seg.id, { id: seg.id, text: saved.text, sourceLanguage: saved.sourceLanguage, status: saved.status, saved: true });
         usage.storedSegments++;
         continue;
@@ -163,7 +162,7 @@ export class Ponte {
               page: req.context?.url,
               model: this.model.model,
               savedAt,
-              settings,
+              settings: settingsKey(req, target.code, source),
             });
           }
         }
@@ -291,10 +290,15 @@ export class Ponte {
  * Fingerprint of everything that should change a saved translation if edited:
  * author, glossary and keep-as-is terms for this language.
  */
-export function settingsKey(req: TranslateRequest, lang: string): string {
-  const glossary = Object.entries(req.glossary ?? {}).sort(([a], [b]) => a.localeCompare(b));
-  const dnt = [...(req.doNotTranslate ?? [])].sort();
-  return hashKey("settings-v1", lang, JSON.stringify(req.author ?? {}), JSON.stringify(glossary), JSON.stringify(dnt)).slice(0, 12);
+export function settingsKey(req: TranslateRequest, lang: string, text: string): string {
+  // Only terms that occur in this text matter, so adding a glossary entry re-translates just
+  // the texts that contain it, not the whole language.
+  const t = text.toLowerCase();
+  const glossary = Object.entries(req.glossary ?? {})
+    .filter(([k]) => t.includes(k.toLowerCase()))
+    .sort(([a], [b]) => a.localeCompare(b));
+  const dnt = (req.doNotTranslate ?? []).filter((d) => t.includes(d.toLowerCase())).sort();
+  return hashKey("settings-v2", lang, JSON.stringify(req.author ?? {}), JSON.stringify(glossary), JSON.stringify(dnt)).slice(0, 12);
 }
 
 function validateSegments(segments: unknown): asserts segments is Segment[] {

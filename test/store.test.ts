@@ -49,7 +49,7 @@ describe("saved translations in the agent", () => {
     const model = new FakeModel(prefixTranslator);
     const store = new MemoryStore();
     const { settingsKey } = await import("../src/core/agent.js");
-    await store.put("hi", [{ ...entry("Kept paragraph", "पहले से सहेजा"), settings: settingsKey({ targetLanguage: "hi", segments: [] }, "hi") }]);
+    await store.put("hi", [{ ...entry("Kept paragraph", "पहले से सहेजा"), settings: settingsKey({ targetLanguage: "hi", segments: [] }, "hi", "Kept paragraph") }]);
     const out = await new Ponte({ model, store }).translate({
       targetLanguage: "hi",
       segments: [{ id: "a", text: "Kept paragraph" }, { id: "b", text: "Edited paragraph" }],
