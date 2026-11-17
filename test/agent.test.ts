@@ -209,3 +209,33 @@ describe("translating into the page's own language", () => {
     expect(out.results.map((r) => r.status)).toEqual(["unchanged", "translated"]);
   });
 });
+
+describe("text in another script is never silently kept", () => {
+  it("retries poem lines the model marked 'unchanged' when translating into the page language", async () => {
+    let call = 0;
+    const model = new FakeModel((c) => {
+      if (c.toolName === "write_brief") return BRIEF;
+      call++;
+      return {
+        results: segmentsIn(c).map((s) => ({
+          id: s.id, sourceLanguage: "hi",
+          action: call === 1 ? "unchanged" : "translated",
+          translation: call === 1 ? s.text : `EN:${s.text}`,
+        })),
+      };
+    });
+    const out = await new Ponte({ model }).translate({
+      targetLanguage: "en", sourceLanguage: "en",
+      segments: [{ id: "l1", text: "कड़कती धूप को भी मैं तो वापस भेज देता हूँ," }, { id: "t", text: "धूप छाँव" }],
+    });
+    expect(out.results.map((r) => r.status)).toEqual(["translated", "unchanged"]); // the short title may stay
+    expect(model.calls.at(-1)!.user).toContain("Do not mark any of them");
+  });
+
+  it("allows short titles to stay as written", async () => {
+    const { leftInOtherScript } = await import("../src/core/agent.js");
+    expect(leftInOtherScript("धूप छाँव", "en")).toBe(false);
+    expect(leftInOtherScript("कड़कती धूप को भी मैं तो वापस भेज देता हूँ,", "en")).toBe(true);
+    expect(leftInOtherScript("Hello there my friend", "en")).toBe(false);
+  });
+});

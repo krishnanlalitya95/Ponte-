@@ -142,6 +142,12 @@ Principles:
 10. Return one result for EVERY segment id you were given, with the same ids.`;
 }
 
+/** When the target is the page's own language, everything sent is in some other language. */
+function intoPageLanguageNote(req: TranslateRequest, target: Language): string {
+  if (!req.sourceLanguage || req.sourceLanguage.split("-")[0] !== target.code) return "";
+  return `Note: the page is written in ${target.name}; these segments are the parts written in another language (for example poems). Translate every one of them into ${target.name}, line by line where the original is in lines, keeping the poetry. Do not mark any of them "unchanged".`;
+}
+
 export function translateUser(args: {
   req: TranslateRequest;
   target: Language;
@@ -160,6 +166,7 @@ export function translateUser(args: {
 
   return [
     `Translate into ${target.name} (${target.code}).`,
+    intoPageLanguageNote(req, target),
     "",
     "<brief>",
     `Content type: ${brief.contentType}`,
