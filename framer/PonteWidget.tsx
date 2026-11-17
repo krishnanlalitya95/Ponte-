@@ -5,7 +5,10 @@
  * and every plain-text layer on the page is rewritten in place by Ponte.
  *
  * In Framer: Assets → Code → New Component → paste this file.
- * Set "Endpoint" to your Ponte server (http://localhost:8787 while developing).
+ *
+ * Mode "Static" (default, free): reads translations published to GitHub Pages by the
+ * "Publish translations" workflow. No server; unpublished text stays in the original.
+ * Mode "Server": asks a running Ponte server, which translates new text live.
  *
  * On the editor canvas it only shows the picker; translation runs in Preview and on
  * the published site so it never touches the editor's own UI.
@@ -29,15 +32,16 @@ const LANGS: Record<string, string> = {
     tr: "Türkçe", nl: "Nederlands",
 }
 
-function loadEngine(endpoint: string): Promise<any> {
+function loadEngine(base: string): Promise<any> {
     if (window.Ponte?.createPonte) return Promise.resolve(window.Ponte)
-    const src = `${endpoint.replace(/\/+$/, "")}/widget.js`
+    const src = `${base.replace(/\/+$/, "")}/widget.js`
     return new Promise((resolve, reject) => {
         const existing = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement | null
         const s = existing ?? document.createElement("script")
         s.addEventListener("load", () => resolve(window.Ponte))
         s.addEventListener("error", () => reject(new Error(`Couldn't load ${src}`)))
         if (!existing) {
+            s.setAttribute("data-manual", "") // this component drives it; no auto picker
             s.src = src
             s.async = true
             document.head.appendChild(s)
@@ -51,7 +55,7 @@ function loadEngine(endpoint: string): Promise<any> {
  */
 export default function PonteWidget(props) {
     const {
-        endpoint, languages, sourceLanguage, contentType, doNotTranslate, notes,
+        mode, staticUrl, endpoint, fonts, languages, sourceLanguage, contentType, doNotTranslate, notes,
         originalLabel, font, color, background, radius, padding, showStatus,
     } = props
     const onCanvas = RenderTarget.current() === RenderTarget.canvas
@@ -62,11 +66,14 @@ export default function PonteWidget(props) {
     useEffect(() => {
         if (onCanvas || typeof window === "undefined") return
         let cancelled = false
-        loadEngine(endpoint)
+        const isStatic = mode !== "server"
+        loadEngine(isStatic ? staticUrl : endpoint)
             .then((P) => {
                 if (cancelled) return
                 ctrl.current = P.createPonte({
-                    endpoint,
+                    staticBase: isStatic ? staticUrl : undefined,
+                    endpoint: isStatic ? undefined : endpoint,
+                    fonts,
                     sourceLanguage: sourceLanguage || undefined,
                     contentType: contentType === "auto" ? undefined : contentType,
                     doNotTranslate: doNotTranslate
@@ -88,7 +95,7 @@ export default function PonteWidget(props) {
             ctrl.current?.destroy()
             ctrl.current = null
         }
-    }, [endpoint, sourceLanguage, contentType, doNotTranslate, notes, onCanvas])
+    }, [mode, staticUrl, endpoint, fonts, sourceLanguage, contentType, doNotTranslate, notes, onCanvas])
 
     const onChange = (e) => {
         const lang = e.target.value
@@ -136,7 +143,10 @@ export default function PonteWidget(props) {
 }
 
 PonteWidget.defaultProps = {
+    mode: "static",
+    staticUrl: "https://krishnanlalitya95.github.io/Ponte-",
     endpoint: "http://localhost:8787",
+    fonts: true,
     languages: "hi,bn,ta,te,mr,gu,kn,ml,pa,en,es,fr,de,pt,ja,zh,ko,ar",
     sourceLanguage: "en",
     contentType: "auto",
@@ -151,7 +161,16 @@ PonteWidget.defaultProps = {
 }
 
 addPropertyControls(PonteWidget, {
-    endpoint: { type: ControlType.String, title: "Endpoint" },
+    mode: {
+        type: ControlType.Enum,
+        title: "Mode",
+        options: ["static", "server"],
+        optionTitles: ["Static (free)", "Server"],
+        displaySegmentedControl: true,
+    },
+    staticUrl: { type: ControlType.String, title: "Published at", hidden: (p) => p.mode === "server" },
+    endpoint: { type: ControlType.String, title: "Endpoint", hidden: (p) => p.mode !== "server" },
+    fonts: { type: ControlType.Boolean, title: "Script fonts", enabledTitle: "Noto", disabledTitle: "Off" },
     languages: {
         type: ControlType.String,
         title: "Languages",
@@ -161,11 +180,12 @@ addPropertyControls(PonteWidget, {
     contentType: {
         type: ControlType.Enum,
         title: "Content",
+        hidden: (p) => p.mode !== "server",
         options: ["auto", "poetry", "narrative", "case_study", "paper", "portfolio_copy", "ui_copy", "mixed"],
         optionTitles: ["Detect", "Poetry", "Story", "Case study", "Paper", "Portfolio copy", "UI copy", "Mixed"],
     },
-    doNotTranslate: { type: ControlType.String, title: "Keep as is", placeholder: "Ponte, ICICI Lombard" },
-    notes: { type: ControlType.String, title: "Notes", displayTextArea: true, placeholder: "Context for the translator" },
+    doNotTranslate: { type: ControlType.String, title: "Keep as is", placeholder: "Ponte, ICICI Lombard", hidden: (p) => p.mode !== "server" },
+    notes: { type: ControlType.String, title: "Notes", displayTextArea: true, placeholder: "Context for the translator", hidden: (p) => p.mode !== "server" },
     originalLabel: { type: ControlType.String, title: "Original label" },
     font: { type: ControlType.Font, controls: "extended", defaultFontType: "sans-serif", defaultValue: { fontSize: 13 } },
     color: { type: ControlType.Color, title: "Text" },

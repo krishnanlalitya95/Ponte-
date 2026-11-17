@@ -8,3 +8,4 @@ evals/reports/
 
 # Local saved translations (the real ones live on the ponte-translations branch)
 translations/
+public/

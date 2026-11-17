@@ -1,0 +1,66 @@
+name: Publish translations
+
+# Publishes the widget + saved translations to GitHub Pages (free) for Static mode.
+# Runs automatically after "Pre-translate site", when you edit a translation on the
+# ponte-translations branch, and when the widget code changes on main.
+on:
+  push:
+    branches: [main, ponte-translations]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    # GitHub Pages is free only for public repos; skip quietly while the repo is private.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Get saved translations
+        run: |
+          if git ls-remote --exit-code --heads origin ponte-translations >/dev/null; then
+            git fetch --depth=1 origin ponte-translations
+            git archive FETCH_HEAD translations | tar -x -C /tmp
+            echo "Found $(ls /tmp/translations | wc -l) language file(s)"
+          else
+            echo "No ponte-translations branch yet"; mkdir -p /tmp/translations
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build:static -- --translations /tmp/translations --out public
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Summary
+        run: |
+          {
+            echo "## Published"
+            echo
+            echo "Status page: ${{ steps.deploy.outputs.page_url }}"
+            echo
+            echo "Framer → Site Settings → Custom Code (end of body):"
+            echo
+            echo '```html'
+            echo "<script src=\"${{ steps.deploy.outputs.page_url }}widget.js\" defer></script>"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

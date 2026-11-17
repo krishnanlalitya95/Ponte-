@@ -11,10 +11,12 @@
     "mock": "npm run build:widget && PONTE_MOCK=1 tsx src/server/index.ts",
     "build:widget": "tsx scripts/build-widget.ts",
     "typecheck": "tsc --noEmit",
+    "pretest": "npm run build:widget",
     "test": "vitest run",
     "eval": "tsx evals/run.ts",
     "translate": "tsx scripts/translate-cli.ts",
-    "pretranslate": "tsx scripts/pretranslate.ts"
+    "pretranslate": "tsx scripts/pretranslate.ts",
+    "build:static": "npm run build:widget && tsx scripts/build-static.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.9.0"
