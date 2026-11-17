@@ -110,11 +110,12 @@ for (const lang of langs) {
   console.log(`  ${lang}  ${String(blocks).padStart(4)} block(s), ${pendingChars(js)} characters`);
 }
 const totalBlocks = todo.reduce((n, j) => n + j.plan.unique.length, 0);
-// Rough cost from earlier runs: about $0.70 per 1,000 blocks live (half as a batch), plus
-// about $0.03 per page reading, and readings are only paid for once per page.
+// Rough cost from a real run on this site (17 Nov 2026: 5,044 blocks for $4.16 as a batch):
+// about $1.60 per 1,000 blocks live, half as a batch, plus ~$0.05 per page reading
+// (paid once per page; later runs reuse it).
 const pagesToRead = new Set(todo.map((j) => j.page)).size;
-const est = (totalBlocks / 1000) * 0.7;
-const read = pagesToRead * 0.03;
+const est = (totalBlocks / 1000) * 1.6;
+const read = pagesToRead * 0.05;
 console.log(
   `  total ${totalBlocks} block(s) on ${pagesToRead} page(s) — roughly $${(est + read).toFixed(2)} live, ` +
     `$${(est / 2 + read).toFixed(2)} as a batch (estimate; Indian scripts cost more than European ones)`,
