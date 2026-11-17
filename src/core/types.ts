@@ -17,6 +17,15 @@ export const CONTENT_TYPES: ContentType[] = [
   "mixed",
 ];
 
+/** Who wrote the text, so first-person grammar (gendered verbs/adjectives) comes out right. */
+export interface Author {
+  name?: string;
+  /** Grammatical gender for first-person forms in languages that mark it. */
+  gender?: "male" | "female" | "neutral";
+  /** Anything else the translator should know about the author's voice. */
+  notes?: string;
+}
+
 /** One piece of plain text found on screen. `id` is opaque to Ponte and echoed back. */
 export interface Segment {
   id: string;
@@ -40,6 +49,8 @@ export interface TranslateRequest {
   doNotTranslate?: string[];
   /** Fixed renderings, e.g. { "case study": "केस स्टडी" }. */
   glossary?: Record<string, string>;
+  /** The author of the text (first-person voice). */
+  author?: Author;
 }
 
 export interface GlossaryEntry {

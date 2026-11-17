@@ -7,6 +7,7 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { AnthropicModelClient, Ponte } from "../src/core/index.js";
+import { loadConfig, withConfig } from "../src/core/config.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 try {
@@ -28,9 +29,8 @@ if (!text) {
 }
 
 const paragraphs = text.split(/\n{2,}/).filter((p) => p.trim());
-const out = await new Ponte({ model: new AnthropicModelClient() }).translate({
-  targetLanguage: lang,
-  segments: paragraphs.map((p, i) => ({ id: String(i), text: p })),
-});
+const out = await new Ponte({ model: new AnthropicModelClient() }).translate(
+  withConfig({ targetLanguage: lang, segments: paragraphs.map((p, i) => ({ id: String(i), text: p })) }, loadConfig(root)),
+);
 if (out.brief) console.error(`[${out.brief.contentType} · ${out.brief.tone}]`);
 console.log(out.results.map((r) => r.text).join("\n\n"));

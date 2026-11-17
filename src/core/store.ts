@@ -24,11 +24,25 @@ export interface StoredTranslation {
   page?: string;
   model?: string;
   savedAt: string;
+  /**
+   * Fingerprint of the settings used (author, glossary, keep-as-is terms). When the
+   * settings change, the entry is re-translated on the next run — unless locked.
+   */
+  settings?: string;
+  /** Set to true on entries you've edited by hand: Ponte will never replace them. */
+  locked?: boolean;
+}
+
+/** Whether a new entry may replace an existing one: only when settings changed and it isn't locked. */
+export function canReplace(existing: StoredTranslation | undefined, next: StoredTranslation): boolean {
+  if (!existing) return true;
+  if (existing.locked) return false;
+  return next.settings !== undefined && existing.settings !== next.settings;
 }
 
 export interface TranslationStore {
   get(lang: string, source: string): Promise<StoredTranslation | undefined>;
-  /** Save new entries. Existing entries are never replaced. */
+  /** Save new entries. Existing entries are replaced only when their settings changed and they aren't locked. */
   put(lang: string, entries: StoredTranslation[]): Promise<void>;
   /** Write anything pending. Call on shutdown. */
   flush(): Promise<void>;
@@ -50,7 +64,10 @@ export class MemoryStore implements TranslationStore {
   async put(lang: string, entries: StoredTranslation[]) {
     if (!entries.length) return;
     const file = this.files.get(lang) ?? {};
-    for (const e of entries) file[fingerprint(e.source)] ??= e;
+    for (const e of entries) {
+      const k = fingerprint(e.source);
+      if (canReplace(file[k], e)) file[k] = e;
+    }
     this.files.set(lang, file);
   }
   async flush() {}
@@ -113,7 +130,7 @@ export class JsonFileStore implements TranslationStore {
     let added = 0;
     for (const e of entries) {
       const key = fingerprint(e.source);
-      if (existing[key] || pending[key]) continue;
+      if (!canReplace(pending[key] ?? existing[key], e)) continue;
       pending[key] = e;
       added++;
     }
@@ -148,7 +165,7 @@ export class JsonFileStore implements TranslationStore {
       } catch (err) {
         // Put them back so the next flush retries.
         const again = this.pending.get(lang) ?? {};
-        for (const [k, v] of Object.entries(additions)) again[k] ??= v;
+        for (const [k, v] of Object.entries(additions)) if (canReplace(again[k], v)) again[k] = v;
         this.pending.set(lang, again);
         throw err;
       }
@@ -161,7 +178,8 @@ export class JsonFileStore implements TranslationStore {
     const data: LanguageFile = { ...(latest?.data ?? {}) };
     let added = 0;
     for (const [k, v] of Object.entries(additions)) {
-      if (!data[k]) {
+      // Re-check against the latest file: a hand edit (locked) made meanwhile always wins.
+      if (canReplace(data[k], v)) {
         data[k] = v;
         added++;
       }

@@ -15,7 +15,7 @@ on:
       langs:
         description: "Languages (codes, comma-separated)"
         required: true
-        default: "hi,bn,ta,te,mr,gu,kn,ml,pa,es,fr,de,ja"
+        default: "hi,bn,ta,te,mr,gu,kn,ml,pa,es,fr,de,pt,ja,zh,ko,ar"
       max_pages:
         description: "Most pages to follow on the site"
         required: false
