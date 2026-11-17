@@ -41,6 +41,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write # the publish step it calls can re-trigger itself on main
 
 concurrency:
   group: ponte-translations
