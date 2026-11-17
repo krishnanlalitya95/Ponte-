@@ -7,10 +7,21 @@
  * re-renders (page transitions, variants, lazy sections).
  */
 import type { ContentType, SegmentResult, TranslateResponse } from "../src/core/types.js";
+import { fontFor, loadFont } from "./fonts.js";
 
 export interface PonteOptions {
-  /** Base URL of the Ponte server, e.g. "http://localhost:8787". */
-  endpoint: string;
+  /**
+   * Static mode: base URL where published translations live (…/t/<lang>.json).
+   * No server needed; text without a saved translation stays in the original language.
+   */
+  staticBase?: string;
+  /**
+   * Ponte server, e.g. "http://localhost:8787". With staticBase set too, it's only asked
+   * for text that isn't published yet.
+   */
+  endpoint?: string;
+  /** Load a matching Noto font for non-Latin scripts. Default true. */
+  fonts?: boolean;
   /** Element to translate. Defaults to document.body. */
   root?: Element;
   contentType?: ContentType;
@@ -36,6 +47,8 @@ export interface PonteStatus {
   language: string | null;
   translated?: number;
   failed?: number;
+  /** Static mode: blocks with no published translation yet (left in the original). */
+  missing?: number;
   error?: string;
 }
 
@@ -84,7 +97,11 @@ interface Block {
 }
 
 export function createPonte(opts: PonteOptions): PonteController {
-  const endpoint = opts.endpoint.replace(/\/+$/, "");
+  const endpoint = opts.endpoint ? opts.endpoint.replace(/\/+$/, "") : null;
+  const staticBase = opts.staticBase ? opts.staticBase.replace(/\/+$/, "") : null;
+  if (!endpoint && !staticBase) throw new Error("Ponte needs staticBase or endpoint");
+  const published = new Map<string, Promise<Record<string, string>>>(); // lang → { textHash: translation }
+  const fontTouched = new Map<HTMLElement, string>(); // element → its previous inline font-family
   const root = opts.root ?? document.body;
   const originals = new WeakMap<Text, string>(); // source text per node
   const written = new WeakMap<Text, string>(); // what Ponte last wrote, to spot external changes
@@ -246,6 +263,7 @@ export function createPonte(opts: PonteOptions): PonteController {
           });
         }
       }
+      applyFont(block, lang);
       if (RTL.has(lang)) {
         if (!block.el.hasAttribute("dir")) {
           block.el.setAttribute("dir", "rtl");
@@ -259,6 +277,31 @@ export function createPonte(opts: PonteOptions): PonteController {
       observer?.takeRecords();
       applying = false;
     }
+  }
+
+  /** Add a matching Noto font after each element's own font (see fonts.ts). */
+  function applyFont(block: Block, lang: string) {
+    if (opts.fonts === false) return;
+    for (const p of block.pieces) {
+      const el = p.node.parentElement;
+      if (!el) continue;
+      const before = fontTouched.has(el) ? fontTouched.get(el)! : el.style.fontFamily;
+      if (fontTouched.has(el)) el.style.fontFamily = before; // measure the element's own font
+      const own = getComputedStyle(el).fontFamily || "";
+      const noto = fontFor(lang, own);
+      if (!noto) {
+        if (fontTouched.has(el)) fontTouched.delete(el);
+        continue;
+      }
+      loadFont(noto);
+      if (!fontTouched.has(el)) fontTouched.set(el, before);
+      el.style.fontFamily = withScriptFont(own, noto);
+    }
+  }
+
+  function restoreFonts() {
+    for (const [el, before] of fontTouched) el.style.fontFamily = before;
+    fontTouched.clear();
   }
 
   function write(node: Text, value: string) {
@@ -279,13 +322,53 @@ export function createPonte(opts: PonteOptions): PonteController {
       }
       for (const el of dirTouched) el.removeAttribute("dir");
       dirTouched.clear();
+      restoreFonts();
     } finally {
       observer?.takeRecords();
       applying = false;
     }
   }
 
+  function loadPublished(lang: string): Promise<Record<string, string>> {
+    let p = published.get(lang);
+    if (!p) {
+      p = fetch(`${staticBase}/t/${encodeURIComponent(lang)}.json`)
+        .then((r) => (r.ok ? (r.json() as Promise<Record<string, string>>) : {}))
+        .catch(() => {
+          published.delete(lang); // try again next time
+          return {};
+        });
+      published.set(lang, p);
+    }
+    return p;
+  }
+
   async function run(lang: string, blocks: Block[], gen: number) {
+    if (staticBase) {
+      // Static mode: apply published translations. Ask the server only for the rest, if there is one.
+      if (!blocks.some((b) => cache.has(`${lang}\0${b.text}`))) status({ state: "translating", language: lang });
+      const map = await loadPublished(lang);
+      if (gen !== generation) return;
+      const rest: Block[] = [];
+      let hits = 0;
+      for (const b of blocks) {
+        const t = cache.get(`${lang}\0${b.text}`) ?? map[textHash(b.text.trim())];
+        if (t !== undefined) {
+          cache.set(`${lang}\0${b.text}`, t);
+          apply(b, t, lang);
+          hits++;
+        } else rest.push(b);
+      }
+      if (!endpoint || !rest.length) {
+        status({ state: "done", language: lang, translated: hits, failed: 0, missing: rest.length });
+        return;
+      }
+      blocks = rest;
+    }
+    return runServer(lang, blocks, gen);
+  }
+
+  async function runServer(lang: string, blocks: Block[], gen: number) {
     // Apply anything we already have, instantly: first this session's answers, then the
     // copy saved in the browser from an earlier visit (which we still re-check with the server).
     const todo: Block[] = [];
@@ -496,4 +579,21 @@ export function textHash(str: string): string {
   h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
   h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
   return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
+}
+
+const GENERIC = /^(serif|sans-serif|monospace|cursive|fantasy|system-ui|ui-[a-z-]+|emoji|math)$/i;
+
+/**
+ * Insert the script font before any trailing generic family, so the element's own
+ * fonts still draw what they can and Noto (not the device default) draws the rest.
+ */
+export function withScriptFont(own: string, noto: string): string {
+  const families = own.split(",").map((f) => f.trim()).filter(Boolean);
+  if (families.some((f) => f.replace(/["']/g, "").toLowerCase() === noto.toLowerCase())) return own;
+  // Only the final fallback moves after Noto; "system-ui, sans-serif" keeps system-ui first so
+  // Latin text keeps its look (Noto fonts also contain Latin letters).
+  const last = families[families.length - 1];
+  const i = last && GENERIC.test(last.replace(/["']/g, "")) ? families.length - 1 : families.length;
+  families.splice(i, 0, `"${noto}"`);
+  return families.join(", ");
 }

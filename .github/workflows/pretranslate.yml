@@ -2,7 +2,8 @@ name: Pre-translate site
 
 # Translate your published site once and save it, so visitors never wait for the agent.
 # Run from GitHub (works on your phone): Actions → Pre-translate site → Run workflow.
-# Saved translations go to the "ponte-translations" branch, folder translations/.
+# Saved translations go to the "ponte-translations" branch, folder translations/,
+# and are then published to GitHub Pages for the free Static mode.
 # Text that is already saved is skipped, so re-running only translates new or edited text.
 on:
   workflow_dispatch:
@@ -28,6 +29,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: ponte-translations
@@ -76,3 +79,9 @@ jobs:
             tail -n 60 pretranslate.log 2>/dev/null || echo "no log"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+
+  publish:
+    needs: pretranslate
+    # Publish whatever was saved, even if a few texts failed.
+    if: ${{ !cancelled() }}
+    uses: ./.github/workflows/publish.yml

@@ -4,8 +4,9 @@
  * Use it in place of a text layer for long-form work (poems, stories, case-study
  * sections, papers). Paste the original into "Text", pick a target language, and
  * the translated text renders right on the canvas so you can review and style it
- * while editing. Set "Language" to "Follow widget" to let visitors switch it with
- * the Ponte widget instead.
+ * while editing (needs a running Ponte server). Set "Language" to "Follow widget" to
+ * show the original and let the Ponte widget translate it with the rest of the page —
+ * this works in Static mode too, because pre-translate picks it up like any other text.
  *
  * In Framer: Assets → Code → New Component → paste this file.
  */
@@ -54,22 +55,13 @@ function translate(endpoint: string, text: string, lang: string, contentType: st
  */
 export default function PonteText(props) {
     const { text, language, endpoint, contentType, notes, title, font, color, align, showErrors } = props
-    const [visitorLang, setVisitorLang] = useState<string | null>(null)
+    const follow = language === "follow"
     const [out, setOut] = useState<string>(text)
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState(false)
 
-    // "Follow widget": listen to the Ponte visitor widget's language.
-    useEffect(() => {
-        if (language !== "follow" || typeof window === "undefined") return
-        const onLang = (e: Event) => setVisitorLang((e as CustomEvent).detail?.language ?? null)
-        window.addEventListener("ponte:language", onLang)
-        const current = window.Ponte?.instance?.language ?? null
-        setVisitorLang(current)
-        return () => window.removeEventListener("ponte:language", onLang)
-    }, [language])
-
-    const target = language === "follow" ? visitorLang : language === "original" ? null : language
+    // "Follow widget": render the original as normal page text; the widget translates it.
+    const target = follow || language === "original" ? null : language
 
     useEffect(() => {
         if (!target || !text?.trim()) {
@@ -90,7 +82,7 @@ export default function PonteText(props) {
 
     return (
         <div
-            data-ponte-skip=""
+            data-ponte-skip={follow ? undefined : ""}
             lang={target || undefined}
             dir={target && RTL.has(target) ? "rtl" : undefined}
             style={{

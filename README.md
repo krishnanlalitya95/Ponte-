@@ -21,6 +21,17 @@ It's built for portfolios that mix short UI copy with long-form work: poetry, st
          { id → replacement text } ──▶ written back into the same DOM nodes
 ```
 
+## Two ways to run it
+
+| | **Static mode (free)** | **Server mode** |
+|---|---|---|
+| How it works | Translate your site once (a GitHub Actions button). Translations are published as files on GitHub Pages, and the widget reads them. | A Ponte server translates any new text live, the first time someone asks. |
+| Monthly cost | $0. You pay the AI only when you run Pre-translate, and only for new or changed text. | AI cost for new text, plus hosting the server. |
+| New text on your site | Stays in the original until you run Pre-translate again. | Translated on the spot. |
+| Needs | A public GitHub repo (GitHub Pages is free for public repos) | A host for a Node server |
+
+For a static portfolio, **Static mode** is the one to use. Setup is in [Static mode](#static-mode-free-no-server) below.
+
 ## Quick start
 
 ```bash
@@ -33,21 +44,55 @@ To try it without an API key, run `npm run mock`. Mock mode returns `[hi] Hello`
 
 Open **http://localhost:8787/demo** and pick a language from the pill in the bottom-right corner.
 
+## Static mode (free, no server)
+
+1. **Make the repo public:** **Settings → General → Danger Zone → Change visibility**. GitHub Pages is free only for public repos. Your API key stays private in Secrets, and the published files are translations of text that's already public on your site.
+2. **Turn on Pages:** **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. **Add your API key** as the `ANTHROPIC_API_KEY` secret (**Settings → Secrets and variables → Actions**).
+4. **Run Actions → Pre-translate site**, choosing your URL and languages. When it finishes, it publishes automatically. The run summary shows the link and the snippet.
+5. **In Framer:** go to **Site Settings → General → Custom Code → End of `<body>` tag** and paste:
+
+   ```html
+   <script src="https://krishnanlalitya95.github.io/Ponte-/widget.js" defer></script>
+   ```
+
+   That's all. The language picker lists exactly the languages you published. If you'd rather place the picker yourself, use the [`PonteWidget`](framer/PonteWidget.tsx) code component with **Mode: Static** instead of the script.
+
+**Updating your site:** after you change text in Framer, run **Pre-translate site** again. Only the changed text is sent to the agent. **Fixing a translation:** edit it on the `ponte-translations` branch (see [Saved translations](#saved-translations)). Saving the edit republishes automatically within a minute or two.
+
+**What a visitor's browser downloads:** `widget.js` (about 13 KB) and one small file for the chosen language, `t/hi.json`. There are no AI calls and no server.
+
+## Matching fonts
+
+Most Framer fonts only include Latin letters. When a page is translated into a non-Latin script, Ponte loads the free Google **Noto** font for that script and adds it to each element's own font list. Latin letters, numbers and names keep your original font; Noto draws only the characters your font lacks. Elements set in a serif get **Noto Serif**, the rest get **Noto Sans**, so headings and body text keep their character.
+
+| Languages | Sans | Serif |
+|---|---|---|
+| Hindi, Marathi | Noto Sans Devanagari | Noto Serif Devanagari |
+| Bengali · Tamil · Telugu · Gujarati · Kannada · Malayalam | Noto Sans *Script* | Noto Serif *Script* |
+| Punjabi | Noto Sans Gurmukhi | Noto Serif Gurmukhi |
+| Odia | Noto Sans Oriya | Noto Serif Oriya |
+| Urdu | Noto Nastaliq Urdu | Noto Nastaliq Urdu |
+| Arabic | Noto Sans Arabic | Noto Naskh Arabic |
+| Japanese · Chinese · Korean | Noto Sans JP / SC / KR | Noto Serif JP / SC / KR |
+
+Fonts load only when a visitor picks that language, and choosing **Original** removes them. To turn this off, use `data-fonts="off"` on the script, or the **Script fonts** toggle on the code component.
+
 ## Using it in Framer
 
 ### 1. Visitor widget (whole page, for visitors)
 
 Use **either** option:
 
-**A. Code component (recommended):** in Framer, go to **Assets → Code → New component**, paste [`framer/PonteWidget.tsx`](framer/PonteWidget.tsx), then drop it into your nav or footer. Set:
-- **Endpoint**: your Ponte server (`http://localhost:8787` while developing)
+**A. Code component:** in Framer, go to **Assets → Code → New component**, paste [`framer/PonteWidget.tsx`](framer/PonteWidget.tsx), then drop it into your nav or footer. Set:
+- **Mode**: **Static** (free; reads the published files, with **Published at** set to your GitHub Pages URL) or **Server** (set **Endpoint** to your Ponte server, `http://localhost:8787` while developing)
 - **Languages**: which languages to offer
 - **Page language**: e.g. `en`
 - **Keep as is**: names that must never change, e.g. `Lalitya Krishnan, CareOne, ICICI Lombard`
 
 On the canvas the component only shows the picker. Translation runs in **Preview** and on the published site, so it never touches the editor itself.
 
-**B. Script tag:** go to **Site Settings → General → Custom Code → End of `<body>` tag**:
+**B. Script tag:** go to **Site Settings → General → Custom Code → End of `<body>` tag**. For static mode, see above. For server mode:
 
 ```html
 <script src="http://localhost:8787/widget.js"
@@ -65,13 +110,14 @@ What the widget does:
 - Remembers the visitor's choice. It also reads `?lang=hi` from the URL.
 - Watches for re-renders (page transitions, variants, lazy sections) and translates new text too. Text it has already translated is re-applied instantly from cache.
 - Sets `dir="rtl"` on blocks translated into Arabic or Urdu.
+- Loads a matching script font (see [Matching fonts](#matching-fonts)).
 - Choosing **Original** restores the exact original text.
 
 If you want an element to use a stable id across visits, give it `data-ponte-id="something"`. Otherwise ids are generated per page load.
 
 ### 2. Code component (author workflow)
 
-[`framer/PonteText.tsx`](framer/PonteText.tsx) is a text component for long-form work. Paste the original into **Text**, choose a **Language**, and the translation renders right on the canvas, so you can review and style it while editing. Use **Content** to force a genre (for example **Poetry**) and **Notes** to give the translator context. Set **Language** to **Follow widget** to let visitors switch it with the visitor widget instead.
+[`framer/PonteText.tsx`](framer/PonteText.tsx) is a text component for long-form work. Paste the original into **Text**, choose a **Language**, and the translation renders right on the canvas, so you can review and style it while editing. Use **Content** to force a genre (for example **Poetry**) and **Notes** to give the translator context. Set **Language** to **Follow widget** to show the original and let the visitor widget translate it like the rest of the page (this works in static mode too).
 
 ### Allowed origins
 
