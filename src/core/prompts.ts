@@ -43,6 +43,7 @@ export function analyzeUser(req: TranslateRequest, target: Language, segments: S
     ctx.description ? `Page description: ${ctx.description}` : "",
     ctx.notes ? `Author's notes: ${ctx.notes}` : "",
     req.contentType ? `The author says this content is: ${req.contentType}. Use that as contentType.` : "",
+    authorLine(req),
     req.doNotTranslate?.length ? `Never translate these terms: ${req.doNotTranslate.join(", ")}` : "",
     "",
     "On-screen text, in page order (role = where it sits on the page):",
@@ -101,6 +102,29 @@ const GENRE_GUIDANCE: Record<ContentType, string> = {
     "This page mixes kinds of writing. Treat each segment by its own nature (its role and surroundings): verse as verse, interface labels as interface labels, research as research.",
 };
 
+const GENDER_FORMS: Record<string, string> = {
+  male: "masculine",
+  female: "feminine",
+  neutral: "gender-neutral where the language allows (otherwise the most natural unmarked form)",
+};
+
+/** Tells the model who "I" is, so verb and adjective agreement is right in gendered languages. */
+export function authorLine(req: TranslateRequest): string {
+  const a = req.author;
+  if (!a || (!a.name && !a.gender && !a.notes)) return "";
+  const parts: string[] = [];
+  if (a.name) parts.push(`The author is ${a.name}.`);
+  if (a.gender && GENDER_FORMS[a.gender]) {
+    parts.push(
+      `Whenever the text speaks in the first person (I, me, my, we in a personal sense), the author is ${a.gender}: use ${GENDER_FORMS[a.gender]} first-person forms in every language that marks gender ` +
+        `(e.g. Hindi/Marathi/Punjabi/Gujarati/Urdu verb endings such as "${a.gender === "female" ? "करती हूँ" : "करता हूँ"}", Spanish/French/Portuguese/Italian adjectives and participles, Arabic). ` +
+        `This applies only to the author; keep other people's gender as written.`,
+    );
+  }
+  if (a.notes) parts.push(`About the author: ${a.notes}`);
+  return `Author: ${parts.join(" ")}`;
+}
+
 export function translateSystem(target: Language): string {
   return `You are Ponte, a careful human-grade translator. You translate MEANING, not words.
 
@@ -144,6 +168,7 @@ export function translateUser(args: {
     `What it is: ${brief.summary}`,
     `Genre guidance: ${GENRE_GUIDANCE[brief.contentType]}`,
     `Translator notes: ${brief.translationNotes}`,
+    authorLine(req),
     "</brief>",
     "",
     glossaryLines.length ? `<glossary>\n${glossaryLines.join("\n")}\n</glossary>\n` : "",

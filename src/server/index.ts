@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { AnthropicModelClient, Ponte } from "../core/index.js";
 import { MockModelClient } from "../core/mock.js";
 import { storeFromEnv } from "../core/store.js";
+import { loadConfig } from "../core/config.js";
 import { configFromEnv, createHandler } from "./app.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
@@ -20,7 +21,7 @@ const store = storeFromEnv(root, mock ? { ...process.env, PONTE_STORE: "memory" 
 const ponte = new Ponte({ model: mock ? new MockModelClient() : new AnthropicModelClient(), store });
 const config = configFromEnv(root);
 
-const server = createServer(createHandler(ponte, config)).listen(port, () => {
+const server = createServer(createHandler(ponte, config, loadConfig(root))).listen(port, () => {
   console.log(`Ponte listening on http://localhost:${port}`);
   console.log(`  demo:      http://localhost:${port}/demo`);
   console.log(`  widget:    http://localhost:${port}/widget.js`);

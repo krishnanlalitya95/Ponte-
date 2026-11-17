@@ -15,6 +15,7 @@ import { JSDOM } from "jsdom";
 import { AnthropicModelClient, Ponte, getLanguage, type TranslateRequest } from "../src/core/index.js";
 import { MockModelClient } from "../src/core/mock.js";
 import { storeFromEnv } from "../src/core/store.js";
+import { loadConfig, withConfig } from "../src/core/config.js";
 import { createPonte } from "../widget/engine.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -38,6 +39,8 @@ for (const l of langs) if (!getLanguage(l)) throw new Error(`Unsupported languag
 const mock = process.env.PONTE_MOCK === "1";
 const store = storeFromEnv(root, mock ? { ...process.env, PONTE_STORE: "memory" } : process.env);
 const ponte = new Ponte({ model: mock ? new MockModelClient() : new AnthropicModelClient(), store });
+const site = loadConfig(root);
+if (site.author || site.glossary || site.doNotTranslate) console.log("Using settings from ponte.config.json");
 const realFetch = globalThis.fetch;
 const FAKE_ENDPOINT = "http://ponte.internal";
 
@@ -82,7 +85,7 @@ for (const page of pages) {
     globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
       const u = String(input);
       if (!u.startsWith(FAKE_ENDPOINT)) return realFetch(input, init);
-      const body = JSON.parse(String(init?.body)) as TranslateRequest;
+      const body = withConfig(JSON.parse(String(init?.body)) as TranslateRequest, site);
       segCount += body.segments.length;
       if (dryRun) {
         for (const s of body.segments) console.log(`    [${s.role}] ${s.text.slice(0, 90).replace(/\n/g, " ⏎ ")}`);

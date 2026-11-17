@@ -48,7 +48,8 @@ describe("saved translations in the agent", () => {
   it("only sends new or changed text to the agent", async () => {
     const model = new FakeModel(prefixTranslator);
     const store = new MemoryStore();
-    await store.put("hi", [entry("Kept paragraph", "पहले से सहेजा")]);
+    const { settingsKey } = await import("../src/core/agent.js");
+    await store.put("hi", [{ ...entry("Kept paragraph", "पहले से सहेजा"), settings: settingsKey({ targetLanguage: "hi", segments: [] }, "hi") }]);
     const out = await new Ponte({ model, store }).translate({
       targetLanguage: "hi",
       segments: [{ id: "a", text: "Kept paragraph" }, { id: "b", text: "Edited paragraph" }],
@@ -225,5 +226,61 @@ describe("GitHub backend", () => {
     // A fresh server reads it back from GitHub.
     const fresh = new JsonFileStore(new GitHubBackend({ token: "t", repo: "me/site", branch: "ponte-translations", dir: "translations", fetch: gh.f }), { log: () => {} });
     expect((await fresh.get("hi", "World"))?.text).toBe("दुनिया");
+  });
+});
+
+describe("settings: author and glossary", () => {
+  const author = { name: "Lalitya Krishnan", gender: "male" as const };
+
+  it("puts the author's gender and name rendering into the prompts", async () => {
+    const { withConfig } = await import("../src/core/config.js");
+    const model = new FakeModel(prefixTranslator);
+    const req = withConfig(
+      { targetLanguage: "hi", segments: [{ id: "a", text: "I am Lalitya Krishnan and I design calm software." }] },
+      { author, glossary: { hi: { "Lalitya Krishnan": "लालित्य कृष्णन" }, ta: { X: "Y" } } },
+    );
+    expect(req.glossary).toEqual({ "Lalitya Krishnan": "लालित्य कृष्णन" }); // only this language's entries
+    await new Ponte({ model }).translate(req);
+    const [brief, translate] = model.calls;
+    expect(brief!.user).toContain("the author is male");
+    expect(translate!.user).toContain("masculine first-person forms");
+    expect(translate!.user).toContain("करता हूँ");
+    expect(translate!.user).toContain('"Lalitya Krishnan": translate → "लालित्य कृष्णन"');
+  });
+
+  it("re-translates saved text when settings change, but never touches locked (hand-edited) entries", async () => {
+    const model = new FakeModel(prefixTranslator);
+    const store = new MemoryStore();
+    // Saved before the author setting existed (no settings fingerprint): one plain, one locked by hand.
+    await store.put("hi", [entry("I made this", "मैंने बनाया (old)"), { ...entry("Locked line", "मेरा संपादन"), locked: true }]);
+    const out = await new Ponte({ model, store }).translate({
+      targetLanguage: "hi",
+      author,
+      segments: [{ id: "a", text: "I made this" }, { id: "b", text: "Locked line" }],
+    });
+    expect(out.results.map((r) => r.text)).toEqual(["HI:I made this", "मेरा संपादन"]);
+    const file = store.files.get("hi")!;
+    expect(file[fingerprint("I made this")]!.text).toBe("HI:I made this"); // replaced
+    expect(file[fingerprint("Locked line")]!.text).toBe("मेरा संपादन"); // kept
+
+    // Same settings again: everything served from saved, no agent calls.
+    const calls = model.calls.length;
+    await new Ponte({ model, store }).translate({ targetLanguage: "hi", author, segments: [{ id: "a", text: "I made this" }] });
+    expect(model.calls.length).toBe(calls);
+  });
+
+  it("file store replaces stale entries on disk but keeps locked ones", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "ponte-"));
+    const path = join(dir, "hi.json");
+    await writeFile(path, JSON.stringify({
+      [fingerprint("Old")]: entry("Old", "पुराना"),
+      [fingerprint("Mine")]: { ...entry("Mine", "मेरा"), locked: true },
+    }));
+    const store = new JsonFileStore(new LocalFileBackend(dir), { log: () => {} });
+    await store.put("hi", [{ ...entry("Old", "नया"), settings: "s2" }, { ...entry("Mine", "नया"), settings: "s2" }]);
+    await store.flush();
+    const data = JSON.parse(await readFile(path, "utf8")) as LanguageFile;
+    expect(data[fingerprint("Old")]!.text).toBe("नया");
+    expect(data[fingerprint("Mine")]!.text).toBe("मेरा");
   });
 });

@@ -184,6 +184,26 @@ Your portfolio is static, so each piece of text only needs translating **once**.
 - **Force a fresh translation:** delete the entry from the file.
 - **Return visitors:** the widget also keeps a copy in the visitor's browser. The page switches language instantly, then quietly checks the server for updates (including your edits).
 
+### Your name, your voice: `ponte.config.json`
+
+Site-wide rules that apply to every translation live in [`ponte.config.json`](ponte.config.json). You can edit it on GitHub from your phone.
+
+```json
+{
+  "author": { "name": "Lalitya Krishnan", "gender": "male", "notes": "…" },
+  "doNotTranslate": ["CareOne"],
+  "glossary": { "hi": { "Lalitya Krishnan": "लालित्य कृष्णन" } }
+}
+```
+
+- **`author.gender`** (`male`, `female` or `neutral`) sets the grammar used whenever the site says "I" or "my", for example Hindi "करता हूँ" vs "करती हूँ", or French and Spanish adjective endings. Other people mentioned in the text keep their own gender.
+- **`glossary`** fixes how a term is written in a given language, such as your name in Devanagari. Add more languages the same way: `"ta": { "Lalitya Krishnan": "…" }`.
+- **`doNotTranslate`** lists names and terms that must stay exactly as written in every language.
+
+**Changing these settings re-translates automatically.** Each saved translation records the settings it was made with. The next Pre-translate run redoes any text whose settings changed and leaves the rest alone.
+
+**Protecting your hand edits:** when you fix a translation by hand, also add `"locked": true` to that entry. Locked entries are never replaced, even when settings change.
+
 ### Translate the whole site in advance
 
 So that even the first visitor never waits:

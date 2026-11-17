@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { LANGUAGES, Ponte, PonteError, type TranslateRequest } from "../core/index.js";
+import { withConfig, type PonteConfig } from "../core/config.js";
 
 export interface ServerConfig {
   allowedOrigins: string[];
@@ -57,7 +58,7 @@ class RateLimiter {
   }
 }
 
-export function createHandler(ponte: Ponte, config: ServerConfig) {
+export function createHandler(ponte: Ponte, config: ServerConfig, site: PonteConfig = {}) {
   const limiter = new RateLimiter(config.rateLimitPerMin);
 
   return async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> {
@@ -107,7 +108,7 @@ export function createHandler(ponte: Ponte, config: ServerConfig) {
           throw new PonteError(`Too much text (${chars} > ${config.maxChars} characters). Send the page in batches.`, 413);
         }
         const started = Date.now();
-        const out = await ponte.translate(body);
+        const out = await ponte.translate(withConfig(body, site));
         const fallbacks = out.results.filter((r) => r.status === "fallback").length;
         console.log(
           `[ponte] ${out.targetLanguage} ${body.segments.length} segs, ${out.brief?.contentType ?? "all saved"}, ` +
