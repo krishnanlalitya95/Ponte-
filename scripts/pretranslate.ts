@@ -109,6 +109,12 @@ for (const lang of langs) {
   const blocks = js.reduce((n, j) => n + j.plan.unique.length, 0);
   console.log(`  ${lang}  ${String(blocks).padStart(4)} block(s), ${pendingChars(js)} characters`);
 }
+// Show where the new text is (for the first language that has some), so you can see what you'd pay for.
+const showLang = process.env.PONTE_SHOW_PENDING || todo[0]?.req.targetLanguage;
+for (const j of todo.filter((x) => x.req.targetLanguage === showLang)) {
+  console.log(`\n  ${j.page} — ${j.plan.unique.length} new block(s) in ${showLang}, e.g.:`);
+  for (const s of j.plan.unique.slice(0, 6)) console.log(`     · ${s.text.slice(0, 90).replace(/\n/g, " / ")}`);
+}
 const totalBlocks = todo.reduce((n, j) => n + j.plan.unique.length, 0);
 // Rough cost from a real run on this site (17 Nov 2026: 5,044 blocks for $4.16 as a batch):
 // about $1.60 per 1,000 blocks live, half as a batch, plus ~$0.05 per page reading
