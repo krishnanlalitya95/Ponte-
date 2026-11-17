@@ -639,6 +639,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "c8d869d0737e12f1": {
+    "source": "⟦0⟧a whole ⟦1⟧lot of personality⟦2⟧.",
+    "text": "⟦0⟧और ⟦1⟧शख़्सियत भरपूर⟦2⟧।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "922834c94bcbeb55": {
     "source": "⟦0⟧August 2022 - July 2024⟦1⟧·⟦2⟧Mumbai, Maharashtra",
     "text": "⟦0⟧अगस्त 2022 - जुलाई 2024⟦1⟧·⟦2⟧मुंबई, महाराष्ट्र",
@@ -679,6 +689,36 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "5b552365873d6005": {
+    "source": "⟦0⟧find their ⟦1⟧way into words⟦2⟧.",
+    "text": "⟦0⟧अपना ⟦1⟧रास्ता अल्फ़ाज़ में ढूँढ़ लेते हैं⟦2⟧।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "b20a754d85e427dc": {
+    "source": "⟦0⟧From understanding how things work to discovering what makes life meaningful, curiosity has always guided me. Somewhere between design, poetry, cooking and everyday adventures, there's ⟦1⟧Tanya⟦2⟧, my wife, my love to share it all with.",
+    "text": "⟦0⟧चीज़ें कैसे काम करती हैं यह समझने से लेकर यह खोजने तक कि ज़िंदगी को क्या अर्थ देता है, जिज्ञासा ने हमेशा मेरा हाथ थामा है। डिज़ाइन, कविता, खाना पकाने और रोज़ के छोटे-छोटे रोमांच के बीच कहीं ⟦1⟧तान्या⟦2⟧ है, मेरी पत्नी, मेरा प्यार, जिसके साथ मैं यह सब बाँट सकता हूँ।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "36d7febd96afadd6": {
+    "source": "⟦0⟧goes a long ⟦1⟧way to the heart⟦2⟧.",
+    "text": "⟦0⟧पहुँचा दे ⟦1⟧सीधे दिल तक⟦2⟧।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "26d190145eb2af77": {
     "source": "⟦0⟧how I ⟦1⟧see the world⟦2⟧.",
     "text": "⟦0⟧मेरा ⟦1⟧दुनिया को देखने का नज़रिया⟦2⟧।",
@@ -688,6 +728,16 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "514fa3c0615571ba": {
+    "source": "⟦0⟧I make ⟦1⟧sense of complexity⟦2⟧.",
+    "text": "⟦0⟧जिससे मैं ⟦1⟧उलझनों को सरल बनाता हूँ⟦2⟧।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "0c9a0723741fb193": {
     "source": "⟦0⟧I’m ⟦1⟧Lalitya Krishnan⟦2⟧, a product designer with six years of experience navigating complex systems and making them simpler for people. From engineering and universal design to building digital experiences at scale, curiosity has shaped how I approach problems.",
@@ -708,6 +758,16 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "7fa45b3adbbca47e": {
+    "source": "⟦0⟧Meet ⟦1⟧Laiba⟦2⟧, my curious Persian kitten and an adorable source of everyday chaos.",
+    "text": "⟦0⟧मिलिए ⟦1⟧लाइबा⟦2⟧ से, मेरी जिज्ञासु पर्शियन बिल्ली का बच्चा और रोज़मर्रा की प्यारी-सी अफ़रा-तफ़री की वजह।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "8e7bd0f9e4fe12a5": {
     "source": "⟦0⟧October 2021 - January 2022⟦1⟧·⟦2⟧Bengaluru, Karnataka",
@@ -809,6 +869,26 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "70fa6ea5c1cc64b4": {
+    "source": "A little flavour,",
+    "text": "ज़रा-सा स्वाद,",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "f4505f1ae31dce44": {
+    "source": "AND THE STORY CONTINUES...",
+    "text": "और कहानी जारी है...",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "6cab75fe0e7f52cf": {
     "source": "At Jio, I worked across commerce, healthcare, and enterprise products, navigating different users, business needs, and technical constraints. I learned how to translate complexity into coherent experiences while collaborating across teams and disciplines.",
     "text": "जियो में मैंने कॉमर्स, हेल्थकेयर और एंटरप्राइज़ प्रोडक्ट्स पर काम किया, जहाँ अलग-अलग उपयोगकर्ताओं, कारोबारी ज़रूरतों और तकनीकी सीमाओं के बीच रास्ता निकालना होता था। मुझे टीमों और विधाओं के पार मिलकर काम करते हुए जटिलता को सुसंगत अनुभवों में ढालना सीखने को मिला।",
@@ -828,6 +908,16 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "184c80896d12394f": {
+    "source": "BETWEEN THE LINES",
+    "text": "पंक्तियों के बीच",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "cd868e4e3a0dbb05": {
     "source": "Born in Kanpur, a city of bustling streets, familiar faces, and countless stories. Long before design became a profession, curiosity was already shaping how I observed the world and found wonder in ordinary things.",
@@ -849,6 +939,36 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "f7549e8b9dec61a2": {
+    "source": "decision count.",
+    "text": "मायने दें।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "aee5331db1cab960": {
+    "source": "Design is how,",
+    "text": "डिज़ाइन वह तरीका है,",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "419aea707e54d104": {
+    "source": "DESIGN WITH INTENTION",
+    "text": "सोच-समझकर डिज़ाइन करें",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "e159075b2e9466ff": {
     "source": "Discovering how things are made.",
     "text": "चीज़ें कैसे बनती हैं, यह जानना।",
@@ -858,6 +978,26 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "4c982448eb7720a2": {
+    "source": "Either way, I love sharing what I make.",
+    "text": "जो भी हो, मुझे अपना बनाया हुआ सबके साथ बाँटना अच्छा लगता है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "f2adb11e2da90626": {
+    "source": "EMBRACE COMPLEXITY",
+    "text": "जटिलता को अपनाएँ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "99ec27db722f07e6": {
     "source": "Engineering introduced me to materials, manufacturing, and the science behind everyday objects. I began looking beyond what things looked like to understand how they worked, why they failed, and how they could be improved.",
@@ -879,6 +1019,26 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "cd919927df45ce39": {
+    "source": "Every experience is part of something larger. I look beyond individual interactions to understand the relationships between people, processes, technology, and business needs.",
+    "text": "हर अनुभव किसी बड़ी कड़ी का हिस्सा होता है। मैं अलग-अलग इंटरैक्शन से आगे देखता हूँ, ताकि लोगों, प्रक्रियाओं, तकनीक और कारोबारी ज़रूरतों के बीच के रिश्तों को समझ सकूँ।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "9e62555d0c6c6e69": {
+    "source": "Find clarity without losing",
+    "text": "स्पष्टता पाएँ, पर खोए बिना",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "3fa55c1459fefbcf": {
     "source": "Finding beauty in precision.",
     "text": "सटीकता में सौंदर्य की खोज।",
@@ -888,6 +1048,26 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "cddd3f368cd84c44": {
+    "source": "For me, cooking is more than following a recipe. It’s about experimenting with flavours, trusting instincts, and finding joy in creating something from scratch. Some days it’s a familiar dish made with care; other days, an experiment that doesn’t quite go to plan.",
+    "text": "मेरे लिए खाना बनाना सिर्फ़ रेसिपी पर चलना नहीं है। यह स्वादों के साथ प्रयोग करने, अपने अंदाज़े पर भरोसा करने और शुरू से कुछ रच लेने की ख़ुशी पाने का नाम है। कुछ दिन यह जानी-पहचानी डिश होती है जो प्यार से बनाई गई हो; कुछ दिन ऐसा प्रयोग जो योजना के मुताबिक नहीं निकलता।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "0be21e3c0a8f3c11": {
+    "source": "Four little paws,",
+    "text": "चार नन्हे पंजे,",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "321857f60d191cce": {
     "source": "From making things to understanding people.",
@@ -929,6 +1109,36 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "2f1b30442922b242": {
+    "source": "I believe thoughtful design lives in the details, from the structure of an entire journey to a single interaction. Every choice should serve a purpose, not merely look good.",
+    "text": "मेरा मानना है कि सोचा-समझा डिज़ाइन बारीकियों में बसता है, चाहे वह पूरे सफ़र का ढाँचा हो या कोई एक इंटरैक्शन। हर चुनाव का कोई मक़सद होना चाहिए, सिर्फ़ अच्छा दिखना काफ़ी नहीं।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "1dff92a4e51ef364": {
+    "source": "I write in Hindi, often borrowing the beauty of Urdu, finding inspiration in emotions, memories, and everyday moments.",
+    "text": "मैं हिंदी में लिखता हूँ, अक्सर उर्दू की खूबसूरती उधार लेकर, और प्रेरणा जज़्बात, यादों और रोज़मर्रा के छोटे-छोटे पलों से पाता हूँ।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "f9f764121fd54eed": {
+    "source": "I’ve been writing poetry since 2010. What began as a way to express thoughts I couldn’t quite put into conversation has become a deeply personal part of who I am.",
+    "text": "मैं 2010 से कविताएँ लिख रहा हूँ। जो बातें मैं बोलकर कह नहीं पाता था, उन्हें कहने का यह एक ज़रिया था, और आज यह मेरे व्यक्तित्व का बहुत निजी हिस्सा बन चुका है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "40e31193b485d1f0": {
     "source": "Learning what scale demands.",
     "text": "बड़े पैमाने की माँग को समझना।",
@@ -938,6 +1148,26 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "5c51867d4f4a9deb": {
+    "source": "LIFE WITH LAIBA",
+    "text": "लाइबा के संग ज़िंदगी",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "3b409a25eee47c12": {
+    "source": "Make every",
+    "text": "हर फ़ैसले को",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "c970082f9d8c13bd": {
     "source": "MY JOURNEY",
@@ -949,6 +1179,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "1d81ac4822509f91": {
+    "source": "My journey from engineering to product design has taught me to look beyond what is immediately visible. I try to understand how things connect, question what could work better, and find clarity without losing the details that matter.",
+    "text": "इंजीनियरिंग से प्रोडक्ट डिज़ाइन तक के मेरे सफ़र ने मुझे सिखाया है कि जो सामने दिखता है, उससे आगे भी देखना चाहिए। मैं समझने की कोशिश करता हूँ कि चीज़ें आपस में कैसे जुड़ी हैं, क्या बेहतर हो सकता है, और उन बारीकियों को खोए बिना साफ़-सुथरी सरलता कैसे पाई जाए जो सचमुच मायने रखती हैं।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "c723098d423a57fe": {
     "source": "NID transformed how I understood design. What began with materials and processes grew into a deeper curiosity about people, accessibility, and lived experiences. I learned to question assumptions and design with context, empathy, and intention.",
     "text": "NID ने डिज़ाइन को देखने का मेरा नज़रिया बदल दिया। सामग्रियों और प्रक्रियाओं से शुरू हुआ सफ़र लोगों, सुगम्यता और जीये हुए अनुभवों के प्रति एक गहरी जिज्ञासा में बदल गया। मैंने धारणाओं पर सवाल उठाना और संदर्भ, संवेदना और स्पष्ट मंशा के साथ डिज़ाइन करना सीखा।",
@@ -958,6 +1198,26 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "2331728995345bba": {
+    "source": "not just the screen.",
+    "text": "सिर्फ़ स्क्रीन नहीं।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "8ba4444b170dbad3": {
+    "source": "Open Lipsa",
+    "text": "लिप्सा खोलें",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "c0c5b3ad57c0efeb": {
     "source": "Researching rural public services revealed how closely digital experiences are connected to real-world systems. It taught me to listen before proposing solutions and to consider the people, processes, and circumstances surrounding every interaction.",
@@ -969,6 +1229,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "23edf0b63a4228fc": {
+    "source": "See the whole,",
+    "text": "पूरी तस्वीर देखें,",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "de41c100927ed5f2": {
     "source": "Seeing design beyond the screen.",
     "text": "स्क्रीन से परे डिज़ाइन को देखना।",
@@ -978,6 +1248,86 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "680091341140232d": {
+    "source": "She has a talent for appearing precisely when I’m trying to concentrate, turning ordinary moments into small adventures, and occasionally supervising my design work.",
+    "text": "उसे ठीक तभी आ धमकने का हुनर आता है जब मैं ध्यान लगाने की कोशिश कर रहा होता हूँ। वह आम पलों को छोटे-छोटे रोमांच में बदल देती है, और कभी-कभार मेरे डिज़ाइन के काम की निगरानी भी कर लेती है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "9086da362a072839": {
+    "source": "Simplicity isn't about removing everything. It's about understanding what matters, navigating constraints, and making complex experiences feel intuitive without compromising their purpose.",
+    "text": "सरलता का मतलब सब कुछ हटा देना नहीं है। यह समझना है कि क्या मायने रखता है, सीमाओं के बीच रास्ता निकालना, और जटिल अनुभवों को उनके उद्देश्य से समझौता किए बिना सहज बनाना।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "b8e5e5ccab578057": {
+    "source": "Some feelings,",
+    "text": "कुछ जज़्बात",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "1b7634f587621797": {
+    "source": "Still curious. Still making. Still becoming.",
+    "text": "अब भी जिज्ञासु। अब भी रचता हुआ। अब भी बनता हुआ।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "92b78332f88ef2d6": {
+    "source": "THE KITCHEN DIARIES",
+    "text": "किचन डायरीज़",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "21a92235a1c762ec": {
+    "source": "THE WAY I SEE THINGS",
+    "text": "मेरा नज़रिया",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "2154d5046b007c21": {
+    "source": "THINK IN SYSTEMS",
+    "text": "सिस्टम की तरह सोचें",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
+  "bcdf1b198c9ebb46": {
+    "source": "Three principles guide how I approach my work: thinking in systems, embracing complexity, and designing with intention.",
+    "text": "मेरे काम का तरीका तीन सिद्धांतों पर टिका है: सिस्टम की तरह सोचना, जटिलता को अपनाना, और सोच-समझकर डिज़ाइन करना।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "a83f0c23f6cef8a6": {
     "source": "Today, I work on complex insurance experiences spanning customer journeys, operational workflows, and design systems. My focus has evolved from improving individual interactions to understanding how decisions connect across people, products, technology, and business outcomes.",
@@ -989,6 +1339,16 @@
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
   },
+  "bca4afd8959e0efd": {
+    "source": "Together, we're building a life filled with laughter, little imperfections, shared dreams and stories yet to unfold. And through it all, I'm still learning, loving, making mistakes and finding new reasons to be curious.",
+    "text": "साथ मिलकर हम एक ऐसी ज़िंदगी बुन रहे हैं जो हँसी, छोटी-छोटी कमियों, साझा सपनों और अनकही कहानियों से भरी है। और इस सबके बीच, मैं अब भी सीख रहा हूँ, प्यार कर रहा हूँ, गलतियाँ कर रहा हूँ और जिज्ञासु बने रहने की नई वजहें ढूँढ़ रहा हूँ।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
+  },
   "267f3a1acfb1e05d": {
     "source": "View Resume",
     "text": "रिज़्यूमे देखें",
@@ -998,6 +1358,16 @@
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T11:10:39.533Z"
+  },
+  "8b5e0b401f9cbab2": {
+    "source": "what matters.",
+    "text": "जो सचमुच मायने रखता है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:17:55.444Z"
   },
   "5415a2e000968423": {
     "source": "Working with tools, moulds, and digital manufacturing taught me that even the smallest detail has a purpose. It deepened my appreciation for precision, iteration, and the thoughtful process behind making things.",
