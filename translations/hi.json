@@ -1,4 +1,624 @@
 {
+  "7027799afc32a126": {
+    "source": "⟦0⟧03⟦1⟧Deliverables",
+    "text": "⟦0⟧03⟦1⟧प्रस्तुत कार्य",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "33680344b3f72cc8": {
+    "source": "⟦0⟧04⟦1⟧Reflection",
+    "text": "⟦0⟧04⟦1⟧चिंतन",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "3f2c8d8c6ffb9970": {
+    "source": "⟦0⟧Introduction⟦1⟧Process⟦2⟧Deliverables⟦3⟧Reflection",
+    "text": "⟦0⟧परिचय⟦1⟧प्रक्रिया⟦2⟧प्रस्तुत कार्य⟦3⟧चिंतन",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "9fe763a2f48ee1c4": {
+    "source": "*Based on survey done with 50+ participants during open elective 2020 at NID Gandhinagar Campus.",
+    "text": "*यह एनआईडी गांधीनगर कैंपस में ओपन इलेक्टिव 2020 के दौरान 50+ प्रतिभागियों के बीच किए गए सर्वेक्षण पर आधारित है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "17c829f3916e673f": {
+    "source": "#CE93D8",
+    "text": "#CE93D8",
+    "status": "unchanged",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "9fc42bcd26b30e78": {
+    "source": "1. Campus photography",
+    "text": "1. कैंपस फ़ोटोग्राफ़ी",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "6ea32f7d728a6847": {
+    "source": "1st Poetry",
+    "text": "पहली कविता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "01d0993e973bed8b": {
+    "source": "2. Emotion survey & infographic",
+    "text": "2. भावना सर्वेक्षण और इन्फोग्राफ़िक",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "4be713d99f75d2e0": {
+    "source": "3. Time-lapse videos & poetries",
+    "text": "3. टाइम-लैप्स वीडियो और कविताएँ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "dfa4f7693b785c6c": {
+    "source": "Alongside photography, we recorded time-lapses across the campus — letting the movement of light tell its own story across time, forming the visual backbone of the final deliverable.",
+    "text": "फ़ोटोग्राफ़ी के साथ-साथ हमने पूरे कैंपस में टाइम-लैप्स रिकॉर्ड किए — ताकि प्रकाश की गति समय के साथ अपनी कहानी खुद कहे। यही अंतिम प्रस्तुति की दृश्य रीढ़ बनी।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "72b7f8bf594ce483": {
+    "source": "approached it",
+    "text": "किया",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "f1c562c1788ce1eb": {
+    "source": "but the eyes in the head on the body resting on the ground.",
+    "text": "बल्कि आँखें सिर में, सिर शरीर पर, और शरीर धरती पर टिका होता है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "2039072741f7b028": {
+    "source": "Campus environments captured across time, articulating how light transforms a space emotionally. पठार, माया, बारिशें, and धूप छाँव, narrated over the time-lapses as the final expressive output.",
+    "text": "समय के साथ कैद किए गए कैंपस के परिवेश, जो बताते हैं कि प्रकाश किसी स्थान को भावनात्मक रूप से कैसे बदल देता है। पठार, माया, बारिशें और धूप छाँव, अंतिम अभिव्यक्ति के रूप में टाइम-लैप्स पर सुनाई गईं।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "f07d74aad3be5526": {
+    "source": "Color & Light in Natural Environment",
+    "text": "प्राकृतिक परिवेश में रंग और प्रकाश",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "fdc5cf6d84b55336": {
+    "source": "colour matter",
+    "text": "क्यों मायने रखते हैं",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "9507ad17d71faf99": {
+    "source": "Confusion",
+    "text": "उलझन",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "a312e78082b77921": {
+    "source": "Creative expression - poetry",
+    "text": "रचनात्मक अभिव्यक्ति - कविता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "bcbd76ed94ed60da": {
+    "source": "Curious",
+    "text": "जिज्ञासा",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "c7ec4b92c29ba226": {
+    "source": "Deliverables",
+    "text": "प्रस्तुत कार्य",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "0749f2f7a13efe79": {
+    "source": "Documenting colour and light conditions across NID Gandhinagar at different times and conditions.",
+    "text": "एनआईडी गांधीनगर में अलग-अलग समय और स्थितियों में रंग और प्रकाश की दशाओं का दस्तावेज़ीकरण।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "548c406383b40bdd": {
+    "source": "Each student chose a medium to express their findings. I chose language, writing four original Hindi poems, each giving an emotional voice to a distinct natural phenomenon observed during the project.",
+    "text": "हर विद्यार्थी ने अपने निष्कर्षों को व्यक्त करने के लिए एक माध्यम चुना। मैंने भाषा चुनी और चार मौलिक हिंदी कविताएँ लिखीं, जिनमें से हर एक प्रोजेक्ट के दौरान देखी गई किसी अलग प्राकृतिक घटना को भावनात्मक स्वर देती है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "65535c95e4b6c602": {
+    "source": "Envy",
+    "text": "ईर्ष्या",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "9dd8e252d7dab887": {
+    "source": "Experiential Design",
+    "text": "अनुभवात्मक डिज़ाइन",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "8bc2efb1baf519d9": {
+    "source": "Exploration of Perceptual Design of Nature",
+    "text": "प्रकृति के अवबोधन-आधारित डिज़ाइन की एक खोज",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "378b29d6a6fc1402": {
+    "source": "Field photography on campus",
+    "text": "कैंपस में फ़ील्ड फ़ोटोग्राफ़ी",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "206c7b3edf5b160f": {
+    "source": "How does natural light make you feel? We photographed, we asked, we mapped emotions. I answered in verses, four Hindi poems, each a portrait of nature in a different emotional state.",
+    "text": "प्राकृतिक प्रकाश आपको कैसा महसूस कराता है? हमने तस्वीरें लीं, पूछा, भावनाओं का नक्शा बनाया। मैंने जवाब कविताओं में दिया, चार हिंदी कविताएँ, जिनमें से हर एक अलग भावनात्मक अवस्था में प्रकृति का एक चित्र है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "b9357600beb97593": {
+    "source": "How we",
+    "text": "हमने यह कैसे",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "b8abe8fb6423070a": {
+    "source": "is a result of our entire",
+    "text": "वह हमारी पूरी",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "43ae77e59dd344fe": {
+    "source": "is a result of our entire perceptual system.",
+    "text": "वह हमारी पूरी अवबोधन प्रणाली का परिणाम है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "60707cfeb40e2a66": {
+    "source": "Lavender",
+    "text": "लैवेंडर",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "8770b297690430de": {
+    "source": "Light and colour are not decorative, they are communicative. They shape how we navigate space, form emotional associations, and connect with our surroundings. Whether it is the vivid arc of a rainbow against storm clouds or the translucent glow of a butterfly wing, colour plays a fundamental role in our relationship with the natural world. This project investigated that relationship directly — by going outside, observing, and asking people what they felt.",
+    "text": "प्रकाश और रंग सजावटी नहीं, संवादी हैं। वे तय करते हैं कि हम स्थान में कैसे राह बनाते हैं, भावनात्मक जुड़ाव कैसे गढ़ते हैं और अपने आसपास से कैसे जुड़ते हैं। चाहे तूफ़ानी बादलों के बीच इंद्रधनुष का चटख चाप हो या तितली के पंख की पारदर्शी आभा, प्राकृतिक दुनिया से हमारे रिश्ते में रंग की भूमिका बुनियादी है। इस प्रोजेक्ट ने उसी रिश्ते को सीधे परखा — बाहर निकलकर, देखकर, और लोगों से पूछकर कि उन्होंने क्या महसूस किया।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "73513993ecea1e32": {
+    "source": "Lust",
+    "text": "वासना",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "d71b98f81e428ccf": {
+    "source": "NID Elective'20",
+    "text": "एनआईडी इलेक्टिव '20",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "b9a3893e924b4874": {
+    "source": "One sees the environment not with the eyes",
+    "text": "कोई परिवेश को केवल आँखों से नहीं देखता,",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "8079e01915b63ec9": {
+    "source": "Passion",
+    "text": "जुनून",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "0acecb48602c20a3": {
+    "source": "Peer emotion survey",
+    "text": "साथियों के बीच भावना सर्वेक्षण",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "2512abb008da0327": {
+    "source": "Peer responses mapping emotions to photographs, visualised as a colour-emotion association infographic.",
+    "text": "साथियों के जवाब, जो भावनाओं को तस्वीरों से जोड़ते हैं और रंग-भावना जुड़ाव के इन्फोग्राफ़िक के रूप में प्रस्तुत किए गए हैं।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "fac87baea65d8488": {
+    "source": "perceptual system.",
+    "text": "अवबोधन प्रणाली का परिणाम है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "e083bd83e9d3e97e": {
+    "source": "Process",
+    "text": "प्रक्रिया",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "bf9b9b72aff8e752": {
+    "source": "produced",
+    "text": "बना",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "349af68054deb172": {
+    "source": "Purity",
+    "text": "पवित्रता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "c297e0f9bfd1ad76": {
+    "source": "romance  ·  yearning  ·  sensitivity",
+    "text": "रोमांस  ·  तड़प  ·  संवेदनशीलता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "94f6185909e0d5be": {
+    "source": "Sadness",
+    "text": "उदासी",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "2526af46df32d5b0": {
+    "source": "Sensory Design",
+    "text": "संवेदी डिज़ाइन",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "1f1141226d2a1956": {
+    "source": "Serenity",
+    "text": "शांति",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "5108d9837375173d": {
+    "source": "Space, as we experience it in architectural settings,",
+    "text": "स्थापत्य परिवेशों में हम जिस रूप में स्थान का अनुभव करते हैं,",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "0de3eb7d695d462f": {
+    "source": "Spirituality",
+    "text": "आध्यात्मिकता",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "afb703e03fcb37e8": {
+    "source": "Sun & shadow",
+    "text": "धूप और छाँव",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "e446fe5c2053a9a8": {
+    "source": "Theoretical grounding",
+    "text": "सैद्धांतिक आधार",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "278412fcac11cbdf": {
+    "source": "Time-lapse capture",
+    "text": "टाइम-लैप्स रिकॉर्डिंग",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "4f6db2b8ce9e9963": {
+    "source": "We asked people to tell us what emotions each photograph evoked. The responses were compiled into an infographic mapping emotional associations to different colour and light conditions.",
+    "text": "हमने लोगों से पूछा कि हर तस्वीर ने उनमें कौन-सी भावनाएँ जगाईं। इन जवाबों को संकलित करके एक इन्फोग्राफ़िक बनाया गया, जो भावनात्मक जुड़ावों को अलग-अलग रंग और प्रकाश की स्थितियों से जोड़ता है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "bbea8d5393d59719": {
+    "source": "We studied how different colours and light conditions affect perception — psychologically influencing emotion and feeling, and physiologically impacting well-being on both visual and non-visual levels.",
+    "text": "हमने अध्ययन किया कि अलग-अलग रंग और प्रकाश की स्थितियाँ अवबोधन को कैसे प्रभावित करती हैं — मनोवैज्ञानिक रूप से भावनाओं और अनुभूतियों को, और शारीरिक रूप से दृश्य व अदृश्य, दोनों स्तरों पर कल्याण को।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "3161014e73ecb5e0": {
+    "source": "We walked the NID Gandhinagar campus and photographed distinct moments of natural light and colour — capturing how the environment changed across time of day, weather, and season.",
+    "text": "हमने एनआईडी गांधीनगर कैंपस में घूमकर प्राकृतिक प्रकाश और रंग के अलग-अलग क्षणों की तस्वीरें लीं — यह दर्ज करते हुए कि दिन के समय, मौसम और ऋतु के साथ परिवेश कैसे बदलता है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "00950b564fb9231e": {
+    "source": "What was",
+    "text": "क्या कुछ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "80406b87734023ed": {
+    "source": "Why light and",
+    "text": "प्रकाश और रंग",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "6254716bbba85d04": {
+    "source": "जल ने रंग उछाल दिए हैं, प्रतिबिम्ब ने कई सवाल दिए हैं,",
+    "text": "जल ने रंग उछाल दिए हैं, प्रतिबिम्ब ने कई सवाल दिए हैं,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "18fc6c39d54089fc": {
+    "source": "झिलमिल झिलमिल उजियारे में, हलके हलके अंधियारे में,",
+    "text": "झिलमिल झिलमिल उजियारे में, हलके हलके अंधियारे में,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "bffc4a76fd5737ad": {
+    "source": "धूप छाँव",
+    "text": "धूप छाँव",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "8680c8c31efd5fb6": {
+    "source": "पवन पताका ठंडी ठंडी, हौले हौले मंडराए है,",
+    "text": "पवन पताका ठंडी ठंडी, हौले हौले मंडराए है,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "c68edf55ad328528": {
+    "source": "पुष्पों की पंखुड़ियों के भी रंग पहर में गर्वित से हैं,",
+    "text": "पुष्पों की पंखुड़ियों के भी रंग पहर में गर्वित से हैं,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "fa6b5f5b685f6a07": {
+    "source": "रंग पातियाँ बदल रही हैं, बादल भी संदर्भित से हैं,",
+    "text": "रंग पातियाँ बदल रही हैं, बादल भी संदर्भित से हैं,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
+  "19274844dcafd747": {
+    "source": "शाखों ने भी पत्तों के संग मिल कर झूले गाड़ दिए हैं,",
+    "text": "शाखों ने भी पत्तों के संग मिल कर झूले गाड़ दिए हैं,",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T11:09:40.774Z"
+  },
   "339edd48e4f5ca91": {
     "source": "⟦0⟧01⟦1⟧Introduction",
     "text": "⟦0⟧01⟦1⟧परिचय",
