@@ -21,6 +21,7 @@
     "about": {
       "title": "About Ponte",
       "text": "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "linkLabel": "View case study",
       "url": "/ponte"
     },
     "callout": {
