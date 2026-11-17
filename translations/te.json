@@ -791,6 +791,83 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "d25639b4fd4db841": {
+    "source": "⟦0⟧1⟦1⟧Economic Viability⟦2⟧1",
+    "text": "⟦0⟧1⟦1⟧ఆర్థిక సాధ్యత⟦2⟧1",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "b54ee6f78b2e8869": {
+    "source": "⟦0⟧2⟦1⟧Alignment with Govt Initiatives⟦2⟧2",
+    "text": "⟦0⟧2⟦1⟧ప్రభుత్వ కార్యక్రమాలతో సమన్వయం⟦2⟧2",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "c1d697d4f5efbd3c": {
+    "source": "⟦0⟧3⟦1⟧Abundance and Accessibility⟦2⟧3",
+    "text": "⟦0⟧3⟦1⟧సమృద్ధి, అందుబాటు⟦2⟧3",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "fc0b05d6302d4ef5": {
+    "source": "⟦0⟧4⟦1⟧Social Impact⟦2⟧4",
+    "text": "⟦0⟧4⟦1⟧సామాజిక ప్రభావం⟦2⟧4",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "05a4d5762a397a08": {
+    "source": "⟦0⟧5⟦1⟧Environmental Sustainability⟦2⟧5",
+    "text": "⟦0⟧5⟦1⟧పర్యావరణ సుస్థిరత⟦2⟧5",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "502f53fd6c57c4cd": {
+    "source": "⟦0⟧6⟦1⟧Versatility and Adaptability⟦2⟧6",
+    "text": "⟦0⟧6⟦1⟧బహుముఖ ఉపయోగం, అనుకూలత⟦2⟧6",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "78da08c48ccffce3": {
+    "source": "⟦0⟧7⟦1⟧Biodegradability and Compostability⟦2⟧7",
+    "text": "⟦0⟧7⟦1⟧జీవవిచ్ఛిన్నత, కంపోస్ట్ అయ్యే గుణం⟦2⟧7",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "7a8609fcf8a1047c": {
     "source": "⟦0⟧A web of ⟦1⟧interconnected challenges",
     "text": "⟦0⟧పరస్పరం ముడిపడిన ⟦1⟧సవాళ్ల వల",
@@ -855,6 +932,50 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "3d542c682ce3e383": {
+    "source": "⟦0⟧Lignocellulose ⟦1⟧(Cellulose-based plastics)",
+    "text": "⟦0⟧లిగ్నోసెల్యులోజ్ ⟦1⟧(సెల్యులోజ్ ఆధారిత ప్లాస్టిక్‌లు)",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "6cd1e6cd254761c3": {
+    "source": "⟦0⟧Material ⟦1⟧selection",
+    "text": "⟦0⟧పదార్థం ⟦1⟧ఎంపిక",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "c82b6e6cbf67242e": {
+    "source": "⟦0⟧Questioning ⟦1⟧the initial brief",
+    "text": "⟦0⟧ప్రారంభ బ్రీఫ్‌ను ⟦1⟧ప్రశ్నించడం",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "0fce577ae8ea24a6": {
+    "source": "⟦0⟧Reframing ⟦1⟧the problem",
+    "text": "⟦0⟧సమస్యకు ⟦1⟧పునర్నిర్వచనం",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "95cfeb8cc38d148e": {
@@ -923,6 +1044,17 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "46da17d160cbf12f": {
+    "source": "Abundance and Accessibility",
+    "text": "సమృద్ధి, అందుబాటు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "1dc45e38bd664583": {
     "source": "Accessibility & inclusivity",
     "text": "అందుబాటు & సమ్మిళితత్వం",
@@ -932,6 +1064,50 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "530fb7268a3d945e": {
+    "source": "Acknowledges the importance of economic feasibility",
+    "text": "ఆర్థిక సాధ్యత ప్రాముఖ్యతను గుర్తిస్తుంది",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "4101b9266cf7e518": {
+    "source": "Advantages and benefits",
+    "text": "ప్రయోజనాలు, లాభాలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "a81be6d5032d8c7d": {
+    "source": "Alignment with Govt Initiatives",
+    "text": "ప్రభుత్వ కార్యక్రమాలతో సమన్వయం",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "790af5f8bf0dc3f0": {
+    "source": "Availability in India",
+    "text": "భారతదేశంలో లభ్యత",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "714679fcef5a6ff3": {
@@ -945,6 +1121,39 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "21558cf6db4dfaa9": {
+    "source": "Before diving in, I questioned the initial problem statement to make sure it addressed the core issues effectively, asking critical questions across five areas.",
+    "text": "లోతుగా వెళ్లే ముందు, ప్రధాన సమస్యలను ఇది సమర్థంగా స్పృశిస్తోందో లేదో నిర్ధారించుకోవడానికి నేను ప్రారంభ సమస్య ప్రకటనను ప్రశ్నించాను. ఐదు అంశాలపై కీలకమైన ప్రశ్నలు వేశాను.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "b2fc423e7ad434da": {
+    "source": "Biodegradability and Compostability",
+    "text": "జీవవిచ్ఛిన్నత, కంపోస్ట్ అయ్యే గుణం",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "564064a5da90384a": {
+    "source": "Biodegradable, renewable and non-toxic, with good mechanical properties; can be processed into films and fibres.",
+    "text": "జీవవిచ్ఛిన్నమయ్యేది, పునరుత్పాదకమైనది, విషరహితమైనది; మంచి యాంత్రిక లక్షణాలు కలిగి ఉంటుంది; పొరలుగా (ఫిల్మ్‌లు), పోగులుగా (ఫైబర్‌లు) ప్రాసెస్ చేయవచ్చు.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "78233632cf839fc6": {
     "source": "Build emotional connections with products",
     "text": "ఉత్పత్తులతో భావోద్వేగ బంధాలను ఏర్పరచడం",
@@ -956,6 +1165,39 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "64ab318f60832b55": {
+    "source": "By addressing these aspects, the revised statement takes a holistic approach to single-use plastics, aligned with the core goals of sustainability and Universal Design.",
+    "text": "ఈ అంశాలను పరిష్కరించడం ద్వారా, సవరించిన ప్రకటన సుస్థిరత, యూనివర్సల్ డిజైన్ అనే ప్రధాన లక్ష్యాలకు అనుగుణంగా ఒక్కసారి వాడి పారేసే ప్లాస్టిక్‌లపై సమగ్రమైన దృక్పథాన్ని అవలంబిస్తుంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "931df794fda11656": {
+    "source": "Challenge the brief",
+    "text": "బ్రీఫ్‌ను సవాలు చేయడం",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "40b9c8f444870eff": {
+    "source": "Challenges",
+    "text": "సవాళ్లు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "06e9a64ec35e5256": {
     "source": "Community impact",
     "text": "సమాజంపై ప్రభావం",
@@ -965,6 +1207,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "55632564589f9c4f": {
+    "source": "Considers inclusivity and user-centred design",
+    "text": "అందరినీ కలుపుకొనిపోవడాన్ని, వినియోగదారు కేంద్రిత డిజైన్‌ను పరిగణిస్తుంది",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "a6e600a10fede40f": {
@@ -1011,6 +1264,17 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "5266698bdc728518": {
+    "source": "Derived from cellulose, the most abundant organic polymer on Earth, these bioplastics are strong and biodegradable, with applications in packaging, textiles and more. Cellulose sources are plentiful in India, though processing challenges and cost affect widespread adoption.",
+    "text": "భూమిపై అత్యంత విస్తృతంగా లభించే సేంద్రియ పాలిమర్ అయిన సెల్యులోజ్ నుంచి తయారయ్యే ఈ బయోప్లాస్టిక్‌లు దృఢమైనవి, జీవవిచ్ఛిన్నమయ్యేవి (స్వయంగా భూమిలో కలిసిపోయేవి); ప్యాకేజింగ్, వస్త్రాలు మొదలైన రంగాల్లో వీటిని వాడుతున్నారు. భారతదేశంలో సెల్యులోజ్ వనరులు పుష్కలంగా ఉన్నాయి, అయితే ప్రాసెసింగ్‌లోని సవాళ్లు, ఖర్చు విస్తృత వినియోగానికి అడ్డుగా నిలుస్తున్నాయి.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "ff0b546fd1ad1f09": {
     "source": "Design process",
     "text": "డిజైన్ ప్రక్రియ",
@@ -1020,6 +1284,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "7576b5e7f2107fbc": {
+    "source": "Develop",
+    "text": "అభివృద్ధి",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "ea5c844f9f4e7c93": {
@@ -1033,6 +1308,138 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "d4a33d5b78bccebe": {
+    "source": "Discover",
+    "text": "అన్వేషణ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "64901e6781a70c33": {
+    "source": "Does it consider the full lifecycle of single-use plastics: production, usage and disposal?",
+    "text": "ఒక్కసారి వాడి పారేసే ప్లాస్టిక్‌ల పూర్తి జీవిత చక్రాన్ని – ఉత్పత్తి, వినియోగం, పారవేత – ఇది పరిగణనలోకి తీసుకుంటోందా?",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "2bcd62b3cb8dbbb0": {
+    "source": "Economic feasibility in India",
+    "text": "భారతదేశంలో ఆర్థిక సాధ్యత",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "f83dbf6305755886": {
+    "source": "Economic Viability",
+    "text": "ఆర్థిక సాధ్యత",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "886a7adaa2245879": {
+    "source": "Emphasises lifecycle sustainability",
+    "text": "జీవిత చక్రమంతా సుస్థిరతకు ప్రాధాన్యం ఇస్తుంది",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "53b169d107003898": {
+    "source": "Encourages innovation and data-driven decisions",
+    "text": "ఆవిష్కరణను, డేటా ఆధారిత నిర్ణయాలను ప్రోత్సహిస్తుంది",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "59165c18e321f657": {
+    "source": "Environmental impact",
+    "text": "పర్యావరణ ప్రభావం",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "e74e8a7c063b87b7": {
+    "source": "Environmental Sustainability",
+    "text": "పర్యావరణ సుస్థిరత",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "66d7ea4aacb05bea": {
+    "source": "Highlights the need for behavioural change",
+    "text": "ప్రవర్తనలో మార్పు అవసరాన్ని నొక్కి చెబుతుంది",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "0b761eb4308af9ad": {
+    "source": "How can we develop inclusive, practical and economically viable alternatives to single-use plastics in daily household use, ensuring they are sustainable throughout their lifecycle and promote positive environmental, social and economic impacts?",
+    "text": "ఇళ్లలో రోజువారీ వినియోగంలో ఉండే ఒక్కసారి వాడి పారేసే ప్లాస్టిక్‌లకు, జీవిత చక్రమంతా సుస్థిరంగా ఉంటూ పర్యావరణ, సామాజిక, ఆర్థిక రంగాల్లో సానుకూల ప్రభావాన్ని కలిగించే, అందరినీ కలుపుకొనిపోయే, ఆచరణాత్మకమైన, ఆర్థికంగా సాధ్యమయ్యే ప్రత్యామ్నాయాలను మనం ఎలా అభివృద్ధి చేయగలం?",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "36f7355cfb13aeaf": {
+    "source": "How does it address plastics already in circulation?",
+    "text": "ఇప్పటికే వాడుకలో ఉన్న ప్లాస్టిక్‌లను ఇది ఎలా పరిష్కరిస్తుంది?",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "3ddf253f62ee2fe9": {
+    "source": "I selected the material on its properties, viability, impact, accessibility, adaptability and sustainability.",
+    "text": "పదార్థం లక్షణాలు, సాధ్యత, ప్రభావం, అందుబాటు, అనుకూలత, సుస్థిరత ఆధారంగా నేను దానిని ఎంచుకున్నాను.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "906f26f261f0f04b": {
     "source": "Imagine a toy chest that holds stories, not plastic waste. Picture a future where everyday convenience doesn’t come at the cost of the environment. This isn’t a distant utopia; the potential is hidden in the very items we throw away: single-use plastics.",
     "text": "ప్లాస్టిక్ వ్యర్థాలకు బదులు కథలను దాచుకున్న ఒక బొమ్మల పెట్టెను ఊహించండి. రోజువారీ సౌకర్యం పర్యావరణాన్ని బలి తీసుకోని భవిష్యత్తును మనసులో చిత్రించుకోండి. ఇది ఎక్కడో దూరంలో ఉన్న కల్పనా లోకం కాదు; మనం పారవేసే వస్తువుల్లోనే, అంటే ఒక్కసారి వాడి పారేసే ప్లాస్టిక్‌లలోనే ఆ అవకాశం దాగి ఉంది.",
@@ -1044,6 +1451,17 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "1cff7713912f5d53": {
+    "source": "Implementation",
+    "text": "అమలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "db6fa4173408d836": {
     "source": "In response, a global movement is gaining momentum. Individuals, businesses and governments are uniting behind the UN Sustainable Development Goals (SDGs) to confront the problem head-on.",
     "text": "దీనికి ప్రతిస్పందనగా ప్రపంచవ్యాప్త ఉద్యమం ఊపందుకుంటోంది. వ్యక్తులు, వ్యాపార సంస్థలు, ప్రభుత్వాలు ఐక్యరాజ్యసమితి సుస్థిర అభివృద్ధి లక్ష్యాలు (SDGs) వెనుక ఏకమై సమస్యను నేరుగా ఎదుర్కొంటున్నాయి.",
@@ -1053,6 +1471,28 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "3ee6166ada05a52e": {
+    "source": "India boasts a wealth of agricultural residues and forestry byproducts, making lignocellulose readily available and cost-effective. This abundance ensures a consistent supply chain for production, reducing reliance on imported materials.",
+    "text": "భారతదేశంలో వ్యవసాయ అవశేషాలు, అటవీ ఉప ఉత్పత్తులు విస్తారంగా ఉన్నాయి; దీనివల్ల లిగ్నోసెల్యులోజ్ సులభంగా, తక్కువ ఖర్చుతో లభిస్తుంది. ఈ సమృద్ధి ఉత్పత్తికి నిరంతర సరఫరా గొలుసును నిర్ధారిస్తూ, దిగుమతి చేసుకునే పదార్థాలపై ఆధారపడటాన్ని తగ్గిస్తుంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "0b49fec2dc14e861": {
+    "source": "Innovation and research",
+    "text": "ఆవిష్కరణ, పరిశోధన",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "b605350bc0020952": {
@@ -1086,6 +1526,61 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "11fb46890e19516e": {
+    "source": "lignocellulose as the material",
+    "text": "లిగ్నోసెల్యులోజ్‌ను పదార్థంగా",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "841cfeeaed2ed5e8": {
+    "source": "Lignocellulose can be processed into various forms, including fibers, films, and molded shapes, offering versatility in product design. This adaptability allows for the creation of a wide range of products catering to diverse consumer needs.",
+    "text": "లిగ్నోసెల్యులోజ్‌ను పోగులు, పలుచని పొరలు, అచ్చులో పోసిన ఆకృతులు వంటి అనేక రూపాల్లోకి మార్చవచ్చు, దీనివల్ల ఉత్పత్తి డిజైన్‌లో విస్తృత అవకాశాలు ఉంటాయి. ఈ అనుకూలత వల్ల వివిధ వినియోగదారుల అవసరాలను తీర్చే అనేక రకాల ఉత్పత్తులను సృష్టించవచ్చు.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "f43532df712d1363": {
+    "source": "Lignocellulose is a renewable resource derived from plant matter, aligning with the principles of sustainability. Its utilization reduces the demand for petroleum-based plastics and contributes to a circular economy by repurposing agricultural waste.",
+    "text": "లిగ్నోసెల్యులోజ్ మొక్కల పదార్థం నుంచి లభించే పునరుత్పాదక వనరు, ఇది సుస్థిరత సూత్రాలకు అనుగుణంగా ఉంటుంది. దీని వినియోగం పెట్రోలియం ఆధారిత ప్లాస్టిక్‌ల అవసరాన్ని తగ్గిస్తుంది, వ్యవసాయ వ్యర్థాలను తిరిగి ఉపయోగంలోకి తీసుకురావడం ద్వారా చక్రీయ ఆర్థిక వ్యవస్థకు తోడ్పడుతుంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "b14755878f6148e6": {
+    "source": "Lignocellulose-based products are biodegradable and compostable, mitigating the environmental burden of plastic waste. This aligns with India's waste management goals and promotes a cleaner environment.",
+    "text": "లిగ్నోసెల్యులోజ్ ఆధారిత ఉత్పత్తులు జీవవిచ్ఛిన్నమయ్యేవి, కంపోస్ట్ అయ్యేవి కూడా; అందువల్ల ప్లాస్టిక్ వ్యర్థాల వల్ల పర్యావరణంపై పడే భారం తగ్గుతుంది. ఇది భారతదేశ వ్యర్థ నిర్వహణ లక్ష్యాలకు అనుగుణంగా ఉండి, పరిశుభ్రమైన పర్యావరణానికి దోహదపడుతుంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "69b1b67de5ef98be": {
+    "source": "Limitations",
+    "text": "పరిమితులు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "679e3766b4584e68": {
@@ -1187,6 +1682,17 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "1910595b366eb396": {
+    "source": "Practical implementation",
+    "text": "ఆచరణాత్మక అమలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "454eed01e876a5bd": {
     "source": "Problem identification",
     "text": "సమస్య గుర్తింపు",
@@ -1218,6 +1724,28 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "fff4b1e97ea5bd3b": {
+    "source": "Reasons to choose",
+    "text": "ఎంచుకోవడానికి కారణాలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "079c5235bfd6ce12": {
+    "source": "Reasons to choose lignocellulose as the material",
+    "text": "లిగ్నోసెల్యులోజ్‌ను పదార్థంగా ఎంచుకోవడానికి కారణాలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "3be611ab2d7d12dd": {
@@ -1253,6 +1781,17 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "273f3e1d44529d82": {
+    "source": "Reframing the problem to align it better with sustainability goals and Universal Design principles.",
+    "text": "సుస్థిరత లక్ష్యాలకు, యూనివర్సల్ డిజైన్ సూత్రాలకు మరింత దగ్గరగా ఉండేలా సమస్యను పునర్నిర్వచించడం.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "47f2a4c76453c43b": {
     "source": "Resource depletion",
     "text": "వనరుల క్షీణత",
@@ -1262,6 +1801,28 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "0dd6ad6825a0542a": {
+    "source": "Revised problem statement",
+    "text": "సవరించిన సమస్య ప్రకటన",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "70ce727cc5a2fde2": {
+    "source": "Scope of environmental impact",
+    "text": "పర్యావరణ ప్రభావ పరిధి",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "95f37c0c77c28830": {
@@ -1297,6 +1858,39 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "d2cf19d4d0be6ef7": {
+    "source": "Social and economic factors",
+    "text": "సామాజిక, ఆర్థిక అంశాలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "70d5798d251c3275": {
+    "source": "Social Impact",
+    "text": "సామాజిక ప్రభావం",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "1cd9f66f864c8897": {
+    "source": "Sustainability metrics",
+    "text": "సుస్థిరత కొలమానాలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "92d4128e38d3fcb5": {
     "source": "Sustainable design solutions for everyday single-use plastic products",
     "text": "రోజువారీ ఒక్కసారి వాడి పారేసే ప్లాస్టిక్ ఉత్పత్తులకు సుస్థిర డిజైన్ పరిష్కారాలు",
@@ -1317,6 +1911,61 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "3e5d553d3d7164c8": {
+    "source": "The abundance of lignocellulose in India translates to cost-effective production, making lignocellulose-based products economically viable for both manufacturers and consumers. This affordability can drive wider adoption and market penetration.",
+    "text": "భారతదేశంలో లిగ్నోసెల్యులోజ్ సమృద్ధిగా ఉండటం వల్ల ఉత్పత్తి తక్కువ ఖర్చుతో సాధ్యమవుతుంది; దీంతో లిగ్నోసెల్యులోజ్ ఆధారిత ఉత్పత్తులు తయారీదారులకు, వినియోగదారులకు ఇద్దరికీ ఆర్థికంగా అనుకూలంగా ఉంటాయి. ఈ అందుబాటు ధర విస్తృత వినియోగానికి, మార్కెట్‌లో విస్తరణకు దోహదం చేస్తుంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "f3201c91052a5780": {
+    "source": "The Develop phase is where ideas generated during the Discover and Define phases are transformed into viable solutions.",
+    "text": "అన్వేషణ, నిర్వచనం దశల్లో పుట్టిన ఆలోచనలు ఆచరణసాధ్యమైన పరిష్కారాలుగా రూపుదిద్దుకునేది అభివృద్ధి దశలోనే.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "02e8d93c248366de": {
+    "source": "The Discover phase is crucial for gathering comprehensive insights and understanding the problem from multiple perspectives.",
+    "text": "సమగ్రమైన అంతర్దృష్టులను సేకరించడానికి, సమస్యను అనేక కోణాల నుంచి అర్థం చేసుకోవడానికి అన్వేషణ దశ చాలా కీలకం.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "390a5ff2300c9919": {
+    "source": "The Double Diamond offers a systematic approach to problem-solving. It begins by understanding the problem deeply, then defines clear objectives. Next, it fosters creativity to generate innovative solutions, and finally guides their implementation, keeping the process user-centred and creative throughout.",
+    "text": "డబుల్ డైమండ్ సమస్య పరిష్కారానికి ఒక క్రమబద్ధమైన మార్గాన్ని అందిస్తుంది. ముందుగా సమస్యను లోతుగా అర్థం చేసుకుంటుంది, తర్వాత స్పష్టమైన లక్ష్యాలను నిర్వచిస్తుంది. ఆ తర్వాత సృజనాత్మకతను ప్రోత్సహించి వినూత్న పరిష్కారాలను రూపొందిస్తుంది, చివరగా వాటి అమలుకు మార్గనిర్దేశం చేస్తుంది. ఈ ప్రక్రియ అంతటా వినియోగదారుడే కేంద్రంగా, సృజనాత్మకంగా సాగుతుంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "27cc8602c1b43a50": {
+    "source": "The Indian government actively promotes the use of bio-based materials like lignocellulose through initiatives like the Biomanufacturing Initiative. Choosing lignocellulose aligns with these initiatives and can potentially attract government support and incentives.",
+    "text": "బయోమాన్యుఫ్యాక్చరింగ్ ఇనిషియేటివ్ వంటి కార్యక్రమాల ద్వారా లిగ్నోసెల్యులోజ్ వంటి జీవ ఆధారిత పదార్థాల వినియోగాన్ని భారత ప్రభుత్వం చురుగ్గా ప్రోత్సహిస్తోంది. లిగ్నోసెల్యులోజ్‌ను ఎంచుకోవడం ఈ కార్యక్రమాలకు అనుగుణంగా ఉండి, ప్రభుత్వ మద్దతును, ప్రోత్సాహకాలను ఆకర్షించే అవకాశం ఉంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "c94acf6c5d7848a5": {
@@ -1374,6 +2023,17 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "94c3eac6ab1eca3f": {
+    "source": "This revised statement",
+    "text": "ఈ సవరించిన ప్రకటన",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "452c911e7564ca1f": {
     "source": "Tiny, low-contrast print on labels and instructions makes essential information hard to read for people with declining vision.",
     "text": "లేబుళ్లు, సూచనలపై ఉండే చిన్న, తక్కువ కాంట్రాస్ట్ ముద్రణ వల్ల కంటిచూపు తగ్గుతున్నవారికి అవసరమైన సమాచారం చదవడం కష్టమవుతుంది.",
@@ -1394,6 +2054,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "d5e62442a7cf3d97": {
+    "source": "Universal Design principles",
+    "text": "యూనివర్సల్ డిజైన్ సూత్రాలు",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   },
   "42b2e50cf4be52ce": {
@@ -1418,6 +2089,28 @@
     "savedAt": "2026-11-17T12:20:36.203Z",
     "settings": "l-ZRpKER4qij"
   },
+  "464d3ffa0e1d60c8": {
+    "source": "Utilising lignocellulose can create employment opportunities in rural areas, where agricultural residues are abundant. This can contribute to rural development and livelihood enhancement, aligning with India's socio-economic goals.",
+    "text": "వ్యవసాయ అవశేషాలు పుష్కలంగా ఉండే గ్రామీణ ప్రాంతాల్లో లిగ్నోసెల్యులోజ్ వినియోగం ఉపాధి అవకాశాలను సృష్టించగలదు. ఇది గ్రామీణాభివృద్ధికి, జీవనోపాధుల మెరుగుదలకు తోడ్పడి, భారతదేశ సామాజిక-ఆర్థిక లక్ష్యాలకు అనుగుణంగా ఉంటుంది.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "850763a411ef3919": {
+    "source": "Versatility and Adaptability",
+    "text": "బహుముఖ ఉపయోగం, అనుకూలత",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
+    "settings": "l-ZRpKER4qij"
+  },
   "b76b1698aa1cb605": {
     "source": "we explored new materials and innovative approaches that",
     "text": "బాధ్యతాయుతమైన వాడకానికి అవకాశాలను తెరిచే కొత్త పదార్థాలను, వినూత్న విధానాలను",
@@ -1438,6 +2131,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:20:36.203Z",
+    "settings": "l-ZRpKER4qij"
+  },
+  "c39a898c70c28ecc": {
+    "source": "Which metrics will evaluate the alternatives: carbon footprint, biodegradability, resource consumption?",
+    "text": "ప్రత్యామ్నాయాలను ఏ కొలమానాలతో మదింపు చేస్తారు: కార్బన్ ఫుట్‌ప్రింట్, జీవవిచ్ఛిన్నత, వనరుల వినియోగం?",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:21:12.444Z",
     "settings": "l-ZRpKER4qij"
   }
 }
