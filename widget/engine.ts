@@ -508,8 +508,8 @@ export function createPonte(opts: PonteOptions): PonteController {
   function remember(lang: string | null) {
     if (opts.remember === false) return;
     try {
-      if (lang) localStorage.setItem(STORAGE_KEY, lang);
-      else localStorage.removeItem(STORAGE_KEY);
+      // "original" is remembered too, so automatic detection won't override that choice.
+      localStorage.setItem(STORAGE_KEY, lang || ORIGINAL);
     } catch {
       /* storage unavailable */
     }
@@ -518,15 +518,66 @@ export function createPonte(opts: PonteOptions): PonteController {
   return controller;
 }
 
-/** The language the visitor asked for: ?lang= in the URL, else their last choice. */
+const ORIGINAL = "original";
+
+/** The language the visitor explicitly asked for: ?lang= in the URL, else their last choice. */
 export function preferredLanguage(): string | null {
   try {
     const fromUrl = new URLSearchParams(location.search).get("lang");
-    if (fromUrl) return fromUrl;
-    return localStorage.getItem(STORAGE_KEY);
+    const v = fromUrl || localStorage.getItem(STORAGE_KEY);
+    return v && v !== ORIGINAL ? v : null;
   } catch {
     return null;
   }
+}
+
+/** Short code of a BCP-47 tag: "hi-IN" → "hi", "pt_BR" → "pt". */
+function shortCode(tag: string): string {
+  return tag.trim().toLowerCase().replace("_", "-").split("-")[0] ?? "";
+}
+
+/** The page's own language: data attribute, else <html lang>, else English. */
+export function pageLanguage(explicit?: string): string {
+  return shortCode(explicit || document.documentElement.getAttribute("lang") || "en") || "en";
+}
+
+/**
+ * Which language to show when a visitor arrives:
+ *   1. ?lang=xx in the URL (?lang=original forces the original)
+ *   2. the visitor's last choice on this site (including "Original")
+ *   3. if auto is on: the first of the visitor's device/browser languages that is either
+ *      the page's own language (→ original) or one we've published (→ that language)
+ * Returns null for "show the original".
+ */
+export function initialLanguage(opts: { available: string[]; source: string; auto?: boolean; languages?: readonly string[] }): string | null {
+  const available = new Set(opts.available.map(shortCode));
+  const source = shortCode(opts.source);
+  const pick = (v: string | null | undefined): string | null | undefined => {
+    if (!v) return undefined;
+    const c = shortCode(v);
+    if (c === ORIGINAL || c === source) return null;
+    return c;
+  };
+  try {
+    const fromUrl = pick(new URLSearchParams(location.search).get("lang"));
+    if (fromUrl !== undefined) return fromUrl;
+  } catch {
+    /* no location */
+  }
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) return pick(stored) ?? null;
+  } catch {
+    /* storage unavailable */
+  }
+  if (opts.auto === false) return null;
+  const visitor = opts.languages ?? (typeof navigator !== "undefined" ? navigator.languages ?? [navigator.language] : []);
+  for (const tag of visitor) {
+    const c = shortCode(tag);
+    if (c === source) return null; // they read the original's language: leave it
+    if (available.has(c)) return c;
+  }
+  return null;
 }
 
 /** Split "⟦0⟧Hello ⟦1⟧world" into ["Hello ", "world"] by marker index. Null if any marker is missing. */

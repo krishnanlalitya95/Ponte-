@@ -56,7 +56,7 @@ function loadEngine(base: string): Promise<any> {
 export default function PonteWidget(props) {
     const {
         mode, staticUrl, endpoint, fonts, languages, sourceLanguage, contentType, doNotTranslate, notes,
-        originalLabel, font, color, background, radius, padding, showStatus,
+        originalLabel, autoDetect, font, color, background, radius, padding, showStatus,
     } = props
     const onCanvas = RenderTarget.current() === RenderTarget.canvas
     const ctrl = useRef<any>(null)
@@ -86,8 +86,15 @@ export default function PonteWidget(props) {
                     },
                 })
                 P.instance = ctrl.current
-                const pref = P.preferredLanguage()
-                if (pref && pref !== sourceLanguage) ctrl.current.translate(pref)
+                // The visitor's last choice, else their device language if it's offered here.
+                const offered = (languages || "").split(",").map((s: string) => s.trim()).filter(Boolean)
+                const available = isStatic ? P.publishedLanguages(staticUrl) : Promise.resolve(offered)
+                available.then((pub: string[]) => {
+                    if (cancelled || !ctrl.current) return
+                    const usable = isStatic ? offered.filter((c: string) => pub.includes(c)) : offered
+                    const first = P.initialLanguage({ available: usable, source: sourceLanguage || "en", auto: autoDetect })
+                    if (first) ctrl.current.translate(first)
+                })
             })
             .catch((e) => setStatus({ state: "error", language: null, error: String(e) }))
         return () => {
@@ -95,7 +102,7 @@ export default function PonteWidget(props) {
             ctrl.current?.destroy()
             ctrl.current = null
         }
-    }, [mode, staticUrl, endpoint, fonts, sourceLanguage, contentType, doNotTranslate, notes, onCanvas])
+    }, [mode, staticUrl, endpoint, fonts, languages, sourceLanguage, autoDetect, contentType, doNotTranslate, notes, onCanvas])
 
     const onChange = (e) => {
         const lang = e.target.value
@@ -130,7 +137,7 @@ export default function PonteWidget(props) {
                     font: "inherit", cursor: "pointer",
                 }}
             >
-                <option value="" style={{ color: "#111" }}>{originalLabel}</option>
+                <option value="" style={{ color: "#111" }}>{originalLabel || LANGS[sourceLanguage] || "Original"}</option>
                 {codes.map((c) => (
                     <option key={c} value={c} style={{ color: "#111" }}>{LANGS[c]}</option>
                 ))}
@@ -152,7 +159,8 @@ PonteWidget.defaultProps = {
     contentType: "auto",
     doNotTranslate: "",
     notes: "",
-    originalLabel: "Original",
+    originalLabel: "",
+    autoDetect: true,
     color: "#FFFFFF",
     background: "rgba(20,20,20,0.88)",
     radius: 999,
@@ -186,7 +194,14 @@ addPropertyControls(PonteWidget, {
     },
     doNotTranslate: { type: ControlType.String, title: "Keep as is", placeholder: "Ponte, ICICI Lombard", hidden: (p) => p.mode !== "server" },
     notes: { type: ControlType.String, title: "Notes", displayTextArea: true, placeholder: "Context for the translator", hidden: (p) => p.mode !== "server" },
-    originalLabel: { type: ControlType.String, title: "Original label" },
+    originalLabel: { type: ControlType.String, title: "Original label", placeholder: "Page language name" },
+    autoDetect: {
+        type: ControlType.Boolean,
+        title: "Visitor language",
+        enabledTitle: "Auto",
+        disabledTitle: "Off",
+        description: "Open in the visitor's device language when it's offered.",
+    },
     font: { type: ControlType.Font, controls: "extended", defaultFontType: "sans-serif", defaultValue: { fontSize: 13 } },
     color: { type: ControlType.Color, title: "Text" },
     background: { type: ControlType.Color, title: "Fill" },

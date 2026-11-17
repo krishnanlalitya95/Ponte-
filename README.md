@@ -56,7 +56,9 @@ Open **http://localhost:8787/demo** and pick a language from the pill in the bot
    <script src="https://krishnanlalitya95.github.io/Ponte-/widget.js" defer></script>
    ```
 
-   That's all. The language picker lists exactly the languages you published. If you'd rather place the picker yourself, use the [`PonteWidget`](framer/PonteWidget.tsx) code component with **Mode: Static** instead of the script.
+   That's all. The language picker lists exactly the languages you published. The first option is labelled with your page's own language (read from `<html lang>`, so "English").
+
+   **Visitors see their own language automatically.** On a first visit the widget checks the visitor's device and browser languages. If one you've published comes before your page's language in their list, the page opens in it. A phone set to Hindi gets Hindi; a browser set to English stays in English. Their own pick from the picker, including going back to English, is remembered and always wins. `?lang=ta` in a link forces a language, and `?lang=original` forces the original. To turn automatic switching off, add `data-auto="off"` to the script. If you'd rather place the picker yourself, use the [`PonteWidget`](framer/PonteWidget.tsx) code component with **Mode: Static** instead of the script.
 
 **Updating your site:** after you change text in Framer, run **Pre-translate site** again. Only the changed text is sent to the agent. **Fixing a translation:** edit it on the `ponte-translations` branch (see [Saved translations](#saved-translations)). Saving the edit republishes automatically within a minute or two.
 
