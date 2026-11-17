@@ -190,6 +190,10 @@ Your portfolio is static, so each piece of text only needs translating **once**.
 
 `"languages"` in [`ponte.config.json`](ponte.config.json) is the list visitors can pick from, besides your page's language. Currently it's Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, French, German, Arabic, Japanese and Korean. Pre-translate translates exactly these (plus English for the Hindi poems) when its Languages box is left empty, and only these are published. To drop a language, remove it from the list. Its saved translations stay in the repo, so adding it back later costs nothing.
 
+### "About Ponte" in the language list
+
+The language list ends with a divider and **About Ponte · how this works →**, which opens your case study. Change its wording or link in `widget.about` in `ponte.config.json`, or remove that block to hide it.
+
 ### The landing note around the picker
 
 `widget.callout` in `ponte.config.json` sets the green note that opens around the language button when someone lands on your site. You can change the title, text, link label and URL, how long it waits before opening (`delayMs`), and how long it stays open (`showForMs`). `frequency` is `"session"` to show it once per visit or `"always"` to show it on every page load. It closes on its own, on a tap outside it, on Escape, or when the picker is used. Its green is a slightly deeper shade of `accent` when needed, so the white text stays readable (WCAG AA). Set `"enabled": false` to turn it off.

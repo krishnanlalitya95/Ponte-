@@ -40,7 +40,13 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; position?: string; autoDetect?: boolean; callout?: Callout };
+  widget: { accent?: string; position?: string; autoDetect?: boolean; callout?: Callout; about?: AboutLink };
+}
+
+/** Last item in the language list, linking to the story of how Ponte was made. */
+export interface AboutLink {
+  label?: string;
+  url?: string;
 }
 
 /** The green note that opens around the picker on landing. */
@@ -111,7 +117,8 @@ if (script && !script.hasAttribute("data-manual")) {
     const position = d.position ?? published?.widget.position ?? "bottom-right";
     if (position !== "none") {
       const callout = d.callout === "off" ? undefined : published?.widget.callout;
-      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout);
+      const about = published?.widget.about ?? (callout?.linkUrl ? { url: callout.linkUrl } : undefined);
+      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about);
     }
     // Visitor's choice, else their device language if we've published it (data-auto="off" to disable).
     const first = initialLanguage({
@@ -168,6 +175,7 @@ function mountPicker(
   position: string,
   accent?: string,
   callout?: Callout,
+  about?: AboutLink,
 ) {
   // The page's language first, then every other offered language. No separate "Original":
   // the page language shows selected while the page is as written.
@@ -242,6 +250,16 @@ function mountPicker(
     opt.textContent = optionLabel(code);
     select.append(opt);
   }
+  const ABOUT = "__ponte_about";
+  if (about?.url) {
+    const sep = document.createElement("option");
+    sep.disabled = true;
+    sep.textContent = "──────────";
+    const opt = document.createElement("option");
+    opt.value = ABOUT;
+    opt.textContent = about.label ?? "About Ponte · how this works →";
+    select.append(sep, opt);
+  }
   const label = (code: string) => {
     const name = LANGUAGES.find((l) => l.code === code)?.name ?? code;
     select.setAttribute("aria-label", `Translate this page. Current language: ${name}`);
@@ -249,7 +267,14 @@ function mountPicker(
   };
   select.value = ponte.language ?? source;
   label(select.value);
-  select.addEventListener("change", () => void ponte.translate(select.value));
+  select.addEventListener("change", () => {
+    if (select.value === ABOUT) {
+      select.value = ponte.language ?? source; // keep showing the current language
+      location.href = about!.url!;
+      return;
+    }
+    void ponte.translate(select.value);
+  });
   window.addEventListener("ponte:status", (e) => {
     const s = (e as CustomEvent).detail as { state: string; language: string | null };
     select.value = s.language ?? source;
