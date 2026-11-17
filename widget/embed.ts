@@ -87,7 +87,9 @@ if (script && !script.hasAttribute("data-manual")) {
 }
 
 function mountPicker(ponte: PonteController, languages: string[] | undefined, source: string, position: string) {
-  const codes = languages ?? LANGUAGES.map((l) => l.code);
+  // The page's language first, then every other offered language. No separate "Original":
+  // the page language shows selected while the page is as written.
+  const codes = [source, ...(languages ?? LANGUAGES.map((l) => l.code)).filter((c) => c !== source)];
   const host = document.createElement("div");
   host.setAttribute("data-ponte-skip", "");
   host.style.cssText = `position:fixed;${position === "bottom-left" ? "left" : "right"}:16px;bottom:16px;z-index:2147483000;`;
@@ -109,27 +111,19 @@ function mountPicker(ponte: PonteController, languages: string[] | undefined, so
     </div>`;
   const select = shadow.querySelector("select")!;
   const statusEl = shadow.querySelector(".s")!;
-  const original = document.createElement("option");
-  original.value = "";
-  // Label the original by its language ("English"), not just "Original".
-  original.textContent = LANGUAGES.find((l) => l.code === source)?.nativeName ?? "Original";
-  select.append(original);
   for (const code of codes) {
     const lang = LANGUAGES.find((l) => l.code === code);
-    if (!lang || code === source) continue;
+    if (!lang) continue;
     const opt = document.createElement("option");
     opt.value = code;
     opt.textContent = lang.nativeName;
     select.append(opt);
   }
-  select.value = ponte.language ?? "";
-  select.addEventListener("change", () => {
-    if (select.value) void ponte.translate(select.value);
-    else ponte.restore();
-  });
+  select.value = ponte.language ?? source;
+  select.addEventListener("change", () => void ponte.translate(select.value));
   window.addEventListener("ponte:status", (e) => {
     const s = (e as CustomEvent).detail as { state: string; language: string | null; failed?: number };
-    select.value = s.language ?? "";
+    select.value = s.language ?? source;
     statusEl.textContent =
       s.state === "translating" ? "Translating…" : s.state === "error" ? "Couldn't translate" : s.failed ? `${s.failed} left as is` : "";
   });

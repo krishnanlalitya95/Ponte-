@@ -153,3 +153,42 @@ describe("static build", () => {
     expect((await readFile(join(dir, "public", "widget.js"), "utf8")).length).toBeGreaterThan(1000);
   });
 });
+
+describe("page language as a real choice (mixed-language pages)", () => {
+  it("switching Hindi → English shows English text as written and the Hindi poem in English", async () => {
+    document.body.innerHTML = `
+      <h1>About me</h1>
+      <p class="poem">शाम की चाय में</p>`;
+    publish({
+      hi: { [textHash("About me")]: "मेरे बारे में" },
+      en: { [textHash("शाम की चाय में")]: "In the evening tea" },
+    });
+    const ponte = createPonte({ staticBase: "https://s", sourceLanguage: "en", observe: false });
+    await ponte.translate("hi");
+    expect(document.querySelector("h1")!.textContent).toBe("मेरे बारे में");
+    expect(document.querySelector(".poem")!.textContent).toBe("शाम की चाय में");
+    await ponte.translate("en");
+    expect(document.querySelector("h1")!.textContent).toBe("About me"); // back to as written, not stuck in Hindi
+    expect(document.querySelector(".poem")!.textContent).toBe("In the evening tea");
+    expect(localStorage.getItem("ponte:language")).toBe("en");
+  });
+
+  it("text with no published translation in the new language returns to the original", async () => {
+    publish({ hi: { [textHash("Monsoon letters")]: "मानसून के ख़त" }, ta: {} });
+    const ponte = createPonte({ staticBase: "https://s", observe: false });
+    await ponte.translate("hi");
+    await ponte.translate("ta");
+    expect(document.querySelector("h1")!.textContent).toBe("Monsoon letters");
+    expect(document.querySelector("h1")!.style.fontFamily).toBe("Georgia, serif");
+  });
+
+  it("a remembered page-language choice is kept only when a translation into it is published", async () => {
+    const { initialLanguage } = await import("../widget/engine.js");
+    localStorage.setItem("ponte:language", "en");
+    expect(initialLanguage({ available: ["en", "hi"], source: "en", languages: ["hi"] })).toBe("en");
+    expect(initialLanguage({ available: ["hi"], source: "en", languages: ["hi"] })).toBeNull();
+    localStorage.clear();
+    // Default for an English reader stays "as written", even when English is published.
+    expect(initialLanguage({ available: ["en", "hi"], source: "en", languages: ["en-IN"] })).toBeNull();
+  });
+});

@@ -98,11 +98,13 @@ export class Ponte {
         results.set(seg.id, { id: seg.id, text: seg.text, sourceLanguage: "und", status: "skipped", reason: "no translatable text" });
         continue;
       }
-      if (req.sourceLanguage && normalizeLanguageCode(req.sourceLanguage) === target.code) {
+      const cands = scriptCandidates(seg.text);
+      // The page is mostly in the target language (e.g. English page, English picked): only text
+      // in another script — like Hindi poems on an English page — needs translating.
+      if (req.sourceLanguage && normalizeLanguageCode(req.sourceLanguage) === target.code && (cands.length === 0 || cands.includes(target.code))) {
         results.set(seg.id, { id: seg.id, text: seg.text, sourceLanguage: target.code, status: "unchanged", reason: "already in target language" });
         continue;
       }
-      const cands = scriptCandidates(seg.text);
       if (cands.length === 1 && cands[0] === target.code) {
         results.set(seg.id, { id: seg.id, text: seg.text, sourceLanguage: target.code, status: "unchanged", reason: "already in target language" });
         continue;

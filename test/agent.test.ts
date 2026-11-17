@@ -193,3 +193,19 @@ describe("strictSchema", async () => {
     expect(t.properties.results.items.additionalProperties).toBe(false);
   });
 });
+
+describe("translating into the page's own language", () => {
+  it("only sends text written in another script (e.g. Hindi poems on an English page)", async () => {
+    const model = new FakeModel(prefixTranslator);
+    const out = await new Ponte({ model }).translate({
+      targetLanguage: "en",
+      sourceLanguage: "en",
+      segments: [
+        { id: "a", text: "About me" },
+        { id: "poem", text: "शाम की चाय में\nमाँ ने आज फिर" },
+      ],
+    });
+    expect(segmentsIn(model.calls[1]!).map((s) => s.id)).toEqual(["poem"]);
+    expect(out.results.map((r) => r.status)).toEqual(["unchanged", "translated"]);
+  });
+});

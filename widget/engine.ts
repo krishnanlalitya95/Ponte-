@@ -310,7 +310,7 @@ export function createPonte(opts: PonteOptions): PonteController {
     written.set(node, value);
   }
 
-  function restoreBlocks(blocks: Block[]) {
+  function restoreBlocks(blocks: Block[], all = false) {
     applying = true;
     try {
       for (const b of blocks) {
@@ -320,9 +320,22 @@ export function createPonte(opts: PonteOptions): PonteController {
           written.delete(p.node);
         }
       }
-      for (const el of dirTouched) el.removeAttribute("dir");
-      dirTouched.clear();
-      restoreFonts();
+      if (all) {
+        for (const el of dirTouched) el.removeAttribute("dir");
+        dirTouched.clear();
+        restoreFonts();
+      } else {
+        for (const b of blocks) {
+          if (dirTouched.delete(b.el)) b.el.removeAttribute("dir");
+          for (const p of b.pieces) {
+            const el = p.node.parentElement;
+            if (el && fontTouched.has(el)) {
+              el.style.fontFamily = fontTouched.get(el)!;
+              fontTouched.delete(el);
+            }
+          }
+        }
+      }
     } finally {
       observer?.takeRecords();
       applying = false;
@@ -360,6 +373,8 @@ export function createPonte(opts: PonteOptions): PonteController {
         } else rest.push(b);
       }
       if (!endpoint || !rest.length) {
+        // Nothing published for these: show them as written (not the previous language).
+        restoreBlocks(rest);
         status({ state: "done", language: lang, translated: hits, failed: 0, missing: rest.length });
         return;
       }
@@ -434,6 +449,7 @@ export function createPonte(opts: PonteOptions): PonteController {
         for (const b of group) {
           const r = byId.get(b.id);
           if (!r || r.status === "fallback") {
+            restoreBlocks([b]); // show it as written rather than in the previous language
             failed.add(`${lang}\0${b.text}`);
             failedCount++;
             continue;
@@ -479,10 +495,12 @@ export function createPonte(opts: PonteOptions): PonteController {
       const gen = ++generation;
       failed.clear(); // an explicit pick retries anything that failed before
       const blocks = collect();
-      if (!lang || (opts.sourceLanguage && lang === opts.sourceLanguage)) {
+      if (!lang) {
         controller.restore();
         return;
       }
+      // Picking the page's own language is a real choice too: it translates whatever is
+      // written in other languages (e.g. Hindi poems on an English page) into it.
       language = lang;
       remember(lang);
       window.dispatchEvent(new CustomEvent("ponte:language", { detail: { language: lang } }));
@@ -493,7 +511,7 @@ export function createPonte(opts: PonteOptions): PonteController {
       generation++;
       language = null;
       remember(null);
-      restoreBlocks(collect());
+      restoreBlocks(collect(), true);
       window.dispatchEvent(new CustomEvent("ponte:language", { detail: { language: null } }));
       status({ state: "idle", language: null });
     },
@@ -555,7 +573,9 @@ export function initialLanguage(opts: { available: string[]; source: string; aut
   const pick = (v: string | null | undefined): string | null | undefined => {
     if (!v) return undefined;
     const c = shortCode(v);
-    if (c === ORIGINAL || c === source) return null;
+    if (c === ORIGINAL) return null;
+    // The page's own language means "as written" unless a translation into it is published.
+    if (c === source && !available.has(c)) return null;
     return c;
   };
   try {

@@ -15,6 +15,8 @@ import type { Author, TranslateRequest } from "./types.js";
  *   }
  */
 export interface PonteConfig {
+  /** The language the site is written in (most of it). Default: the page's <html lang>. */
+  sourceLanguage?: string;
   author?: Author;
   doNotTranslate?: string[];
   /** Fixed renderings per target language: { "<lang>": { "<source term>": "<rendering>" } }. */
@@ -43,6 +45,7 @@ export function withConfig(req: TranslateRequest, config: PonteConfig): Translat
   const dnt = [...new Set([...(config.doNotTranslate ?? []), ...(req.doNotTranslate ?? [])])];
   return {
     ...req,
+    sourceLanguage: req.sourceLanguage ?? config.sourceLanguage,
     author: req.author ?? config.author,
     glossary: Object.keys(glossary).length ? glossary : undefined,
     doNotTranslate: dnt.length ? dnt : undefined,

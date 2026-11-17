@@ -56,7 +56,7 @@ function loadEngine(base: string): Promise<any> {
 export default function PonteWidget(props) {
     const {
         mode, staticUrl, endpoint, fonts, languages, sourceLanguage, contentType, doNotTranslate, notes,
-        originalLabel, autoDetect, font, color, background, radius, padding, showStatus,
+        autoDetect, font, color, background, radius, padding, showStatus,
     } = props
     const onCanvas = RenderTarget.current() === RenderTarget.canvas
     const ctrl = useRef<any>(null)
@@ -104,15 +104,16 @@ export default function PonteWidget(props) {
         }
     }, [mode, staticUrl, endpoint, fonts, languages, sourceLanguage, autoDetect, contentType, doNotTranslate, notes, onCanvas])
 
+    const source = sourceLanguage || "en"
     const onChange = (e) => {
         const lang = e.target.value
         setValue(lang)
-        if (!ctrl.current) return
-        if (lang) ctrl.current.translate(lang)
-        else ctrl.current.restore()
+        ctrl.current?.translate(lang)
     }
 
-    const codes: string[] = (languages || "").split(",").map((s: string) => s.trim()).filter((c: string) => LANGS[c] && c !== sourceLanguage)
+    // Page language first, then the rest. No separate "Original": the page language shows
+    // selected while the page is as written; picking it later translates other-language text into it.
+    const codes: string[] = [source, ...(languages || "").split(",").map((s: string) => s.trim()).filter((c: string) => LANGS[c] && c !== source)]
     const statusText =
         status?.state === "translating" ? "Translating…"
         : status?.state === "error" ? "Couldn't translate"
@@ -130,14 +131,13 @@ export default function PonteWidget(props) {
             <span aria-hidden="true">文A</span>
             <select
                 aria-label="Translate this page"
-                value={value}
+                value={value || source}
                 onChange={onChange}
                 style={{
                     appearance: "none", background: "transparent", border: 0, color: "inherit",
                     font: "inherit", cursor: "pointer",
                 }}
             >
-                <option value="" style={{ color: "#111" }}>{originalLabel || LANGS[sourceLanguage] || "Original"}</option>
                 {codes.map((c) => (
                     <option key={c} value={c} style={{ color: "#111" }}>{LANGS[c]}</option>
                 ))}
@@ -159,7 +159,6 @@ PonteWidget.defaultProps = {
     contentType: "auto",
     doNotTranslate: "",
     notes: "",
-    originalLabel: "",
     autoDetect: true,
     color: "#FFFFFF",
     background: "rgba(20,20,20,0.88)",
@@ -194,7 +193,6 @@ addPropertyControls(PonteWidget, {
     },
     doNotTranslate: { type: ControlType.String, title: "Keep as is", placeholder: "Ponte, ICICI Lombard", hidden: (p) => p.mode !== "server" },
     notes: { type: ControlType.String, title: "Notes", displayTextArea: true, placeholder: "Context for the translator", hidden: (p) => p.mode !== "server" },
-    originalLabel: { type: ControlType.String, title: "Original label", placeholder: "Page language name" },
     autoDetect: {
         type: ControlType.Boolean,
         title: "Visitor language",
