@@ -5,9 +5,19 @@ name: Pre-translate site
 # Saved translations go to the "ponte-translations" branch, folder translations/,
 # and are then published to GitHub Pages for the free Static mode.
 # Text that is already saved is skipped, so re-running only translates new or edited text.
+# It also runs by itself every Monday, so new projects get translated without you
+# remembering (a week with no new text makes no AI calls and costs nothing).
 on:
+  schedule:
+    - cron: "17 3 * * 1" # Mondays 08:47 IST
   workflow_dispatch:
     inputs:
+      mode:
+        description: "Translate as a batch (half price, can take a few minutes to hours), translate now (full price, fastest), or only estimate the cost"
+        required: false
+        default: "batch"
+        type: choice
+        options: [batch, now, estimate]
       url:
         description: "Site to translate (comma-separate several start pages)"
         required: true
@@ -39,7 +49,8 @@ concurrency:
 jobs:
   pretranslate:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Batches usually finish within minutes; allow up to 6 hours just in case.
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -49,6 +60,7 @@ jobs:
       - run: npm ci
 
       - name: Check API key
+        if: ${{ inputs.mode != 'estimate' }}
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -60,14 +72,18 @@ jobs:
       - name: Translate and save
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          PONTE_MODEL: ${{ inputs.model }}
+          PONTE_MODEL: ${{ inputs.model || 'claude-sonnet-5-5' }}
           PONTE_STORE: github
           PONTE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PONTE_GITHUB_REPO: ${{ github.repository }}
           PONTE_GITHUB_BRANCH: ponte-translations
         run: |
           set -o pipefail
-          npm run pretranslate -- --url "${{ inputs.url }}" --langs "${{ inputs.langs }}" --max-pages "${{ inputs.max_pages }}" 2>&1 | tee pretranslate.log
+          MODE="${{ inputs.mode || 'batch' }}"
+          FLAGS=""
+          [ "$MODE" = "batch" ] && FLAGS="--batch"
+          [ "$MODE" = "estimate" ] && FLAGS="--estimate"
+          npm run pretranslate -- --url "${{ inputs.url || 'https://lalityakrishnan.in' }}" --langs "${{ inputs.langs }}" --max-pages "${{ inputs.max_pages || '30' }}" $FLAGS 2>&1 | tee pretranslate.log
 
       - name: Summary
         if: always()
@@ -84,6 +100,6 @@ jobs:
 
   publish:
     needs: pretranslate
-    # Publish whatever was saved, even if a few texts failed.
-    if: ${{ !cancelled() }}
+    # Publish whatever was saved, even if a few texts failed (nothing to publish for an estimate).
+    if: ${{ !cancelled() && inputs.mode != 'estimate' }}
     uses: ./.github/workflows/publish.yml

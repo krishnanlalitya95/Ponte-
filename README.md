@@ -218,6 +218,14 @@ Site-wide rules that apply to every translation live in [`ponte.config.json`](po
 
 **Protecting your hand edits:** when you fix a translation by hand, also add `"locked": true` to that entry. Locked entries are never replaced, even when settings change.
 
+### Keeping costs down
+
+- **Saved text is free.** A run only sends text that isn't saved yet, or whose settings changed (for example, your name in a new script).
+- **One reading per page.** The agent reads each page once and writes a brief (genre, tone, terms) that every language shares. The brief is saved in `translations/_briefs.json`, so later runs don't pay for it again.
+- **Batch mode (default).** Pre-translate sends all requests as one Anthropic Message Batch, at half the price. Results usually come back within minutes.
+- **Estimate first.** Run Pre-translate with mode **estimate** to see how much is left and roughly what it will cost, without spending anything.
+- **Weekly top-up.** Pre-translate runs by itself every Monday, so new projects get translated. A week with no new text makes no AI calls. To turn this off, remove the `schedule:` lines from `.github/workflows/pretranslate.yml`. GitHub also pauses scheduled runs on a repo that has had no activity for 60 days, and running it once by hand re-enables it.
+
 ### Translate the whole site in advance
 
 So that even the first visitor never waits:

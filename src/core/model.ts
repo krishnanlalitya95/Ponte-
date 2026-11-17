@@ -22,6 +22,14 @@ export interface StructuredResult<T> {
 export interface ModelClient {
   readonly model: string;
   structured<T>(call: StructuredCall): Promise<StructuredResult<T>>;
+  /**
+   * Optional: run many calls as one asynchronous batch (half price on Anthropic's API;
+   * results usually within minutes, at most 24 hours). Returns a result or an Error per id.
+   */
+  batch?(
+    calls: Array<{ id: string; call: StructuredCall }>,
+    onProgress?: (msg: string) => void,
+  ): Promise<Map<string, StructuredResult<unknown> | Error>>;
 }
 
 /**
@@ -73,14 +81,17 @@ export class AnthropicModelClient implements ModelClient {
     return this.viaTool<T>(call);
   }
 
-  private async viaOutputFormat<T>(call: StructuredCall): Promise<StructuredResult<T>> {
-    const res = await this.client.messages.create({
+  private params(call: StructuredCall) {
+    return {
       model: this.model,
       max_tokens: call.maxTokens,
       system: call.system,
-      output_config: { format: { type: "json_schema", schema: strictSchema(call.schema) as Record<string, unknown> } },
-      messages: [{ role: "user", content: `${call.user}\n\n(${call.toolDescription})` }],
-    });
+      output_config: { format: { type: "json_schema" as const, schema: strictSchema(call.schema) as Record<string, unknown> } },
+      messages: [{ role: "user" as const, content: `${call.user}\n\n(${call.toolDescription})` }],
+    };
+  }
+
+  private parse<T>(res: Anthropic.Message, call: StructuredCall): StructuredResult<T> {
     if (res.stop_reason === "max_tokens") throw new Error(`Model output was cut off at max_tokens (${call.maxTokens}).`);
     if (res.stop_reason === "refusal") throw new Error("The model declined this request.");
     const text = res.content
@@ -94,6 +105,47 @@ export class AnthropicModelClient implements ModelClient {
       throw new Error(`Model returned invalid JSON (stop_reason=${res.stop_reason}).`);
     }
     return { data, inputTokens: res.usage.input_tokens, outputTokens: res.usage.output_tokens };
+  }
+
+  private async viaOutputFormat<T>(call: StructuredCall): Promise<StructuredResult<T>> {
+    return this.parse<T>(await this.client.messages.create(this.params(call)), call);
+  }
+
+  async batch(
+    calls: Array<{ id: string; call: StructuredCall }>,
+    onProgress: (msg: string) => void = () => {},
+  ): Promise<Map<string, StructuredResult<unknown> | Error>> {
+    const out = new Map<string, StructuredResult<unknown> | Error>();
+    if (!calls.length) return out;
+    const byId = new Map(calls.map((c) => [c.id, c.call]));
+    const created = await this.client.messages.batches.create({
+      requests: calls.map((c) => ({ custom_id: c.id, params: this.params(c.call) })),
+    });
+    onProgress(`batch ${created.id}: ${calls.length} request(s) submitted`);
+    let batch = created;
+    let wait = 15_000;
+    while (batch.processing_status !== "ended") {
+      await new Promise((r) => setTimeout(r, wait));
+      wait = Math.min(wait * 1.5, 60_000);
+      batch = await this.client.messages.batches.retrieve(created.id);
+      const c = batch.request_counts;
+      onProgress(`batch ${batch.id}: ${c.succeeded} done, ${c.processing} processing, ${c.errored + c.expired + c.canceled} failed`);
+    }
+    for await (const item of await this.client.messages.batches.results(created.id)) {
+      const call = byId.get(item.custom_id);
+      if (!call) continue;
+      if (item.result.type === "succeeded") {
+        try {
+          out.set(item.custom_id, this.parse(item.result.message, call));
+        } catch (e) {
+          out.set(item.custom_id, e instanceof Error ? e : new Error(String(e)));
+        }
+      } else {
+        const why = item.result.type === "errored" ? JSON.stringify(item.result.error) : item.result.type;
+        out.set(item.custom_id, new Error(`batch request ${item.result.type}: ${why}`));
+      }
+    }
+    return out;
   }
 
   private async viaTool<T>(call: StructuredCall): Promise<StructuredResult<T>> {

@@ -284,3 +284,37 @@ describe("settings: author and glossary", () => {
     expect(data[fingerprint("Mine")]!.text).toBe("मेरा");
   });
 });
+
+describe("one reading per page", () => {
+  it("reads a page once for all languages and saves the brief for later runs", async () => {
+    const model = new FakeModel(prefixTranslator);
+    const store = new MemoryStore();
+    const page = { url: "https://site/about" };
+    for (const lang of ["hi", "ta", "fr"]) {
+      await new Ponte({ model, store }).translate({ targetLanguage: lang, context: page, segments: [{ id: "a", text: `Hello ${lang}` }] });
+    }
+    expect(model.calls.filter((c) => c.toolName === "write_brief")).toHaveLength(1);
+    expect(model.calls.filter((c) => c.toolName === "submit_translations")).toHaveLength(3);
+    // A new server process with the same store: no new reading.
+    await new Ponte({ model, store }).translate({ targetLanguage: "de", context: page, segments: [{ id: "a", text: "Hello de" }] });
+    expect(model.calls.filter((c) => c.toolName === "write_brief")).toHaveLength(1);
+  });
+
+  it("batches translations: prepare → buildChunks → settle → finish saves them", async () => {
+    const model = new FakeModel(prefixTranslator);
+    const store = new MemoryStore();
+    const ponte = new Ponte({ model, store });
+    const req = { targetLanguage: "hi", context: { url: "https://site/" }, segments: [{ id: "a", text: "One" }, { id: "b", text: "Two" }] };
+    const plan = await ponte.prepare(req);
+    const usage = plan.usage;
+    const brief = await ponte.getBrief(req, usage);
+    const work = ponte.buildChunks(req, plan, brief);
+    expect(work).toHaveLength(1);
+    // Pretend the batch API answered:
+    const answer = prefixTranslator(work[0]!.call) as { results: never[] };
+    const results = await ponte.settleChunk(req, plan, brief, work[0]!, { raw: answer.results }, usage);
+    await ponte.finish(req, plan, brief, results);
+    expect((await store.get("hi", "Two"))?.text).toBe("HI:Two");
+    expect(model.calls.filter((c) => c.toolName === "submit_translations")).toHaveLength(0); // nothing sent live
+  });
+});

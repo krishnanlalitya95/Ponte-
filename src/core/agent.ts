@@ -1,7 +1,7 @@
 import { LruCache, hashKey } from "./cache.js";
 import { MemoryStore, type StoredTranslation, type TranslationStore } from "./store.js";
 import { getLanguage, isUntranslatable, normalizeLanguageCode, scriptCandidates, type Language } from "./languages.js";
-import type { ModelClient } from "./model.js";
+import type { ModelClient, StructuredCall } from "./model.js";
 import {
   ANALYZE_SYSTEM,
   BRIEF_SCHEMA,
@@ -43,14 +43,14 @@ export interface PonteOptions {
   store?: TranslationStore;
 }
 
-interface RawResult {
+export interface RawResult {
   id: string;
   sourceLanguage: string;
   action: "translated" | "unchanged";
   translation: string;
 }
 
-interface Usage {
+export interface Usage {
   inputTokens: number;
   outputTokens: number;
   storedSegments: number;
@@ -79,6 +79,22 @@ export class Ponte {
   }
 
   async translate(req: TranslateRequest): Promise<TranslateResponse> {
+    const plan = await this.prepare(req);
+    if (plan.unique.length) {
+      const brief = await this.getBrief(req, plan.usage);
+      const work = this.buildChunks(req, plan, brief);
+      const done = await mapLimit(work, this.concurrency, async (w) => {
+        const res = await this.callChunk(w.call, plan.usage);
+        return this.settleChunk(req, plan, brief, w, res, plan.usage);
+      });
+      await this.finish(req, plan, brief, done.flat());
+      return this.response(req, plan, brief);
+    }
+    return this.response(req, plan, null);
+  }
+
+  /** Step 1 — detect: skip what needs no model, reuse saved translations, de-duplicate. */
+  async prepare(req: TranslateRequest): Promise<Plan> {
     const target = getLanguage(req.targetLanguage);
     if (!target) throw new PonteError(`Unsupported target language: ${req.targetLanguage}`);
     if (req.contentType && !CONTENT_TYPES.includes(req.contentType)) {
@@ -88,9 +104,6 @@ export class Ponte {
 
     const usage: Usage = { inputTokens: 0, outputTokens: 0, storedSegments: 0, modelCalls: 0 };
     const results = new Map<string, SegmentResult>();
-    const contextKey = hashKey(req.context?.url, req.context?.title, req.contentType, JSON.stringify(req.glossary ?? {}), (req.doNotTranslate ?? []).join("|"), JSON.stringify(req.author ?? {}));
-
-    // 1. Detect: cheap local pass — skip what obviously needs no model.
     const pending: Segment[] = [];
     for (const seg of req.segments) {
       if (isUntranslatable(seg.text)) {
@@ -130,70 +143,150 @@ export class Ponte {
         unique.push(seg);
       }
     }
+    return { target, results, unique, duplicates, usage };
+  }
 
-    // 2. Contextualize: read the whole page (not just pending bits) and write a brief.
-    //    Skipped entirely when everything was already saved — no model calls at all.
-    let brief: ContentBrief | null = null;
+  /** Step 3a — the translation calls for a prepared request (used live and for batches). */
+  buildChunks(req: TranslateRequest, plan: Plan, brief: ContentBrief): ChunkWork[] {
+    const chunks = chunkSegments(plan.unique, this.chunkChars);
+    return chunks.map((chunk, i) => {
+      const prev = chunks[i - 1];
+      const precedingContext = prev ? prev.slice(-3).map((s) => s.text) : [];
+      return { chunk, precedingContext, call: this.chunkCall(req, plan.target, brief, chunk, precedingContext) };
+    });
+  }
 
-    // 3. Translate for meaning, chunked, with continuity context between chunks.
-    if (unique.length) {
-      brief = await this.getBrief(req, target, contextKey, usage);
-      const b = brief;
-      const chunks = chunkSegments(unique, this.chunkChars);
-      const translated = await mapLimit(chunks, this.concurrency, (chunk, i) => {
-        const prev = chunks[i - 1];
-        const precedingContext = prev ? prev.slice(-3).map((s) => s.text) : [];
-        return this.translateChunk(req, target, b, chunk, precedingContext, usage);
-      });
-      const toSave: StoredTranslation[] = [];
-      const savedAt = new Date().toISOString();
-      const textById = new Map(unique.map((s) => [s.id, s.text]));
-      for (const chunkResults of translated) {
-        for (const r of chunkResults) {
-          results.set(r.id, r);
-          const source = textById.get(r.id);
-          if (source !== undefined && (r.status === "translated" || r.status === "unchanged")) {
-            toSave.push({
-              source,
-              text: r.text,
-              status: r.status,
-              sourceLanguage: r.sourceLanguage,
-              contentType: b.contentType,
-              page: req.context?.url,
-              model: this.model.model,
-              savedAt,
-              settings: settingsKey(req, target.code, source),
-            });
-          }
-        }
-      }
-      await this.store.put(target.code, toSave);
-      for (const [dupId, canonicalId] of duplicates) {
-        const r = results.get(canonicalId);
-        if (r) results.set(dupId, { ...r, id: dupId });
+  private chunkCall(req: TranslateRequest, target: Language, brief: ContentBrief, chunk: Segment[], precedingContext: string[]): StructuredCall {
+    return {
+      system: translateSystem(target),
+      user: translateUser({ req, target, brief, segments: chunk, precedingContext }),
+      toolName: "submit_translations",
+      toolDescription: "Submit the translation for every segment.",
+      schema: TRANSLATION_SCHEMA,
+      maxTokens: this.maxOutputTokens,
+    };
+  }
+
+  private async callChunk(call: StructuredCall, usage: Usage): Promise<ChunkOutcome> {
+    try {
+      const res = await this.model.structured<{ results: RawResult[] }>(call);
+      usage.modelCalls++;
+      usage.inputTokens += res.inputTokens;
+      usage.outputTokens += res.outputTokens;
+      return { raw: Array.isArray(res.data?.results) ? res.data.results : [] };
+    } catch (e) {
+      return { raw: [], error: e instanceof Error ? e.message : String(e) };
+    }
+  }
+
+  /**
+   * Step 4 — validate a chunk's output. Failures are retried once, live, in smaller pieces
+   * (so one bad segment can't sink the rest); what still fails falls back to the original.
+   */
+  async settleChunk(
+    req: TranslateRequest,
+    plan: Plan,
+    brief: ContentBrief,
+    work: Pick<ChunkWork, "chunk" | "precedingContext">,
+    outcome: ChunkOutcome,
+    usage: Usage,
+    attempt = 1,
+  ): Promise<SegmentResult[]> {
+    const byId = new Map(outcome.raw.map((r) => [String(r.id), r]));
+    const good: SegmentResult[] = [];
+    const retry: Segment[] = [];
+    let error = outcome.error;
+    for (const seg of work.chunk) {
+      const r = byId.get(seg.id);
+      const problem = !r ? "missing from model output" : validateTranslation(seg.text, r);
+      if (!problem && r) {
+        good.push({
+          id: seg.id,
+          text: r.action === "unchanged" ? seg.text : r.translation,
+          sourceLanguage: normalizeLanguageCode(r.sourceLanguage || brief.dominantLanguage) || "und",
+          status: r.action === "unchanged" ? "unchanged" : "translated",
+        });
+      } else {
+        retry.push(seg);
+        error ??= problem ?? undefined;
       }
     }
+    if (retry.length && attempt < 2) {
+      for (const piece of chunkSegments(retry, Math.max(500, Math.floor(this.chunkChars / 4)))) {
+        const call = this.chunkCall(req, plan.target, brief, piece, work.precedingContext);
+        const res = await this.callChunk(call, usage);
+        good.push(...(await this.settleChunk(req, plan, brief, { chunk: piece, precedingContext: work.precedingContext }, res, usage, attempt + 1)));
+      }
+    } else {
+      for (const seg of retry) {
+        good.push({ id: seg.id, text: seg.text, sourceLanguage: "und", status: "fallback", reason: error ?? "translation failed" });
+      }
+    }
+    return good;
+  }
 
+  /** Step 5 — save what worked and fill in duplicates. */
+  async finish(req: TranslateRequest, plan: Plan, brief: ContentBrief, chunkResults: SegmentResult[]): Promise<void> {
+    const toSave: StoredTranslation[] = [];
+    const savedAt = new Date().toISOString();
+    const textById = new Map(plan.unique.map((s) => [s.id, s.text]));
+    for (const r of chunkResults) {
+      plan.results.set(r.id, r);
+      const source = textById.get(r.id);
+      if (source !== undefined && (r.status === "translated" || r.status === "unchanged")) {
+        toSave.push({
+          source,
+          text: r.text,
+          status: r.status,
+          sourceLanguage: r.sourceLanguage,
+          contentType: brief.contentType,
+          page: req.context?.url,
+          model: this.model.model,
+          savedAt,
+          settings: settingsKey(req, plan.target.code, source),
+        });
+      }
+    }
+    await this.store.put(plan.target.code, toSave);
+    for (const [dupId, canonicalId] of plan.duplicates) {
+      const r = plan.results.get(canonicalId);
+      if (r) plan.results.set(dupId, { ...r, id: dupId });
+    }
+  }
+
+  response(req: TranslateRequest, plan: Plan, brief: ContentBrief | null): TranslateResponse {
     return {
-      targetLanguage: target.code,
+      targetLanguage: plan.target.code,
       brief,
       results: req.segments.map(
-        (s) =>
-          results.get(s.id) ?? { id: s.id, text: s.text, sourceLanguage: "und", status: "fallback", reason: "no result" },
+        (s) => plan.results.get(s.id) ?? { id: s.id, text: s.text, sourceLanguage: "und", status: "fallback", reason: "no result" },
       ),
-      usage,
+      usage: plan.usage,
       model: this.model.model,
     };
   }
 
-  private async getBrief(req: TranslateRequest, target: Language, contextKey: string, usage: Usage): Promise<ContentBrief> {
-    // The brief depends on the page, not on which segments still need work, so
-    // incremental requests from the same page (e.g. lazily rendered sections) reuse it.
+  /**
+   * Step 2 — read the page once and write a brief. The brief doesn't depend on the target
+   * language, so one reading serves every language, and it's saved with the translations
+   * so later runs (and the server) reuse it instead of paying for it again.
+   */
+  async getBrief(req: TranslateRequest, usage: Usage): Promise<ContentBrief> {
     const pageKey = req.context?.url
-      ? hashKey("brief", target.code, contextKey)
-      : hashKey("brief", target.code, contextKey, req.segments.map((s) => s.text).join("\n").slice(0, this.analysisChars));
+      ? hashKey("brief-v2", normalizePageUrl(req.context.url), req.contentType, JSON.stringify(req.author ?? {}))
+      : hashKey("brief-v2", req.contentType, JSON.stringify(req.author ?? {}), req.segments.map((s) => s.text).join("\n").slice(0, this.analysisChars));
     const cached = this.briefCache.get(pageKey);
     if (cached) return cached;
+    const saved = await this.store.get(BRIEFS, pageKey);
+    if (saved) {
+      try {
+        const brief = sanitizeBrief(JSON.parse(saved.text) as ContentBrief, req);
+        this.briefCache.set(pageKey, brief);
+        return brief;
+      } catch {
+        /* unreadable: write a new one */
+      }
+    }
 
     const sample: Segment[] = [];
     let used = 0;
@@ -209,7 +302,7 @@ export class Ponte {
 
     const res = await this.model.structured<ContentBrief>({
       system: ANALYZE_SYSTEM,
-      user: analyzeUser(req, target, sample),
+      user: analyzeUser(req, sample),
       toolName: "write_brief",
       toolDescription: "Record your reading of the page as a brief for the translator.",
       schema: BRIEF_SCHEMA,
@@ -221,69 +314,42 @@ export class Ponte {
 
     const brief = sanitizeBrief(res.data, req);
     this.briefCache.set(pageKey, brief);
+    await this.store.put(BRIEFS, [
+      { source: pageKey, text: JSON.stringify(brief), status: "translated", sourceLanguage: "und", page: req.context?.url, model: this.model.model, savedAt: new Date().toISOString() },
+    ]);
     return brief;
   }
+}
 
-  private async translateChunk(
-    req: TranslateRequest,
-    target: Language,
-    brief: ContentBrief,
-    chunk: Segment[],
-    precedingContext: string[],
-    usage: Usage,
-    attempt = 1,
-  ): Promise<SegmentResult[]> {
-    let raw: RawResult[] = [];
-    let error: string | undefined;
-    try {
-      const res = await this.model.structured<{ results: RawResult[] }>({
-        system: translateSystem(target),
-        user: translateUser({ req, target, brief, segments: chunk, precedingContext }),
-        toolName: "submit_translations",
-        toolDescription: "Submit the translation for every segment.",
-        schema: TRANSLATION_SCHEMA,
-        maxTokens: this.maxOutputTokens,
-      });
-      usage.modelCalls++;
-      usage.inputTokens += res.inputTokens;
-      usage.outputTokens += res.outputTokens;
-      raw = Array.isArray(res.data?.results) ? res.data.results : [];
-    } catch (e) {
-      error = e instanceof Error ? e.message : String(e);
-    }
+/** Store "language" that holds page briefs (translations/_briefs.json). */
+export const BRIEFS = "_briefs";
 
-    const byId = new Map(raw.map((r) => [String(r.id), r]));
-    const good: SegmentResult[] = [];
-    const retry: Segment[] = [];
-    for (const seg of chunk) {
-      const r = byId.get(seg.id);
-      const problem = !r ? "missing from model output" : validateTranslation(seg.text, r);
-      if (!problem && r) {
-        good.push({
-          id: seg.id,
-          text: r.action === "unchanged" ? seg.text : r.translation,
-          sourceLanguage: normalizeLanguageCode(r.sourceLanguage || brief.dominantLanguage) || "und",
-          status: r.action === "unchanged" ? "unchanged" : "translated",
-        });
-      } else {
-        retry.push(seg);
-        error ??= problem ?? undefined;
-      }
-    }
-
-    if (retry.length && attempt < 2) {
-      // Retry the failures once, in smaller pieces so one bad segment can't sink the rest.
-      const smaller = chunkSegments(retry, Math.max(500, Math.floor(this.chunkChars / 4)));
-      for (const piece of smaller) {
-        good.push(...(await this.translateChunk(req, target, brief, piece, precedingContext, usage, attempt + 1)));
-      }
-    } else {
-      for (const seg of retry) {
-        good.push({ id: seg.id, text: seg.text, sourceLanguage: "und", status: "fallback", reason: error ?? "translation failed" });
-      }
-    }
-    return good;
+function normalizePageUrl(u: string): string {
+  try {
+    const url = new URL(u);
+    return (url.origin + url.pathname).replace(/\/$/, "");
+  } catch {
+    return u;
   }
+}
+
+export interface Plan {
+  target: Language;
+  results: Map<string, SegmentResult>;
+  unique: Segment[];
+  duplicates: Map<string, string>;
+  usage: Usage;
+}
+
+export interface ChunkWork {
+  chunk: Segment[];
+  precedingContext: string[];
+  call: StructuredCall;
+}
+
+export interface ChunkOutcome {
+  raw: RawResult[];
+  error?: string;
 }
 
 /**
