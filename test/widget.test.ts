@@ -214,3 +214,24 @@ describe("visitor language detection", async () => {
     expect(pageLanguage("hi")).toBe("hi");
   });
 });
+
+describe("spacing around styled words", () => {
+  it("keeps spaces the translation adds where the original had none (\"Krishnan.\" → \"कृष्णन हूँ।\")", async () => {
+    document.body.innerHTML = `<p>I'm Lalitya <b>Krishnan</b>.</p><p>I design <em>experiences</em>, write</p>`;
+    mockServer((s) =>
+      s.text.startsWith("⟦0⟧I'm") ? "⟦0⟧मैं लालित्य ⟦1⟧कृष्णन⟦2⟧ हूँ।" : "⟦0⟧मैं ⟦1⟧अनुभव⟦2⟧ डिज़ाइन करता हूँ, लिखता हूँ",
+    );
+    await createPonte({ endpoint: "http://api", observe: false }).translate("hi");
+    const [a, b] = document.querySelectorAll("p");
+    expect(a!.textContent).toBe("मैं लालित्य कृष्णन हूँ।");
+    expect(a!.querySelector("b")!.textContent).toBe("कृष्णन"); // space stays outside the bold word
+    expect(b!.textContent).toBe("मैं अनुभव डिज़ाइन करता हूँ, लिखता हूँ");
+  });
+
+  it("adds no spaces in Japanese", async () => {
+    document.body.innerHTML = `<p>Read <a href="#">here</a> now</p>`;
+    mockServer(() => "⟦1⟧ここ⟦0⟧を読む⟦2⟧今");
+    await createPonte({ endpoint: "http://api", observe: false }).translate("ja");
+    expect(document.querySelector("p")!.textContent).toBe("を読むここ今");
+  });
+});

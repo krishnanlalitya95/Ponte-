@@ -252,14 +252,23 @@ export function createPonte(opts: PonteOptions): PonteController {
           // Markers lost: put the whole translation in the first node, empty the rest.
           block.pieces.forEach((p, i) => write(p.node, i === 0 ? p.lead + translation.replace(/⟦\d+⟧/g, "") + p.trail : ""));
         } else {
-          const sep = NO_SPACE.has(lang) ? "" : " ";
+          const n = block.pieces.length;
+          const cores = parts.map((x) => x.trim());
+          // Space between DOM-adjacent pieces i and i+1: where the translation puts one, or where
+          // the original had one (except in languages written without spaces).
+          const side: Array<"start" | "end" | null> = [];
+          for (let i = 0; i < n - 1; i++) {
+            const inTranslation = /\s$/.test(parts[i] ?? "") || /^\s/.test(parts[i + 1] ?? "");
+            const want = (inTranslation || (block.gaps[i] && !NO_SPACE.has(lang))) && !!cores[i] && !!cores[i + 1];
+            if (!want) side.push(null);
+            // Keep the space on the side it was originally (outside a link/bold), else where the translation had it.
+            else if (block.gaps[i]) side.push(block.pieces[i]!.trail ? "end" : "start");
+            else side.push(/^\s/.test(parts[i + 1] ?? "") ? "start" : "end");
+          }
           block.pieces.forEach((p, i) => {
-            const part = (parts[i] ?? "").trim();
-            // Put inter-piece spaces back on the side they were originally on (outside links, etc.).
-            const prev = block.pieces[i - 1];
-            const lead = i === 0 ? p.lead : block.gaps[i - 1] && !prev?.trail && part ? sep : "";
-            const trail = i === block.pieces.length - 1 ? p.trail : block.gaps[i] && p.trail && part ? sep : "";
-            write(p.node, lead + part + trail);
+            const lead = i === 0 ? p.lead : side[i - 1] === "start" ? " " : "";
+            const trail = i === n - 1 ? p.trail : side[i] === "end" ? " " : "";
+            write(p.node, lead + cores[i] + trail);
           });
         }
       }
