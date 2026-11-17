@@ -31,7 +31,7 @@ interface Grade {
 }
 
 const PASS = { meaning: 4, tone: 4, fluency: 4 };
-const filter = process.argv[2]?.toLowerCase();
+const filter = process.argv[2]?.trim().toLowerCase() || undefined;
 const cases = CASES.filter((c) => !filter || c.name.toLowerCase().includes(filter));
 
 const translatorModel = new AnthropicModelClient();

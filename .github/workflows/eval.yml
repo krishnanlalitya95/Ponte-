@@ -1,0 +1,57 @@
+name: Translation evals
+
+# Run from GitHub (works on your phone): Actions → Translation evals → Run workflow.
+# Needs the repository secret ANTHROPIC_API_KEY (Settings → Secrets and variables → Actions).
+on:
+  workflow_dispatch:
+    inputs:
+      filter:
+        description: "Only run cases whose name contains this (e.g. poetry, hi, paper). Leave empty for all."
+        required: false
+        default: ""
+      model:
+        description: "Translator model"
+        required: false
+        default: "claude-sonnet-5-5"
+        type: choice
+        options: [claude-sonnet-5-5, claude-opus-5-5]
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Check API key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Add ANTHROPIC_API_KEY under Settings → Secrets and variables → Actions, then run again."
+            exit 1
+          fi
+
+      - name: Run evals
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PONTE_MODEL: ${{ inputs.model }}
+        run: npm run eval -- "${{ inputs.filter }}"
+
+      - name: Show report on the run page
+        if: always()
+        run: |
+          report=$(ls -t evals/reports/*.md 2>/dev/null | head -1)
+          if [ -n "$report" ]; then cat "$report" >> "$GITHUB_STEP_SUMMARY"; else echo "No report was written." >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: evals/reports/
+          if-no-files-found: ignore

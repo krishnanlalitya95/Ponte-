@@ -139,6 +139,14 @@ There are seven smoke cases: poetry (en→hi and hi→en), narrative (en→ta), 
 
 A case passes at ≥4 on all three scores with no word-for-word flag. Reports are written to `evals/reports/`.
 
+### Running evals from GitHub (no computer needed)
+
+1. On GitHub, open the repo → **Settings → Secrets and variables → Actions → New repository secret**. Name it `ANTHROPIC_API_KEY` and paste your key.
+2. Open **Actions → Translation evals → Run workflow**. Optionally type a filter (for example `poetry`) and pick a model.
+3. When the run finishes, open it. The full report, with scores, judge comments and side-by-side text, is shown on the run page.
+
+Every push and pull request also runs the tests automatically (**Actions → CI**).
+
 ## Development
 
 ```bash
