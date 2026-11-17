@@ -25,7 +25,12 @@ export interface PonteConfig {
   languages?: string[];
   author?: Author;
   /** Look of the visitor picker, published with the translations. */
-  widget?: { accent?: string; position?: "bottom-right" | "bottom-left" };
+  widget?: {
+    accent?: string;
+    position?: "bottom-right" | "bottom-left";
+    /** Open in the visitor's device language when it's offered. Off: always start in the page language. */
+    autoDetect?: boolean;
+  };
   doNotTranslate?: string[];
   /** Fixed renderings per target language: { "<lang>": { "<source term>": "<rendering>" } }. */
   glossary?: Record<string, Record<string, string>>;

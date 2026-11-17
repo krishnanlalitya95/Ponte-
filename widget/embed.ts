@@ -40,7 +40,7 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; position?: string };
+  widget: { accent?: string; position?: string; autoDetect?: boolean };
 }
 
 const indexCache = new Map<string, Promise<PublishedIndex>>();
@@ -99,7 +99,8 @@ if (script && !script.hasAttribute("data-manual")) {
     const first = initialLanguage({
       available: codes ?? LANGUAGES.map((l) => l.code),
       source,
-      auto: d.auto !== "off",
+      // Off unless switched on: data-auto="on", or widget.autoDetect in ponte.config.json.
+      auto: d.auto ? d.auto !== "off" : published?.widget.autoDetect === true,
     });
     if (first) void ponte.translate(first);
   };
