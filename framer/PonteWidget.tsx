@@ -154,7 +154,7 @@ PonteWidget.defaultProps = {
     staticUrl: "https://krishnanlalitya95.github.io/Ponte-",
     endpoint: "http://localhost:8787",
     fonts: true,
-    languages: "hi,bn,ta,te,mr,gu,kn,ml,pa,en,es,fr,de,pt,ja,zh,ko,ar",
+    languages: "hi,bn,ta,te,mr,gu,kn,ml,fr,de,ar,ja,ko",
     sourceLanguage: "en",
     contentType: "auto",
     doNotTranslate: "",

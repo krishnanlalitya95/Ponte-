@@ -13,9 +13,9 @@ on:
         required: true
         default: "https://lalityakrishnan.in"
       langs:
-        description: "Languages (codes, comma-separated). Include your page's own language (en) to translate text written in other languages, like Hindi poems, into it."
-        required: true
-        default: "en,hi,bn,ta,te,mr,gu,kn,ml,pa,es,fr,de,pt,ja,zh,ko,ar"
+        description: "Languages (codes, comma-separated). Leave empty to use the list in ponte.config.json (plus your page language, for text like Hindi poems)."
+        required: false
+        default: ""
       max_pages:
         description: "Most pages to follow on the site"
         required: false

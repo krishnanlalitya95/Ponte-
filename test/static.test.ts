@@ -152,6 +152,18 @@ describe("static build", () => {
     expect(idx.languages[0].code).toBe("hi");
     expect((await readFile(join(dir, "public", "widget.js"), "utf8")).length).toBeGreaterThan(1000);
   });
+
+  it("publishes only the languages currently offered", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "ponte-static-"));
+    await mkdir(join(dir, "translations"));
+    const file = (src: string, text: string): LanguageFile => ({
+      [fingerprint(src)]: { source: src, text, status: "translated", sourceLanguage: "en", savedAt: "x" },
+    });
+    await writeFile(join(dir, "translations", "hi.json"), JSON.stringify(file("Hi", "नमस्ते")));
+    await writeFile(join(dir, "translations", "es.json"), JSON.stringify(file("Hi", "Hola")));
+    const res = await buildStatic(join(dir, "translations"), join(dir, "public"), ["en", "hi"]);
+    expect(res.languages.map((l) => l.code)).toEqual(["hi"]);
+  });
 });
 
 describe("page language as a real choice (mixed-language pages)", () => {

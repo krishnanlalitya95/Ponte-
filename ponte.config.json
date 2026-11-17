@@ -1,5 +1,20 @@
 {
   "sourceLanguage": "en",
+  "languages": [
+    "hi",
+    "bn",
+    "ta",
+    "te",
+    "mr",
+    "gu",
+    "kn",
+    "ml",
+    "fr",
+    "de",
+    "ar",
+    "ja",
+    "ko"
+  ],
   "author": {
     "name": "Lalitya Krishnan",
     "gender": "male",
