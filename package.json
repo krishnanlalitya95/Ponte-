@@ -1,0 +1,30 @@
+{
+  "name": "ponte",
+  "version": "0.1.0",
+  "description": "Ponte — agentic, meaning-first translation for Framer sites. Detects on-screen text, understands context, and replaces it in place.",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "npm run build:widget && tsx watch src/server/index.ts",
+    "start": "npm run build:widget && tsx src/server/index.ts",
+    "mock": "npm run build:widget && PONTE_MOCK=1 tsx src/server/index.ts",
+    "build:widget": "tsx scripts/build-widget.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "eval": "tsx evals/run.ts",
+    "translate": "tsx scripts/translate-cli.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "jsdom": "^31.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
