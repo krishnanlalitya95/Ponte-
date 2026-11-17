@@ -122,8 +122,10 @@ export class Ponte {
         continue;
       }
       const saved = await this.store.get(target.code, seg.text);
-      // Reuse a saved translation unless it was made with different settings (and isn't locked).
-      if (saved && (saved.locked || saved.settings === settingsKey(req, target.code, seg.text))) {
+      // Reuse a saved translation unless it was made with different settings (and isn't locked),
+      // or it was wrongly left in another language (e.g. a Hindi poem line "kept" for English).
+      const stale = saved && !saved.locked && (saved.settings !== settingsKey(req, target.code, seg.text) || (saved.status === "unchanged" && leftInOtherScript(seg.text, target.code)));
+      if (saved && !stale) {
         results.set(seg.id, { id: seg.id, text: saved.text, sourceLanguage: saved.sourceLanguage, status: saved.status, saved: true });
         usage.storedSegments++;
         continue;
@@ -198,7 +200,7 @@ export class Ponte {
     let error = outcome.error;
     for (const seg of work.chunk) {
       const r = byId.get(seg.id);
-      const problem = !r ? "missing from model output" : validateTranslation(seg.text, r);
+      const problem = !r ? "missing from model output" : validateTranslation(seg.text, r, plan.target.code);
       if (!problem && r) {
         good.push({
           id: seg.id,
@@ -353,6 +355,16 @@ export interface ChunkOutcome {
 }
 
 /**
+ * True when a "keep as is" answer can't be right: a sentence-length text (4+ words) written in
+ * a script the target language doesn't use. Short titles and names may legitimately stay.
+ */
+export function leftInOtherScript(source: string, target: string): boolean {
+  const cands = scriptCandidates(source);
+  if (!cands.length || cands.includes(target)) return false;
+  return source.replace(/⟦\d+⟧/g, " ").trim().split(/\s+/).length >= 4;
+}
+
+/**
  * Fingerprint of everything that should change a saved translation if edited:
  * author, glossary and keep-as-is terms for this language.
  */
@@ -381,9 +393,9 @@ function validateSegments(segments: unknown): asserts segments is Segment[] {
 }
 
 /** Returns a problem description, or null when the translation is usable. */
-export function validateTranslation(source: string, r: RawResult): string | null {
+export function validateTranslation(source: string, r: RawResult, target?: string): string | null {
   if (r.action !== "translated" && r.action !== "unchanged") return "invalid action";
-  if (r.action === "unchanged") return null;
+  if (r.action === "unchanged") return target && leftInOtherScript(source, target) ? "left untranslated" : null;
   if (typeof r.translation !== "string" || !r.translation.trim()) return "empty translation";
   const want = (source.match(MARKER_RE) ?? []).sort().join("");
   const got = (r.translation.match(MARKER_RE) ?? []).sort().join("");

@@ -37,6 +37,8 @@ export interface StoredTranslation {
 export function canReplace(existing: StoredTranslation | undefined, next: StoredTranslation): boolean {
   if (!existing) return true;
   if (existing.locked) return false;
+  // A real translation may replace one the agent wrongly left as is.
+  if (existing.status === "unchanged" && next.status === "translated") return true;
   return next.settings !== undefined && existing.settings !== next.settings;
 }
 
