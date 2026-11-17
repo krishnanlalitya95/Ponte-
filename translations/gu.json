@@ -868,6 +868,28 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "c3a28416c450dc3e": {
+    "source": "⟦0⟧A ⟦1⟧sustainable ⟦2⟧food packaging",
+    "text": "⟦0⟧એક ⟦1⟧ટકાઉ ⟦2⟧ફૂડ પેકેજિંગ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "69d562423350f64a": {
+    "source": "⟦0⟧A meal with ⟦1⟧Patra",
+    "text": "⟦0⟧એક ભોજન ⟦1⟧Patra સાથે",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "7a8609fcf8a1047c": {
     "source": "⟦0⟧A web of ⟦1⟧interconnected challenges",
     "text": "⟦0⟧પડકારોનું ⟦1⟧એકબીજામાં ગૂંથાયેલું જાળું",
@@ -877,6 +899,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "68cb3e1a6b806d8c": {
+    "source": "⟦0⟧Alternate ⟦1⟧applications",
+    "text": "⟦0⟧વૈકલ્પિક ⟦1⟧ઉપયોગો",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "20f18b8be214656c": {
@@ -901,6 +934,17 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "1a1f0d954591e19e": {
+    "source": "⟦0⟧Ease of assembly: ⟦1⟧simple, intuitive folds make Patra easy to assemble and disassemble.",
+    "text": "⟦0⟧સહેલાઈથી જોડાણ: ⟦1⟧સરળ અને સહજ વળાંકોને કારણે Patra ને જોડવું અને ખોલવું સહેલું છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "c68a342ccc198a96": {
     "source": "⟦0⟧Environmental⟦1⟧challenges",
     "text": "⟦0⟧પર્યાવરણીય⟦1⟧પડકારો",
@@ -912,6 +956,28 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "10cca7277a56c6f4": {
+    "source": "⟦0⟧From prototype ⟦1⟧to usecase",
+    "text": "⟦0⟧પ્રોટોટાઇપથી ⟦1⟧વાસ્તવિક ઉપયોગ સુધી",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "7b1cbe387b7e90eb": {
+    "source": "⟦0⟧Guided by ⟦1⟧Mr. Balaji Rengarajan",
+    "text": "⟦0⟧માર્ગદર્શન: ⟦1⟧શ્રી બાલાજી રેંગરાજન",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "41646e81c090a2e8": {
     "source": "⟦0⟧How can we ⟦1⟧minimise the reliance on single-use plastics",
     "text": "⟦0⟧આપણે કેવી રીતે ⟦1⟧એકવાર વપરાતા પ્લાસ્ટિક પરની નિર્ભરતા ઘટાડી શકીએ",
@@ -921,6 +987,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "f716e2577d8b1f1b": {
+    "source": "⟦0⟧Introducing ⟦1⟧Patra",
+    "text": "⟦0⟧પરિચય ⟦1⟧Patra નો",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "58aa9e8d801f025f": {
@@ -956,6 +1033,28 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "909f93065af5813f": {
+    "source": "⟦0⟧Minimal waste: ⟦1⟧precise folding uses material efficiently and reduces waste.",
+    "text": "⟦0⟧ન્યૂનતમ કચરો: ⟦1⟧ચોક્કસ વળાંકોથી સામગ્રીનો કાર્યક્ષમ ઉપયોગ થાય છે અને કચરો ઘટે છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "fe0a77301e7a5746": {
+    "source": "⟦0⟧NID ⟦1⟧Bengaluru",
+    "text": "⟦0⟧NID ⟦1⟧બેંગલુરુ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "c82b6e6cbf67242e": {
     "source": "⟦0⟧Questioning ⟦1⟧the initial brief",
     "text": "⟦0⟧પ્રારંભિક બ્રીફ ⟦1⟧પર પ્રશ્નો ઉઠાવવા",
@@ -987,6 +1086,28 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "29abad8ef549b01d": {
+    "source": "⟦0⟧Sources and ⟦1⟧further reading",
+    "text": "⟦0⟧સ્રોતો અને ⟦1⟧વધુ વાંચન",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "d72e3486bccac055": {
+    "source": "⟦0⟧Structural integrity: ⟦1⟧the folds add strength and stability.",
+    "text": "⟦0⟧માળખાકીય મજબૂતી: ⟦1⟧વળાંકો મજબૂતી અને સ્થિરતા ઉમેરે છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "308b51ad9f8716df": {
@@ -1044,6 +1165,28 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "c2e695638acbf3ea": {
+    "source": "A grid of small pyramids traps a layer of air, reducing heat transfer.",
+    "text": "નાના પિરામિડની ગ્રિડ હવાનો એક સ્તર રોકી રાખે છે, જેથી ગરમીનું સ્થાનાંતર ઘટે છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "be6a975d3747caf6": {
+    "source": "a hello.",
+    "text": "એક હેલો.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "46da17d160cbf12f": {
     "source": "Abundance and Accessibility",
     "text": "પુષ્કળ જથ્થો અને સુલભતા",
@@ -1053,6 +1196,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:44.881Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "a4aef61566ce26e9": {
+    "source": "Academic papers",
+    "text": "શૈક્ષણિક પેપર",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "1dc45e38bd664583": {
@@ -1099,6 +1253,28 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "84681e1e5de5c4e3": {
+    "source": "An innovative food packaging solution designed to meet the growing demand for sustainable, eco-friendly alternatives to single-use plastics. Patra combines the ancient art of origami with modern sustainable materials to create a versatile, durable and aesthetically pleasing packaging option.",
+    "text": "એકવાર વપરાતા પ્લાસ્ટિકના ટકાઉ, પર્યાવરણ-અનુકૂળ વિકલ્પોની વધતી માંગને પહોંચી વળવા રચાયેલું એક નવીન ફૂડ પેકેજિંગ સમાધાન. Patra ઓરિગામીની પ્રાચીન કળાને આધુનિક ટકાઉ સામગ્રી સાથે જોડીને બહુમુખી, મજબૂત અને દેખાવમાં સુંદર પેકેજિંગ વિકલ્પ બનાવે છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "b14ac78a46e90b71": {
+    "source": "Articles",
+    "text": "લેખો",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "790af5f8bf0dc3f0": {
     "source": "Availability in India",
     "text": "ભારતમાં ઉપલબ્ધતા",
@@ -1132,6 +1308,17 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "1342274b2be8de28": {
+    "source": "Beyond food, the same material and folding system can package products across many industries.",
+    "text": "ખોરાક ઉપરાંત, આ જ સામગ્રી અને વાળવાની પદ્ધતિથી અનેક ઉદ્યોગોની પ્રોડક્ટ્સનું પેકેજિંગ થઈ શકે છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "b2fc423e7ad434da": {
     "source": "Biodegradability and Compostability",
     "text": "જૈવ-વિઘટનશીલતા અને ખાતર બનવાની ક્ષમતા",
@@ -1152,6 +1339,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:44.881Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "cc1ca47d2004f88b": {
+    "source": "Build & Test",
+    "text": "બનાવટ અને પરીક્ષણ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "78233632cf839fc6": {
@@ -1220,6 +1418,28 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "9dc7e90e56b2f263": {
+    "source": "Construction",
+    "text": "બાંધકામ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "9f2f3cd7ee02dc34": {
+    "source": "Consumer goods",
+    "text": "ગ્રાહક વસ્તુઓ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "a6e600a10fede40f": {
     "source": "Context",
     "text": "સંદર્ભ",
@@ -1251,6 +1471,28 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "6e5c6b029d1d60a8": {
+    "source": "Data reports",
+    "text": "ડેટા રિપોર્ટ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "a62b8fdf7f62ef72": {
+    "source": "Deliver",
+    "text": "અમલીકરણ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "3794da8e7b2257ee": {
@@ -1330,6 +1572,17 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "02d9be75b85e3cc3": {
+    "source": "E-commerce",
+    "text": "ઈ-કોમર્સ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "2bcd62b3cb8dbbb0": {
     "source": "Economic feasibility in India",
     "text": "ભારતમાં આર્થિક શક્યતા",
@@ -1396,6 +1649,94 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "c98ba1acbd22a15d": {
+    "source": "Feature 1",
+    "text": "સુવિધા 1",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "e04620c8b3b611b3": {
+    "source": "Feature 2",
+    "text": "સુવિધા 2",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "82e522a86692cc50": {
+    "source": "Feature 3",
+    "text": "સુવિધા 3",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "822f7c45ea725c53": {
+    "source": "Feature 4",
+    "text": "સુવિધા 4",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "864dae9ee841a838": {
+    "source": "Folded, never glued",
+    "text": "વાળેલું, ક્યારેય ચોંટાડેલું નહીં",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "1ab945a0ec6421ec": {
+    "source": "Food and beverage",
+    "text": "ખાદ્ય અને પીણાં",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "e33f2ecd23c5dc96": {
+    "source": "for the scroll.",
+    "text": "સ્ક્રોલ કરવા બદલ.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "a64b892ff09a8da7": {
+    "source": "Healthcare",
+    "text": "આરોગ્યસંભાળ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "66d7ea4aacb05bea": {
     "source": "Highlights the need for behavioural change",
     "text": "વર્તનમાં બદલાવની જરૂરિયાતને ઉજાગર કરે છે",
@@ -1405,6 +1746,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:44.881Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "e18b64032b2094f3": {
+    "source": "Holder extension",
+    "text": "હોલ્ડર એક્સટેન્શન",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "0b761eb4308af9ad": {
@@ -1506,6 +1858,17 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "f5a8bfa5e1ff545d": {
+    "source": "Keeps hot food hot and cold food cold",
+    "text": "ગરમ ખોરાક ગરમ અને ઠંડો ખોરાક ઠંડો રાખે છે",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "b238e6f8aa58ea13": {
     "source": "Lack of inclusive features",
     "text": "સમાવેશી સુવિધાઓનો અભાવ",
@@ -1537,6 +1900,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:44.881Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "a4c020e9bd86927d": {
+    "source": "Lignocellulose body",
+    "text": "લિગ્નોસેલ્યુલોઝ બોડી",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "841cfeeaed2ed5e8": {
@@ -1627,6 +2001,28 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "f35b7a0b7386a03a": {
+    "source": "Origami construction",
+    "text": "ઓરિગામી રચના",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "ef128921735e1e81": {
+    "source": "Other usecase",
+    "text": "અન્ય ઉપયોગ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "967930d4a5bcd834": {
     "source": "Overconsumption & wastefulness",
     "text": "અતિશય વપરાશ અને બગાડ",
@@ -1636,6 +2032,39 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "582c5a4eb8f0072d": {
+    "source": "Packaging for",
+    "text": "આના માટે પેકેજિંગ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "9381d8514f97489d": {
+    "source": "Patra is crafted from lignocellulose, a biodegradable material derived from plant biomass. It is robust, lightweight and environmentally friendly, and it decomposes naturally, reducing landfill waste. Its cellulose, hemicellulose and lignin give it the strength and durability to protect food in storage and transport.",
+    "text": "Patra લિગ્નોસેલ્યુલોઝમાંથી બનેલું છે, જે વનસ્પતિ બાયોમાસમાંથી મળતી જૈવ-વિઘટનશીલ સામગ્રી છે. તે મજબૂત, હલકું અને પર્યાવરણ-અનુકૂળ છે, અને કુદરતી રીતે વિઘટન પામે છે, જેથી કચરાના ઢગલા (લેન્ડફિલ)નો કચરો ઘટે છે. તેમાં રહેલા સેલ્યુલોઝ, હેમિસેલ્યુલોઝ અને લિગ્નિનને કારણે સંગ્રહ અને પરિવહન દરમિયાન ખોરાકને સુરક્ષિત રાખવાની મજબૂતી અને ટકાઉપણું મળે છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "09c6807c68bd323b": {
+    "source": "Patra’s design draws on origami, the traditional Japanese art of paper folding, creating complex three-dimensional shapes from flat sheets without adhesives or complex machinery.",
+    "text": "Patra ની ડિઝાઇન ઓરિગામી પર આધારિત છે, જે કાગળ વાળવાની પરંપરાગત જાપાની કળા છે. તેમાં ચીકણા પદાર્થો કે જટિલ મશીનરી વિના સપાટ શીટમાંથી જટિલ ત્રિ-પરિમાણીય આકારો રચાય છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "aed1c9dcdbd53ab4": {
@@ -1682,6 +2111,17 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "5a6c148f24e75104": {
+    "source": "Practical for everyday use",
+    "text": "રોજિંદા ઉપયોગ માટે વ્યવહારુ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "1910595b366eb396": {
     "source": "Practical implementation",
     "text": "વ્યવહારુ અમલ",
@@ -1713,6 +2153,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "7e6f4cf43debbd07": {
+    "source": "Prototype testing",
+    "text": "પ્રોટોટાઇપ પરીક્ષણ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "d2abb90278603468": {
@@ -1781,6 +2232,17 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "69824d3b0e70ca6a": {
+    "source": "References",
+    "text": "સંદર્ભો",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "273f3e1d44529d82": {
     "source": "Reframing the problem to align it better with sustainability goals and Universal Design principles.",
     "text": "સમસ્યાને ટકાઉપણાના લક્ષ્યો અને યુનિવર્સલ ડિઝાઇનના સિદ્ધાંતો સાથે વધુ સુસંગત બને તે રીતે નવેસરથી ઘડવી.",
@@ -1812,6 +2274,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:44.881Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "28d0a723503ddd5d": {
+    "source": "Robust, light and biodegradable",
+    "text": "મજબૂત, હલકું અને જૈવ-વિઘટનશીલ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "70ce727cc5a2fde2": {
@@ -1913,6 +2386,50 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "72d1e1bfbe3e69a3": {
+    "source": "Taking the sugarcane sheet from raw material to a working Patra prototype, then testing the final prototype with real food.",
+    "text": "શેરડીની શીટને કાચા માલમાંથી કામ કરતા Patra પ્રોટોટાઇપ સુધી લઈ જવી અને પછી અંતિમ પ્રોટોટાઇપનું વાસ્તવિક ખોરાક સાથે પરીક્ષણ કરવું.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "b15fa20afec679c1": {
+    "source": "Textiles and apparel",
+    "text": "કાપડ અને વસ્ત્રો",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "335c1ecfc323af98": {
+    "source": "Textured surface with air pockets",
+    "text": "હવાના પોલાણવાળી ખરબચડી સપાટી",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "268bc1833e83306f": {
+    "source": "Thank you",
+    "text": "આભાર",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "3e5d553d3d7164c8": {
     "source": "The abundance of lignocellulose in India translates to cost-effective production, making lignocellulose-based products economically viable for both manufacturers and consumers. This affordability can drive wider adoption and market penetration.",
     "text": "ભારતમાં લિગ્નોસેલ્યુલોઝની પુષ્કળતાને કારણે ઉત્પાદન ઓછા ખર્ચે થઈ શકે છે, જેથી લિગ્નોસેલ્યુલોઝ-આધારિત ઉત્પાદનો ઉત્પાદકો અને ગ્રાહકો બંને માટે આર્થિક રીતે પરવડે તેવાં બને છે. આ પરવડતા ખર્ચથી વ્યાપક સ્વીકાર અને બજારમાં પ્રવેશને વેગ મળી શકે છે.",
@@ -1922,6 +2439,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:44.881Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "c9538853a000749c": {
+    "source": "The Deliver phase is where ideas and prototypes developed during the previous phases are refined, tested, and finalized for production.",
+    "text": "અમલીકરણનો તબક્કો એ છે, જ્યાં અગાઉના તબક્કાઓમાં વિકસાવેલા વિચારો અને પ્રોટોટાઇપને વધુ સુધારવામાં આવે છે, તેનું પરીક્ષણ થાય છે અને ઉત્પાદન માટે તેને અંતિમ રૂપ અપાય છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "f3201c91052a5780": {
@@ -1957,6 +2485,17 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "209e13b4aa585a8d": {
+    "source": "The holder extension enhances Patra’s functionality and convenience. Designed on the same principles of sustainability and user-centricity, it keeps the packaging environmentally friendly and practical for everyday use.",
+    "text": "હોલ્ડર એક્સટેન્શન Patra ની ઉપયોગિતા અને સુવિધા વધારે છે. ટકાઉપણા અને વપરાશકર્તા-કેન્દ્રિતતાના એ જ સિદ્ધાંતો પર રચાયેલું હોવાથી તે પેકેજિંગને પર્યાવરણ-અનુકૂળ અને રોજિંદા ઉપયોગ માટે વ્યવહારુ રાખે છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "27cc8602c1b43a50": {
     "source": "The Indian government actively promotes the use of bio-based materials like lignocellulose through initiatives like the Biomanufacturing Initiative. Choosing lignocellulose aligns with these initiatives and can potentially attract government support and incentives.",
     "text": "ભારત સરકાર બાયોમેન્યુફેક્ચરિંગ ઇનિશિયેટિવ જેવી પહેલો દ્વારા લિગ્નોસેલ્યુલોઝ જેવી જૈવ-આધારિત સામગ્રીના ઉપયોગને સક્રિયપણે પ્રોત્સાહન આપે છે. લિગ્નોસેલ્યુલોઝની પસંદગી આ પહેલો સાથે સુસંગત છે અને સંભવતઃ સરકારી સહાય તથા પ્રોત્સાહનો આકર્ષી શકે છે.",
@@ -1968,6 +2507,17 @@
     "savedAt": "2026-11-17T12:25:44.881Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "25cfd0f7bc088682": {
+    "source": "The lid’s primary function is thermal insulation. Its textured surface, a grid of small pyramids, creates air pockets that act as insulators, keeping hot food hot and cold food cold and enhancing the overall dining experience.",
+    "text": "ઢાંકણાનું મુખ્ય કાર્ય થર્મલ ઇન્સ્યુલેશન છે. તેની ખરબચડી સપાટી, નાના પિરામિડની ગ્રિડ, હવાના પોલાણ બનાવે છે જે ઇન્સ્યુલેટરની જેમ કામ કરે છે. તેનાથી ગરમ ખોરાક ગરમ અને ઠંડો ખોરાક ઠંડો રહે છે અને જમવાનો અનુભવ વધુ સારો બને છે.",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "c94acf6c5d7848a5": {
     "source": "Their disposable nature contradicts the principle of enduring, adaptable solutions.",
     "text": "તેની ફેંકી દેવાની પ્રકૃતિ ટકાઉ અને અનુકૂલનક્ષમ ઉકેલોના સિદ્ધાંતથી વિપરીત છે.",
@@ -1977,6 +2527,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "3643dfb02d5c0932": {
+    "source": "Thermal lid",
+    "text": "થર્મલ ઢાંકણ",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "bcb412d2850f3d7a": {
@@ -2122,6 +2683,17 @@
     "savedAt": "2026-11-17T12:25:16.272Z",
     "settings": "0Zp9vD2Ygwl_"
   },
+  "c625db9916c60246": {
+    "source": "Web resources",
+    "text": "વેબ સંસાધનો",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
   "9b4dcff7611222bc": {
     "source": "What if, instead of simply eliminating single-use plastics,",
     "text": "જો એકવાર વપરાતા પ્લાસ્ટિકને માત્ર દૂર કરવાને બદલે,",
@@ -2131,6 +2703,17 @@
     "page": "https://lalityakrishnan.in/design-for-sustainability",
     "model": "claude-sonnet-5-5",
     "savedAt": "2026-11-17T12:25:16.272Z",
+    "settings": "0Zp9vD2Ygwl_"
+  },
+  "083bcc796f9798c1": {
+    "source": "What origami brings",
+    "text": "ઓરિગામી શું લાવે છે",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "case_study",
+    "page": "https://lalityakrishnan.in/design-for-sustainability",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T12:26:07.855Z",
     "settings": "0Zp9vD2Ygwl_"
   },
   "c39a898c70c28ecc": {
