@@ -110,8 +110,8 @@ export function createHandler(ponte: Ponte, config: ServerConfig) {
         const out = await ponte.translate(body);
         const fallbacks = out.results.filter((r) => r.status === "fallback").length;
         console.log(
-          `[ponte] ${out.targetLanguage} ${body.segments.length} segs, ${out.brief.contentType}, ` +
-            `${out.usage.modelCalls} calls, ${out.usage.cachedSegments} cached, ${fallbacks} fallback, ${Date.now() - started}ms`,
+          `[ponte] ${out.targetLanguage} ${body.segments.length} segs, ${out.brief?.contentType ?? "all saved"}, ` +
+            `${out.usage.modelCalls} calls, ${out.usage.storedSegments} saved, ${fallbacks} fallback, ${Date.now() - started}ms`,
         );
         return json(res, 200, out);
       }

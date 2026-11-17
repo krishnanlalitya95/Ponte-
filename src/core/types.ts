@@ -72,12 +72,15 @@ export interface SegmentResult {
   status: SegmentStatus;
   /** Why it wasn't translated, when applicable. */
   reason?: string;
+  /** True when served from saved translations (no agent call). */
+  saved?: boolean;
 }
 
 export interface TranslateResponse {
   targetLanguage: string;
-  brief: ContentBrief;
+  /** The agent's reading of the page; null when everything came from saved translations. */
+  brief: ContentBrief | null;
   results: SegmentResult[];
-  usage: { inputTokens: number; outputTokens: number; cachedSegments: number; modelCalls: number };
+  usage: { inputTokens: number; outputTokens: number; storedSegments: number; modelCalls: number };
   model: string;
 }

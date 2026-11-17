@@ -1,0 +1,78 @@
+name: Pre-translate site
+
+# Translate your published site once and save it, so visitors never wait for the agent.
+# Run from GitHub (works on your phone): Actions → Pre-translate site → Run workflow.
+# Saved translations go to the "ponte-translations" branch, folder translations/.
+# Text that is already saved is skipped, so re-running only translates new or edited text.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Site to translate (comma-separate several start pages)"
+        required: true
+        default: "https://lalityakrishnan.in"
+      langs:
+        description: "Languages (codes, comma-separated)"
+        required: true
+        default: "hi,bn,ta,te,mr,gu,kn,ml,pa,es,fr,de,ja"
+      max_pages:
+        description: "Most pages to follow on the site"
+        required: false
+        default: "30"
+      model:
+        description: "Translator model"
+        required: false
+        default: "claude-sonnet-5-5"
+        type: choice
+        options: [claude-sonnet-5-5, claude-opus-5-5]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ponte-translations
+  cancel-in-progress: false
+
+jobs:
+  pretranslate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Check API key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Add ANTHROPIC_API_KEY under Settings → Secrets and variables → Actions, then run again."
+            exit 1
+          fi
+
+      - name: Translate and save
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PONTE_MODEL: ${{ inputs.model }}
+          PONTE_STORE: github
+          PONTE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PONTE_GITHUB_REPO: ${{ github.repository }}
+          PONTE_GITHUB_BRANCH: ponte-translations
+        run: npm run pretranslate -- --url "${{ inputs.url }}" --langs "${{ inputs.langs }}" --max-pages "${{ inputs.max_pages }}" | tee pretranslate.log
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Pre-translate"
+            echo
+            echo "Saved translations: [ponte-translations/translations](https://github.com/${{ github.repository }}/tree/ponte-translations/translations)"
+            echo
+            echo '```'
+            tail -n 60 pretranslate.log 2>/dev/null || echo "no log"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

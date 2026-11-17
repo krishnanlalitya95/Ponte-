@@ -21,7 +21,7 @@ describe("Ponte agent", () => {
       ["b", "skipped", "2024"],
       ["c", "translated", "⟦0⟧HI:Read the ⟦1⟧HI:full write-up"],
     ]);
-    expect(out.brief.contentType).toBe("portfolio_copy");
+    expect(out.brief?.contentType).toBe("portfolio_copy");
     expect(out.usage.modelCalls).toBe(2);
   });
 
@@ -63,7 +63,7 @@ describe("Ponte agent", () => {
     const again = await ponte.translate({ ...req, segments: [{ id: "z", text: "Hello" }] });
     expect(model.calls).toHaveLength(2);
     expect(again.results[0]).toMatchObject({ id: "z", text: "HI:Hello" });
-    expect(again.usage.cachedSegments).toBe(1);
+    expect(again.usage.storedSegments).toBe(1);
   });
 
   it("translates duplicate text once and fans the result out", async () => {
@@ -128,7 +128,7 @@ describe("Ponte agent", () => {
   it("honours an author-forced content type", async () => {
     const model = new FakeModel(prefixTranslator);
     const out = await new Ponte({ model }).translate({ targetLanguage: "hi", contentType: "poetry", segments: [{ id: "a", text: "Rain" }] });
-    expect(out.brief.contentType).toBe("poetry");
+    expect(out.brief?.contentType).toBe("poetry");
     expect(model.calls[1]!.user).toContain("This is verse");
   });
 

@@ -5,3 +5,6 @@ dist/
 evals/reports/
 *.log
 .DS_Store
+
+# Local saved translations (the real ones live on the ponte-translations branch)
+translations/

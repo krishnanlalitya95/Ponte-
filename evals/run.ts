@@ -52,7 +52,7 @@ for (const c of cases) {
   const source = c.segments.map((s) => s.text).join("\n\n");
   const translation = out.results.map((r) => r.text).join("\n\n");
 
-  const failures = deterministicChecks(c, out.brief.contentType, out.results.map((r) => r.text), out.results.map((r) => r.status));
+  const failures = deterministicChecks(c, out.brief?.contentType ?? "unknown", out.results.map((r) => r.text), out.results.map((r) => r.status));
   const grade = await gradeIt(c, source, translation);
   const ok =
     failures.length === 0 && grade.meaning >= PASS.meaning && grade.tone >= PASS.tone && grade.fluency >= PASS.fluency && !grade.wordForWord;
@@ -62,7 +62,7 @@ for (const c of cases) {
   lines.push(
     `## ${ok ? "✅" : "❌"} ${c.name}`,
     "",
-    `Detected: **${out.brief.contentType}** · tone: ${out.brief.tone}`,
+    `Detected: **${out.brief?.contentType}** · tone: ${out.brief?.tone}`,
     `Scores — meaning **${grade.meaning}**/5 · tone **${grade.tone}**/5 · fluency **${grade.fluency}**/5 · word-for-word: ${grade.wordForWord ? "yes" : "no"}`,
     "",
     failures.length ? `Check failures: ${failures.join("; ")}\n` : "",
