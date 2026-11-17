@@ -25,7 +25,7 @@ Decide:
 - tone and register (e.g. "wistful, intimate, first person", "confident, plain-spoken professional").
 - audience (who the author is writing for).
 - summary: 1–3 sentences on what the text is about and what it is trying to do.
-- glossary: proper nouns, names, brands, product names, technical jargon, coined terms and culturally loaded words, each with a treatment:
+- glossary (at most 30 entries; the ones that matter most for consistency): proper nouns, names, brands, product names, technical jargon, coined terms and culturally loaded words, each with a treatment:
   keep = leave exactly as written (brand names, product names, code, acronyms like UX, KPI).
   transliterate = write in the target script but don't translate the meaning (people's and place names, usually).
   translate = translate with a fixed rendering so it stays consistent across the page.
