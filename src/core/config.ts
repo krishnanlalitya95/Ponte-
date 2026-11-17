@@ -30,7 +30,7 @@ export interface PonteConfig {
     position?: "bottom-right" | "bottom-left";
     /** Open in the visitor's device language when it's offered. Off: always start in the page language. */
     autoDetect?: boolean;
-    /** Last item in the language list, linking to the Ponte case study. */
+    /** Last item in the language list, linking to the Gloss case study. */
     about?: { title?: string; text?: string; linkLabel?: string; url?: string };
     /** Green note that opens around the picker on landing (see widget/embed.ts → Callout). */
     callout?: {

@@ -287,7 +287,7 @@ function mountPicker(
           .join("")}
       </ul>
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
-        <strong>${esc(about.title ?? "About Ponte")}</strong>
+        <strong>${esc(about.title ?? "About Gloss")}</strong>
         <span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span>
         <b class="cta">${esc(about.linkLabel ?? "View case study")} <i aria-hidden="true">→</i></b></a>` : ""}
     </div>
