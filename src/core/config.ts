@@ -30,6 +30,17 @@ export interface PonteConfig {
     position?: "bottom-right" | "bottom-left";
     /** Open in the visitor's device language when it's offered. Off: always start in the page language. */
     autoDetect?: boolean;
+    /** Green note that opens around the picker on landing (see widget/embed.ts → Callout). */
+    callout?: {
+      enabled?: boolean;
+      title?: string;
+      text?: string;
+      linkLabel?: string;
+      linkUrl?: string;
+      delayMs?: number;
+      showForMs?: number;
+      frequency?: "session" | "always";
+    };
   };
   doNotTranslate?: string[];
   /** Fixed renderings per target language: { "<lang>": { "<source term>": "<rendering>" } }. */

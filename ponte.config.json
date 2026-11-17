@@ -17,7 +17,17 @@
   ],
   "widget": {
     "accent": "#6F9C16",
-    "autoDetect": false
+    "autoDetect": false,
+    "callout": {
+      "enabled": true,
+      "title": "Read this portfolio in your language",
+      "text": "Ponte is an AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "linkLabel": "View case study",
+      "linkUrl": "/ponte",
+      "delayMs": 2000,
+      "showForMs": 9000,
+      "frequency": "session"
+    }
   },
   "author": {
     "name": "Lalitya Krishnan",

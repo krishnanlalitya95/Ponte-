@@ -40,7 +40,22 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; position?: string; autoDetect?: boolean };
+  widget: { accent?: string; position?: string; autoDetect?: boolean; callout?: Callout };
+}
+
+/** The green note that opens around the picker on landing. */
+export interface Callout {
+  enabled?: boolean;
+  title?: string;
+  text?: string;
+  linkLabel?: string;
+  linkUrl?: string;
+  /** Wait this long after the page loads before opening (ms). */
+  delayMs?: number;
+  /** Close on its own after this long (ms), unless the visitor is hovering or focused in it. */
+  showForMs?: number;
+  /** "session" (default): once per browser session; "always": every page load. */
+  frequency?: "session" | "always";
 }
 
 const indexCache = new Map<string, Promise<PublishedIndex>>();
@@ -94,7 +109,10 @@ if (script && !script.hasAttribute("data-manual")) {
     if (!codes && published && !endpoint) codes = published.languages;
     const accent = d.accent || published?.widget.accent;
     const position = d.position ?? published?.widget.position ?? "bottom-right";
-    if (position !== "none") mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent);
+    if (position !== "none") {
+      const callout = d.callout === "off" ? undefined : published?.widget.callout;
+      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout);
+    }
     // Visitor's choice, else their device language if we've published it (data-auto="off" to disable).
     const first = initialLanguage({
       available: codes ?? LANGUAGES.map((l) => l.code),
@@ -109,6 +127,24 @@ if (script && !script.hasAttribute("data-manual")) {
 }
 
 const ICON = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>`;
+
+/**
+ * A shade of the accent dark enough for white text to pass WCAG AA (4.5:1),
+ * keeping its hue. The accent itself is used when it already passes.
+ */
+export function readableOn(hex: string | undefined): string {
+  const m = /^#?([0-9a-f]{6})$/i.exec((hex ?? "").trim());
+  if (!m) return "17, 17, 17";
+  const n = parseInt(m[1]!, 16);
+  let c = [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  const lum = (v: number[]) =>
+    v.map((x) => {
+      const s = x / 255;
+      return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    }).reduce((acc, x, i) => acc + x * [0.2126, 0.7152, 0.0722][i]!, 0);
+  for (let i = 0; i < 20 && 1.05 / (lum(c) + 0.05) < 4.5; i++) c = c.map((x) => Math.round(x * 0.94));
+  return c.join(", ");
+}
 
 /** "#6F9C16" → "111, 156, 22" for rgba(). Falls back to a neutral ink. */
 function rgb(hex: string | undefined): string {
@@ -131,11 +167,13 @@ function mountPicker(
   source: string,
   position: string,
   accent?: string,
+  callout?: Callout,
 ) {
   // The page's language first, then every other offered language. No separate "Original":
   // the page language shows selected while the page is as written.
   const codes = [source, ...(languages ?? LANGUAGES.map((l) => l.code)).filter((c) => c !== source)];
   const a = rgb(accent);
+  const cardBg = readableOn(accent);
   const host = document.createElement("div");
   host.setAttribute("data-ponte-skip", "");
   const side = position === "bottom-left" ? "left" : "right";
@@ -163,7 +201,32 @@ function mountPicker(
       @keyframes pulse{50%{opacity:.3}}
       @media (prefers-reduced-motion:reduce){.b,.b:hover{transition:none;transform:none}.b.busy svg{animation-duration:2.4s}}
       .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+      /* Callout: grows out of the button, which sits in its bottom-${side} corner. */
+      .c{position:absolute;${side}:-10px;bottom:-10px;box-sizing:border-box;width:min(320px, calc(100vw - 12px));
+         padding:18px 18px 58px;border-radius:24px;background:rgb(${cardBg});color:#fff;
+         font:400 14px/1.45 var(--ponte-font, system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);-webkit-font-smoothing:antialiased;
+         box-shadow:0 2px 4px rgba(${a},.18),0 12px 28px -6px rgba(${a},.40),0 32px 60px -16px rgba(${a},.35);
+         transform-origin:${side === "right" ? "calc(100% - 34px)" : "34px"} calc(100% - 28px);
+         opacity:0;transform:scale(.4);visibility:hidden;pointer-events:none;
+         transition:opacity .22s ease, transform .32s cubic-bezier(.2,.9,.25,1.1), visibility 0s linear .32s}
+      .c.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;
+         transition:opacity .22s ease, transform .38s cubic-bezier(.2,.9,.25,1.1), visibility 0s}
+      .c h2{margin:0 0 6px;font-size:16px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
+      .c p{margin:0;color:rgba(255,255,255,.92)}
+      .c a{position:absolute;${side === "right" ? "left" : "right"}:18px;bottom:18px;display:inline-flex;align-items:center;gap:6px;
+         color:#fff;font-weight:600;text-decoration:none;border-radius:8px;padding:2px 0}
+      .c a:hover span{transform:translateX(3px)}
+      .c a span{display:inline-block;transition:transform .18s ease}
+      .c a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+      .b{z-index:1}
+      @media (prefers-reduced-motion:reduce){.c,.c.open{transition:opacity .2s ease, visibility 0s linear .2s;transform:none}}
     </style>
+    ${callout?.enabled ? `<div class="c" role="note" aria-label="${esc(callout.title ?? "About this translator")}">
+      ${callout.title ? `<h2>${esc(callout.title)}</h2>` : ""}
+      ${callout.text ? `<p>${esc(callout.text)}</p>` : ""}
+      ${callout.linkUrl ? `<a href="${esc(callout.linkUrl)}">${esc(callout.linkLabel ?? "View case study")} <span aria-hidden="true">→</span></a>` : ""}
+    </div>` : ""}
     <div class="b" title="Translate">
       ${ICON}
       <select></select>
@@ -195,4 +258,67 @@ function mountPicker(
     live.textContent = s.state === "translating" ? "Translating…" : s.state === "error" ? "Couldn't translate this page" : "";
   });
   document.body.append(host);
+  if (callout?.enabled) {
+    // Use the site's own typeface for the note (first paragraph's font), so it feels native.
+    const sample = document.querySelector("main p, p, h1") ?? document.body;
+    const family = getComputedStyle(sample).fontFamily;
+    if (family) host.style.setProperty("--ponte-font", `${family}, system-ui, sans-serif`);
+    wireCallout(host, shadow, select, callout);
+  }
+}
+
+function esc(s: string): string {
+  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+}
+
+const CALLOUT_SEEN = "ponte:callout-seen";
+
+/** Open on landing, close by itself, on a tap outside, on Escape, or when the picker is used. */
+function wireCallout(host: HTMLElement, shadow: ShadowRoot, select: HTMLSelectElement, cfg: Callout) {
+  const card = shadow.querySelector(".c") as HTMLElement | null;
+  if (!card) return;
+  if (cfg.frequency !== "always") {
+    try {
+      if (sessionStorage.getItem(CALLOUT_SEEN)) return;
+    } catch {
+      /* storage unavailable: show it */
+    }
+  }
+  let hideTimer: ReturnType<typeof setTimeout> | undefined;
+  let hovering = false;
+  const close = () => {
+    card.classList.remove("open");
+    clearTimeout(hideTimer);
+    document.removeEventListener("pointerdown", onOutside, true);
+    document.removeEventListener("keydown", onKey, true);
+  };
+  const scheduleClose = (ms: number) => {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => (hovering ? scheduleClose(1500) : close()), ms);
+  };
+  const onOutside = (e: Event) => {
+    if (!e.composedPath().includes(host)) close();
+  };
+  const onKey = (e: KeyboardEvent) => {
+    if (e.key === "Escape") close();
+  };
+  card.addEventListener("pointerenter", () => (hovering = true));
+  card.addEventListener("pointerleave", () => (hovering = false));
+  card.addEventListener("focusin", () => (hovering = true));
+  card.addEventListener("focusout", () => (hovering = false));
+  // Using the picker means they've got it: get out of the way.
+  select.addEventListener("pointerdown", close);
+  select.addEventListener("focus", close);
+
+  setTimeout(() => {
+    card.classList.add("open");
+    try {
+      sessionStorage.setItem(CALLOUT_SEEN, "1");
+    } catch {
+      /* fine */
+    }
+    document.addEventListener("pointerdown", onOutside, true);
+    document.addEventListener("keydown", onKey, true);
+    scheduleClose(cfg.showForMs ?? 9000);
+  }, cfg.delayMs ?? 2000);
 }
