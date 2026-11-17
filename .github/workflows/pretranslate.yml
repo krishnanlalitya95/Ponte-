@@ -13,9 +13,9 @@ on:
         required: true
         default: "https://lalityakrishnan.in"
       langs:
-        description: "Languages (codes, comma-separated)"
+        description: "Languages (codes, comma-separated). Include your page's own language (en) to translate text written in other languages, like Hindi poems, into it."
         required: true
-        default: "hi,bn,ta,te,mr,gu,kn,ml,pa,es,fr,de,pt,ja,zh,ko,ar"
+        default: "en,hi,bn,ta,te,mr,gu,kn,ml,pa,es,fr,de,pt,ja,zh,ko,ar"
       max_pages:
         description: "Most pages to follow on the site"
         required: false

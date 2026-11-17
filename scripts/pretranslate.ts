@@ -110,7 +110,7 @@ for (const page of pages) {
       remember: false,
       persist: false,
       fonts: false, // fonts are a visitor-side concern; nothing to style here
-      sourceLanguage: process.env.PONTE_SOURCE_LANGUAGE,
+      sourceLanguage: site.sourceLanguage || process.env.PONTE_SOURCE_LANGUAGE || dom.window.document.documentElement.lang || "en",
       onStatus: (s) => s.error && status.push(s.error),
     });
     await engine.translate(lang);
