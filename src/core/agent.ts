@@ -124,7 +124,11 @@ export class Ponte {
       const saved = await this.store.get(target.code, seg.text);
       // Reuse a saved translation unless it was made with different settings (and isn't locked),
       // or it was wrongly left in another language (e.g. a Hindi poem line "kept" for English).
-      const stale = saved && !saved.locked && (saved.settings !== settingsKey(req, target.code, seg.text) || (saved.status === "unchanged" && leftInOtherScript(seg.text, target.code)));
+      const stale =
+        saved &&
+        !saved.locked &&
+        (saved.settings !== settingsKey(req, target.code, seg.text) ||
+          (saved.status === "unchanged" && intoPageLanguage(req, target.code) && leftInOtherScript(seg.text, target.code)));
       if (saved && !stale) {
         results.set(seg.id, { id: seg.id, text: saved.text, sourceLanguage: saved.sourceLanguage, status: saved.status, saved: true });
         usage.storedSegments++;
@@ -200,7 +204,10 @@ export class Ponte {
     let error = outcome.error;
     for (const seg of work.chunk) {
       const r = byId.get(seg.id);
-      const problem = !r ? "missing from model output" : validateTranslation(seg.text, r, plan.target.code);
+      // Other-language text must be translated when the target is the page's own language
+      // (e.g. Hindi poems for English readers); for other targets the brief may keep it.
+      const strict = intoPageLanguage(req, plan.target.code) ? plan.target.code : undefined;
+      const problem = !r ? "missing from model output" : validateTranslation(seg.text, r, strict);
       if (!problem && r) {
         good.push({
           id: seg.id,
@@ -358,6 +365,10 @@ export interface ChunkOutcome {
  * True when a "keep as is" answer can't be right: a sentence-length text (4+ words) written in
  * a script the target language doesn't use. Short titles and names may legitimately stay.
  */
+export function intoPageLanguage(req: TranslateRequest, target: string): boolean {
+  return !!req.sourceLanguage && normalizeLanguageCode(req.sourceLanguage) === target;
+}
+
 export function leftInOtherScript(source: string, target: string): boolean {
   const cands = scriptCandidates(source);
   if (!cands.length || cands.includes(target)) return false;
