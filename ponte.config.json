@@ -18,6 +18,10 @@
   "widget": {
     "accent": "#6F9C16",
     "autoDetect": false,
+    "about": {
+      "label": "About Ponte · how this works →",
+      "url": "/ponte"
+    },
     "callout": {
       "enabled": true,
       "title": "Read this portfolio in your language",
