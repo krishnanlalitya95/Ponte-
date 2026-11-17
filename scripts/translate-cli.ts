@@ -32,5 +32,5 @@ const out = await new Ponte({ model: new AnthropicModelClient() }).translate({
   targetLanguage: lang,
   segments: paragraphs.map((p, i) => ({ id: String(i), text: p })),
 });
-console.error(`[${out.brief.contentType} · ${out.brief.tone}]`);
+if (out.brief) console.error(`[${out.brief.contentType} · ${out.brief.tone}]`);
 console.log(out.results.map((r) => r.text).join("\n\n"));

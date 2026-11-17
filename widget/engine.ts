@@ -23,6 +23,11 @@ export interface PonteOptions {
   observe?: boolean;
   /** Remember the visitor's choice in localStorage. Default true. */
   remember?: boolean;
+  /**
+   * Keep a copy of translations in the visitor's browser so a return visit shows them
+   * instantly, then quietly checks the server for updates. Default true.
+   */
+  persist?: boolean;
   onStatus?: (s: PonteStatus) => void;
 }
 
@@ -57,6 +62,7 @@ const SKIP_SELECTOR = '[data-ponte-skip], [translate="no"], .notranslate, [conte
 const RTL = new Set(["ar", "ur", "he", "fa"]);
 const NO_SPACE = new Set(["ja", "zh"]);
 const STORAGE_KEY = "ponte:language";
+const PERSIST_PREFIX = "ponte:t:";
 const BATCH_SEGMENTS = 120;
 const BATCH_CHARS = 16000;
 
@@ -92,6 +98,39 @@ export function createPonte(opts: PonteOptions): PonteController {
   let observer: MutationObserver | null = null;
   let pendingTimer: ReturnType<typeof setTimeout> | undefined;
   let applying = false;
+  const persisted = new Map<string, Record<string, string>>(); // lang → { textHash: translation }
+  let persistTimer: ReturnType<typeof setTimeout> | undefined;
+
+  function persistedFor(lang: string): Record<string, string> {
+    let m = persisted.get(lang);
+    if (!m) {
+      m = {};
+      if (opts.persist !== false) {
+        try {
+          const raw = localStorage.getItem(PERSIST_PREFIX + lang);
+          if (raw) m = JSON.parse(raw) as Record<string, string>;
+        } catch {
+          /* storage unavailable or corrupt */
+        }
+      }
+      persisted.set(lang, m);
+    }
+    return m;
+  }
+
+  function savePersisted() {
+    if (opts.persist === false) return;
+    clearTimeout(persistTimer);
+    persistTimer = setTimeout(() => {
+      for (const [lang, m] of persisted) {
+        try {
+          localStorage.setItem(PERSIST_PREFIX + lang, JSON.stringify(m));
+        } catch {
+          /* quota or private mode: fine, the server copy still works */
+        }
+      }
+    }, 200);
+  }
 
   const status = (s: PonteStatus) => {
     document.documentElement.setAttribute("data-ponte-state", s.state);
@@ -247,20 +286,35 @@ export function createPonte(opts: PonteOptions): PonteController {
   }
 
   async function run(lang: string, blocks: Block[], gen: number) {
-    // Apply anything we already have, instantly.
+    // Apply anything we already have, instantly: first this session's answers, then the
+    // copy saved in the browser from an earlier visit (which we still re-check with the server).
     const todo: Block[] = [];
+    const local = persistedFor(lang);
+    let fromBrowser = 0;
     for (const b of blocks) {
       const key = `${lang}\0${b.text}`;
       const hit = cache.get(key);
-      if (hit !== undefined) apply(b, hit, lang);
-      else if (!failed.has(key)) todo.push(b);
+      if (hit !== undefined) {
+        apply(b, hit, lang);
+        continue;
+      }
+      if (failed.has(key)) continue;
+      const saved = local[textHash(b.text)];
+      if (saved !== undefined) {
+        apply(b, saved, lang);
+        fromBrowser++;
+      }
+      todo.push(b);
     }
     if (!todo.length) {
       status({ state: "done", language: lang, translated: blocks.length, failed: 0 });
       return;
     }
 
-    status({ state: "translating", language: lang });
+    // If the browser copy already covered everything, check for updates silently.
+    const silent = fromBrowser === todo.length;
+    if (silent) status({ state: "done", language: lang, translated: blocks.length, failed: 0 });
+    else status({ state: "translating", language: lang });
     let translated = 0;
     let failedCount = 0;
     // Send the whole page context with each batch, top of page first.
@@ -302,14 +356,17 @@ export function createPonte(opts: PonteOptions): PonteController {
             continue;
           }
           cache.set(`${lang}\0${b.text}`, r.text);
+          local[textHash(b.text)] = r.text;
           apply(b, r.text, lang);
           translated++;
         }
+        savePersisted();
       }
-      status({ state: "done", language: lang, translated, failed: failedCount });
+      if (!silent) status({ state: "done", language: lang, translated, failed: failedCount });
     } catch (e) {
       // Don't hammer a failing server on every re-render; the next explicit pick retries.
       for (const b of todo) if (!cache.has(`${lang}\0${b.text}`)) failed.add(`${lang}\0${b.text}`);
+      if (silent) return; // the page already shows the browser copy; try again next visit
       status({ state: "error", language: lang, translated, failed: failedCount, error: e instanceof Error ? e.message : String(e) });
     }
   }
@@ -425,4 +482,18 @@ function batch(blocks: Block[]): Block[][] {
   }
   if (cur.length) out.push(cur);
   return out;
+}
+
+/** Short, stable hash of a string (cyrb53), used to key the browser copy. */
+export function textHash(str: string): string {
+  let h1 = 0xdeadbeef;
+  let h2 = 0x41c6ce57;
+  for (let i = 0; i < str.length; i++) {
+    const ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
 }

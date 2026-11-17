@@ -1,4 +1,5 @@
 import { LruCache, hashKey } from "./cache.js";
+import { MemoryStore, type StoredTranslation, type TranslationStore } from "./store.js";
 import { getLanguage, isUntranslatable, normalizeLanguageCode, scriptCandidates, type Language } from "./languages.js";
 import type { ModelClient } from "./model.js";
 import {
@@ -38,7 +39,8 @@ export interface PonteOptions {
   concurrency?: number;
   /** Max tokens for a translation call. */
   maxOutputTokens?: number;
-  segmentCacheSize?: number;
+  /** Where translations are saved and reused. Defaults to memory (nothing persisted). */
+  store?: TranslationStore;
 }
 
 interface RawResult {
@@ -51,7 +53,7 @@ interface RawResult {
 interface Usage {
   inputTokens: number;
   outputTokens: number;
-  cachedSegments: number;
+  storedSegments: number;
   modelCalls: number;
 }
 
@@ -64,7 +66,7 @@ export class Ponte {
   private readonly analysisChars: number;
   private readonly concurrency: number;
   private readonly maxOutputTokens: number;
-  private readonly segmentCache: LruCache<SegmentResult>;
+  readonly store: TranslationStore;
   private readonly briefCache = new LruCache<ContentBrief>(500);
 
   constructor(opts: PonteOptions) {
@@ -73,7 +75,7 @@ export class Ponte {
     this.analysisChars = opts.analysisChars ?? 16000;
     this.concurrency = opts.concurrency ?? 3;
     this.maxOutputTokens = opts.maxOutputTokens ?? 16000;
-    this.segmentCache = new LruCache(opts.segmentCacheSize ?? 20000);
+    this.store = opts.store ?? new MemoryStore();
   }
 
   async translate(req: TranslateRequest): Promise<TranslateResponse> {
@@ -84,7 +86,7 @@ export class Ponte {
     }
     validateSegments(req.segments);
 
-    const usage: Usage = { inputTokens: 0, outputTokens: 0, cachedSegments: 0, modelCalls: 0 };
+    const usage: Usage = { inputTokens: 0, outputTokens: 0, storedSegments: 0, modelCalls: 0 };
     const results = new Map<string, SegmentResult>();
     const contextKey = hashKey(req.context?.url, req.context?.title, req.contentType, JSON.stringify(req.glossary ?? {}), (req.doNotTranslate ?? []).join("|"));
 
@@ -104,10 +106,10 @@ export class Ponte {
         results.set(seg.id, { id: seg.id, text: seg.text, sourceLanguage: target.code, status: "unchanged", reason: "already in target language" });
         continue;
       }
-      const cached = this.segmentCache.get(hashKey(target.code, contextKey, seg.text));
-      if (cached) {
-        results.set(seg.id, { ...cached, id: seg.id });
-        usage.cachedSegments++;
+      const saved = await this.store.get(target.code, seg.text);
+      if (saved) {
+        results.set(seg.id, { id: seg.id, text: saved.text, sourceLanguage: saved.sourceLanguage, status: saved.status, saved: true });
+        usage.storedSegments++;
         continue;
       }
       pending.push(seg);
@@ -127,25 +129,41 @@ export class Ponte {
     }
 
     // 2. Contextualize: read the whole page (not just pending bits) and write a brief.
-    const brief = await this.getBrief(req, target, contextKey, usage);
+    //    Skipped entirely when everything was already saved — no model calls at all.
+    let brief: ContentBrief | null = null;
 
     // 3. Translate for meaning, chunked, with continuity context between chunks.
     if (unique.length) {
+      brief = await this.getBrief(req, target, contextKey, usage);
+      const b = brief;
       const chunks = chunkSegments(unique, this.chunkChars);
       const translated = await mapLimit(chunks, this.concurrency, (chunk, i) => {
         const prev = chunks[i - 1];
         const precedingContext = prev ? prev.slice(-3).map((s) => s.text) : [];
-        return this.translateChunk(req, target, brief, chunk, precedingContext, usage);
+        return this.translateChunk(req, target, b, chunk, precedingContext, usage);
       });
+      const toSave: StoredTranslation[] = [];
+      const savedAt = new Date().toISOString();
+      const textById = new Map(unique.map((s) => [s.id, s.text]));
       for (const chunkResults of translated) {
         for (const r of chunkResults) {
           results.set(r.id, r);
-          if (r.status === "translated" || r.status === "unchanged") {
-            const seg = unique.find((s) => s.id === r.id);
-            if (seg) this.segmentCache.set(hashKey(target.code, contextKey, seg.text), r);
+          const source = textById.get(r.id);
+          if (source !== undefined && (r.status === "translated" || r.status === "unchanged")) {
+            toSave.push({
+              source,
+              text: r.text,
+              status: r.status,
+              sourceLanguage: r.sourceLanguage,
+              contentType: b.contentType,
+              page: req.context?.url,
+              model: this.model.model,
+              savedAt,
+            });
           }
         }
       }
+      await this.store.put(target.code, toSave);
       for (const [dupId, canonicalId] of duplicates) {
         const r = results.get(canonicalId);
         if (r) results.set(dupId, { ...r, id: dupId });

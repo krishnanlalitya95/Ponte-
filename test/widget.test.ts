@@ -130,6 +130,44 @@ describe("visitor engine", () => {
   });
 });
 
+describe("browser copy (return visits)", () => {
+  it("shows the saved copy instantly on a new page load, then re-checks quietly", async () => {
+    mockServer(upper);
+    await createPonte({ endpoint: "http://api", observe: false }).translate("hi");
+    await new Promise((r) => setTimeout(r, 250)); // let the browser copy save
+
+    // New page load: fresh DOM + fresh engine; server is slow and has an improved version.
+    document.body.innerHTML = `<h1>Calm software</h1>`;
+    let release!: () => void;
+    const gate = new Promise<void>((r) => (release = r));
+    vi.stubGlobal("fetch", vi.fn(async (_u: string, init: { body: string }) => {
+      await gate;
+      const body = JSON.parse(init.body);
+      return new Response(JSON.stringify({ results: body.segments.map((s: Seg) => ({ id: s.id, text: "Calm Software (edited)", status: "translated" })) }), { status: 200 });
+    }));
+    const statuses: string[] = [];
+    const p = createPonte({ endpoint: "http://api", observe: false, onStatus: (s) => statuses.push(s.state) }).translate("hi");
+    await Promise.resolve();
+    expect(document.querySelector("h1")!.textContent).toBe("CALM SOFTWARE"); // instant, before the server answers
+    expect(statuses).toEqual(["done"]); // no "Translating…" flash
+    release();
+    await p;
+    expect(document.querySelector("h1")!.textContent).toBe("Calm Software (edited)"); // picks up your edit
+  });
+
+  it("keeps showing the saved copy if the server is unreachable", async () => {
+    mockServer(upper);
+    await createPonte({ endpoint: "http://api", observe: false }).translate("hi");
+    await new Promise((r) => setTimeout(r, 250));
+    document.body.innerHTML = `<h1>Calm software</h1>`;
+    vi.stubGlobal("fetch", vi.fn(async () => { throw new TypeError("offline"); }));
+    const statuses: string[] = [];
+    await createPonte({ endpoint: "http://api", observe: false, onStatus: (s) => statuses.push(s.state) }).translate("hi");
+    expect(document.querySelector("h1")!.textContent).toBe("CALM SOFTWARE");
+    expect(statuses).toEqual(["done"]);
+  });
+});
+
 describe("splitMarkers", () => {
   it("splits by index and rejects missing markers", () => {
     expect(splitMarkers("⟦0⟧a ⟦1⟧b", 2)).toEqual(["a ", "b"]);

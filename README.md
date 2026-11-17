@@ -102,10 +102,12 @@ The response includes the agent's reading of the page and one result per segment
   "targetLanguage": "hi",
   "brief": { "contentType": "poetry", "tone": "nostalgic, tender", "glossary": [...], "translationNotes": "...", ... },
   "results": [{ "id": "poem-1", "text": "…", "sourceLanguage": "en", "status": "translated" }],
-  "usage": { "inputTokens": 1234, "outputTokens": 456, "cachedSegments": 0, "modelCalls": 2 },
+  "usage": { "inputTokens": 1234, "outputTokens": 456, "storedSegments": 0, "modelCalls": 2 },
   "model": "claude-sonnet-5-5"
 }
 ```
+
+`brief` is `null` when every segment came from saved translations. Saved results carry `"saved": true`.
 
 `status` is one of these:
 - `translated`
@@ -122,9 +124,40 @@ Other endpoints: `GET /v1/languages`, `GET /widget.js`, `GET /health`, `GET /dem
 3. **Translate.** Claude translates in chunks, using the brief, genre-specific guidance and the end of the previous chunk for continuity. The prompt asks for meaning, idiom and feel. Poetry keeps its line breaks, papers keep their hedging and numbers, and UI copy stays short. Output is structured (a forced tool call), never parsed from free text.
 4. **Validate.** Every id must come back, markers must be preserved, and the output must be non-empty and not runaway-long. Failures are retried once in smaller pieces, then fall back to the original.
 
-Identical strings (nav items, repeated buttons) are translated once. Results are cached per segment, so repeat visitors cost nothing.
+Identical strings (nav items, repeated buttons) are translated once. Every successful translation is saved (see **Saved translations** below). Text that's already saved is returned without any agent call, and a page that is fully saved skips the reading step too.
 
 Model: `PONTE_MODEL` (default `claude-sonnet-5-5`). For the most literary nuance, use `claude-opus-5-5`.
+
+## Saved translations
+
+Your portfolio is static, so each piece of text only needs translating **once**. Ponte saves every translation and reuses it for every later visitor. The agent runs only for text it hasn't seen before.
+
+- **Where they live:** `translations/<language>.json` on the **`ponte-translations`** branch of this repo, for example `translations/hi.json`. Each entry holds the original (`source`), the translation (`text`) and the page it was found on.
+- **Edit a translation:** on GitHub (your phone works), switch to the `ponte-translations` branch, open `translations/hi.json`, tap the pencil, change the `"text"` of an entry and commit. Ponte never overwrites an existing entry, so your version is what visitors see. The server picks up edits within about 5 minutes (`PONTE_STORE_REFRESH_SEC`).
+- **Change your site:** when a paragraph changes, its fingerprint changes too. Only that paragraph gets translated again; everything else stays as saved.
+- **Force a fresh translation:** delete the entry from the file.
+- **Return visitors:** the widget also keeps a copy in the visitor's browser. The page switches language instantly, then quietly checks the server for updates (including your edits).
+
+### Translate the whole site in advance
+
+So that even the first visitor never waits:
+
+1. Make sure the `ANTHROPIC_API_KEY` secret is set (see Evals below).
+2. Open **Actions → Pre-translate site → Run workflow**, check the site URL and languages, and run it.
+
+It loads your published pages and finds the text exactly the way the widget does (same code). It translates only what isn't saved yet and commits the results to the `ponte-translations` branch. Re-run it after you change your site; only the new text costs anything.
+
+From a terminal: `npm run pretranslate -- --url https://lalityakrishnan.in --langs hi,ta --dry-run`. Use `--dry-run` to list the text it would send without translating.
+
+### Where the server saves
+
+| `PONTE_STORE` | Saves to | Use for |
+|---|---|---|
+| `file` (default without a token) | `./translations` on disk | local development |
+| `github` (default when `PONTE_GITHUB_TOKEN` is set) | the `ponte-translations` branch, via the GitHub API | a hosted server: hosts often wipe their disk on restart |
+| `memory` | nowhere | tests, mock mode |
+
+For `github`, create a **fine-grained token** on GitHub (**Settings → Developer settings → Fine-grained tokens**) with access to this repo only and **Contents: Read and write**. Set it as `PONTE_GITHUB_TOKEN` on your host. New translations are batched into one commit roughly every 20 seconds per language, and anything pending is saved when the server shuts down.
 
 ## Evals
 
@@ -156,15 +189,16 @@ npm run translate -- hi "Text to try"   # one-off translation in the terminal
 ```
 
 ```
-src/core/      agent pipeline, prompts, language registry, model client, cache
+src/core/      agent pipeline, prompts, language registry, model client, saved-translation store
 src/server/    HTTP server (Framer channel API, CORS, limits, rate limiting)
 widget/        browser engine + script-tag entry (built to dist/ponte-widget.js)
 framer/        Framer code components: PonteWidget (visitors), PonteText (authoring)
 evals/         smoke eval cases and runner
+scripts/       pre-translate crawler, widget build, CLI
 demo/          local demo page
 test/          vitest suites
 ```
 
 ## v1 scope
 
-These are out of scope for v1: rich-text structure beyond keeping inline links and bold in place, CMS sync, OCR of images or PDFs, sites outside Framer, and a hosted deploy. Development runs locally, and caches are in memory. A published Framer site needs the server reachable over HTTPS (a tunnel such as `cloudflared` or `ngrok` works for testing) and that origin added to `PONTE_ALLOWED_ORIGINS`.
+These are out of scope for v1: rich-text structure beyond keeping inline links and bold in place, CMS sync, OCR of images or PDFs, sites outside Framer, and a hosted deploy. A published Framer site needs the server reachable over HTTPS (a tunnel such as `cloudflared` or `ngrok` works for testing) and that origin added to `PONTE_ALLOWED_ORIGINS`.
