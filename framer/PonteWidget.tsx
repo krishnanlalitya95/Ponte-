@@ -159,7 +159,7 @@ PonteWidget.defaultProps = {
     contentType: "auto",
     doNotTranslate: "",
     notes: "",
-    autoDetect: true,
+    autoDetect: false,
     color: "#FFFFFF",
     background: "rgba(20,20,20,0.88)",
     radius: 999,

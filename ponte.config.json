@@ -16,7 +16,8 @@
     "ko"
   ],
   "widget": {
-    "accent": "#6F9C16"
+    "accent": "#6F9C16",
+    "autoDetect": false
   },
   "author": {
     "name": "Lalitya Krishnan",
