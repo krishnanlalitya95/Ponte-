@@ -700,7 +700,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4eac4399ff244690": {
     "source": "⟦0⟧2013–2017⟦1⟧·⟦2⟧Lucknow, Uttar Pradesh",
@@ -710,7 +711,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "bc3eb952ea239da7": {
     "source": "⟦0⟧2017-2018⟦1⟧·⟦2⟧Bhubaneswar, Odisha",
@@ -720,17 +722,19 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fded4c22bb646040": {
     "source": "⟦0⟧2019-2022⟦1⟧·⟦2⟧Ahmedabad (Bengaluru Campus)",
-    "text": "⟦0⟧2019-2022⟦1⟧·⟦2⟧अहमदाबाद (बेंगलुरु कैंपस)",
+    "text": "⟦0⟧2019-2022⟦1⟧·⟦2⟧अहमदाबाद (बेंगलुरु परिसर)",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9d389d6071b872f3": {
     "source": "⟦0⟧31 December 1995⟦1⟧·⟦2⟧Kanpur, Uttar Pradesh",
@@ -740,17 +744,19 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c8d869d0737e12f1": {
     "source": "⟦0⟧a whole ⟦1⟧lot of personality⟦2⟧.",
-    "text": "⟦0⟧और ⟦1⟧शख़्सियत भरपूर⟦2⟧।",
+    "text": "⟦0⟧ढेर सारा ⟦1⟧अपना ही अंदाज़⟦2⟧।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "922834c94bcbeb55": {
     "source": "⟦0⟧August 2022 - July 2024⟦1⟧·⟦2⟧Mumbai, Maharashtra",
@@ -760,7 +766,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e2cbb110643cfebe": {
     "source": "⟦0⟧August 2024 – Present⟦1⟧·⟦2⟧Mumbai, Maharashtra",
@@ -770,17 +777,19 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "900017a5b2a4fb64": {
     "source": "⟦0⟧Bachelor of Technology⟦1⟧·⟦2⟧Central Institute of Plastics Engineering & Technology",
-    "text": "⟦0⟧बैचलर ऑफ टेक्नोलॉजी (बी.टेक.)⟦1⟧·⟦2⟧सेंट्रल इंस्टीट्यूट ऑफ प्लास्टिक्स इंजीनियरिंग एंड टेक्नोलॉजी",
+    "text": "⟦0⟧बैचलर ऑफ़ टेक्नोलॉजी⟦1⟧·⟦2⟧केंद्रीय प्लास्टिक इंजीनियरिंग एवं प्रौद्योगिकी संस्थान",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8d3f7a9135aac2f4": {
     "source": "⟦0⟧Early Schooling⟦1⟧·⟦2⟧Jawahar Navodaya Vidyalaya",
@@ -790,87 +799,96 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5b552365873d6005": {
     "source": "⟦0⟧find their ⟦1⟧way into words⟦2⟧.",
-    "text": "⟦0⟧अपना ⟦1⟧रास्ता अल्फ़ाज़ में ढूँढ़ लेते हैं⟦2⟧।",
+    "text": "⟦0⟧अपना ⟦1⟧रास्ता शब्दों में⟦2⟧ ढूँढ लेते हैं।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "b20a754d85e427dc": {
     "source": "⟦0⟧From understanding how things work to discovering what makes life meaningful, curiosity has always guided me. Somewhere between design, poetry, cooking and everyday adventures, there's ⟦1⟧Tanya⟦2⟧, my wife, my love to share it all with.",
-    "text": "⟦0⟧चीज़ें कैसे काम करती हैं यह समझने से लेकर यह खोजने तक कि ज़िंदगी को क्या अर्थ देता है, जिज्ञासा ने हमेशा मेरा हाथ थामा है। डिज़ाइन, कविता, खाना पकाने और रोज़ के छोटे-छोटे रोमांच के बीच कहीं ⟦1⟧तान्या⟦2⟧ है, मेरी पत्नी, मेरा प्यार, जिसके साथ मैं यह सब बाँट सकता हूँ।",
+    "text": "⟦0⟧चीज़ें कैसे काम करती हैं, यह समझने से लेकर यह खोजने तक कि ज़िंदगी को अर्थ क्या देता है, जिज्ञासा ने हमेशा मेरा हाथ थामे रखा है। डिज़ाइन, कविता, खाना पकाने और रोज़ के छोटे-छोटे रोमांचों के बीच कहीं ⟦1⟧तान्या⟦2⟧ है, मेरी पत्नी, मेरी जीवनसंगिनी, जिसके साथ मैं यह सब बाँट सकता हूँ।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "36d7febd96afadd6": {
     "source": "⟦0⟧goes a long ⟦1⟧way to the heart⟦2⟧.",
-    "text": "⟦0⟧पहुँचा दे ⟦1⟧सीधे दिल तक⟦2⟧।",
+    "text": "⟦0⟧सीधे ⟦1⟧दिल तक पहुँचता है⟦2⟧।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "26d190145eb2af77": {
     "source": "⟦0⟧how I ⟦1⟧see the world⟦2⟧.",
-    "text": "⟦0⟧मेरा ⟦1⟧दुनिया को देखने का नज़रिया⟦2⟧।",
+    "text": "⟦0⟧मेरी ⟦1⟧दुनिया देखने की नज़र⟦2⟧।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "514fa3c0615571ba": {
     "source": "⟦0⟧I make ⟦1⟧sense of complexity⟦2⟧.",
-    "text": "⟦0⟧जिससे मैं ⟦1⟧उलझनों को सरल बनाता हूँ⟦2⟧।",
+    "text": "⟦0⟧जिससे मैं ⟦1⟧जटिलता को समझ पाता हूँ⟦2⟧।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0c9a0723741fb193": {
     "source": "⟦0⟧I’m ⟦1⟧Lalitya Krishnan⟦2⟧, a product designer with six years of experience navigating complex systems and making them simpler for people. From engineering and universal design to building digital experiences at scale, curiosity has shaped how I approach problems.",
-    "text": "⟦0⟧मैं ⟦1⟧ललित्या कृष्णन⟦2⟧ हूँ, एक प्रोडक्ट डिज़ाइनर, जिसके पास जटिल सिस्टम में राह खोजने और उन्हें लोगों के लिए आसान बनाने का छह साल का अनुभव है। इंजीनियरिंग और यूनिवर्सल डिज़ाइन (सर्वसुलभ डिज़ाइन) से लेकर बड़े पैमाने पर डिजिटल अनुभव गढ़ने तक, जिज्ञासा ने ही मेरे समस्याओं को देखने के ढंग को आकार दिया है।",
+    "text": "⟦0⟧मैं ⟦1⟧लालित्य कृष्णन⟦2⟧ हूँ, छह वर्षों के अनुभव वाला एक प्रोडक्ट डिज़ाइनर, जो जटिल सिस्टम्स की गुत्थियाँ सुलझाकर उन्हें लोगों के लिए सरल बनाता है। इंजीनियरिंग और यूनिवर्सल डिज़ाइन से लेकर बड़े पैमाने पर डिजिटल अनुभव गढ़ने तक, जिज्ञासा ने ही तय किया है कि मैं समस्याओं तक कैसे पहुँचता हूँ।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "FYsSHhWeMcxc"
   },
   "c5084f58b0684cb4": {
     "source": "⟦0⟧Master of Design⟦1⟧·⟦2⟧National Institute of Design",
-    "text": "⟦0⟧मास्टर ऑफ डिज़ाइन (एम.डिज़ाइन)⟦1⟧·⟦2⟧नेशनल इंस्टीट्यूट ऑफ डिज़ाइन",
+    "text": "⟦0⟧मास्टर ऑफ़ डिज़ाइन⟦1⟧·⟦2⟧राष्ट्रीय डिज़ाइन संस्थान",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "7fa45b3adbbca47e": {
     "source": "⟦0⟧Meet ⟦1⟧Laiba⟦2⟧, my curious Persian kitten and an adorable source of everyday chaos.",
-    "text": "⟦0⟧मिलिए ⟦1⟧लाइबा⟦2⟧ से, मेरी जिज्ञासु पर्शियन बिल्ली का बच्चा और रोज़मर्रा की प्यारी-सी अफ़रा-तफ़री की वजह।",
+    "text": "⟦0⟧मिलिए ⟦1⟧लाइबा⟦2⟧ से, मेरी जिज्ञासु पर्शियन बिल्ली के बच्चे से, जो रोज़मर्रा की प्यारी-सी हलचल की वजह है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8e7bd0f9e4fe12a5": {
     "source": "⟦0⟧October 2021 - January 2022⟦1⟧·⟦2⟧Bengaluru, Karnataka",
@@ -880,67 +898,74 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fd1df583e1867600": {
     "source": "⟦0⟧Post Graduate Diploma⟦1⟧·⟦2⟧Central Tool Room & Training Centre",
-    "text": "⟦0⟧पोस्ट ग्रेजुएट डिप्लोमा⟦1⟧·⟦2⟧सेंट्रल टूल रूम एंड ट्रेनिंग सेंटर",
+    "text": "⟦0⟧पोस्ट ग्रेजुएट डिप्लोमा⟦1⟧·⟦2⟧केंद्रीय टूल रूम एवं प्रशिक्षण केंद्र",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "540a2cfd19a67f90": {
     "source": "⟦0⟧Product Designer⟦1⟧·⟦2⟧ICICI Lombard General Insurance Company",
-    "text": "⟦0⟧प्रोडक्ट डिज़ाइनर⟦1⟧·⟦2⟧आईसीआईसीआई लोम्बार्ड जनरल इंश्योरेंस कंपनी",
+    "text": "⟦0⟧प्रोडक्ट डिज़ाइनर⟦1⟧·⟦2⟧ICICI Lombard General Insurance Company",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c377c3ec1b3d3e22": {
     "source": "⟦0⟧UX Designer⟦1⟧·⟦2⟧Jio Platforms Limited",
-    "text": "⟦0⟧UX डिज़ाइनर⟦1⟧·⟦2⟧जियो प्लेटफ़ॉर्म्स लिमिटेड",
+    "text": "⟦0⟧UX डिज़ाइनर⟦1⟧·⟦2⟧Jio Platforms Limited",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5d4c4bcb2c07a3e1": {
     "source": "⟦0⟧UX Researcher⟦1⟧·⟦2⟧RDPR, Government of Karnataka",
-    "text": "⟦0⟧UX रिसर्चर⟦1⟧·⟦2⟧आरडीपीआर, कर्नाटक सरकार",
+    "text": "⟦0⟧UX रिसर्चर⟦1⟧·⟦2⟧RDPR, Government of Karnataka",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a1d9a773d98f4ee7": {
     "source": "⟦0⟧with a habit of ⟦1⟧making things⟦2⟧.",
-    "text": "⟦0⟧जिसे ⟦1⟧कुछ न कुछ रचने⟦2⟧ की आदत है।",
+    "text": "⟦0⟧जिसे आदत है ⟦1⟧कुछ न कुछ बनाते रहने की⟦2⟧।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3c0fa849b7b19195": {
     "source": "⟦0⟧Work shaped by logic. ⟦1⟧Life softened by words, warmth and wonder.",
-    "text": "⟦0⟧काम को तर्क ने गढ़ा है। ⟦1⟧जीवन को शब्दों, अपनेपन और विस्मय ने सँवारा है।",
+    "text": "⟦0⟧काम को गढ़ा तर्क ने। ⟦1⟧जीवन को कोमल किया शब्दों, अपनेपन और विस्मय ने।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f8dcc33e66f90603": {
     "source": "A beginning by The Ganges",
@@ -950,7 +975,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "46df30720af7b0e0": {
     "source": "A curious mind,",
@@ -960,7 +986,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5b3fc97afcaea90b": {
     "source": "A LITTLE ABOUT ME",
@@ -970,7 +997,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "70fa6ea5c1cc64b4": {
     "source": "A little flavour,",
@@ -980,7 +1008,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f4505f1ae31dce44": {
     "source": "AND THE STORY CONTINUES...",
@@ -990,27 +1019,30 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "6cab75fe0e7f52cf": {
     "source": "At Jio, I worked across commerce, healthcare, and enterprise products, navigating different users, business needs, and technical constraints. I learned how to translate complexity into coherent experiences while collaborating across teams and disciplines.",
-    "text": "जियो में मैंने कॉमर्स, हेल्थकेयर और एंटरप्राइज़ प्रोडक्ट्स पर काम किया, जहाँ अलग-अलग उपयोगकर्ताओं, कारोबारी ज़रूरतों और तकनीकी सीमाओं के बीच रास्ता निकालना होता था। मुझे टीमों और विधाओं के पार मिलकर काम करते हुए जटिलता को सुसंगत अनुभवों में ढालना सीखने को मिला।",
+    "text": "Jio में मैंने कॉमर्स, हेल्थकेयर और एंटरप्राइज़ प्रोडक्ट्स पर काम किया, जहाँ अलग-अलग उपयोगकर्ताओं, व्यावसायिक ज़रूरतों और तकनीकी सीमाओं के बीच रास्ता निकालना होता था। मैंने सीखा कि जटिलता को सुसंगत अनुभवों में कैसे ढाला जाए, और अलग-अलग टीमों और विधाओं के साथ मिलकर काम कैसे किया जाए।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c99c3bf3c9b8f7da": {
     "source": "Away from screens, I write poetry, cook with care, find comfort in nature and share my days with Laiba, my curious little kitten.",
-    "text": "स्क्रीन से दूर, मैं कविताएँ लिखती हूँ, मन लगाकर खाना पकाती हूँ, प्रकृति में सुकून पाती हूँ और अपने दिन लाइबा के साथ बाँटती हूँ, जो मेरी नन्ही जिज्ञासु बिल्ली है।",
+    "text": "स्क्रीन से दूर, मैं कविताएँ लिखता हूँ, मन लगाकर खाना पकाता हूँ, प्रकृति में सुकून पाता हूँ और अपने दिन लैबा के साथ बिताता हूँ, जो मेरी जिज्ञासु नन्ही बिल्ली है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "184c80896d12394f": {
     "source": "BETWEEN THE LINES",
@@ -1020,27 +1052,30 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "cd868e4e3a0dbb05": {
     "source": "Born in Kanpur, a city of bustling streets, familiar faces, and countless stories. Long before design became a profession, curiosity was already shaping how I observed the world and found wonder in ordinary things.",
-    "text": "मेरा जन्म कानपुर में हुआ, जो चहल-पहल भरी गलियों, जाने-पहचाने चेहरों और अनगिनत कहानियों का शहर है। डिज़ाइन के पेशा बनने से बहुत पहले ही जिज्ञासा मेरे दुनिया को देखने के ढंग को आकार दे रही थी और मैं साधारण चीज़ों में भी विस्मय खोज लेती थी।",
+    "text": "मेरा जन्म कानपुर में हुआ, एक ऐसे शहर में जहाँ चहल-पहल भरी सड़कें हैं, जाने-पहचाने चेहरे हैं और अनगिनत कहानियाँ हैं। डिज़ाइन के पेशा बनने से बहुत पहले ही जिज्ञासा तय करने लगी थी कि मैं दुनिया को कैसे देखता हूँ और साधारण चीज़ों में भी अचरज कैसे खोज लेता हूँ।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2b3c1e2f6de94ba8": {
     "source": "Building products and systems.",
-    "text": "प्रोडक्ट और सिस्टम गढ़ते हुए।",
+    "text": "प्रोडक्ट्स और सिस्टम्स गढ़ते हुए।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f7549e8b9dec61a2": {
     "source": "decision count.",
@@ -1050,17 +1085,19 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "aee5331db1cab960": {
     "source": "Design is how,",
-    "text": "डिज़ाइन वह तरीका है,",
+    "text": "डिज़ाइन वह ज़रिया है,",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "419aea707e54d104": {
     "source": "DESIGN WITH INTENTION",
@@ -1070,27 +1107,30 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e159075b2e9466ff": {
     "source": "Discovering how things are made.",
-    "text": "चीज़ें कैसे बनती हैं, यह जानना।",
+    "text": "यह जानते हुए कि चीज़ें कैसे बनती हैं।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4c982448eb7720a2": {
     "source": "Either way, I love sharing what I make.",
-    "text": "जो भी हो, मुझे अपना बनाया हुआ सबके साथ बाँटना अच्छा लगता है।",
+    "text": "जो भी हो, जो बनाता हूँ उसे सबके साथ बाँटना मुझे बहुत पसंद है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f2adb11e2da90626": {
     "source": "EMBRACE COMPLEXITY",
@@ -1100,37 +1140,41 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "99ec27db722f07e6": {
     "source": "Engineering introduced me to materials, manufacturing, and the science behind everyday objects. I began looking beyond what things looked like to understand how they worked, why they failed, and how they could be improved.",
-    "text": "इंजीनियरिंग ने मुझे सामग्रियों, निर्माण और रोज़मर्रा की चीज़ों के पीछे के विज्ञान से परिचित कराया। मैं यह देखने लगी कि चीज़ें दिखती कैसी हैं, इससे आगे बढ़कर यह समझूँ कि वे काम कैसे करती हैं, क्यों विफल होती हैं और उन्हें बेहतर कैसे बनाया जा सकता है।",
+    "text": "इंजीनियरिंग ने मुझे सामग्रियों, निर्माण-प्रक्रियाओं और रोज़मर्रा की चीज़ों के पीछे के विज्ञान से जोड़ा। मैं यह देखने लगा कि चीज़ें दिखती कैसी हैं, इससे आगे बढ़कर यह समझूँ कि वे काम कैसे करती हैं, क्यों बिगड़ती हैं और उन्हें बेहतर कैसे बनाया जा सकता है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0d7ec8ec1186ed98": {
     "source": "Every chapter shaped,",
-    "text": "हर पड़ाव ने गढ़ा है,",
+    "text": "हर पड़ाव ने गढ़ी है,",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "cd919927df45ce39": {
     "source": "Every experience is part of something larger. I look beyond individual interactions to understand the relationships between people, processes, technology, and business needs.",
-    "text": "हर अनुभव किसी बड़ी कड़ी का हिस्सा होता है। मैं अलग-अलग इंटरैक्शन से आगे देखता हूँ, ताकि लोगों, प्रक्रियाओं, तकनीक और कारोबारी ज़रूरतों के बीच के रिश्तों को समझ सकूँ।",
+    "text": "हर अनुभव किसी बड़ी कड़ी का हिस्सा होता है। मैं अलग-अलग इंटरैक्शन से आगे देखता हूँ, ताकि लोगों, प्रक्रियाओं, तकनीक और व्यावसायिक ज़रूरतों के आपसी रिश्तों को समझ सकूँ।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9e62555d0c6c6e69": {
     "source": "Find clarity without losing",
@@ -1140,27 +1184,30 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3fa55c1459fefbcf": {
     "source": "Finding beauty in precision.",
-    "text": "सटीकता में सौंदर्य की खोज।",
+    "text": "सटीकता में सुंदरता खोजते हुए।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "cddd3f368cd84c44": {
     "source": "For me, cooking is more than following a recipe. It’s about experimenting with flavours, trusting instincts, and finding joy in creating something from scratch. Some days it’s a familiar dish made with care; other days, an experiment that doesn’t quite go to plan.",
-    "text": "मेरे लिए खाना बनाना सिर्फ़ रेसिपी पर चलना नहीं है। यह स्वादों के साथ प्रयोग करने, अपने अंदाज़े पर भरोसा करने और शुरू से कुछ रच लेने की ख़ुशी पाने का नाम है। कुछ दिन यह जानी-पहचानी डिश होती है जो प्यार से बनाई गई हो; कुछ दिन ऐसा प्रयोग जो योजना के मुताबिक नहीं निकलता।",
+    "text": "मेरे लिए खाना बनाना सिर्फ़ रेसिपी का पालन करना नहीं है। यह स्वादों के साथ प्रयोग करना है, अपनी सूझ पर भरोसा करना है, और शुरू से कुछ रच लेने की ख़ुशी पाना है। कुछ दिन यह किसी जानी-पहचानी डिश को जतन से बनाना होता है; तो कुछ दिन ऐसा प्रयोग, जो योजना के मुताबिक़ नहीं बैठता।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0be21e3c0a8f3c11": {
     "source": "Four little paws,",
@@ -1170,7 +1217,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "321857f60d191cce": {
     "source": "From making things to understanding people.",
@@ -1180,17 +1228,19 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "96edb281c9a04f78": {
     "source": "From the streets of Kanpur to designing products used at scale, my path has been anything but linear. Along the way, every place, person and experience has added a different perspective to how I think, create and solve problems.",
-    "text": "कानपुर की गलियों से लेकर बड़े पैमाने पर इस्तेमाल होने वाले प्रोडक्ट डिज़ाइन करने तक, मेरा रास्ता सीधी लकीर जैसा बिल्कुल नहीं रहा। इस राह में हर जगह, हर इंसान और हर अनुभव ने मेरे सोचने, रचने और समस्याएँ सुलझाने के ढंग में एक नया नज़रिया जोड़ा है।",
+    "text": "कानपुर की गलियों से लेकर बड़े पैमाने पर इस्तेमाल होने वाले प्रोडक्ट डिज़ाइन करने तक, मेरा रास्ता कभी सीधी लकीर नहीं रहा। इस सफ़र में हर जगह, हर इंसान और हर अनुभव ने मेरे सोचने, रचने और समस्याएँ सुलझाने के ढंग में एक नया नज़रिया जोड़ा है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "caa4c9f59b829706": {
     "source": "Growing beyond the familiar.",
@@ -1200,17 +1250,19 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "76a0367b0ab27532": {
     "source": "Hostel life at Navodaya introduced me to independence, friendships, and perspectives beyond my own. Between shared routines and everyday discoveries, I learned the value of community, discipline, and growing together.",
-    "text": "नवोदय के हॉस्टल जीवन ने मुझे आत्मनिर्भरता, दोस्ती और अपने से अलग नज़रियों से मिलवाया। साझा दिनचर्या और रोज़ की छोटी-छोटी खोजों के बीच मुझे समुदाय, अनुशासन और साथ मिलकर आगे बढ़ने की क़ीमत समझ आई।",
+    "text": "नवोदय के छात्रावास के जीवन ने मुझे आत्मनिर्भरता, दोस्तियों और अपने से परे नज़रियों से मिलवाया। साझा दिनचर्या और रोज़मर्रा की छोटी-छोटी खोजों के बीच मैंने समुदाय, अनुशासन और साथ बढ़ने की क़ीमत समझी।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2f1b30442922b242": {
     "source": "I believe thoughtful design lives in the details, from the structure of an entire journey to a single interaction. Every choice should serve a purpose, not merely look good.",
@@ -1220,47 +1272,52 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1dff92a4e51ef364": {
     "source": "I write in Hindi, often borrowing the beauty of Urdu, finding inspiration in emotions, memories, and everyday moments.",
-    "text": "मैं हिंदी में लिखता हूँ, अक्सर उर्दू की खूबसूरती उधार लेकर, और प्रेरणा जज़्बात, यादों और रोज़मर्रा के छोटे-छोटे पलों से पाता हूँ।",
+    "text": "मैं हिन्दी में लिखता हूँ, अक्सर उर्दू की ख़ूबसूरती उधार लेते हुए, और भावनाओं, यादों और रोज़मर्रा के पलों में प्रेरणा ढूँढते हुए।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f9f764121fd54eed": {
     "source": "I’ve been writing poetry since 2010. What began as a way to express thoughts I couldn’t quite put into conversation has become a deeply personal part of who I am.",
-    "text": "मैं 2010 से कविताएँ लिख रहा हूँ। जो बातें मैं बोलकर कह नहीं पाता था, उन्हें कहने का यह एक ज़रिया था, और आज यह मेरे व्यक्तित्व का बहुत निजी हिस्सा बन चुका है।",
+    "text": "मैं 2010 से कविताएँ लिख रहा हूँ। जो बातें मैं बातचीत में ठीक से कह नहीं पाता था, उन्हें कहने का जो ज़रिया शुरू हुआ, वह आज मेरे व्यक्तित्व का बेहद निजी हिस्सा बन चुका है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "40e31193b485d1f0": {
     "source": "Learning what scale demands.",
-    "text": "बड़े पैमाने की माँग को समझना।",
+    "text": "यह सीखते हुए कि बड़े पैमाने की माँग क्या होती है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5c51867d4f4a9deb": {
     "source": "LIFE WITH LAIBA",
-    "text": "लाइबा के संग ज़िंदगी",
+    "text": "लाइबा के साथ ज़िंदगी",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3b409a25eee47c12": {
     "source": "Make every",
@@ -1270,7 +1327,8 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c970082f9d8c13bd": {
     "source": "MY JOURNEY",
@@ -1280,27 +1338,30 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1d81ac4822509f91": {
     "source": "My journey from engineering to product design has taught me to look beyond what is immediately visible. I try to understand how things connect, question what could work better, and find clarity without losing the details that matter.",
-    "text": "इंजीनियरिंग से प्रोडक्ट डिज़ाइन तक के मेरे सफ़र ने मुझे सिखाया है कि जो सामने दिखता है, उससे आगे भी देखना चाहिए। मैं समझने की कोशिश करता हूँ कि चीज़ें आपस में कैसे जुड़ी हैं, क्या बेहतर हो सकता है, और उन बारीकियों को खोए बिना साफ़-सुथरी सरलता कैसे पाई जाए जो सचमुच मायने रखती हैं।",
+    "text": "इंजीनियरिंग से प्रोडक्ट डिज़ाइन तक के मेरे सफ़र ने मुझे वह देखना सिखाया है जो पहली नज़र में दिखता नहीं। मैं समझने की कोशिश करता हूँ कि चीज़ें आपस में कैसे जुड़ी हैं, सवाल करता हूँ कि क्या बेहतर हो सकता था, और उन बारीकियों को खोए बिना स्पष्टता तलाशता हूँ जो सचमुच मायने रखती हैं।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c723098d423a57fe": {
     "source": "NID transformed how I understood design. What began with materials and processes grew into a deeper curiosity about people, accessibility, and lived experiences. I learned to question assumptions and design with context, empathy, and intention.",
-    "text": "NID ने डिज़ाइन को देखने का मेरा नज़रिया बदल दिया। सामग्रियों और प्रक्रियाओं से शुरू हुआ सफ़र लोगों, सुगम्यता और जीये हुए अनुभवों के प्रति एक गहरी जिज्ञासा में बदल गया। मैंने धारणाओं पर सवाल उठाना और संदर्भ, संवेदना और स्पष्ट मंशा के साथ डिज़ाइन करना सीखा।",
+    "text": "NID ने डिज़ाइन को देखने का मेरा नज़रिया बदल दिया। जो सफ़र सामग्रियों और प्रक्रियाओं से शुरू हुआ था, वह लोगों, सुगम्यता और जिए हुए अनुभवों के बारे में गहरी जिज्ञासा में बदल गया। मैंने मान्यताओं पर सवाल उठाना सीखा और संदर्भ, संवेदना और सोच-समझ के साथ डिज़ाइन करना सीखा।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2331728995345bba": {
     "source": "not just the screen.",
@@ -1310,27 +1371,30 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8ba4444b170dbad3": {
     "source": "Open Lipsa",
-    "text": "लिप्सा खोलें",
+    "text": "Lipsa खोलें",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c0c5b3ad57c0efeb": {
     "source": "Researching rural public services revealed how closely digital experiences are connected to real-world systems. It taught me to listen before proposing solutions and to consider the people, processes, and circumstances surrounding every interaction.",
-    "text": "ग्रामीण सार्वजनिक सेवाओं पर शोध करते हुए मैंने जाना कि डिजिटल अनुभव असल दुनिया की व्यवस्थाओं से कितनी गहराई से जुड़े होते हैं। मुझे सिखाया गया कि समाधान सुझाने से पहले सुनना ज़रूरी है, और हर इंटरैक्शन के आसपास मौजूद लोगों, प्रक्रियाओं और परिस्थितियों का ध्यान रखना चाहिए।",
+    "text": "ग्रामीण सार्वजनिक सेवाओं पर शोध करते हुए मुझे समझ आया कि डिजिटल अनुभव असल दुनिया की व्यवस्थाओं से कितनी गहराई से जुड़े होते हैं। इसने मुझे सिखाया कि समाधान सुझाने से पहले सुनना ज़रूरी है, और हर इंटरैक्शन के आसपास मौजूद लोगों, प्रक्रियाओं और परिस्थितियों का ख़याल रखना भी।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "23edf0b63a4228fc": {
     "source": "See the whole,",
@@ -1340,47 +1404,52 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "de41c100927ed5f2": {
     "source": "Seeing design beyond the screen.",
-    "text": "स्क्रीन से परे डिज़ाइन को देखना।",
+    "text": "स्क्रीन से आगे डिज़ाइन को देखते हुए।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "680091341140232d": {
     "source": "She has a talent for appearing precisely when I’m trying to concentrate, turning ordinary moments into small adventures, and occasionally supervising my design work.",
-    "text": "उसे ठीक तभी आ धमकने का हुनर आता है जब मैं ध्यान लगाने की कोशिश कर रहा होता हूँ। वह आम पलों को छोटे-छोटे रोमांच में बदल देती है, और कभी-कभार मेरे डिज़ाइन के काम की निगरानी भी कर लेती है।",
+    "text": "उसे ठीक उसी वक़्त आ धमकने का हुनर आता है जब मैं ध्यान लगाने की कोशिश कर रहा होता हूँ। वह साधारण पलों को छोटे-छोटे रोमांच बना देती है, और कभी-कभार मेरे डिज़ाइन के काम की निगरानी भी कर लेती है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9086da362a072839": {
     "source": "Simplicity isn't about removing everything. It's about understanding what matters, navigating constraints, and making complex experiences feel intuitive without compromising their purpose.",
-    "text": "सरलता का मतलब सब कुछ हटा देना नहीं है। यह समझना है कि क्या मायने रखता है, सीमाओं के बीच रास्ता निकालना, और जटिल अनुभवों को उनके उद्देश्य से समझौता किए बिना सहज बनाना।",
+    "text": "सरलता का मतलब सब कुछ हटा देना नहीं है। यह समझना है कि क्या मायने रखता है, सीमाओं के बीच रास्ता निकालना है, और जटिल अनुभवों को उनके उद्देश्य से समझौता किए बिना सहज बनाना है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "b8e5e5ccab578057": {
     "source": "Some feelings,",
-    "text": "कुछ जज़्बात",
+    "text": "कुछ एहसास,",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1b7634f587621797": {
     "source": "Still curious. Still making. Still becoming.",
@@ -1390,27 +1459,30 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "92b78332f88ef2d6": {
     "source": "THE KITCHEN DIARIES",
-    "text": "किचन डायरीज़",
+    "text": "रसोई की डायरी",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "21a92235a1c762ec": {
     "source": "THE WAY I SEE THINGS",
-    "text": "मेरा नज़रिया",
+    "text": "चीज़ों को देखने का मेरा नज़रिया",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2154d5046b007c21": {
     "source": "THINK IN SYSTEMS",
@@ -1420,37 +1492,41 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "bcdf1b198c9ebb46": {
     "source": "Three principles guide how I approach my work: thinking in systems, embracing complexity, and designing with intention.",
-    "text": "मेरे काम का तरीका तीन सिद्धांतों पर टिका है: सिस्टम की तरह सोचना, जटिलता को अपनाना, और सोच-समझकर डिज़ाइन करना।",
+    "text": "मेरे काम का रास्ता तीन सिद्धांत तय करते हैं: सिस्टम की तरह सोचना, जटिलता को अपनाना, और सोच-समझकर डिज़ाइन करना।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a83f0c23f6cef8a6": {
     "source": "Today, I work on complex insurance experiences spanning customer journeys, operational workflows, and design systems. My focus has evolved from improving individual interactions to understanding how decisions connect across people, products, technology, and business outcomes.",
-    "text": "आज मैं बीमा के जटिल अनुभवों पर काम करती हूँ, जिनमें ग्राहक यात्राएँ, संचालन के वर्कफ़्लो और डिज़ाइन सिस्टम शामिल हैं। मेरा ध्यान अलग-अलग इंटरैक्शन को बेहतर बनाने से आगे बढ़कर यह समझने पर आ गया है कि लोगों, प्रोडक्ट, तकनीक और कारोबारी नतीजों के बीच फ़ैसले आपस में कैसे जुड़ते हैं।",
+    "text": "आज मैं बीमा के जटिल अनुभवों पर काम करता हूँ, जिनमें ग्राहक यात्राएँ, परिचालन वर्कफ़्लो और डिज़ाइन सिस्टम शामिल हैं। मेरा ध्यान अलग-अलग इंटरैक्शन सुधारने से आगे बढ़कर यह समझने पर है कि लोगों, प्रोडक्ट्स, तकनीक और व्यावसायिक नतीजों के बीच फ़ैसले आपस में कैसे जुड़ते हैं।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "bca4afd8959e0efd": {
     "source": "Together, we're building a life filled with laughter, little imperfections, shared dreams and stories yet to unfold. And through it all, I'm still learning, loving, making mistakes and finding new reasons to be curious.",
-    "text": "साथ मिलकर हम एक ऐसी ज़िंदगी बुन रहे हैं जो हँसी, छोटी-छोटी कमियों, साझा सपनों और अनकही कहानियों से भरी है। और इस सबके बीच, मैं अब भी सीख रहा हूँ, प्यार कर रहा हूँ, गलतियाँ कर रहा हूँ और जिज्ञासु बने रहने की नई वजहें ढूँढ़ रहा हूँ।",
+    "text": "साथ मिलकर हम एक ऐसी ज़िंदगी बुन रहे हैं जो हँसी, छोटी-छोटी खामियों, साझा सपनों और अनकही कहानियों से भरी है। और इस सबके बीच मैं अब भी सीख रहा हूँ, प्यार कर रहा हूँ, ग़लतियाँ कर रहा हूँ और जिज्ञासु बने रहने की नई वजहें ढूँढ रहा हूँ।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "267f3a1acfb1e05d": {
     "source": "View Resume",
@@ -1460,67 +1536,96 @@
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8b5e0b401f9cbab2": {
     "source": "what matters.",
-    "text": "जो सचमुच मायने रखता है।",
+    "text": "जो मायने रखता है।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:55.444Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5415a2e000968423": {
     "source": "Working with tools, moulds, and digital manufacturing taught me that even the smallest detail has a purpose. It deepened my appreciation for precision, iteration, and the thoughtful process behind making things.",
-    "text": "औज़ारों, साँचों (मोल्ड) और डिजिटल निर्माण के साथ काम करते हुए मैंने जाना कि छोटे से छोटे ब्योरे का भी एक मक़सद होता है। इससे सटीकता, इटरेशन और चीज़ें बनाने के पीछे की सोची-समझी प्रक्रिया के प्रति मेरी क़द्र और गहरी हुई।",
+    "text": "औज़ारों, साँचों और डिजिटल मैन्युफ़ैक्चरिंग के साथ काम करते हुए मैंने जाना कि सबसे छोटे ब्योरे का भी एक मक़सद होता है। इससे सटीकता, बार-बार सुधारने की प्रक्रिया और चीज़ें बनाने के पीछे की सोची-समझी मेहनत के प्रति मेरी क़द्र और गहरी हो गई।",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "portfolio_copy",
     "page": "https://lalityakrishnan.in/about",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:10:39.533Z"
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "cea908ec6c51ff78": {
+    "source": "किन्हीं झिलमिल पठारों सा \nकभी मैं रुप धरता हूँ,  \nये जल भी बैर करता है, \nमैं इतना रौद्र लगता हूँ,  \nकड़कती धूप को भी मैं \nतो वापस भेज देता हूँ,  \nये मेरा शौर्य है, \nजो मैं सदा ही धैर्य देता हूँ,  \nमशहूर हैं मेरे चर्चे \nहमेशा डट के रहने के,  \nमगर अन्दर से मैं भी टूटता हूँ, \nमौन रहता हूँ।  \nमगर अन्दर से मैं भी टूटता हूँ, \nमौन रहता हूँ॥",
+    "text": "किन्हीं झिलमिल पठारों सा \nकभी मैं रुप धरता हूँ,  \nये जल भी बैर करता है, \nमैं इतना रौद्र लगता हूँ,  \nकड़कती धूप को भी मैं \nतो वापस भेज देता हूँ,  \nये मेरा शौर्य है, \nजो मैं सदा ही धैर्य देता हूँ,  \nमशहूर हैं मेरे चर्चे \nहमेशा डट के रहने के,  \nमगर अन्दर से मैं भी टूटता हूँ, \nमौन रहता हूँ।  \nमगर अन्दर से मैं भी टूटता हूँ, \nमौन रहता हूँ॥",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "7271be08c0caa35b": {
+    "source": "झिलमिल झिलमिल उजियारे में,\nहलके हलके अंधियारे में,\nपवन पताका ठंडी ठंडी,\nहौले हौले मंडराए है,\nरंग पातियाँ बदल रही हैं,\nबादल भी संदर्भित से हैं,\nपुष्पों की पंखुड़ियों के भी\nरंग पहर में गर्वित से हैं,\nजल ने रंग उछाल दिए हैं,\nप्रतिबिम्ब ने कई सवाल दिए हैं,\nशाखों ने भी पत्तों के संग\nमिल कर झूले गाड़ दिए हैं,\nमृग मरीचिका लाग रही हैं\nघास हमारे बगियाने की,\nकुदरत के इस मेल जोल में,\nधूप छाँव के खेल खेल में॥",
+    "text": "झिलमिल झिलमिल उजियारे में,\nहलके हलके अंधियारे में,\nपवन पताका ठंडी ठंडी,\nहौले हौले मंडराए है,\nरंग पातियाँ बदल रही हैं,\nबादल भी संदर्भित से हैं,\nपुष्पों की पंखुड़ियों के भी\nरंग पहर में गर्वित से हैं,\nजल ने रंग उछाल दिए हैं,\nप्रतिबिम्ब ने कई सवाल दिए हैं,\nशाखों ने भी पत्तों के संग\nमिल कर झूले गाड़ दिए हैं,\nमृग मरीचिका लाग रही हैं\nघास हमारे बगियाने की,\nकुदरत के इस मेल जोल में,\nधूप छाँव के खेल खेल में॥",
+    "status": "unchanged",
+    "sourceLanguage": "hi",
+    "contentType": "portfolio_copy",
+    "page": "https://lalityakrishnan.in/about",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:53:04.080Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "7027799afc32a126": {
     "source": "⟦0⟧03⟦1⟧Deliverables",
-    "text": "⟦0⟧03⟦1⟧प्रस्तुत कार्य",
+    "text": "⟦0⟧03⟦1⟧प्रदेय",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "33680344b3f72cc8": {
     "source": "⟦0⟧04⟦1⟧Reflection",
     "text": "⟦0⟧04⟦1⟧चिंतन",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4b60cf7519075273": {
     "source": "⟦0⟧Guided by ⟦1⟧Mr. Shekhar Bhattacharya",
-    "text": "⟦0⟧मार्गदर्शन ⟦1⟧श्री शेखर भट्टाचार्य",
+    "text": "⟦0⟧मार्गदर्शक: ⟦1⟧श्री शेखर भट्टाचार्य",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3f2c8d8c6ffb9970": {
     "source": "⟦0⟧Introduction⟦1⟧Process⟦2⟧Deliverables⟦3⟧Reflection",
-    "text": "⟦0⟧परिचय⟦1⟧प्रक्रिया⟦2⟧प्रस्तुत कार्य⟦3⟧चिंतन",
+    "text": "⟦0⟧परिचय⟦1⟧प्रक्रिया⟦2⟧प्रदेय⟦3⟧चिंतन",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3749b17cb94fec05": {
     "source": "⟦0⟧NID ⟦1⟧Gandhinagar",
@@ -1530,67 +1635,74 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0cb365f081ccb2e5": {
     "source": "⟦0⟧Open Elective ⟦1⟧2020",
-    "text": "⟦0⟧ओपन इलेक्टिव (वैकल्पिक पाठ्यक्रम) ⟦1⟧2020",
+    "text": "⟦0⟧ओपन इलेक्टिव ⟦1⟧2020",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9fe763a2f48ee1c4": {
     "source": "*Based on survey done with 50+ participants during open elective 2020 at NID Gandhinagar Campus.",
-    "text": "*यह एनआईडी गांधीनगर कैंपस में ओपन इलेक्टिव 2020 के दौरान 50+ प्रतिभागियों के बीच किए गए सर्वेक्षण पर आधारित है।",
+    "text": "*यह सर्वेक्षण 2020 के ओपन इलेक्टिव के दौरान एनआईडी गांधीनगर परिसर में 50+ प्रतिभागियों के बीच किया गया था।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "17c829f3916e673f": {
     "source": "#CE93D8",
     "text": "#CE93D8",
     "status": "unchanged",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9fc42bcd26b30e78": {
     "source": "1. Campus photography",
-    "text": "1. कैंपस फ़ोटोग्राफ़ी",
+    "text": "1. परिसर की फ़ोटोग्राफ़ी",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "6ea32f7d728a6847": {
     "source": "1st Poetry",
     "text": "पहली कविता",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "01d0993e973bed8b": {
     "source": "2. Emotion survey & infographic",
     "text": "2. भावना सर्वेक्षण और इन्फोग्राफ़िक",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "304e01c2e9b38f3b": {
     "source": "2nd Poetry",
@@ -1600,17 +1712,19 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4be713d99f75d2e0": {
     "source": "3. Time-lapse videos & poetries",
     "text": "3. टाइम-लैप्स वीडियो और कविताएँ",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a9ac6a6d7cf67a6b": {
     "source": "3rd Poetry",
@@ -1620,7 +1734,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "78d27622fb49f7db": {
     "source": "4th Poetry",
@@ -1630,297 +1745,327 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "dfa4f7693b785c6c": {
     "source": "Alongside photography, we recorded time-lapses across the campus — letting the movement of light tell its own story across time, forming the visual backbone of the final deliverable.",
-    "text": "फ़ोटोग्राफ़ी के साथ-साथ हमने पूरे कैंपस में टाइम-लैप्स रिकॉर्ड किए — ताकि प्रकाश की गति समय के साथ अपनी कहानी खुद कहे। यही अंतिम प्रस्तुति की दृश्य रीढ़ बनी।",
+    "text": "फ़ोटोग्राफ़ी के साथ-साथ हमने पूरे परिसर के टाइम-लैप्स भी रिकॉर्ड किए — रोशनी की गति को समय के आर-पार अपनी कहानी खुद कहने दिया, जो अंतिम प्रदेय की दृश्य रीढ़ बना।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "72b7f8bf594ce483": {
     "source": "approached it",
-    "text": "किया",
+    "text": "इस पर काम किया",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f1c562c1788ce1eb": {
     "source": "but the eyes in the head on the body resting on the ground.",
-    "text": "बल्कि आँखें सिर में, सिर शरीर पर, और शरीर धरती पर टिका होता है।",
+    "text": "बल्कि धरती पर टिके शरीर पर रखे सिर में जड़ी आँखों से देखता है।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2039072741f7b028": {
     "source": "Campus environments captured across time, articulating how light transforms a space emotionally. पठार, माया, बारिशें, and धूप छाँव, narrated over the time-lapses as the final expressive output.",
-    "text": "समय के साथ कैद किए गए कैंपस के परिवेश, जो बताते हैं कि प्रकाश किसी स्थान को भावनात्मक रूप से कैसे बदल देता है। पठार, माया, बारिशें और धूप छाँव, अंतिम अभिव्यक्ति के रूप में टाइम-लैप्स पर सुनाई गईं।",
+    "text": "समय के आर-पार दर्ज किए गए परिसर के परिवेश, जो बताते हैं कि रोशनी किसी स्थान को भावनात्मक रूप से कैसे बदल देती है। पठार, माया, बारिशें, और धूप छाँव, अंतिम अभिव्यक्ति के रूप में टाइम-लैप्स पर सुनाई गई हैं।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f07d74aad3be5526": {
     "source": "Color & Light in Natural Environment",
     "text": "प्राकृतिक परिवेश में रंग और प्रकाश",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fdc5cf6d84b55336": {
     "source": "colour matter",
     "text": "क्यों मायने रखते हैं",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9507ad17d71faf99": {
     "source": "Confusion",
     "text": "उलझन",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "a312e78082b77921": {
     "source": "Creative expression - poetry",
     "text": "रचनात्मक अभिव्यक्ति - कविता",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "bcbd76ed94ed60da": {
     "source": "Curious",
-    "text": "जिज्ञासा",
+    "text": "जिज्ञासु",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c7ec4b92c29ba226": {
     "source": "Deliverables",
-    "text": "प्रस्तुत कार्य",
+    "text": "प्रदेय",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0749f2f7a13efe79": {
     "source": "Documenting colour and light conditions across NID Gandhinagar at different times and conditions.",
-    "text": "एनआईडी गांधीनगर में अलग-अलग समय और स्थितियों में रंग और प्रकाश की दशाओं का दस्तावेज़ीकरण।",
+    "text": "एनआईडी गांधीनगर में अलग-अलग समय और परिस्थितियों में रंग और प्रकाश की स्थितियों का दस्तावेज़ीकरण।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "548c406383b40bdd": {
     "source": "Each student chose a medium to express their findings. I chose language, writing four original Hindi poems, each giving an emotional voice to a distinct natural phenomenon observed during the project.",
-    "text": "हर विद्यार्थी ने अपने निष्कर्षों को व्यक्त करने के लिए एक माध्यम चुना। मैंने भाषा चुनी और चार मौलिक हिंदी कविताएँ लिखीं, जिनमें से हर एक प्रोजेक्ट के दौरान देखी गई किसी अलग प्राकृतिक घटना को भावनात्मक स्वर देती है।",
+    "text": "हर विद्यार्थी ने अपने निष्कर्षों को व्यक्त करने के लिए एक माध्यम चुना। मैंने भाषा को चुना और चार मौलिक हिंदी कविताएँ लिखीं, जिनमें से हर एक परियोजना के दौरान देखी गई किसी अलग प्राकृतिक घटना को भावनात्मक स्वर देती है।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "65535c95e4b6c602": {
     "source": "Envy",
     "text": "ईर्ष्या",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8bc2efb1baf519d9": {
     "source": "Exploration of Perceptual Design of Nature",
-    "text": "प्रकृति के अवबोधन-आधारित डिज़ाइन की एक खोज",
-    "status": "translated",
-    "sourceLanguage": "en",
-    "contentType": "case_study",
-    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
-    "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
-  },
-  "378b29d6a6fc1402": {
-    "source": "Field photography on campus",
-    "text": "कैंपस में फ़ील्ड फ़ोटोग्राफ़ी",
-    "status": "translated",
-    "sourceLanguage": "en",
-    "contentType": "case_study",
-    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
-    "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
-  },
-  "206c7b3edf5b160f": {
-    "source": "How does natural light make you feel? We photographed, we asked, we mapped emotions. I answered in verses, four Hindi poems, each a portrait of nature in a different emotional state.",
-    "text": "प्राकृतिक प्रकाश आपको कैसा महसूस कराता है? हमने तस्वीरें लीं, पूछा, भावनाओं का नक्शा बनाया। मैंने जवाब कविताओं में दिया, चार हिंदी कविताएँ, जिनमें से हर एक अलग भावनात्मक अवस्था में प्रकृति का एक चित्र है।",
-    "status": "translated",
-    "sourceLanguage": "en",
-    "contentType": "case_study",
-    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
-    "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
-  },
-  "b9357600beb97593": {
-    "source": "How we",
-    "text": "हमने यह कैसे",
-    "status": "translated",
-    "sourceLanguage": "en",
-    "contentType": "case_study",
-    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
-    "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
-  },
-  "61b1ba4f2bc2559d": {
-    "source": "Illusion",
-    "text": "माया",
+    "text": "प्रकृति के अवबोधात्मक डिज़ाइन की एक खोज",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "378b29d6a6fc1402": {
+    "source": "Field photography on campus",
+    "text": "परिसर में फ़ील्ड फ़ोटोग्राफ़ी",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "206c7b3edf5b160f": {
+    "source": "How does natural light make you feel? We photographed, we asked, we mapped emotions. I answered in verses, four Hindi poems, each a portrait of nature in a different emotional state.",
+    "text": "प्राकृतिक रोशनी आपको कैसा महसूस कराती है? हमने तस्वीरें खींचीं, लोगों से पूछा, भावनाओं का नक्शा बनाया। मैंने जवाब कविताओं में दिया — चार हिंदी कविताएँ, जिनमें से हर एक प्रकृति का एक अलग भावनात्मक रूप दिखाती है।",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "b9357600beb97593": {
+    "source": "How we",
+    "text": "हमने कैसे",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
+  },
+  "61b1ba4f2bc2559d": {
+    "source": "Illusion",
+    "text": "भ्रम",
+    "status": "translated",
+    "sourceLanguage": "en",
+    "contentType": "mixed",
+    "page": "https://lalityakrishnan.in/color-and-light-in-nature",
+    "model": "claude-sonnet-5-5",
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "b8abe8fb6423070a": {
     "source": "is a result of our entire",
-    "text": "वह हमारी पूरी",
+    "text": "हमारी संपूर्ण",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "43ae77e59dd344fe": {
     "source": "is a result of our entire perceptual system.",
-    "text": "वह हमारी पूरी अवबोधन प्रणाली का परिणाम है।",
+    "text": "वह हमारी संपूर्ण अवबोध-प्रणाली का परिणाम है।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "60707cfeb40e2a66": {
     "source": "Lavender",
     "text": "लैवेंडर",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8770b297690430de": {
     "source": "Light and colour are not decorative, they are communicative. They shape how we navigate space, form emotional associations, and connect with our surroundings. Whether it is the vivid arc of a rainbow against storm clouds or the translucent glow of a butterfly wing, colour plays a fundamental role in our relationship with the natural world. This project investigated that relationship directly — by going outside, observing, and asking people what they felt.",
-    "text": "प्रकाश और रंग सजावटी नहीं, संवादी हैं। वे तय करते हैं कि हम स्थान में कैसे राह बनाते हैं, भावनात्मक जुड़ाव कैसे गढ़ते हैं और अपने आसपास से कैसे जुड़ते हैं। चाहे तूफ़ानी बादलों के बीच इंद्रधनुष का चटख चाप हो या तितली के पंख की पारदर्शी आभा, प्राकृतिक दुनिया से हमारे रिश्ते में रंग की भूमिका बुनियादी है। इस प्रोजेक्ट ने उसी रिश्ते को सीधे परखा — बाहर निकलकर, देखकर, और लोगों से पूछकर कि उन्होंने क्या महसूस किया।",
+    "text": "प्रकाश और रंग सजावट भर नहीं हैं, वे संवाद हैं। वे तय करते हैं कि हम स्थान में कैसे राह बनाते हैं, भावनात्मक जुड़ाव कैसे गढ़ते हैं, और अपने आसपास से कैसे रिश्ता जोड़ते हैं। चाहे वह तूफ़ानी बादलों के सामने इंद्रधनुष की चटख चाप हो या तितली के पंख की पारभासी दमक, प्राकृतिक दुनिया से हमारे रिश्ते में रंग की भूमिका बुनियादी है। इस परियोजना ने उसी रिश्ते को सीधे परखा — बाहर निकलकर, देखकर, और लोगों से पूछकर कि उन्होंने क्या महसूस किया।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "73513993ecea1e32": {
     "source": "Lust",
     "text": "वासना",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "d71b98f81e428ccf": {
     "source": "NID Elective'20",
-    "text": "एनआईडी इलेक्टिव '20",
+    "text": "NID इलेक्टिव'20",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "b9a3893e924b4874": {
     "source": "One sees the environment not with the eyes",
-    "text": "कोई परिवेश को केवल आँखों से नहीं देखता,",
+    "text": "कोई परिवेश को आँखों से नहीं देखता,",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8079e01915b63ec9": {
     "source": "Passion",
     "text": "जुनून",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0acecb48602c20a3": {
     "source": "Peer emotion survey",
-    "text": "साथियों के बीच भावना सर्वेक्षण",
+    "text": "सहपाठी भावना सर्वेक्षण",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2512abb008da0327": {
     "source": "Peer responses mapping emotions to photographs, visualised as a colour-emotion association infographic.",
-    "text": "साथियों के जवाब, जो भावनाओं को तस्वीरों से जोड़ते हैं और रंग-भावना जुड़ाव के इन्फोग्राफ़िक के रूप में प्रस्तुत किए गए हैं।",
+    "text": "तस्वीरों से भावनाओं को जोड़ते सहपाठियों के उत्तर, जिन्हें रंग-भावना संबंध के इन्फोग्राफ़िक के रूप में दृश्य रूप दिया गया।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fac87baea65d8488": {
     "source": "perceptual system.",
-    "text": "अवबोधन प्रणाली का परिणाम है।",
+    "text": "अवबोध-प्रणाली का परिणाम है।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fa5172d8e857c82c": {
     "source": "Plateau",
@@ -1930,187 +2075,206 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e083bd83e9d3e97e": {
     "source": "Process",
     "text": "प्रक्रिया",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "bf9b9b72aff8e752": {
     "source": "produced",
-    "text": "बना",
+    "text": "तैयार हुआ",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "349af68054deb172": {
     "source": "Purity",
     "text": "पवित्रता",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "ac43c8a867771cf7": {
     "source": "Rains",
-    "text": "बारिशें",
+    "text": "बरसातें",
     "status": "translated",
     "sourceLanguage": "en",
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c297e0f9bfd1ad76": {
     "source": "romance  ·  yearning  ·  sensitivity",
     "text": "रोमांस  ·  तड़प  ·  संवेदनशीलता",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "94f6185909e0d5be": {
     "source": "Sadness",
     "text": "उदासी",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "2526af46df32d5b0": {
     "source": "Sensory Design",
     "text": "संवेदी डिज़ाइन",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1f1141226d2a1956": {
     "source": "Serenity",
     "text": "शांति",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "5108d9837375173d": {
     "source": "Space, as we experience it in architectural settings,",
-    "text": "स्थापत्य परिवेशों में हम जिस रूप में स्थान का अनुभव करते हैं,",
+    "text": "वास्तुशिल्पीय परिवेश में हम स्थान को जैसे अनुभव करते हैं,",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0de3eb7d695d462f": {
     "source": "Spirituality",
     "text": "आध्यात्मिकता",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "afb703e03fcb37e8": {
     "source": "Sun & shadow",
     "text": "धूप और छाँव",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e446fe5c2053a9a8": {
     "source": "Theoretical grounding",
     "text": "सैद्धांतिक आधार",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "278412fcac11cbdf": {
     "source": "Time-lapse capture",
     "text": "टाइम-लैप्स रिकॉर्डिंग",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4f6db2b8ce9e9963": {
     "source": "We asked people to tell us what emotions each photograph evoked. The responses were compiled into an infographic mapping emotional associations to different colour and light conditions.",
-    "text": "हमने लोगों से पूछा कि हर तस्वीर ने उनमें कौन-सी भावनाएँ जगाईं। इन जवाबों को संकलित करके एक इन्फोग्राफ़िक बनाया गया, जो भावनात्मक जुड़ावों को अलग-अलग रंग और प्रकाश की स्थितियों से जोड़ता है।",
+    "text": "हमने लोगों से पूछा कि हर तस्वीर ने उनमें कौन-सी भावना जगाई। इन उत्तरों को मिलाकर एक इन्फोग्राफ़िक बनाया गया, जो अलग-अलग रंग और प्रकाश की स्थितियों से जुड़ी भावनाओं का नक्शा पेश करता है।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "bbea8d5393d59719": {
     "source": "We studied how different colours and light conditions affect perception — psychologically influencing emotion and feeling, and physiologically impacting well-being on both visual and non-visual levels.",
-    "text": "हमने अध्ययन किया कि अलग-अलग रंग और प्रकाश की स्थितियाँ अवबोधन को कैसे प्रभावित करती हैं — मनोवैज्ञानिक रूप से भावनाओं और अनुभूतियों को, और शारीरिक रूप से दृश्य व अदृश्य, दोनों स्तरों पर कल्याण को।",
+    "text": "हमने अध्ययन किया कि अलग-अलग रंग और प्रकाश की स्थितियाँ हमारे बोध को कैसे प्रभावित करती हैं — मनोवैज्ञानिक रूप से भावनाओं और अनुभूतियों को, और शारीरिक रूप से दृश्य तथा अदृश्य, दोनों स्तरों पर हमारे सुख-स्वास्थ्य को।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3161014e73ecb5e0": {
     "source": "We walked the NID Gandhinagar campus and photographed distinct moments of natural light and colour — capturing how the environment changed across time of day, weather, and season.",
-    "text": "हमने एनआईडी गांधीनगर कैंपस में घूमकर प्राकृतिक प्रकाश और रंग के अलग-अलग क्षणों की तस्वीरें लीं — यह दर्ज करते हुए कि दिन के समय, मौसम और ऋतु के साथ परिवेश कैसे बदलता है।",
+    "text": "हमने एनआईडी गांधीनगर परिसर में घूमकर प्राकृतिक रोशनी और रंग के अलग-अलग क्षणों की तस्वीरें लीं — यह दर्ज करते हुए कि दिन के समय, मौसम और ऋतु के साथ परिवेश कैसे बदलता है।",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "00950b564fb9231e": {
     "source": "What was",
     "text": "क्या कुछ",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "80406b87734023ed": {
     "source": "Why light and",
     "text": "प्रकाश और रंग",
     "status": "translated",
     "sourceLanguage": "en",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fbc88713267ec0ef": {
     "source": "इन शज़रों को महकाती सी,",
@@ -2120,7 +2284,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4a987dda67ce06a9": {
     "source": "उड़ा देती हवाएँ हैं वो भीतर के ख्यालों को",
@@ -2130,7 +2295,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9f2aad3da0979209": {
     "source": "एक धूप सुहानी हो काया,",
@@ -2140,7 +2306,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0631edc290368551": {
     "source": "कड़कती धूप को भी मैं तो वापस भेज देता हूँ,",
@@ -2150,7 +2317,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "91cc974508f3457e": {
     "source": "कभी कोई किरण सी जीवन में,",
@@ -2160,7 +2328,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "68188a52e0b47d04": {
     "source": "कभी पतझड़ को लाती हैं, कभी खामोश रहती हैं,",
@@ -2170,7 +2339,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "35c2e2ee8748de0d": {
     "source": "कभी पानी को छूती हैं, कभी हैं भेदती मन को,",
@@ -2180,7 +2350,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "58b23bcf0901c5b4": {
     "source": "कभी सतत श्वेत निर्मल पाया,",
@@ -2190,7 +2361,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c5baa9d6a94e631d": {
     "source": "किन्हीं झिलमिल पठारों सा कभी मैं रुप धरता हूँ,",
@@ -2200,7 +2372,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "16b0b56235b23916": {
     "source": "कुदरत के इस मेल जोल में, धूप छाँव के खेल खेल में॥",
@@ -2210,7 +2383,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "afda360452c92b7d": {
     "source": "चट्टानों को पिघलाती सी,",
@@ -2220,27 +2394,30 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "6254716bbba85d04": {
     "source": "जल ने रंग उछाल दिए हैं, प्रतिबिम्ब ने कई सवाल दिए हैं,",
     "text": "जल ने रंग उछाल दिए हैं, प्रतिबिम्ब ने कई सवाल दिए हैं,",
     "status": "unchanged",
     "sourceLanguage": "hi",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "18fc6c39d54089fc": {
     "source": "झिलमिल झिलमिल उजियारे में, हलके हलके अंधियारे में,",
     "text": "झिलमिल झिलमिल उजियारे में, हलके हलके अंधियारे में,",
     "status": "unchanged",
     "sourceLanguage": "hi",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "e3d7f7e5ceaeaa2d": {
     "source": "तुम किसके मन की हो माया।",
@@ -2250,7 +2427,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "4818a11c97631126": {
     "source": "तुम दुविधा में चलती फिरती,",
@@ -2260,7 +2438,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "917d7979302b243a": {
     "source": "तुम दुविधा में चलती फिरती॥",
@@ -2270,7 +2449,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "f9b55de1a2eb2601": {
     "source": "तुम सरल स्वरूप समिपंत सी,",
@@ -2280,17 +2460,19 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "bffc4a76fd5737ad": {
     "source": "धूप छाँव",
     "text": "धूप छाँव",
     "status": "unchanged",
     "sourceLanguage": "hi",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "331a3fc11bb58ae9": {
     "source": "पठार",
@@ -2300,7 +2482,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "45a32ab79b028a90": {
     "source": "पतंगे उड़ रहे हैं घास पर बरसात सी लेकर,",
@@ -2310,27 +2493,30 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8680c8c31efd5fb6": {
     "source": "पवन पताका ठंडी ठंडी, हौले हौले मंडराए है,",
     "text": "पवन पताका ठंडी ठंडी, हौले हौले मंडराए है,",
     "status": "unchanged",
     "sourceLanguage": "hi",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "c68edf55ad328528": {
     "source": "पुष्पों की पंखुड़ियों के भी रंग पहर में गर्वित से हैं,",
     "text": "पुष्पों की पंखुड़ियों के भी रंग पहर में गर्वित से हैं,",
     "status": "unchanged",
     "sourceLanguage": "hi",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "1aea74f889c8328a": {
     "source": "बारिशें",
@@ -2340,7 +2526,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "0421675b30df2887": {
     "source": "मगर अन्दर से मैं भी टूटता हूँ, मौन रहता हूँ।",
@@ -2350,7 +2537,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "3efb5b1dd1ec78f3": {
     "source": "मगर अन्दर से मैं भी टूटता हूँ, मौन रहता हूँ॥",
@@ -2360,7 +2548,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "feacdc9329c2221b": {
     "source": "मगर ये बारिशें फिर से सभी कुछ बाँध देती हैं।",
@@ -2370,7 +2559,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "ec607114d1bce2e1": {
     "source": "मगर ये बारिशें फिर से सभी कुछ बाँध देती हैं॥",
@@ -2380,7 +2570,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "95fb0cd6ce20457f": {
     "source": "मशहूर हैं मेरे चर्चे हमेशा डट के रहने के,",
@@ -2390,7 +2581,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "9e6e07d560d8adb9": {
     "source": "माया",
@@ -2400,7 +2592,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "8a54f62cf3f9dce8": {
     "source": "मृग मरीचिका लाग रही हैं घास हमारे बगियाने की,",
@@ -2410,7 +2603,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "7531e83633507a0a": {
     "source": "ये जल भी बैर करता है, मैं इतना रौद्र लगता हूँ,",
@@ -2420,7 +2614,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fba76c18f88aad75": {
     "source": "ये मेरा शौर्य है, जो मैं सदा ही धैर्य देता हूँ,",
@@ -2430,27 +2625,30 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "fa6b5f5b685f6a07": {
     "source": "रंग पातियाँ बदल रही हैं, बादल भी संदर्भित से हैं,",
     "text": "रंग पातियाँ बदल रही हैं, बादल भी संदर्भित से हैं,",
     "status": "unchanged",
     "sourceLanguage": "hi",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "19274844dcafd747": {
     "source": "शाखों ने भी पत्तों के संग मिल कर झूले गाड़ दिए हैं,",
     "text": "शाखों ने भी पत्तों के संग मिल कर झूले गाड़ दिए हैं,",
     "status": "unchanged",
     "sourceLanguage": "hi",
-    "contentType": "case_study",
+    "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:09:40.774Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "29d5f2c04f26fcbe": {
     "source": "हवाएँ घास को अक्सर ज़रा सा शुष्क करती हैं,",
@@ -2460,7 +2658,8 @@
     "contentType": "mixed",
     "page": "https://lalityakrishnan.in/color-and-light-in-nature",
     "model": "claude-sonnet-5-5",
-    "savedAt": "2026-11-17T11:17:09.818Z"
+    "savedAt": "2026-11-17T16:53:04.071Z",
+    "settings": "vl-kB7H5L3ux"
   },
   "339edd48e4f5ca91": {
     "source": "⟦0⟧01⟦1⟧Introduction",
