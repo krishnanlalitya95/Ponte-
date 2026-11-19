@@ -252,7 +252,7 @@ function mountPicker(
       .m{position:absolute;${side}:0;bottom:48px;width:min(300px, calc(100vw - 32px));max-height:min(560px, calc(100vh - 120px));
          display:flex;flex-direction:column;background:#fff;border-radius:20px;overflow:hidden;
          font:400 15px/1.3 ${font};color:#1a1a1a;-webkit-font-smoothing:antialiased;
-         box-shadow:0 0 0 1px rgba(0,0,0,.04),0 2px 4px rgba(${a},.10),0 12px 28px -6px rgba(${a},.24),0 32px 64px -16px rgba(${a},.28);
+         box-shadow:0 2px 4px rgba(${a},.10),0 12px 28px -6px rgba(${a},.24),0 32px 64px -16px rgba(${a},.28);
          transform-origin:${side === "right" ? "calc(100% - 24px)" : "24px"} 100%;
          opacity:0;transform:translateY(8px) scale(.96);visibility:hidden;pointer-events:none;
          transition:opacity .16s ease, transform .22s cubic-bezier(.2,.9,.25,1), visibility 0s linear .22s}
@@ -288,8 +288,8 @@ function mountPicker(
          transition:opacity .22s ease, transform .32s cubic-bezier(.2,.9,.25,1.1), visibility 0s linear .32s}
       .c.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;
          transition:opacity .22s ease, transform .38s cubic-bezier(.2,.9,.25,1.1), visibility 0s}
-      .c .logo{display:block;height:30px;width:auto;margin:0 0 14px}
-      .about .logo{display:block;height:24px;width:auto;margin:0 0 8px}
+      .c .logo{display:block;height:36px;width:auto;margin:0 0 14px}
+      .about .logo{display:block;height:28px;width:auto;margin:0 0 8px}
       .c h2{margin:0 0 6px;font-size:16px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
       .c p{margin:0;color:rgba(255,255,255,.92)}
       .c a{position:absolute;${side === "right" ? "left" : "right"}:18px;bottom:18px;display:inline-flex;align-items:center;gap:2px;
@@ -302,7 +302,7 @@ function mountPicker(
         .m,.m.open,.c,.c.open{transition:opacity .15s ease, visibility 0s linear .15s;transform:none}}
     </style>
     ${callout?.enabled ? `<div class="c" role="note" aria-label="${esc(callout.title ?? "About this translator")}">
-      ${logo?.light ? `<img class="logo" src="${esc(logo.light)}" alt="${esc(logo.alt ?? "")}" width="82" height="30">` : ""}
+      ${logo?.light ? `<img class="logo" src="${esc(logo.light)}" alt="${esc(logo.alt ?? "")}" width="99" height="36">` : ""}
       ${callout.title ? `<h2>${esc(callout.title)}</h2>` : ""}
       ${callout.text ? `<p>${esc(callout.text)}</p>` : ""}
       ${callout.linkUrl ? `<a href="${esc(callout.linkUrl)}">${esc(callout.linkLabel ?? "See how I built it")} <span aria-hidden="true">${CHEVRON_SM}</span></a>` : ""}
@@ -321,7 +321,7 @@ function mountPicker(
       </ul>
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
         ${logo?.dark
-          ? `<img class="logo" src="${esc(logo.dark)}" alt="${esc(about.title ?? logo.alt ?? "")}" width="66" height="24">`
+          ? `<img class="logo" src="${esc(logo.dark)}" alt="${esc(about.title ?? logo.alt ?? "")}" width="77" height="28">`
           : `<strong>${esc(about.title ?? "About Gloss AI")}</strong>`}
         <span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span>
         <b class="cta">${esc(about.linkLabel ?? "See how I built it")} <i aria-hidden="true">${CHEVRON_SM}</i></b></a>` : ""}
