@@ -25,14 +25,14 @@
     "about": {
       "title": "About Gloss AI",
       "text": "Gloss AI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
-      "linkLabel": "View case study",
+      "linkLabel": "See how I built it",
       "url": "/gloss"
     },
     "callout": {
       "enabled": true,
       "title": "Read this portfolio in your language",
       "text": "Gloss AI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
-      "linkLabel": "View case study",
+      "linkLabel": "See how I built it",
       "linkUrl": "/gloss",
       "delayMs": 2000,
       "showForMs": 9000,

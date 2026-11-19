@@ -195,7 +195,7 @@ Your portfolio is static, so each piece of text only needs translating **once**.
 
 ### "About Gloss" in the language list
 
-The language menu ends with an **About Gloss** card: a short description in smaller text and a **View case study →** link, matching the landing note. The whole card opens your case study. Change its title, text, link label or URL in `widget.about` in `ponte.config.json`, or remove that block to hide it.
+The language menu ends with an **About Gloss** card: a short description in smaller text and a **See how I built it ›** link, matching the landing note. The whole card opens your case study. Change its title, text, link label or URL in `widget.about` in `ponte.config.json`, or remove that block to hide it.
 
 ### The landing note around the picker
 

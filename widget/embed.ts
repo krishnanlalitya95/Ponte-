@@ -179,6 +179,7 @@ export function optionLabel(code: string): string {
   return `${lang.rtl ? "\u200E" : ""}${lang.nativeName} · ${lang.name}`;
 }
 
+const CHEVRON_SM = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`;
 const CHECK = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`;
 
 function mountPicker(
@@ -260,8 +261,8 @@ function mountPicker(
       .about .t{flex:1;min-width:0}
       .about strong{display:block;font-size:13px;font-weight:600;color:rgb(${cardBg});margin-bottom:2px}
       .about span{display:block;font-size:12px;line-height:1.45;color:#5f5f5f}
-      .about .cta{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:600;color:rgb(${cardBg})}
-      .about .cta i{font-style:normal;display:inline-block;transition:transform .18s ease}
+      .about .cta{display:inline-flex;align-items:center;gap:2px;margin-top:10px;font-size:13px;font-weight:600;color:rgb(${cardBg})}
+      .about .cta i{font-style:normal;display:inline-flex;transition:transform .18s ease}
       .about:hover .cta i{transform:translateX(3px)}
 
       /* Callout: grows out of the button, which sits in its bottom-${side} corner. */
@@ -277,10 +278,10 @@ function mountPicker(
          transition:opacity .22s ease, transform .38s cubic-bezier(.2,.9,.25,1.1), visibility 0s}
       .c h2{margin:0 0 6px;font-size:16px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
       .c p{margin:0;color:rgba(255,255,255,.92)}
-      .c a{position:absolute;${side === "right" ? "left" : "right"}:18px;bottom:18px;display:inline-flex;align-items:center;gap:6px;
+      .c a{position:absolute;${side === "right" ? "left" : "right"}:18px;bottom:18px;display:inline-flex;align-items:center;gap:2px;
          color:#fff;font-weight:600;text-decoration:none;border-radius:8px;padding:2px 0}
       .c a:hover span{transform:translateX(3px)}
-      .c a span{display:inline-block;transition:transform .18s ease}
+      .c a span{display:inline-flex;transition:transform .18s ease}
       .c a:focus-visible{outline:2px solid #fff;outline-offset:3px}
       @media (prefers-reduced-motion:reduce){
         .b,.b:hover{transition:none;transform:none}.b.busy svg{animation-duration:2.4s}
@@ -289,7 +290,7 @@ function mountPicker(
     ${callout?.enabled ? `<div class="c" role="note" aria-label="${esc(callout.title ?? "About this translator")}">
       ${callout.title ? `<h2>${esc(callout.title)}</h2>` : ""}
       ${callout.text ? `<p>${esc(callout.text)}</p>` : ""}
-      ${callout.linkUrl ? `<a href="${esc(callout.linkUrl)}">${esc(callout.linkLabel ?? "View case study")} <span aria-hidden="true">→</span></a>` : ""}
+      ${callout.linkUrl ? `<a href="${esc(callout.linkUrl)}">${esc(callout.linkLabel ?? "See how I built it")} <span aria-hidden="true">${CHEVRON_SM}</span></a>` : ""}
     </div>` : ""}
     <div class="m" id="ponte-menu">
       <ul class="list" role="listbox" tabindex="-1" aria-label="Choose a language">
@@ -306,7 +307,7 @@ function mountPicker(
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
         <strong>${esc(about.title ?? "About Gloss")}</strong>
         <span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span>
-        <b class="cta">${esc(about.linkLabel ?? "View case study")} <i aria-hidden="true">→</i></b></a>` : ""}
+        <b class="cta">${esc(about.linkLabel ?? "See how I built it")} <i aria-hidden="true">${CHEVRON_SM}</i></b></a>` : ""}
     </div>
     <button class="b" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="ponte-menu">
       ${icon}
