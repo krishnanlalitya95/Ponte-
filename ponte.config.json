@@ -17,17 +17,21 @@
   ],
   "widget": {
     "accent": "#6F9C16",
+    "brand": {
+      "from": "#2F57E7",
+      "to": "#58C0D6"
+    },
     "autoDetect": false,
     "about": {
-      "title": "About Gloss",
-      "text": "Gloss is an AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "title": "About Gloss AI",
+      "text": "Gloss AI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
       "linkLabel": "View case study",
       "url": "/gloss"
     },
     "callout": {
       "enabled": true,
       "title": "Read this portfolio in your language",
-      "text": "Gloss is an AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "text": "Gloss AI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
       "linkLabel": "View case study",
       "linkUrl": "/gloss",
       "delayMs": 2000,
@@ -41,6 +45,7 @@
     "notes": "Senior product designer from Mumbai, India. Writes about his own work and life in the first person."
   },
   "doNotTranslate": [
+    "Gloss AI",
     "Gloss"
   ],
   "glossary": {

@@ -40,7 +40,13 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; position?: string; autoDetect?: boolean; callout?: Callout; about?: AboutLink };
+  widget: { accent?: string; brand?: Brand; position?: string; autoDetect?: boolean; callout?: Callout; about?: AboutLink };
+}
+
+/** Brand gradient (e.g. the Gloss AI logo): top colour → bottom colour. */
+export interface Brand {
+  from: string;
+  to: string;
 }
 
 /** Last item in the language list, linking to the story of how Ponte was made. */
@@ -120,7 +126,7 @@ if (script && !script.hasAttribute("data-manual")) {
     if (position !== "none") {
       const callout = d.callout === "off" ? undefined : published?.widget.callout;
       const about = published?.widget.about ?? (callout?.linkUrl ? { url: callout.linkUrl } : undefined);
-      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about);
+      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about, published?.widget.brand);
     }
     // Visitor's choice, else their device language if we've published it (data-auto="off" to disable).
     const first = initialLanguage({
@@ -183,14 +189,24 @@ function mountPicker(
   accent?: string,
   callout?: Callout,
   about?: AboutLink,
+  brand?: Brand,
 ) {
   // The page's language first, then every other offered language. No separate "Original":
   // the page language shows selected while the page is as written.
   const codes = [source, ...(languages ?? LANGUAGES.map((l) => l.code)).filter((c) => c !== source)].filter((c) =>
     LANGUAGES.some((l) => l.code === c),
   );
-  const a = rgb(accent);
-  const cardBg = readableOn(accent);
+  // Shadows and tints take the brand's lead colour; text accents a shade that reads on white.
+  const lead = brand?.from ?? accent;
+  const a = rgb(lead);
+  const cardBg = readableOn(lead);
+  const cardFill = brand ? `linear-gradient(155deg, ${brand.from} 0%, ${brand.to} 100%)` : `rgb(${cardBg})`;
+  const icon = brand
+    ? ICON.replace('stroke="currentColor"', 'stroke="url(#ponte-grad)"').replace(
+        "<path",
+        `<defs><linearGradient id="ponte-grad" x1="0" y1="0" x2="0" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${brand.from}"/><stop offset="1" stop-color="${brand.to}"/></linearGradient></defs><path`,
+      )
+    : ICON;
   const host = document.createElement("div");
   host.setAttribute("data-ponte-skip", "");
   const side = position === "bottom-left" ? "left" : "right";
@@ -250,7 +266,8 @@ function mountPicker(
 
       /* Callout: grows out of the button, which sits in its bottom-${side} corner. */
       .c{position:absolute;${side}:-10px;bottom:-10px;width:min(320px, calc(100vw - 12px));
-         padding:18px 18px 58px;border-radius:24px;background:rgb(${cardBg});color:#fff;
+         padding:18px 18px 58px;border-radius:24px;background:${cardFill};color:#fff;
+         text-shadow:${brand ? `0 1px 2px rgba(${rgb(brand.from)},.45)` : "none"};
          font:400 14px/1.45 ${font};-webkit-font-smoothing:antialiased;
          box-shadow:0 2px 4px rgba(${a},.18),0 12px 28px -6px rgba(${a},.40),0 32px 60px -16px rgba(${a},.35);
          transform-origin:${side === "right" ? "calc(100% - 34px)" : "34px"} calc(100% - 28px);
@@ -292,7 +309,7 @@ function mountPicker(
         <b class="cta">${esc(about.linkLabel ?? "View case study")} <i aria-hidden="true">→</i></b></a>` : ""}
     </div>
     <button class="b" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="ponte-menu">
-      ${ICON}
+      ${icon}
       <span class="sr" aria-live="polite"></span>
     </button>`;
   const btn = shadow.querySelector(".b") as HTMLButtonElement;
