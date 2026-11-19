@@ -27,6 +27,8 @@ export interface PonteConfig {
   /** Look of the visitor picker, published with the translations. */
   widget?: {
     accent?: string;
+    /** Brand gradient (top → bottom): fills the landing note, colours the picker icon and shadows. */
+    brand?: { from: string; to: string };
     position?: "bottom-right" | "bottom-left";
     /** Open in the visitor's device language when it's offered. Off: always start in the page language. */
     autoDetect?: boolean;
