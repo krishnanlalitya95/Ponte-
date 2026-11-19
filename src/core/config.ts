@@ -29,6 +29,8 @@ export interface PonteConfig {
     accent?: string;
     /** Brand gradient (top → bottom): fills the landing note, colours the picker icon and shadows. */
     brand?: { from: string; to: string };
+    /** Logos next to widget.js (from assets/): light on the gradient note, dark (colour) in the menu. */
+    logo?: { light?: string; dark?: string; alt?: string };
     position?: "bottom-right" | "bottom-left";
     /** Open in the visitor's device language when it's offered. Off: always start in the page language. */
     autoDetect?: boolean;

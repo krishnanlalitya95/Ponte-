@@ -40,7 +40,14 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; brand?: Brand; position?: string; autoDetect?: boolean; callout?: Callout; about?: AboutLink };
+  widget: { accent?: string; brand?: Brand; logo?: Logo; position?: string; autoDetect?: boolean; callout?: Callout; about?: AboutLink };
+}
+
+/** Logo images, as paths next to widget.js (or full URLs): white for the gradient note, colour for the menu. */
+export interface Logo {
+  light?: string;
+  dark?: string;
+  alt?: string;
 }
 
 /** Brand gradient (e.g. the Gloss AI logo): top colour → bottom colour. */
@@ -126,7 +133,11 @@ if (script && !script.hasAttribute("data-manual")) {
     if (position !== "none") {
       const callout = d.callout === "off" ? undefined : published?.widget.callout;
       const about = published?.widget.about ?? (callout?.linkUrl ? { url: callout.linkUrl } : undefined);
-      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about, published?.widget.brand);
+      const base = staticBase ?? scriptBase ?? "";
+      const abs = (u?: string) => (u ? (/^https?:|^\//.test(u) ? u : `${base}/${u}`) : undefined);
+      const logo = published?.widget.logo;
+      const logos = logo ? { light: abs(logo.light), dark: abs(logo.dark), alt: logo.alt ?? "Gloss AI" } : undefined;
+      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about, published?.widget.brand, logos);
     }
     // Visitor's choice, else their device language if we've published it (data-auto="off" to disable).
     const first = initialLanguage({
@@ -191,6 +202,7 @@ function mountPicker(
   callout?: Callout,
   about?: AboutLink,
   brand?: Brand,
+  logo?: Logo,
 ) {
   // The page's language first, then every other offered language. No separate "Original":
   // the page language shows selected while the page is as written.
@@ -276,6 +288,8 @@ function mountPicker(
          transition:opacity .22s ease, transform .32s cubic-bezier(.2,.9,.25,1.1), visibility 0s linear .32s}
       .c.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;
          transition:opacity .22s ease, transform .38s cubic-bezier(.2,.9,.25,1.1), visibility 0s}
+      .c .logo{display:block;height:20px;width:auto;margin:0 0 12px}
+      .about .logo{display:block;height:16px;width:auto;margin:0 0 6px}
       .c h2{margin:0 0 6px;font-size:16px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
       .c p{margin:0;color:rgba(255,255,255,.92)}
       .c a{position:absolute;${side === "right" ? "left" : "right"}:18px;bottom:18px;display:inline-flex;align-items:center;gap:2px;
@@ -288,6 +302,7 @@ function mountPicker(
         .m,.m.open,.c,.c.open{transition:opacity .15s ease, visibility 0s linear .15s;transform:none}}
     </style>
     ${callout?.enabled ? `<div class="c" role="note" aria-label="${esc(callout.title ?? "About this translator")}">
+      ${logo?.light ? `<img class="logo" src="${esc(logo.light)}" alt="${esc(logo.alt ?? "")}" width="55" height="20">` : ""}
       ${callout.title ? `<h2>${esc(callout.title)}</h2>` : ""}
       ${callout.text ? `<p>${esc(callout.text)}</p>` : ""}
       ${callout.linkUrl ? `<a href="${esc(callout.linkUrl)}">${esc(callout.linkLabel ?? "See how I built it")} <span aria-hidden="true">${CHEVRON_SM}</span></a>` : ""}
@@ -305,7 +320,9 @@ function mountPicker(
           .join("")}
       </ul>
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
-        <strong>${esc(about.title ?? "About Gloss")}</strong>
+        ${logo?.dark
+          ? `<img class="logo" src="${esc(logo.dark)}" alt="${esc(about.title ?? logo.alt ?? "")}" width="44" height="16">`
+          : `<strong>${esc(about.title ?? "About Gloss AI")}</strong>`}
         <span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span>
         <b class="cta">${esc(about.linkLabel ?? "See how I built it")} <i aria-hidden="true">${CHEVRON_SM}</i></b></a>` : ""}
     </div>
