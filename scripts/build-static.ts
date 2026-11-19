@@ -10,7 +10,7 @@
  *
  * The workflow "Publish translations" runs this and deploys public/ to GitHub Pages.
  */
-import { copyFile, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, cp, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { LANGUAGES } from "../src/core/languages.js";
@@ -70,6 +70,8 @@ export async function buildStatic(
   const updatedAt = new Date().toISOString();
   await writeFile(join(outDir, "t", "index.json"), JSON.stringify({ updatedAt, languages, widget: widget ?? {} }, null, 2));
   await copyFile(join(root, "dist", "ponte-widget.js"), join(outDir, "widget.js"));
+  // Brand assets (logos) referenced by widget.logo in ponte.config.json.
+  await cp(join(root, "assets"), outDir, { recursive: true }).catch(() => {});
   await writeFile(
     join(outDir, "index.html"),
     `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

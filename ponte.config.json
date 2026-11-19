@@ -18,8 +18,13 @@
   "widget": {
     "accent": "#6F9C16",
     "brand": {
-      "from": "#2F57E7",
-      "to": "#58C0D6"
+      "from": "#205EEE",
+      "to": "#07C1DA"
+    },
+    "logo": {
+      "light": "brand/gloss-ai-white.png",
+      "dark": "brand/gloss-ai-color.png",
+      "alt": "Gloss AI"
     },
     "autoDetect": false,
     "about": {
