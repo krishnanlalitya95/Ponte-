@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { normalizeLanguageCode } from "./languages.js";
-import type { Author, TranslateRequest } from "./types.js";
+import type { Author, TranslateRequest, Voice } from "./types.js";
 
 /**
  * Site-wide translation settings, kept in ponte.config.json at the repo root.
@@ -10,6 +10,7 @@ import type { Author, TranslateRequest } from "./types.js";
  *
  *   {
  *     "author": { "name": "…", "gender": "male", "notes": "…" },
+ *     "voice": "everyday",
  *     "doNotTranslate": ["CareOne"],
  *     "glossary": { "hi": { "Lalitya Krishnan": "लालित्य कृष्णन" } }
  *   }
@@ -24,6 +25,8 @@ export interface PonteConfig {
    */
   languages?: string[];
   author?: Author;
+  /** "everyday" (how people really talk), "standard" or "formal". Changing it re-translates saved text. */
+  voice?: Voice;
   /** Look of the visitor picker, published with the translations. */
   widget?: {
     accent?: string;
@@ -77,6 +80,7 @@ export function withConfig(req: TranslateRequest, config: PonteConfig): Translat
     ...req,
     sourceLanguage: req.sourceLanguage ?? config.sourceLanguage,
     author: req.author ?? config.author,
+    voice: req.voice ?? config.voice,
     glossary: Object.keys(glossary).length ? glossary : undefined,
     doNotTranslate: dnt.length ? dnt : undefined,
   };

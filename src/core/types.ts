@@ -17,6 +17,14 @@ export const CONTENT_TYPES: ContentType[] = [
   "mixed",
 ];
 
+/**
+ * How everyday the language should sound.
+ * everyday = the words people actually use when they talk and text today (default for GlossAI).
+ * standard = neutral written language.
+ * formal   = polished, official register.
+ */
+export type Voice = "everyday" | "standard" | "formal";
+
 /** Who wrote the text, so first-person grammar (gendered verbs/adjectives) comes out right. */
 export interface Author {
   name?: string;
@@ -51,6 +59,8 @@ export interface TranslateRequest {
   glossary?: Record<string, string>;
   /** The author of the text (first-person voice). */
   author?: Author;
+  /** How everyday the language should sound. Unset = standard. */
+  voice?: Voice;
 }
 
 export interface GlossaryEntry {

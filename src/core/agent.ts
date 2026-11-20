@@ -164,7 +164,7 @@ export class Ponte {
 
   private chunkCall(req: TranslateRequest, target: Language, brief: ContentBrief, chunk: Segment[], precedingContext: string[]): StructuredCall {
     return {
-      system: translateSystem(target),
+      system: translateSystem(target, req.voice),
       user: translateUser({ req, target, brief, segments: chunk, precedingContext }),
       toolName: "submit_translations",
       toolDescription: "Submit the translation for every segment.",
@@ -282,8 +282,8 @@ export class Ponte {
    */
   async getBrief(req: TranslateRequest, usage: Usage): Promise<ContentBrief> {
     const pageKey = req.context?.url
-      ? hashKey("brief-v2", normalizePageUrl(req.context.url), req.contentType, JSON.stringify(req.author ?? {}))
-      : hashKey("brief-v2", req.contentType, JSON.stringify(req.author ?? {}), req.segments.map((s) => s.text).join("\n").slice(0, this.analysisChars));
+      ? hashKey("brief-v2", normalizePageUrl(req.context.url), req.contentType, JSON.stringify(req.author ?? {}), ...(req.voice ? [req.voice] : []))
+      : hashKey("brief-v2", req.contentType, JSON.stringify(req.author ?? {}), ...(req.voice ? [req.voice] : []), req.segments.map((s) => s.text).join("\n").slice(0, this.analysisChars));
     const cached = this.briefCache.get(pageKey);
     if (cached) return cached;
     const saved = await this.store.get(BRIEFS, pageKey);
@@ -377,7 +377,7 @@ export function leftInOtherScript(source: string, target: string): boolean {
 
 /**
  * Fingerprint of everything that should change a saved translation if edited:
- * author, glossary and keep-as-is terms for this language.
+ * author, voice, glossary and keep-as-is terms for this language.
  */
 export function settingsKey(req: TranslateRequest, lang: string, text: string): string {
   // Only terms that occur in this text matter, so adding a glossary entry re-translates just
@@ -387,7 +387,9 @@ export function settingsKey(req: TranslateRequest, lang: string, text: string): 
     .filter(([k]) => t.includes(k.toLowerCase()))
     .sort(([a], [b]) => a.localeCompare(b));
   const dnt = (req.doNotTranslate ?? []).filter((d) => t.includes(d.toLowerCase())).sort();
-  return hashKey("settings-v2", lang, JSON.stringify(req.author ?? {}), JSON.stringify(glossary), JSON.stringify(dnt)).slice(0, 12);
+  // Voice joins the fingerprint only when set, so sites that never set it keep their saved text.
+  const voice = req.voice && req.voice !== "standard" ? [`voice:${req.voice}`] : [];
+  return hashKey("settings-v2", lang, JSON.stringify(req.author ?? {}), JSON.stringify(glossary), JSON.stringify(dnt), ...voice).slice(0, 12);
 }
 
 function validateSegments(segments: unknown): asserts segments is Segment[] {

@@ -1,4 +1,4 @@
-import type { ContentType, Segment } from "../src/core/types.js";
+import type { ContentType, Segment, Voice } from "../src/core/types.js";
 
 export interface EvalCase {
   name: string;
@@ -11,6 +11,10 @@ export interface EvalCase {
   mustContain?: string[];
   /** Keep the line count of verse. */
   keepLines?: boolean;
+  /** Voice to translate in (see Voice). */
+  voice?: Voice;
+  /** Textbook/official words that should NOT appear in an everyday translation. */
+  mustAvoid?: string[];
   /** What a good translation must carry over — given to the judge. */
   meaningNotes: string;
 }
@@ -131,5 +135,39 @@ export const CASES: EvalCase[] = [
     mustContain: ["ICICI Lombard"],
     meaningNotes:
       "Confident first-person designer voice. The headline's contrast (calm vs anxious) must land as a crisp tagline. 'A claim that's gone quiet' = a claim with no updates; render the feeling, not literally a silent claim. Consistent register (je, no stiff vous-to-reader).",
+  },
+{
+    name: "everyday voice · portfolio en → hi",
+    targetLanguage: "hi",
+    expectedType: ["portfolio_copy", "case_study", "mixed"],
+    voice: "everyday",
+    segments: [
+      { id: "h1", role: "h1", text: "I design apps that help people when things go wrong." },
+      {
+        id: "p",
+        role: "p",
+        text:
+          "For this project I talked to twenty users, tested three prototypes with the team, and used their feedback to make filing a claim simple enough to finish in five minutes.",
+      },
+    ],
+    mustContain: ["5"],
+    mustAvoid: ["प्रयोक्ता", "अनुप्रयोग", "अभिकल्पना", "आवश्यक", "प्रारंभ", "सहायता", "उपयोगकर्ताओं"],
+    meaningNotes:
+      "Must sound like everyday Hindi a young professional in Mumbai would actually say — Hindustani, with the English words people really use (डिज़ाइन, ऐप, यूज़र, प्रोजेक्ट, टीम, फ़ीडबैक, प्रोटोटाइप). Penalise heavily any शुद्ध/सरकारी Hindi or Sanskritised coinages even if accurate. Numbers (twenty, three, five minutes) must stay exact.",
+  },
+  {
+    name: "everyday voice · portfolio en → ta",
+    targetLanguage: "ta",
+    expectedType: ["portfolio_copy", "case_study", "mixed"],
+    voice: "everyday",
+    segments: [
+      {
+        id: "p",
+        role: "p",
+        text: "I spent two weeks with the claims team to understand why users kept calling support. The answer was simple: the app never told them what happens next.",
+      },
+    ],
+    meaningNotes:
+      "Simple modern written Tamil with everyday vocabulary and the English loanwords Tamil speakers really use (டீம், யூசர், ஆப், சப்போர்ட்). Penalise literary செந்தமிழ் or தனித்தமிழ் coinages for tech words, and penalise spoken-dialect spellings. The 'simple answer' turn must land.",
   },
 ];
