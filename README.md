@@ -63,6 +63,8 @@ Open **http://localhost:8787/demo** and pick a language from the pill in the bot
 
    **Every visitor lands on English**, whatever their device language is. They switch with the picker, and their pick is remembered for their next visit. `?lang=ta` in a link opens a page in Tamil, and `?lang=original` forces the original. To have the site open in a visitor's device language instead, set `"autoDetect": true` under `"widget"` in `ponte.config.json`. If you'd rather place the picker yourself, use the [`PonteWidget`](framer/PonteWidget.tsx) code component with **Mode: Static** instead of the script.
 
+   **Share in a language.** The language menu ends with "Share this page in हिन्दी" (or whichever language is showing). On phones it opens the share sheet (WhatsApp and the rest) with a link that opens the page in that language; on a computer it copies the link. To hide it, set `"share": false` under `"widget"` in `ponte.config.json`.
+
 **Updating your site:** after you change text in Framer, run **Pre-translate site** again. Only the changed text is sent to the agent. **Fixing a translation:** edit it on the `ponte-translations` branch (see [Saved translations](#saved-translations)). Saving the edit republishes automatically within a minute or two.
 
 **What a visitor's browser downloads:** `widget.js` (about 13 KB) and one small file for the chosen language, `t/hi.json`. There are no AI calls and no server.
