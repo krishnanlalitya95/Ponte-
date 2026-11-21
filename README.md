@@ -227,7 +227,7 @@ Site-wide rules that apply to every translation live in [`ponte.config.json`](po
 - **One reading per page.** The agent reads each page once and writes a brief (genre, tone, terms) that every language shares. The brief is saved in `translations/_briefs.json`, so later runs don't pay for it again.
 - **Batch mode (default).** Pre-translate sends all requests as one Anthropic Message Batch, at half the price. Results usually come back within minutes.
 - **Estimate first.** Run Pre-translate with mode **estimate** to see how much is left and roughly what it will cost, without spending anything.
-- **Weekly top-up.** Pre-translate runs by itself every Monday, so new projects get translated. A week with no new text makes no AI calls. To turn this off, remove the `schedule:` lines from `.github/workflows/pretranslate.yml`. GitHub also pauses scheduled runs on a repo that has had no activity for 60 days, and running it once by hand re-enables it.
+- **Runs only when you start it.** There is no automatic schedule: after adding or editing content, run Actions → Pre-translate site. Text that is already saved is skipped.
 
 ### Translate the whole site in advance
 

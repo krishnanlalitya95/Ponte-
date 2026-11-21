@@ -5,11 +5,8 @@ name: Pre-translate site
 # Saved translations go to the "ponte-translations" branch, folder translations/,
 # and are then published to GitHub Pages for the free Static mode.
 # Text that is already saved is skipped, so re-running only translates new or edited text.
-# It also runs by itself every Monday, so new projects get translated without you
-# remembering (a week with no new text makes no AI calls and costs nothing).
+# It only runs when you start it (no automatic schedule).
 on:
-  schedule:
-    - cron: "17 3 * * 1" # Mondays 08:47 IST
   workflow_dispatch:
     inputs:
       mode:
