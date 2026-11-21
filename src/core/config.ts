@@ -39,6 +39,8 @@ export interface PonteConfig {
     autoDetect?: boolean;
     /** "Share this page in …" in the language menu (native share sheet, or copy link). On unless false. */
     share?: boolean;
+    /** Language switch effect: "dust" (default) or "none". */
+    transition?: "dust" | "none";
     /** Last item in the language list, linking to the Gloss case study. */
     about?: { title?: string; text?: string; linkLabel?: string; url?: string };
     /** Green note that opens around the picker on landing (see widget/embed.ts → Callout). */

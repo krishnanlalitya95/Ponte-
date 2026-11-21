@@ -14,12 +14,14 @@
  * data-accent="#6F9C16" (picker colour; default from ponte.config.json → widget.accent),
  * data-fonts="off", data-auto="off" (don't switch to the visitor's device language),
  * data-share="off" (hide "Share this page in …" in the menu),
+ * data-transition="off" (switch languages without the dust effect),
  * data-static="…" (published translations elsewhere),
  * data-do-not-translate, data-content-type, data-notes (server mode).
  * Add data-ponte-skip to any element Ponte should leave alone.
  */
 import { createPonte, initialLanguage, pageLanguage, preferredLanguage, type PonteController, type PonteOptions } from "./engine.js";
 import { LANGUAGES } from "../src/core/languages.js";
+import { snapSwap } from "./snap.js";
 import type { ContentType } from "../src/core/types.js";
 
 declare global {
@@ -41,7 +43,7 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; brand?: Brand; logo?: Logo; position?: string; autoDetect?: boolean; share?: boolean; callout?: Callout; about?: AboutLink };
+  widget: { accent?: string; brand?: Brand; logo?: Logo; position?: string; autoDetect?: boolean; share?: boolean; transition?: "dust" | "none"; callout?: Callout; about?: AboutLink };
 }
 
 /** Logo images, as paths next to widget.js (or full URLs): white for the gradient note, colour for the menu. */
@@ -130,6 +132,12 @@ if (script && !script.hasAttribute("data-manual")) {
     const published = staticBase ? await publishedIndex(staticBase) : null;
     if (!codes && published && !endpoint) codes = published.languages;
     const accent = d.accent || published?.widget.accent;
+    // Dust when the visitor picks a language (data-transition="off" or widget.transition: "none" to switch it off).
+    const dust = d.transition ? d.transition !== "off" : published?.widget.transition !== "none";
+    if (dust) {
+      const green = published?.widget.brand?.from ?? accent;
+      opts.transition = (blocks, swap) => snapSwap(blocks, swap, { accent: green });
+    }
     const position = d.position ?? published?.widget.position ?? "bottom-right";
     if (position !== "none") {
       const callout = d.callout === "off" ? undefined : published?.widget.callout;
@@ -394,7 +402,7 @@ function mountPicker(
     if (code !== current) {
       current = code;
       label();
-      void ponte.translate(code);
+      void ponte.translate(code, { animate: true });
     }
   };
   const onOutside = (e: Event) => {

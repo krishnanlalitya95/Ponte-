@@ -65,6 +65,8 @@ Open **http://localhost:8787/demo** and pick a language from the pill in the bot
 
    **Share in a language.** The language menu ends with "Share this page in हिन्दी" (or whichever language is showing). On phones it opens the share sheet (WhatsApp and the rest) with a link that opens the page in that language; on a computer it copies the link. To hide it, set `"share": false` under `"widget"` in `ponte.config.json`.
 
+   **Dust transition.** When a visitor picks a language, the text on screen breaks into fine dust that blows away from left to right while the new language fades in (about 2 seconds). It only plays for a pick from the menu, never on page load or when opening another page, and only text on screen animates. Visitors who turn on "reduce motion" get an instant switch, and slow devices fall back to a plain fade. To switch it off, set `"transition": "none"` under `"widget"` in `ponte.config.json`.
+
 **Updating your site:** after you change text in Framer, run **Pre-translate site** again. Only the changed text is sent to the agent. **Fixing a translation:** edit it on the `ponte-translations` branch (see [Saved translations](#saved-translations)). Saving the edit republishes automatically within a minute or two.
 
 **What a visitor's browser downloads:** `widget.js` (about 13 KB) and one small file for the chosen language, `t/hi.json`. There are no AI calls and no server.
