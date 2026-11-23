@@ -96,6 +96,7 @@ const VOICE_LABEL: Record<Voice, string> = {
 const VOICE_GUIDANCE: Record<Voice, string> = {
   everyday: `VOICE: EVERYDAY. This matters more than sounding elegant.
 Write the way an educated native speaker actually talks and writes today: to a friend or colleague on WhatsApp, in a well-made modern app, in a popular magazine. NOT the way a textbook, a government notice, a dictionary or a literary classic does.
+The site has a global audience: use everyday words understood by native speakers in every country and region where the language is spoken. Avoid words, spellings and slang specific to one city, region or dialect.
 - Common word over "pure", literary or Sanskritised/classical word. If two words mean the same thing, pick the one people say.
 - If people normally say the English word (design, app, user, project, team, feedback, research, prototype, website, office…), write that English word in the target script. Don't invent or dig up a native coinage nobody uses.
 - Translate the meaning of each sentence, then say it the natural way. Rebuild the sentence if needed; short, simple sentences beat long formal ones.
@@ -103,41 +104,41 @@ Write the way an educated native speaker actually talks and writes today: to a f
 - Still respectful and correct — everyday, not slangy, not crude, no text-speak.
 - Verse stays poetic: keep the imagery and music, but with words that feel alive today, not archaic or bookish ones.
 - Numbers, metrics, research claims and hedging stay exact — only the wording gets simpler.
-- Before you submit, re-read each line and ask: "Would a 25-year-old who speaks this language at home actually say this?" If not, change the word or the sentence.`,
+- Before you submit, re-read each line and ask: "Would a 25-year-old who speaks this language at home, wherever they live, understand it at once and say it this way?" If not, change the word or the sentence.`,
   standard: "VOICE: STANDARD. Neutral, clear written language; avoid both slang and archaic or bureaucratic words.",
   formal: "VOICE: FORMAL. Polished, respectful written register suitable for official or academic readers.",
 };
 
 /** What "everyday" means in each language — where models most often drift into textbook register. */
 export const EVERYDAY_NOTES: Record<string, string> = {
-  hi: `Hindi: write spoken Hindustani as people in Mumbai/Delhi actually use it, not शुद्ध/सरकारी हिंदी. Prefer काम (not कार्य), मदद (not सहायता), ज़रूरी (not आवश्यक), शुरू (not प्रारंभ), इस्तेमाल (not उपयोग/प्रयोग), लोग (not व्यक्ति/जन), सोच/आइडिया (not विचारधारा), बेहतर (not उत्कृष्ट), आसान (not सरल/सुगम). Urdu-origin everyday words (ज़िंदगी, शौक़, ख़ास, दुनिया, वक़्त) are natural. Use English loanwords people say: डिज़ाइन, यूज़र, ऐप, प्रोजेक्ट, टीम, रिसर्च, फ़ीडबैक — never coinages like प्रयोक्ता, अनुप्रयोग, अभिकल्पना, अभिकल्पक.`,
-  mr: `Marathi: everyday spoken-standard Marathi (as in Pune/Mumbai), not heavy Sanskritised or official Marathi. Use English loanwords people say: डिझाइन, युझर, ॲप, प्रोजेक्ट, टीम, रिसर्च. Prefer वापर (not उपयोजन), काम, मदत, गरज.`,
-  gu: `Gujarati: everyday Gujarati as spoken in Ahmedabad/Mumbai, not literary or official. Keep English loanwords people use: ડિઝાઇન, યુઝર, એપ, પ્રોજેક્ટ, ટીમ.`,
-  bn: `Bengali: চলিত ভাষা (modern colloquial standard), never সাধু ভাষা forms (করিয়া, তাহার, ইহা). Everyday words over tatsama-heavy ones (কাজ not কার্য, সাহায্য/হেল্প as people say). Keep English loanwords Kolkata speakers use: ডিজাইন, ইউজার, অ্যাপ, প্রজেক্ট, টিম.`,
-  ta: `Tamil: simple modern written Tamil as used by popular Tamil websites and apps — not literary செந்தமிழ், and don't use தனித்தமிழ் coinages for tech or work words. Keep English loanwords Tamil speakers actually use: டிசைன், யூசர், ஆப், ப்ராஜெக்ட், டீம், ரிசர்ச். Don't write spoken-dialect spellings (e.g. பண்றேன்) either — modern written form, everyday vocabulary.`,
-  te: `Telugu: వ్యావహారిక భాష (modern spoken standard), never గ్రాంథిక forms. Keep English loanwords people use: డిజైన్, యూజర్, యాప్, ప్రాజెక్ట్, టీమ్.`,
-  kn: `Kannada: everyday modern Kannada as used in Bengaluru, not heavy Sanskritised or official Kannada. Keep English loanwords people use: ಡಿಸೈನ್, ಯೂಸರ್, ಆ್ಯಪ್, ಪ್ರಾಜೆಕ್ಟ್, ಟೀಮ್.`,
-  ml: `Malayalam: simple modern written Malayalam as in popular news/lifestyle sites, not heavy Sanskritised literary style. Keep English loanwords people use: ഡിസൈൻ, യൂസർ, ആപ്പ്, പ്രോജക്ട്, ടീം.`,
-  pa: `Punjabi: everyday Punjabi as spoken, with English loanwords people use (ਡਿਜ਼ਾਈਨ, ਯੂਜ਼ਰ, ਐਪ, ਪ੍ਰੋਜੈਕਟ).`,
+  hi: `Hindi: everyday Hindustani as Hindi speakers in India and abroad use it, not शुद्ध/सरकारी हिंदी. Prefer काम (not कार्य), मदद (not सहायता), ज़रूरी (not आवश्यक), शुरू (not प्रारंभ), इस्तेमाल (not उपयोग/प्रयोग), लोग (not व्यक्ति/जन), सोच/आइडिया (not विचारधारा), बेहतर (not उत्कृष्ट), आसान (not सरल/सुगम). Urdu-origin everyday words (ज़िंदगी, शौक़, ख़ास, दुनिया, वक़्त) are natural. Use English loanwords people say: डिज़ाइन, यूज़र, ऐप, प्रोजेक्ट, टीम, रिसर्च, फ़ीडबैक — never coinages like प्रयोक्ता, अनुप्रयोग, अभिकल्पना, अभिकल्पक. Don't overdo English either: write a Hindi word when people commonly say one (आसान, not सिंपल; अनुभव or तजुर्बा, not एक्सपीरियंस).`,
+  mr: `Marathi: everyday standard Marathi understood by Marathi speakers everywhere, not heavy Sanskritised or official Marathi, and not one city's slang. Use English loanwords people say: डिझाइन, युझर, ॲप, प्रोजेक्ट, टीम, रिसर्च. Prefer वापर (not उपयोजन), काम, मदत, गरज.`,
+  gu: `Gujarati: everyday standard Gujarati understood by Gujarati speakers in India and abroad, not literary or official. Keep English loanwords people use: ડિઝાઇન, યુઝર, એપ, પ્રોજેક્ટ, ટીમ.`,
+  bn: `Bengali: চলিত ভাষা (modern standard), never সাধু ভাষা forms (করিয়া, তাহার, ইহা). Readers are in both India and Bangladesh: choose words natural on both sides and avoid ones that belong to only one. Everyday words over tatsama-heavy ones (কাজ not কার্য). Keep widely used English loanwords: ডিজাইন, ইউজার, অ্যাপ, প্রজেক্ট, টিম.`,
+  ta: `Tamil: simple modern written Tamil readable by Tamil speakers in India, Sri Lanka, Singapore and Malaysia — not literary செந்தமிழ், and don't invent தனித்தமிழ் coinages for tech or work words. Keep only widely known English loanwords (டிசைன், யூசர், ஆப், ப்ராஜெக்ட், டீம்) and use common Tamil words for everything else. Modern written forms, not spoken-dialect spellings (e.g. பண்றேன்).`,
+  te: `Telugu: వ్యావహారిక భాష (modern standard), never గ్రాంథిక forms, understood across Andhra Pradesh, Telangana and abroad. Keep English loanwords people use: డిజైన్, యూజర్, యాప్, ప్రాజెక్ట్, టీమ్.`,
+  kn: `Kannada: everyday modern standard Kannada understood across Karnataka and abroad, not heavy Sanskritised or official Kannada. Keep English loanwords people use: ಡಿಸೈನ್, ಯೂಸರ್, ಆ್ಯಪ್, ಪ್ರಾಜೆಕ್ಟ್, ಟೀಮ್.`,
+  ml: `Malayalam: simple modern written Malayalam as in popular news and lifestyle writing, readable in Kerala and by Malayalis abroad; not heavy Sanskritised literary style. Keep English loanwords people use: ഡിസൈൻ, യൂസർ, ആപ്പ്, പ്രോജക്ട്, ടീം.`,
+  pa: `Punjabi: everyday standard Punjabi in Gurmukhi, understood in India and abroad, with English loanwords people use (ਡਿਜ਼ਾਈਨ, ਯੂਜ਼ਰ, ਐਪ, ਪ੍ਰੋਜੈਕਟ).`,
   or: `Odia: everyday modern Odia, with English loanwords people use (ଡିଜାଇନ, ୟୁଜର, ଆପ୍).`,
-  ur: `Urdu: everyday spoken Urdu, not heavy Persianised/Arabic literary vocabulary; English loanwords people use (ڈیزائن، یوزر، ایپ، پروجیکٹ).`,
-  fr: `French: natural contemporary French as on a good modern website — light, direct, not administrative (avoid "afin de", "ledit", nominal chains). Anglicisms that French designers actually use (design, UX, feedback) are fine.`,
-  de: `German: natural contemporary German as modern design studios write it — short sentences, verbs over noun chains (avoid Behördendeutsch and stacked compounds). Established anglicisms (Design, User, Feedback, Team) are fine.`,
-  es: `Spanish: natural, contemporary, neutral Spanish; direct and warm, not bureaucratic.`,
-  pt: `Portuguese: natural contemporary Portuguese; direct, not bureaucratic.`,
+  ur: `Urdu: everyday Urdu understood in Pakistan and India, not heavy Persianised/Arabic literary vocabulary; English loanwords people use (ڈیزائن، یوزر، ایپ، پروجیکٹ).`,
+  fr: `French: natural contemporary international French, read in France, Belgium, Switzerland, Canada and Africa — light, direct, not administrative (avoid "afin de", "ledit", nominal chains) and no slang from one country. Widely used design anglicisms (design, UX) are fine.`,
+  de: `German: natural contemporary German for readers in Germany, Austria and Switzerland — short sentences, verbs over noun chains (avoid Behördendeutsch and stacked compounds). Established anglicisms (Design, User, Feedback, Team) are fine.`,
+  es: `Spanish: natural, contemporary neutral Spanish understood in Spain and Latin America; direct and warm, not bureaucratic; no country-specific slang.`,
+  pt: `Portuguese: natural contemporary Portuguese; direct, not bureaucratic; avoid expressions only one of Brazil or Portugal uses.`,
   it: `Italian: natural contemporary Italian; avoid burocratese.`,
-  ar: `Arabic: clear, simple Modern Standard Arabic as used by modern tech and lifestyle sites — not classical or ornate. Short sentences; familiar vocabulary; established loanwords (تطبيق، تصميم) are fine.`,
+  ar: `Arabic: clear, simple Modern Standard Arabic readable from Morocco to the Gulf, as used by modern tech and lifestyle sites — not classical or ornate, and no dialect words. Short sentences; familiar vocabulary; established loanwords (تطبيق، تصميم) are fine.`,
   ja: `Japanese: plain, friendly です・ます style; avoid stiff 漢語-heavy phrasing and over-honorific keigo (尊敬語/謙譲語 piles). Use katakana loanwords Japanese designers use: デザイン, ユーザー, アプリ, プロジェクト, チーム, リサーチ.`,
   ko: `Korean: friendly 해요체, not stiff 합니다체 throughout; prefer everyday words over heavy Sino-Korean ones. Use loanwords Korean designers use: 디자인, 사용자/유저, 앱, 프로젝트, 팀, 리서치.`,
   zh: `Chinese: natural modern Mandarin as on popular apps and sites; avoid 书面语/四字成语 piles and bureaucratic phrasing.`,
   ru: `Russian: natural contemporary Russian; avoid канцелярит (officialese, noun chains).`,
   id: `Indonesian: everyday Bahasa Indonesia as on modern apps, not stiff formal government style; common English loanwords are fine.`,
   tr: `Turkish: natural contemporary Turkish; avoid stiff Ottoman-era or bureaucratic vocabulary.`,
-  nl: `Dutch: natural, direct contemporary Dutch; avoid ambtelijke taal.`,
-  en: `English: plain, natural, contemporary English; avoid stiff or archaic phrasing.`,
+  nl: `Dutch: natural, direct contemporary Dutch for the Netherlands and Belgium; avoid ambtelijke taal.`,
+  en: `English: plain, natural, contemporary international English; avoid stiff or archaic phrasing and region-specific idioms.`,
 };
 
-function voiceSection(target: Language, voice: Voice | undefined): string {
+export function voiceSection(target: Language, voice: Voice | undefined): string {
   if (!voice) return "";
   const lang = voice === "everyday" && EVERYDAY_NOTES[target.code] ? `\n${EVERYDAY_NOTES[target.code]}` : "";
   return `\n\n${VOICE_GUIDANCE[voice]}${lang}`;
@@ -200,7 +201,8 @@ Principles:
 7. Some segments contain markers like ⟦0⟧ ⟦1⟧. Each marker starts a piece of text with its own formatting (a link, bold word). Every marker in the source MUST appear exactly once in your translation, followed by the words that correspond to that piece. You may reorder markers when the target grammar requires it.
 8. If a segment is already in ${target.name}, or is a name/brand/term that should stay as-is, return it unchanged with action "unchanged".
 9. Never add explanations, notes, quotes or translator's commentary. Output only the translation in the tool call.
-10. Return one result for EVERY segment id you were given, with the same ids.${voiceSection(target, voice)}`;
+10. Return one result for EVERY segment id you were given, with the same ids.
+11. Names of fields, methods, job titles, courses and projects (Universal Design, design system, user research…) are terms, not phrases: never translate them word by word. Use the name professionals in ${target.name} use; if they say the English term, write it in ${target.script} script. A glossary entry always wins.${voiceSection(target, voice)}`;
 }
 
 /** When the target is the page's own language, everything sent is in some other language. */

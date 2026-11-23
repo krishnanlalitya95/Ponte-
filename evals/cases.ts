@@ -153,7 +153,7 @@ export const CASES: EvalCase[] = [
     mustContain: ["5"],
     mustAvoid: ["प्रयोक्ता", "अनुप्रयोग", "अभिकल्पना", "आवश्यक", "प्रारंभ", "सहायता", "उपयोगकर्ताओं"],
     meaningNotes:
-      "Must sound like everyday Hindi a young professional in Mumbai would actually say — Hindustani, with the English words people really use (डिज़ाइन, ऐप, यूज़र, प्रोजेक्ट, टीम, फ़ीडबैक, प्रोटोटाइप). Penalise heavily any शुद्ध/सरकारी Hindi or Sanskritised coinages even if accurate. Numbers (twenty, three, five minutes) must stay exact.",
+      "Must sound like everyday Hindi that Hindi speakers anywhere would say — Hindustani, with the English words people really use (डिज़ाइन, ऐप, यूज़र, प्रोजेक्ट, टीम, फ़ीडबैक, प्रोटोटाइप) but not English where a common Hindi word exists. Penalise heavily any शुद्ध/सरकारी Hindi or Sanskritised coinages even if accurate. Numbers (twenty, three, five minutes) must stay exact.",
   },
   {
     name: "everyday voice · portfolio en → ta",
@@ -169,5 +169,15 @@ export const CASES: EvalCase[] = [
     ],
     meaningNotes:
       "Simple modern written Tamil with everyday vocabulary and the English loanwords Tamil speakers really use (டீம், யூசர், ஆப், சப்போர்ட்). Penalise literary செந்தமிழ் or தனித்தமிழ் coinages for tech words, and penalise spoken-dialect spellings. The 'simple answer' turn must land.",
+  },
+  {
+    name: "terms · Universal Design en → ta",
+    targetLanguage: "ta",
+    expectedType: ["portfolio_copy", "case_study", "mixed"],
+    voice: "everyday",
+    segments: [{ id: "p", role: "p", text: "From engineering and universal design to building digital products at scale, curiosity has shaped how I work." }],
+    mustAvoid: ["உலகளாவிய வடிவமைப்பு", "தயாரிப்பு வடிவமைப்பாளர்"],
+    meaningNotes:
+      "Universal Design is a named design field (design that works for everyone), not 'worldwide design': it must stay a term (யுனிவர்சல் டிசைன்). Simple modern written Tamil readable in India and Sri Lanka.",
   },
 ];

@@ -5,6 +5,7 @@
  *   npm run pretranslate -- --url https://lalityakrishnan.in --langs hi,ta --batch
  *   npm run pretranslate -- --url https://lalityakrishnan.in --estimate      # what it would cost; no API calls
  *   npm run pretranslate -- --url https://lalityakrishnan.in --no-words      # skip word lookups
+ *   npm run pretranslate -- --url https://lalityakrishnan.in --no-check      # skip the independent checker
  *
  * 1. Crawls the site (same-site links, up to --max-pages) and finds text on each page
  *    exactly the way the visitor widget does (same code).
@@ -13,6 +14,9 @@
  * 4. Translates the rest. With --batch, every request goes out as one Message Batch:
  *    half the price, results usually within minutes (at most 24 h).
  * 5. Saves to the configured store (PONTE_STORE / PONTE_GITHUB_*).
+ * 5b. The independent checker reads every translation it hasn't checked yet next to the
+ *    original, flags real problems (meaning, terms, grammar, numbers, unclear words) and
+ *    saves the fix. Skip with --no-check.
  * 6. Prepares word lookups (select a word on the site → its meaning in any language) for
  *    text that doesn't have them yet, or whose translation changed. Skip with --no-words.
  */
@@ -30,6 +34,7 @@ import { createPonte } from "../widget/engine.js";
 import { scriptCandidates } from "../src/core/languages.js";
 import { chunkWordSegments, cleanGlosses, plain, wordsCall, wordsSettings, wordsStoreKey, type WordGloss, type WordSegment } from "../src/core/words.js";
 import type { StoredTranslation } from "../src/core/store.js";
+import { acceptFix, checkCall, checkMark, chunkCheck, type CheckResult, type CheckSegment } from "../src/core/review.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 try {
@@ -51,6 +56,7 @@ const maxPages = Number(args["max-pages"] ?? 30);
 const estimate = "estimate" in args || "dry-run" in args;
 const useBatch = "batch" in args;
 const withWords = !("no-words" in args);
+const withCheck = !("no-check" in args);
 if (!startUrls.length || !langs.length) {
   console.error("Usage: npm run pretranslate -- --url https://your-site [--langs hi,ta] [--batch] [--estimate] [--max-pages 30]");
   process.exit(1);
@@ -162,8 +168,29 @@ if (withWords) {
   const w = (wordsPending / 1000) * 2.4;
   console.log(`  word lookups: ${wordsPending} block(s) to prepare — roughly $${w.toFixed(2)} live, $${(w / 2).toFixed(2)} as a batch`);
 }
-if (estimate || (!totalBlocks && !wordsPending)) {
-  if (!totalBlocks && !wordsPending) console.log("\nEverything is already translated. Nothing to do.");
+let checkPending = 0;
+if (withCheck) {
+  const counted = new Set<string>();
+  const pendingKeys = new Set(todo.flatMap((j) => j.plan.unique.map((u) => `${j.req.targetLanguage}\0${u.text}`)));
+  for (const p of pages)
+    for (const lang of langs)
+      for (const seg of p.req.segments) {
+        const k = `${lang}\0${seg.text}`;
+        if (counted.has(k)) continue;
+        counted.add(k);
+        if (pendingKeys.has(k)) {
+          checkPending++;
+          continue;
+        }
+        const e = await store.get(lang, seg.text);
+        if (e && e.status === "translated" && !e.locked && e.checked !== checkMark(e.text)) checkPending++;
+      }
+  // Rough: the checker reads source + translation and writes little unless it fixes something.
+  const c = (checkPending / 1000) * 0.9;
+  console.log(`  checking: ${checkPending} translation(s) — roughly $${c.toFixed(2)} live, $${(c / 2).toFixed(2)} as a batch`);
+}
+if (estimate || (!totalBlocks && !wordsPending && !checkPending)) {
+  if (!totalBlocks && !wordsPending && !checkPending) console.log("\nEverything is already translated. Nothing to do.");
   process.exit(0);
 }
 
@@ -239,6 +266,67 @@ for (const [ji, j] of todo.entries()) {
 await store.flush();
 }
 
+// --- 5b. independent checker -------------------------------------------------------------
+const checkTotals = { checked: 0, fixed: 0, failed: 0 };
+if (withCheck) {
+  type Job = CheckSegment & { entry: StoredTranslation };
+  const calls: Array<{ id: string; call: StructuredCall; lang: string; segs: Job[] }> = [];
+  for (const lang of langs) {
+    const cfg = withConfig({ targetLanguage: lang, segments: [] }, site);
+    for (const p of pages) {
+      const segs: Job[] = [];
+      const seen = new Set<string>();
+      for (const seg of p.req.segments) {
+        if (seen.has(seg.text)) continue;
+        seen.add(seg.text);
+        const e = await store.get(lang, seg.text);
+        if (!e || e.status !== "translated" || e.locked || e.checked === checkMark(e.text)) continue;
+        segs.push({ id: `c${segs.length}`, source: e.source, translation: e.text, entry: e });
+      }
+      for (const [i, chunk] of chunkCheck(segs).entries())
+        calls.push({ id: `check-${lang}-${calls.length}-${i}`, call: checkCall(lang, p.url, chunk, cfg), lang, segs: chunk });
+    }
+  }
+  const total = calls.reduce((n, c) => n + c.segs.length, 0);
+  if (total) {
+    console.log(`\nChecking ${total} translation(s) in ${calls.length} request(s)${useBatch ? " as one batch (half price)" : ""}…`);
+    const res = await runCalls<{ results: CheckResult[] }>(calls.map(({ id, call }) => ({ id, call })));
+    for (const c of calls) {
+      const r = res.get(c.id);
+      if (!r || r instanceof Error) {
+        checkTotals.failed += c.segs.length;
+        if (r) errors.set(`checker: ${r.message}`, (errors.get(`checker: ${r.message}`) ?? 0) + 1);
+        continue;
+      }
+      const byId = new Map((r.data.results ?? []).map((x) => [x.id, x]));
+      const updates: StoredTranslation[] = [];
+      for (const s of c.segs) {
+        const verdict = byId.get(s.id);
+        if (!verdict) {
+          checkTotals.failed++;
+          continue;
+        }
+        const fixed = acceptFix(s, verdict, c.lang);
+        const text = fixed ?? s.entry.text;
+        updates.push({
+          ...s.entry,
+          text,
+          checked: checkMark(text),
+          ...(fixed ? { checkNote: verdict.problem ?? "fixed by checker", savedAt: new Date().toISOString() } : {}),
+        });
+        checkTotals.checked++;
+        if (fixed) {
+          checkTotals.fixed++;
+          console.log(`  ${c.lang} fixed: ${(verdict.problem ?? "").slice(0, 100)}`);
+        }
+      }
+      await store.put(c.lang, updates);
+    }
+    await store.flush();
+    console.log(`Checked ${checkTotals.checked} translation(s): ${checkTotals.fixed} fixed${checkTotals.failed ? `, ${checkTotals.failed} not checked (run again to retry)` : ""}.`);
+  }
+}
+
 // --- 6. word lookups ---------------------------------------------------------------------
 const wordTotals = { saved: 0, failed: 0 };
 if (withWords) {
@@ -304,7 +392,7 @@ console.log(
   `\nDone: ${totals.translated} block(s) translated, ${totals.failed} failed. ` +
     `Tokens: ${usage.inputTokens + batchIn} in / ${usage.outputTokens + batchOut} out — about $${cost.toFixed(2)}.`,
 );
-if (totals.failed || wordTotals.failed) {
+if (totals.failed || wordTotals.failed || checkTotals.failed) {
   for (const [why, n] of errors) console.error(`  ${n}× ${why.slice(0, 300)}`);
   console.error("Run again to retry the failures (saved work is kept).");
   process.exitCode = 1;

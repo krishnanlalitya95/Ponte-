@@ -57,7 +57,7 @@ export interface Logo {
   alt?: string;
 }
 
-/** Brand gradient (e.g. the Gloss AI logo): top colour → bottom colour. */
+/** Brand gradient (e.g. the GlossAI logo): top colour → bottom colour. */
 export interface Brand {
   from: string;
   to: string;
@@ -150,7 +150,7 @@ if (script && !script.hasAttribute("data-manual")) {
       const base = staticBase ?? scriptBase ?? "";
       const abs = (u?: string) => (u ? (/^https?:|^\//.test(u) ? u : `${base}/${u}`) : undefined);
       const logo = published?.widget.logo;
-      const logos = logo ? { light: abs(logo.light), dark: abs(logo.dark), alt: logo.alt ?? "Gloss AI" } : undefined;
+      const logos = logo ? { light: abs(logo.light), dark: abs(logo.dark), alt: logo.alt ?? "GlossAI" } : undefined;
       // "Share this page in …": on unless switched off (data-share="off" or widget.share: false).
       const share = d.share ? d.share !== "off" : published?.widget.share !== false;
       mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about, published?.widget.brand, logos, share);

@@ -31,6 +31,10 @@ export interface StoredTranslation {
   settings?: string;
   /** Set to true on entries you've edited by hand: Ponte will never replace them. */
   locked?: boolean;
+  /** Set by the checker (src/core/review.ts) once this exact text has been checked. */
+  checked?: string;
+  /** What the checker fixed, kept for your reference. */
+  checkNote?: string;
   /** Word lookups (only in translations/words-<lang>.json): see src/core/words.ts. */
   words?: Array<{ s: string; t: string; c: string; d: string }>;
 }
@@ -41,6 +45,8 @@ export function canReplace(existing: StoredTranslation | undefined, next: Stored
   if (existing.locked) return false;
   // A real translation may replace one the agent wrongly left as is.
   if (existing.status === "unchanged" && next.status === "translated") return true;
+  // The checker marks (and maybe fixes) an entry it has reviewed.
+  if (next.checked !== undefined && existing.checked !== next.checked) return true;
   return next.settings !== undefined && existing.settings !== next.settings;
 }
 

@@ -26,6 +26,10 @@ export class MockModelClient implements ModelClient {
         outputTokens: 0,
       };
     }
+    if (call.toolName === "submit_review") {
+      const items = JSON.parse(/<segments>\n([\s\S]*?)\n<\/segments>/.exec(call.user)?.[1] ?? "[]") as Array<{ id: string }>;
+      return { data: { results: items.map((it) => ({ id: it.id, verdict: "ok" })) } as T, inputTokens: 0, outputTokens: 0 };
+    }
     if (call.toolName === "submit_words") {
       const lang = /Word lookups in .*?\((\w+)\)/.exec(call.user)?.[1] ?? "xx";
       const items = JSON.parse(/<segments>\n([\s\S]*?)\n<\/segments>/.exec(call.user)?.[1] ?? "[]") as Array<{ id: string; original: string }>;
