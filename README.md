@@ -1,10 +1,10 @@
-# Gloss
+# GlossAI
 
-**Agentic, meaning-first translation for Framer sites.** Gloss finds the plain text on screen, reads it like a translator (what kind of writing is this? what tone? which names stay as they are?), translates for meaning instead of word-for-word, and swaps the text **in place**. You get no side-by-side dump of machine translation.
+**Agentic, meaning-first translation for Framer sites.** GlossAI finds the plain text on screen, reads it like a translator (what kind of writing is this? what tone? which names stay as they are?), translates for meaning instead of word-for-word, and swaps the text **in place**. You get no side-by-side dump of machine translation.
 
 It's built for portfolios that mix short UI copy with long-form work: poetry, stories, case studies and papers. It covers major Indian languages (Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Odia, Urdu) and major global ones (English, Spanish, French, German, Portuguese, Italian, Japanese, Chinese, Korean, Arabic, Russian, Indonesian, Turkish, Dutch). Claude powers it.
 
-> **Name:** this project was renamed from Ponte to Gloss. The repo name, the GitHub Pages address (`/Ponte-/widget.js`), `ponte.config.json`, the `ponte-translations` branch and `PONTE_*` settings keep the old name so existing sites keep working.
+> **Name:** the product is **GlossAI** (earlier names: Ponte, Gloss). The repo name, the GitHub Pages address (`/Ponte-/widget.js`), `ponte.config.json`, the `ponte-translations` branch, `PONTE_*` settings and code names such as `window.Ponte`, `createPonte` and `data-ponte-skip` keep the old name so existing sites keep working.
 
 
 ```
@@ -14,11 +14,12 @@ It's built for portfolios that mix short UI copy with long-form work: poetry, st
             POST /v1/channels/framer/translate
                      │
             ┌────────┴─────────────────────────────┐
-            │ Gloss agent                          │
+            │ GlossAI agent                        │
             │ 1. Detect   script hints, skip junk  │
             │ 2. Read     genre, tone, glossary    │  ← one Claude call per page
             │ 3. Translate meaning-first, chunked  │  ← Claude, structured output
             │ 4. Validate ids, markers, retry      │
+            │ 5. Check    second-pass review & fix │  ← Pre-translate only
             └────────┬─────────────────────────────┘
                      ▼
          { id → replacement text } ──▶ written back into the same DOM nodes
@@ -28,7 +29,7 @@ It's built for portfolios that mix short UI copy with long-form work: poetry, st
 
 | | **Static mode (free)** | **Server mode** |
 |---|---|---|
-| How it works | Translate your site once (a GitHub Actions button). Translations are published as files on GitHub Pages, and the widget reads them. | A Gloss server translates any new text live, the first time someone asks. |
+| How it works | Translate your site once (a GitHub Actions button). Translations are published as files on GitHub Pages, and the widget reads them. | A GlossAI server translates any new text live, the first time someone asks. |
 | Monthly cost | $0. You pay the AI only when you run Pre-translate, and only for new or changed text. | AI cost for new text, plus hosting the server. |
 | New text on your site | Stays in the original until you run Pre-translate again. | Translated on the spot. |
 | Needs | A public GitHub repo (GitHub Pages is free for public repos) | A host for a Node server |
@@ -75,7 +76,7 @@ Open **http://localhost:8787/demo** and pick a language from the pill in the bot
 
 ## Matching fonts
 
-Most Framer fonts only include Latin letters. When a page is translated into a non-Latin script, Gloss loads the free Google **Noto** font for that script and adds it to each element's own font list. Latin letters, numbers and names keep your original font; Noto draws only the characters your font lacks. Elements set in a serif get **Noto Serif**, the rest get **Noto Sans**, so headings and body text keep their character.
+Most Framer fonts only include Latin letters. When a page is translated into a non-Latin script, GlossAI loads the free Google **Noto** font for that script and adds it to each element's own font list. Latin letters, numbers and names keep your original font; Noto draws only the characters your font lacks. Elements set in a serif get **Noto Serif**, the rest get **Noto Sans**, so headings and body text keep their character.
 
 | Languages | Sans | Serif |
 |---|---|---|
@@ -96,7 +97,7 @@ Fonts load only when a visitor picks that language, and choosing **Original** re
 Use **either** option:
 
 **A. Code component:** in Framer, go to **Assets → Code → New component**, paste [`framer/PonteWidget.tsx`](framer/PonteWidget.tsx), then drop it into your nav or footer. Set:
-- **Mode**: **Static** (free; reads the published files, with **Published at** set to your GitHub Pages URL) or **Server** (set **Endpoint** to your Gloss server, `http://localhost:8787` while developing)
+- **Mode**: **Static** (free; reads the published files, with **Published at** set to your GitHub Pages URL) or **Server** (set **Endpoint** to your GlossAI server, `http://localhost:8787` while developing)
 - **Languages**: which languages to offer
 - **Page language**: e.g. `en`
 - **Keep as is**: names that must never change, e.g. `Lalitya Krishnan, CareOne, ICICI Lombard`
@@ -117,7 +118,7 @@ On the canvas the component only shows the picker. Translation runs in **Preview
 What the widget does:
 - Walks the page's text nodes, skipping `script`, `style`, `code`, `pre`, form fields, and anything marked `data-ponte-skip`, `translate="no"` or `.notranslate`.
 - Groups text into blocks. A paragraph with a link inside is sent as one sentence (`⟦0⟧Read the ⟦1⟧full write-up`), so it gets translated as a sentence. Each piece goes back into its own node, so links and bold text keep working.
-- Sends the page title, URL and description along with the text, so Gloss understands what the page is.
+- Sends the page title, URL and description along with the text, so GlossAI understands what the page is.
 - Remembers the visitor's choice. It also reads `?lang=hi` from the URL.
 - Watches for re-renders (page transitions, variants, lazy sections) and translates new text too. Text it has already translated is re-applied instantly from cache.
 - Sets `dir="rtl"` on blocks translated into Arabic or Urdu.
@@ -132,7 +133,7 @@ If you want an element to use a stable id across visits, give it `data-ponte-id=
 
 ### Allowed origins
 
-Browsers can only call Gloss from the origins listed in `PONTE_ALLOWED_ORIGINS`. The defaults cover `localhost`, `*.framer.app`, `*.framer.website` and the Framer canvas. Add your own domain, for example `https://lalityakrishnan.in`. If the widget says "Couldn't translate", check the server log for `Origin … is not allowed`.
+Browsers can only call GlossAI from the origins listed in `PONTE_ALLOWED_ORIGINS`. The defaults cover `localhost`, `*.framer.app`, `*.framer.website` and the Framer canvas. Add your own domain, for example `https://lalityakrishnan.in`. If the widget says "Couldn't translate", check the server log for `Origin … is not allowed`.
 
 ## API
 
@@ -170,7 +171,7 @@ The response includes the agent's reading of the page and one result per segment
 - `translated`
 - `unchanged`: already in the target language, or a name that should stay
 - `skipped`: numbers, URLs, symbols
-- `fallback`: Gloss couldn't produce a valid translation, so the original is returned and the page never shows broken text
+- `fallback`: GlossAI couldn't produce a valid translation, so the original is returned and the page never shows broken text
 
 Other endpoints: `GET /v1/languages`, `GET /widget.js`, `GET /health`, `GET /demo`.
 
@@ -181,16 +182,30 @@ Other endpoints: `GET /v1/languages`, `GET /widget.js`, `GET /health`, `GET /dem
 3. **Translate.** Claude translates in chunks, using the brief, genre-specific guidance and the end of the previous chunk for continuity. The prompt asks for meaning, idiom and feel. Poetry keeps its line breaks, papers keep their hedging and numbers, and UI copy stays short. Output is structured (a forced tool call), never parsed from free text.
 4. **Validate.** Every id must come back, markers must be preserved, and the output must be non-empty and not runaway-long. Failures are retried once in smaller pieces, then fall back to the original.
 
+5. **Check** (Pre-translate). A second, independent pass reads every new translation next to the original and flags only real problems; flagged lines are fixed and saved. See **Correct for a global audience** below.
+
 Identical strings (nav items, repeated buttons) are translated once. Every successful translation is saved (see **Saved translations** below). Text that's already saved is returned without any agent call, and a page that is fully saved skips the reading step too.
 
 Model: `PONTE_MODEL` (default `claude-sonnet-5-5`). For the most literary nuance, use `claude-opus-5-5`.
 
+## Correct for a global audience
+
+The goal: every language version reads as correct and natural to a native reader **wherever they live**. Five rules work together:
+
+1. **Meaning, not words.** Each sentence is translated for what it means and rebuilt the way that language says it.
+2. **Everyday words understood everywhere** (`"voice": "everyday"`). Common words over literary, purist or bureaucratic ones, with no slang or words that belong to one city or region. Each language has notes for its whole audience: Bengali for India and Bangladesh, Tamil for India, Sri Lanka, Singapore and Malaysia, Arabic as Modern Standard Arabic readable from Morocco to the Gulf, international French, neutral Spanish, and so on.
+3. **Terms stay terms.** Names of fields, methods, job titles, courses and projects (Universal Design, design system, user research…) are never translated word by word. They use the name professionals in that language use, written in its script; for example Universal Design is யுனிவர்சல் டிசைன் in Tamil, ユニバーサルデザイン in Japanese and التصميم الشامل in Arabic. Your key terms are fixed for every language in `glossary` in `ponte.config.json`, which always wins.
+4. **The author's grammar.** First-person grammar follows `author.gender` in every language that marks it.
+5. **An independent checker.** After translating, Pre-translate runs a second pass that reads each translation next to the original and flags only real problems: wrong or missing meaning, a term or glossary entry handled wrongly, wrong grammar for the author, changed numbers or names, lost formatting, or words a native reader somewhere wouldn't understand. It saves the fix (keeping all formatting) and notes what it fixed in `checkNote`. Each translation is checked once, and again only if its text changes. Hand-locked entries are never touched. It adds roughly 40–60% to a run; skip it with `--no-check`.
+
+No machine translation is perfect for every reader. For the languages that matter most to you, ask a native speaker to read a few pages, and lock their corrections (`"locked": true`) so nothing overwrites them.
+
 ## Saved translations
 
-Your portfolio is static, so each piece of text only needs translating **once**. Gloss saves every translation and reuses it for every later visitor. The agent runs only for text it hasn't seen before.
+Your portfolio is static, so each piece of text only needs translating **once**. GlossAI saves every translation and reuses it for every later visitor. The agent runs only for text it hasn't seen before.
 
 - **Where they live:** `translations/<language>.json` on the **`ponte-translations`** branch of this repo, for example `translations/hi.json`. Each entry holds the original (`source`), the translation (`text`) and the page it was found on.
-- **Edit a translation:** on GitHub (your phone works), switch to the `ponte-translations` branch, open `translations/hi.json`, tap the pencil, change the `"text"` of an entry and commit. Gloss never overwrites an existing entry, so your version is what visitors see. The server picks up edits within about 5 minutes (`PONTE_STORE_REFRESH_SEC`).
+- **Edit a translation:** on GitHub (your phone works), switch to the `ponte-translations` branch, open `translations/hi.json`, tap the pencil, change the `"text"` of an entry, add `"locked": true` and commit. Locked entries are never replaced (not by settings changes, not by the checker), so your version is what visitors see. The server picks up edits within about 5 minutes (`PONTE_STORE_REFRESH_SEC`).
 - **Change your site:** when a paragraph changes, its fingerprint changes too. Only that paragraph gets translated again; everything else stays as saved.
 - **Force a fresh translation:** delete the entry from the file.
 - **Return visitors:** the widget also keeps a copy in the visitor's browser. The page switches language instantly, then quietly checks the server for updates (including your edits).
@@ -199,9 +214,9 @@ Your portfolio is static, so each piece of text only needs translating **once**.
 
 `"languages"` in [`ponte.config.json`](ponte.config.json) is the list visitors can pick from, besides your page's language. Currently it's Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, French, German, Arabic, Japanese and Korean. Pre-translate translates exactly these (plus English for the Hindi poems) when its Languages box is left empty, and only these are published. To drop a language, remove it from the list. Its saved translations stay in the repo, so adding it back later costs nothing.
 
-### "About Gloss" in the language list
+### "About GlossAI" in the language list
 
-The language menu ends with an **About Gloss** card: a short description in smaller text and a **See how I built it ›** link, matching the landing note. The whole card opens your case study. Change its title, text, link label or URL in `widget.about` in `ponte.config.json`, or remove that block to hide it.
+The language menu ends with an **About GlossAI** card: a short description in smaller text and a **See how I built it ›** link, matching the landing note. The whole card opens your case study. Change its title, text, link label or URL in `widget.about` in `ponte.config.json`, or remove that block to hide it.
 
 ### The landing note around the picker
 
@@ -220,10 +235,11 @@ Site-wide rules that apply to every translation live in [`ponte.config.json`](po
 ```
 
 - **`author.gender`** (`male`, `female` or `neutral`) sets the grammar used whenever the site says "I" or "my", for example Hindi "करता हूँ" vs "करती हूँ", or French and Spanish adjective endings. Other people mentioned in the text keep their own gender.
-- **`glossary`** fixes how a term is written in a given language, such as your name in Devanagari. Add more languages the same way: `"ta": { "Lalitya Krishnan": "…" }`.
-- **`doNotTranslate`** lists names and terms that must stay exactly as written in every language.
+- **`glossary`** fixes how a term is written in a given language, such as your name in Devanagari or **Universal Design** in Tamil. Every language here has entries for your key terms (Universal Design, Design for Sustainability, Product Designer, Design System, User Research). Add more the same way: `"ta": { "Your term": "…" }`.
+- **`doNotTranslate`** lists names that must stay exactly as written in every language, such as **GlossAI**.
+- **`voice`** is `"everyday"` (words people actually use, understood across regions), `"standard"` or `"formal"`.
 
-**Changing these settings re-translates automatically.** Each saved translation records the settings it was made with. The next Pre-translate run redoes any text whose settings changed and leaves the rest alone.
+**Changing these settings re-translates automatically.** Each saved translation records the settings it was made with. The next Pre-translate run redoes any text whose settings changed and leaves the rest alone. Until then, the site keeps showing the older translations, so a settings change never turns your site back to English.
 
 **Protecting your hand edits:** when you fix a translation by hand, also add `"locked": true` to that entry. Locked entries are never replaced, even when settings change.
 
@@ -242,9 +258,9 @@ So that even the first visitor never waits:
 1. Make sure the `ANTHROPIC_API_KEY` secret is set (see Evals below).
 2. Open **Actions → Pre-translate site → Run workflow**, check the site URL and languages, and run it.
 
-It loads your published pages and finds the text exactly the way the widget does (same code). It translates only what isn't saved yet and commits the results to the `ponte-translations` branch. Re-run it after you change your site; only the new text costs anything.
+It loads your published pages and finds the text exactly the way the widget does (same code). It translates only what isn't saved yet, runs the independent checker on new translations, prepares word lookups, and commits the results to the `ponte-translations` branch. Re-run it after you change your site; only the new text costs anything.
 
-From a terminal: `npm run pretranslate -- --url https://lalityakrishnan.in --langs hi,ta --dry-run`. Use `--dry-run` to list the text it would send without translating.
+From a terminal: `npm run pretranslate -- --url https://lalityakrishnan.in --langs hi,ta --dry-run`. Use `--dry-run` to list the text it would send without translating, `--no-check` to skip the checker and `--no-words` to skip word lookups.
 
 ### Where the server saves
 

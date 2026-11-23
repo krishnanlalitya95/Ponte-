@@ -25,19 +25,19 @@
     "logo": {
       "light": "brand/gloss-ai-white.png",
       "dark": "brand/gloss-ai-color.png",
-      "alt": "Gloss AI"
+      "alt": "GlossAI"
     },
     "autoDetect": false,
     "about": {
-      "title": "About Gloss AI",
-      "text": "Gloss AI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "title": "About GlossAI",
+      "text": "GlossAI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
       "linkLabel": "See how I built it",
       "url": "/gloss"
     },
     "callout": {
       "enabled": true,
       "title": "Read this portfolio in your language",
-      "text": "Gloss AI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
+      "text": "GlossAI is an agent I built that translates with context, carrying meaning, tone and poetry across, not just words.",
       "linkLabel": "See how I built it",
       "linkUrl": "/gloss",
       "delayMs": 2000,
@@ -51,6 +51,7 @@
     "notes": "Senior product designer from Mumbai, India. Writes about his own work and life in the first person."
   },
   "doNotTranslate": [
+    "GlossAI",
     "Gloss AI",
     "Gloss"
   ],
@@ -58,57 +59,126 @@
     "hi": {
       "Lalitya Krishnan": "लालित्य कृष्णन",
       "Lalitya": "लालित्य",
-      "Krishnan": "कृष्णन"
+      "Krishnan": "कृष्णन",
+      "Universal Design": "यूनिवर्सल डिज़ाइन",
+      "Design for Sustainability": "डिज़ाइन फ़ॉर सस्टेनेबिलिटी",
+      "Product Designer": "प्रोडक्ट डिज़ाइनर",
+      "Design System": "डिज़ाइन सिस्टम",
+      "User Research": "यूज़र रिसर्च"
     },
     "mr": {
       "Lalitya Krishnan": "लालित्य कृष्णन",
       "Lalitya": "लालित्य",
-      "Krishnan": "कृष्णन"
+      "Krishnan": "कृष्णन",
+      "Universal Design": "युनिव्हर्सल डिझाइन",
+      "Design for Sustainability": "डिझाइन फॉर सस्टेनेबिलिटी",
+      "Product Designer": "प्रॉडक्ट डिझायनर",
+      "Design System": "डिझाइन सिस्टम",
+      "User Research": "युझर रिसर्च"
     },
     "gu": {
       "Lalitya Krishnan": "લાલિત્ય કૃષ્ણન",
       "Lalitya": "લાલિત્ય",
-      "Krishnan": "કૃષ્ણન"
+      "Krishnan": "કૃષ્ણન",
+      "Universal Design": "યુનિવર્સલ ડિઝાઇન",
+      "Design for Sustainability": "ડિઝાઇન ફોર સસ્ટેનેબિલિટી",
+      "Product Designer": "પ્રોડક્ટ ડિઝાઇનર",
+      "Design System": "ડિઝાઇન સિસ્ટમ",
+      "User Research": "યુઝર રિસર્ચ"
     },
     "bn": {
       "Lalitya Krishnan": "লালিত্য কৃষ্ণন",
       "Lalitya": "লালিত্য",
-      "Krishnan": "কৃষ্ণন"
+      "Krishnan": "কৃষ্ণন",
+      "Universal Design": "ইউনিভার্সাল ডিজাইন",
+      "Design for Sustainability": "ডিজাইন ফর সাসটেইনেবিলিটি",
+      "Product Designer": "প্রোডাক্ট ডিজাইনার",
+      "Design System": "ডিজাইন সিস্টেম",
+      "User Research": "ইউজার রিসার্চ"
     },
     "ta": {
       "Lalitya Krishnan": "லாலித்யா கிருஷ்ணன்",
       "Lalitya": "லாலித்யா",
-      "Krishnan": "கிருஷ்ணன்"
+      "Krishnan": "கிருஷ்ணன்",
+      "Universal Design": "யுனிவர்சல் டிசைன்",
+      "Design for Sustainability": "டிசைன் ஃபார் சஸ்டெய்னபிலிட்டி",
+      "Product Designer": "ப்ராடக்ட் டிசைனர்",
+      "Design System": "டிசைன் சிஸ்டம்",
+      "User Research": "யூசர் ரிசர்ச்"
     },
     "te": {
       "Lalitya Krishnan": "లాలిత్య కృష్ణన్",
       "Lalitya": "లాలిత్య",
-      "Krishnan": "కృష్ణన్"
+      "Krishnan": "కృష్ణన్",
+      "Universal Design": "యూనివర్సల్ డిజైన్",
+      "Design for Sustainability": "డిజైన్ ఫర్ సస్టైనబిలిటీ",
+      "Product Designer": "ప్రోడక్ట్ డిజైనర్",
+      "Design System": "డిజైన్ సిస్టమ్",
+      "User Research": "యూజర్ రీసెర్చ్"
     },
     "kn": {
       "Lalitya Krishnan": "ಲಾಲಿತ್ಯ ಕೃಷ್ಣನ್",
       "Lalitya": "ಲಾಲಿತ್ಯ",
-      "Krishnan": "ಕೃಷ್ಣನ್"
+      "Krishnan": "ಕೃಷ್ಣನ್",
+      "Universal Design": "ಯೂನಿವರ್ಸಲ್ ಡಿಸೈನ್",
+      "Design for Sustainability": "ಡಿಸೈನ್ ಫಾರ್ ಸಸ್ಟೈನಬಿಲಿಟಿ",
+      "Product Designer": "ಪ್ರಾಡಕ್ಟ್ ಡಿಸೈನರ್",
+      "Design System": "ಡಿಸೈನ್ ಸಿಸ್ಟಮ್",
+      "User Research": "ಯೂಸರ್ ರಿಸರ್ಚ್"
     },
     "ml": {
       "Lalitya Krishnan": "ലാലിത്യ കൃഷ്ണൻ",
       "Lalitya": "ലാലിത്യ",
-      "Krishnan": "കൃഷ്ണൻ"
+      "Krishnan": "കൃഷ്ണൻ",
+      "Universal Design": "യൂണിവേഴ്സൽ ഡിസൈൻ",
+      "Design for Sustainability": "ഡിസൈൻ ഫോർ സസ്റ്റൈനബിലിറ്റി",
+      "Product Designer": "പ്രൊഡക്റ്റ് ഡിസൈനർ",
+      "Design System": "ഡിസൈൻ സിസ്റ്റം",
+      "User Research": "യൂസർ റിസർച്ച്"
     },
     "ar": {
       "Lalitya Krishnan": "لاليتيا كريشنان",
       "Lalitya": "لاليتيا",
-      "Krishnan": "كريشنان"
+      "Krishnan": "كريشنان",
+      "Universal Design": "التصميم الشامل",
+      "Design for Sustainability": "Design for Sustainability",
+      "Product Designer": "مصمم منتجات",
+      "Design System": "نظام التصميم",
+      "User Research": "أبحاث المستخدمين"
     },
     "ja": {
       "Lalitya Krishnan": "ラリティヤ・クリシュナン",
       "Lalitya": "ラリティヤ",
-      "Krishnan": "クリシュナン"
+      "Krishnan": "クリシュナン",
+      "Universal Design": "ユニバーサルデザイン",
+      "Design for Sustainability": "デザイン・フォー・サステナビリティ",
+      "Product Designer": "プロダクトデザイナー",
+      "Design System": "デザインシステム",
+      "User Research": "ユーザーリサーチ"
     },
     "ko": {
       "Lalitya Krishnan": "랄리티야 크리슈난",
       "Lalitya": "랄리티야",
-      "Krishnan": "크리슈난"
+      "Krishnan": "크리슈난",
+      "Universal Design": "유니버설 디자인",
+      "Design for Sustainability": "디자인 포 서스테이너빌리티",
+      "Product Designer": "프로덕트 디자이너",
+      "Design System": "디자인 시스템",
+      "User Research": "사용자 리서치"
+    },
+    "fr": {
+      "Universal Design": "conception universelle",
+      "Design for Sustainability": "Design for Sustainability",
+      "Product Designer": "Product Designer",
+      "Design System": "design system",
+      "User Research": "recherche utilisateur"
+    },
+    "de": {
+      "Universal Design": "Universal Design",
+      "Design for Sustainability": "Design for Sustainability",
+      "Product Designer": "Product Designer",
+      "Design System": "Designsystem",
+      "User Research": "User Research"
     }
   }
 }

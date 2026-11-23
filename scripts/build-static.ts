@@ -56,14 +56,10 @@ export async function buildStatic(
     const req = site ? withConfig({ targetLanguage: code, segments: [] }, site) : null;
     for (const e of Object.values(data)) {
       if (!e || typeof e.source !== "string" || typeof e.text !== "string") continue;
-      // Don't publish translations made under older settings (wrong name or grammar). Those
-      // lines show as written until Pre-translate redoes them. Hand-locked entries always publish.
-      // A voice change alone (e.g. to everyday language) keeps the older wording visible until
-      // Pre-translate redoes it: still correct, just more formal.
-      if (req && !e.locked && e.settings !== settingsKey(req, code, e.source) && e.settings !== settingsKey({ ...req, voice: undefined }, code, e.source)) {
-        stale++;
-        continue;
-      }
+      // Translations made under older settings (glossary, voice, keep-as-is terms, author) stay
+      // published until Pre-translate redoes them, so a settings change never turns the site
+      // back to English. They're counted so the build log shows what the next run will redo.
+      if (req && !e.locked && e.settings !== settingsKey(req, code, e.source)) stale++;
       // Same key the widget computes from the text it finds on the page.
       out[textHash(e.source.trim())] = e.text;
     }
@@ -133,7 +129,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   console.log(
     `Built ${get("out", "public")}/: widget.js + ${res.languages.length} language(s)` +
       (res.languages.length
-        ? ` — ${res.languages.map((l) => `${l.code} ${l.entries}${l.waitingForRetranslation ? ` (+${l.waitingForRetranslation} outdated, hidden)` : ""}`).join(", ")}`
+        ? ` — ${res.languages.map((l) => `${l.code} ${l.entries}${l.waitingForRetranslation ? ` (${l.waitingForRetranslation} outdated, shown until Pre-translate redoes them)` : ""}`).join(", ")}`
         : "") +
       (res.words.length ? `; word lookups: ${res.words.join(", ")}` : ""),
   );

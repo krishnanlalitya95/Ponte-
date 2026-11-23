@@ -43,7 +43,7 @@ export interface PonteConfig {
     words?: boolean;
     /** Language switch effect: "dust" (default) or "none". */
     transition?: "dust" | "none";
-    /** Last item in the language list, linking to the Gloss case study. */
+    /** Last item in the language list, linking to the GlossAI case study. */
     about?: { title?: string; text?: string; linkLabel?: string; url?: string };
     /** Green note that opens around the picker on landing (see widget/embed.ts → Callout). */
     callout?: {
