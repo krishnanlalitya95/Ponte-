@@ -48,6 +48,7 @@ for (const c of cases) {
     segments: c.segments,
     context: c.context,
     doNotTranslate: c.doNotTranslate,
+    voice: c.voice,
   });
   const source = c.segments.map((s) => s.text).join("\n\n");
   const translation = out.results.map((r) => r.text).join("\n\n");
@@ -98,6 +99,7 @@ function deterministicChecks(c: EvalCase, type: string, texts: string[], statuse
   if (!expected.includes(type as never)) f.push(`content type ${type}, expected ${expected.join("/")}`);
   if (statuses.includes("fallback")) f.push("some segments fell back to the original");
   for (const m of c.mustContain ?? []) if (!all.includes(m)) f.push(`missing "${m}"`);
+  for (const m of c.mustAvoid ?? []) if (all.includes(m)) f.push(`textbook word "${m}"`);
   if (c.keepLines) {
     c.segments.forEach((s, i) => {
       const want = s.text.split("\n").length;
@@ -115,7 +117,10 @@ async function gradeIt(c: EvalCase, source: string, translation: string): Promis
       "You are a demanding bilingual literary and technical reviewer. You did not write this translation. " +
       "Judge whether a native reader of the target language would get the same meaning, intent and feeling as a reader of the source. " +
       "Penalise literal, word-for-word renderings that are grammatical but unnatural, dropped nuance (hedging, irony, implicature), " +
-      "changed facts or numbers, and register drift. Be specific and strict: 5 = publishable by a professional translator.",
+      "changed facts or numbers, and register drift. Be specific and strict: 5 = publishable by a professional translator. " +
+      (c.voice === "everyday"
+        ? "The author asked for EVERYDAY language: score tone and fluency low if it uses textbook, official, literary or purist words where native speakers would say a simpler word or the English loanword, even if it is accurate."
+        : ""),
     user: [
       `Target language: ${target.name}`,
       `What a good translation must carry over: ${c.meaningNotes}`,

@@ -63,6 +63,12 @@ Open **http://localhost:8787/demo** and pick a language from the pill in the bot
 
    **Every visitor lands on English**, whatever their device language is. They switch with the picker, and their pick is remembered for their next visit. `?lang=ta` in a link opens a page in Tamil, and `?lang=original` forces the original. To have the site open in a visitor's device language instead, set `"autoDetect": true` under `"widget"` in `ponte.config.json`. If you'd rather place the picker yourself, use the [`PonteWidget`](framer/PonteWidget.tsx) code component with **Mode: Static** instead of the script.
 
+   **Share in a language.** The language menu ends with "Share this page in हिन्दी" (or whichever language is showing). On phones it opens the share sheet (WhatsApp and the rest) with a link that opens the page in that language; on a computer it copies the link. To hide it, set `"share": false` under `"widget"` in `ponte.config.json`.
+
+   **Dust transition.** When a visitor picks a language, the text on screen breaks into fine dust that blows away from left to right while the new language fades in (about 2 seconds). It only plays for a pick from the menu, never on page load or when opening another page, and only text on screen animates. Visitors who turn on "reduce motion" get an instant switch, and slow devices fall back to a plain fade. To switch it off, set `"transition": "none"` under `"widget"` in `ponte.config.json`.
+
+   **Select a word.** When a visitor selects a word or short phrase (long-press on a phone, double-click on a computer), a popup shows a language dropdown and the word's meaning in that language: what it means in this sentence, and its dictionary meanings. It works on a page shown in any language; the dropdown leaves that language out, starts on Hindi (English when the page is in Hindi) and remembers the visitor's choice. Pre-translate prepares the meanings once (`translations/words-<lang>.json`, which you can edit like translations) and publishes them as `t/words/<lang>.json`, loaded only when someone selects a word. It adds roughly the same again as translating to a Pre-translate run, only for new or changed text; skip it with `--no-words`, or hide the popup with `"words": false` under `"widget"`.
+
 **Updating your site:** after you change text in Framer, run **Pre-translate site** again. Only the changed text is sent to the agent. **Fixing a translation:** edit it on the `ponte-translations` branch (see [Saved translations](#saved-translations)). Saving the edit republishes automatically within a minute or two.
 
 **What a visitor's browser downloads:** `widget.js` (about 13 KB) and one small file for the chosen language, `t/hi.json`. There are no AI calls and no server.
@@ -227,7 +233,7 @@ Site-wide rules that apply to every translation live in [`ponte.config.json`](po
 - **One reading per page.** The agent reads each page once and writes a brief (genre, tone, terms) that every language shares. The brief is saved in `translations/_briefs.json`, so later runs don't pay for it again.
 - **Batch mode (default).** Pre-translate sends all requests as one Anthropic Message Batch, at half the price. Results usually come back within minutes.
 - **Estimate first.** Run Pre-translate with mode **estimate** to see how much is left and roughly what it will cost, without spending anything.
-- **Weekly top-up.** Pre-translate runs by itself every Monday, so new projects get translated. A week with no new text makes no AI calls. To turn this off, remove the `schedule:` lines from `.github/workflows/pretranslate.yml`. GitHub also pauses scheduled runs on a repo that has had no activity for 60 days, and running it once by hand re-enables it.
+- **Runs only when you start it.** There is no automatic schedule: after adding or editing content, run Actions → Pre-translate site. Text that is already saved is skipped.
 
 ### Translate the whole site in advance
 

@@ -3,6 +3,8 @@
  *
  *   public/widget.js          the visitor widget
  *   public/t/<lang>.json      { "<text hash>": "<translation>" } for every saved translation
+ *   public/t/words/<lang>.json { "<text hash>": [[word, in this language, meaning here, dictionary], …] }
+ *                             for "select a word" (loaded only when a visitor selects one)
  *   public/t/index.json       which languages are published, with counts
  *   public/index.html         a small status page
  *
@@ -23,6 +25,8 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 export interface StaticBuildResult {
   languages: Array<{ code: string; name: string; entries: number; waitingForRetranslation?: number }>;
+  /** Languages with word lookups published. */
+  words: string[];
 }
 
 export async function buildStatic(
@@ -54,7 +58,9 @@ export async function buildStatic(
       if (!e || typeof e.source !== "string" || typeof e.text !== "string") continue;
       // Don't publish translations made under older settings (wrong name or grammar). Those
       // lines show as written until Pre-translate redoes them. Hand-locked entries always publish.
-      if (req && !e.locked && e.settings !== settingsKey(req, code, e.source)) {
+      // A voice change alone (e.g. to everyday language) keeps the older wording visible until
+      // Pre-translate redoes it: still correct, just more formal.
+      if (req && !e.locked && e.settings !== settingsKey(req, code, e.source) && e.settings !== settingsKey({ ...req, voice: undefined }, code, e.source)) {
         stale++;
         continue;
       }
@@ -67,8 +73,33 @@ export async function buildStatic(
 
   // Same order as the settings file, so the picker lists languages the way you listed them.
   if (only) languages.sort((a, b) => only.indexOf(a.code) - only.indexOf(b.code));
+
+  // Word lookups: translations/words-<lang>.json → t/words/<lang>.json, compact.
+  const words: string[] = [];
+  let wordFiles: string[] = [];
+  try {
+    wordFiles = (await readdir(translationsDir)).filter((f) => /^words-[a-z]{2,3}\.json$/.test(f));
+  } catch {
+    /* none yet */
+  }
+  if (wordFiles.length) await mkdir(join(outDir, "t", "words"), { recursive: true });
+  for (const f of wordFiles.sort()) {
+    const code = f.replace(/^words-|\.json$/g, "");
+    if (!LANGUAGES.some((l) => l.code === code) || (only && !only.includes(code))) continue;
+    const data = JSON.parse(await readFile(join(translationsDir, f), "utf8")) as LanguageFile;
+    const out: Record<string, string[][]> = {};
+    for (const e of Object.values(data)) {
+      if (!e || typeof e.source !== "string" || !Array.isArray(e.words) || !e.words.length) continue;
+      out[textHash(e.source.trim())] = e.words.map((w) => [w.s, w.t, w.c, w.d]);
+    }
+    if (!Object.keys(out).length) continue;
+    await writeFile(join(outDir, "t", "words", `${code}.json`), JSON.stringify(out));
+    words.push(code);
+  }
+  if (only) words.sort((a, b) => only.indexOf(a) - only.indexOf(b));
+
   const updatedAt = new Date().toISOString();
-  await writeFile(join(outDir, "t", "index.json"), JSON.stringify({ updatedAt, languages, widget: widget ?? {} }, null, 2));
+  await writeFile(join(outDir, "t", "index.json"), JSON.stringify({ updatedAt, languages, words, widget: widget ?? {} }, null, 2));
   await copyFile(join(root, "dist", "ponte-widget.js"), join(outDir, "widget.js"));
   // Brand assets (logos) referenced by widget.logo in ponte.config.json.
   await cp(join(root, "assets"), outDir, { recursive: true }).catch(() => {});
@@ -87,7 +118,7 @@ ${languages.map((l) => `<tr><td>${l.name} (${l.code})</td><td>${l.entries}</td><
 <script>document.querySelector("code").textContent = '<script src="' + location.origin + location.pathname.replace(/[^/]*$/, "") + 'widget.js" defer><\\/script>';</script>
 `,
   );
-  return { languages };
+  return { languages, words };
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -103,6 +134,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     `Built ${get("out", "public")}/: widget.js + ${res.languages.length} language(s)` +
       (res.languages.length
         ? ` — ${res.languages.map((l) => `${l.code} ${l.entries}${l.waitingForRetranslation ? ` (+${l.waitingForRetranslation} outdated, hidden)` : ""}`).join(", ")}`
-        : ""),
+        : "") +
+      (res.words.length ? `; word lookups: ${res.words.join(", ")}` : ""),
   );
 }

@@ -1,5 +1,5 @@
 import type { Language } from "./languages.js";
-import type { ContentBrief, ContentType, Segment, TranslateRequest } from "./types.js";
+import type { ContentBrief, ContentType, Segment, TranslateRequest, Voice } from "./types.js";
 import { CONTENT_TYPES } from "./types.js";
 
 /** Inline-formatting markers the widget inserts when one block holds several text nodes. */
@@ -45,6 +45,7 @@ export function analyzeUser(req: TranslateRequest, segments: Segment[]): string 
     ctx.notes ? `Author's notes: ${ctx.notes}` : "",
     req.contentType ? `The author says this content is: ${req.contentType}. Use that as contentType.` : "",
     authorLine(req),
+    req.voice ? `Voice the author wants in every language: ${VOICE_LABEL[req.voice]}. Describe register and write translationNotes with that in mind.` : "",
     req.doNotTranslate?.length ? `Never translate these terms: ${req.doNotTranslate.join(", ")}` : "",
     "",
     "On-screen text, in page order (role = where it sits on the page):",
@@ -81,6 +82,66 @@ export const BRIEF_SCHEMA = {
   },
   required: ["contentType", "tone", "register", "audience", "summary", "glossary", "translationNotes", "dominantLanguage"],
 } as const;
+
+// ---------------------------------------------------------------------------
+// Voice — how everyday the language should sound
+// ---------------------------------------------------------------------------
+
+const VOICE_LABEL: Record<Voice, string> = {
+  everyday: "everyday — the words people actually use when they talk and text today, never textbook or official language",
+  standard: "standard written language",
+  formal: "formal and polished",
+};
+
+const VOICE_GUIDANCE: Record<Voice, string> = {
+  everyday: `VOICE: EVERYDAY. This matters more than sounding elegant.
+Write the way an educated native speaker actually talks and writes today: to a friend or colleague on WhatsApp, in a well-made modern app, in a popular magazine. NOT the way a textbook, a government notice, a dictionary or a literary classic does.
+- Common word over "pure", literary or Sanskritised/classical word. If two words mean the same thing, pick the one people say.
+- If people normally say the English word (design, app, user, project, team, feedback, research, prototype, website, office…), write that English word in the target script. Don't invent or dig up a native coinage nobody uses.
+- Translate the meaning of each sentence, then say it the natural way. Rebuild the sentence if needed; short, simple sentences beat long formal ones.
+- Idioms and phrasal expressions: use what a native speaker would say in that moment, not the dictionary equivalent.
+- Still respectful and correct — everyday, not slangy, not crude, no text-speak.
+- Verse stays poetic: keep the imagery and music, but with words that feel alive today, not archaic or bookish ones.
+- Numbers, metrics, research claims and hedging stay exact — only the wording gets simpler.
+- Before you submit, re-read each line and ask: "Would a 25-year-old who speaks this language at home actually say this?" If not, change the word or the sentence.`,
+  standard: "VOICE: STANDARD. Neutral, clear written language; avoid both slang and archaic or bureaucratic words.",
+  formal: "VOICE: FORMAL. Polished, respectful written register suitable for official or academic readers.",
+};
+
+/** What "everyday" means in each language — where models most often drift into textbook register. */
+export const EVERYDAY_NOTES: Record<string, string> = {
+  hi: `Hindi: write spoken Hindustani as people in Mumbai/Delhi actually use it, not शुद्ध/सरकारी हिंदी. Prefer काम (not कार्य), मदद (not सहायता), ज़रूरी (not आवश्यक), शुरू (not प्रारंभ), इस्तेमाल (not उपयोग/प्रयोग), लोग (not व्यक्ति/जन), सोच/आइडिया (not विचारधारा), बेहतर (not उत्कृष्ट), आसान (not सरल/सुगम). Urdu-origin everyday words (ज़िंदगी, शौक़, ख़ास, दुनिया, वक़्त) are natural. Use English loanwords people say: डिज़ाइन, यूज़र, ऐप, प्रोजेक्ट, टीम, रिसर्च, फ़ीडबैक — never coinages like प्रयोक्ता, अनुप्रयोग, अभिकल्पना, अभिकल्पक.`,
+  mr: `Marathi: everyday spoken-standard Marathi (as in Pune/Mumbai), not heavy Sanskritised or official Marathi. Use English loanwords people say: डिझाइन, युझर, ॲप, प्रोजेक्ट, टीम, रिसर्च. Prefer वापर (not उपयोजन), काम, मदत, गरज.`,
+  gu: `Gujarati: everyday Gujarati as spoken in Ahmedabad/Mumbai, not literary or official. Keep English loanwords people use: ડિઝાઇન, યુઝર, એપ, પ્રોજેક્ટ, ટીમ.`,
+  bn: `Bengali: চলিত ভাষা (modern colloquial standard), never সাধু ভাষা forms (করিয়া, তাহার, ইহা). Everyday words over tatsama-heavy ones (কাজ not কার্য, সাহায্য/হেল্প as people say). Keep English loanwords Kolkata speakers use: ডিজাইন, ইউজার, অ্যাপ, প্রজেক্ট, টিম.`,
+  ta: `Tamil: simple modern written Tamil as used by popular Tamil websites and apps — not literary செந்தமிழ், and don't use தனித்தமிழ் coinages for tech or work words. Keep English loanwords Tamil speakers actually use: டிசைன், யூசர், ஆப், ப்ராஜெக்ட், டீம், ரிசர்ச். Don't write spoken-dialect spellings (e.g. பண்றேன்) either — modern written form, everyday vocabulary.`,
+  te: `Telugu: వ్యావహారిక భాష (modern spoken standard), never గ్రాంథిక forms. Keep English loanwords people use: డిజైన్, యూజర్, యాప్, ప్రాజెక్ట్, టీమ్.`,
+  kn: `Kannada: everyday modern Kannada as used in Bengaluru, not heavy Sanskritised or official Kannada. Keep English loanwords people use: ಡಿಸೈನ್, ಯೂಸರ್, ಆ್ಯಪ್, ಪ್ರಾಜೆಕ್ಟ್, ಟೀಮ್.`,
+  ml: `Malayalam: simple modern written Malayalam as in popular news/lifestyle sites, not heavy Sanskritised literary style. Keep English loanwords people use: ഡിസൈൻ, യൂസർ, ആപ്പ്, പ്രോജക്ട്, ടീം.`,
+  pa: `Punjabi: everyday Punjabi as spoken, with English loanwords people use (ਡਿਜ਼ਾਈਨ, ਯੂਜ਼ਰ, ਐਪ, ਪ੍ਰੋਜੈਕਟ).`,
+  or: `Odia: everyday modern Odia, with English loanwords people use (ଡିଜାଇନ, ୟୁଜର, ଆପ୍).`,
+  ur: `Urdu: everyday spoken Urdu, not heavy Persianised/Arabic literary vocabulary; English loanwords people use (ڈیزائن، یوزر، ایپ، پروجیکٹ).`,
+  fr: `French: natural contemporary French as on a good modern website — light, direct, not administrative (avoid "afin de", "ledit", nominal chains). Anglicisms that French designers actually use (design, UX, feedback) are fine.`,
+  de: `German: natural contemporary German as modern design studios write it — short sentences, verbs over noun chains (avoid Behördendeutsch and stacked compounds). Established anglicisms (Design, User, Feedback, Team) are fine.`,
+  es: `Spanish: natural, contemporary, neutral Spanish; direct and warm, not bureaucratic.`,
+  pt: `Portuguese: natural contemporary Portuguese; direct, not bureaucratic.`,
+  it: `Italian: natural contemporary Italian; avoid burocratese.`,
+  ar: `Arabic: clear, simple Modern Standard Arabic as used by modern tech and lifestyle sites — not classical or ornate. Short sentences; familiar vocabulary; established loanwords (تطبيق، تصميم) are fine.`,
+  ja: `Japanese: plain, friendly です・ます style; avoid stiff 漢語-heavy phrasing and over-honorific keigo (尊敬語/謙譲語 piles). Use katakana loanwords Japanese designers use: デザイン, ユーザー, アプリ, プロジェクト, チーム, リサーチ.`,
+  ko: `Korean: friendly 해요체, not stiff 합니다체 throughout; prefer everyday words over heavy Sino-Korean ones. Use loanwords Korean designers use: 디자인, 사용자/유저, 앱, 프로젝트, 팀, 리서치.`,
+  zh: `Chinese: natural modern Mandarin as on popular apps and sites; avoid 书面语/四字成语 piles and bureaucratic phrasing.`,
+  ru: `Russian: natural contemporary Russian; avoid канцелярит (officialese, noun chains).`,
+  id: `Indonesian: everyday Bahasa Indonesia as on modern apps, not stiff formal government style; common English loanwords are fine.`,
+  tr: `Turkish: natural contemporary Turkish; avoid stiff Ottoman-era or bureaucratic vocabulary.`,
+  nl: `Dutch: natural, direct contemporary Dutch; avoid ambtelijke taal.`,
+  en: `English: plain, natural, contemporary English; avoid stiff or archaic phrasing.`,
+};
+
+function voiceSection(target: Language, voice: Voice | undefined): string {
+  if (!voice) return "";
+  const lang = voice === "everyday" && EVERYDAY_NOTES[target.code] ? `\n${EVERYDAY_NOTES[target.code]}` : "";
+  return `\n\n${VOICE_GUIDANCE[voice]}${lang}`;
+}
 
 // ---------------------------------------------------------------------------
 // Step 2 — translate for meaning
@@ -126,20 +187,20 @@ export function authorLine(req: TranslateRequest): string {
   return `Author: ${parts.join(" ")}`;
 }
 
-export function translateSystem(target: Language): string {
+export function translateSystem(target: Language, voice?: Voice): string {
   return `You are Ponte, a careful human-grade translator. You translate MEANING, not words.
 
 Principles:
 1. Read each segment in context of the whole page and the brief. Translate what the author means and how it feels, not a word-for-word rendering.
 2. Write natural, fluent ${target.name} in ${target.script} script that a native reader would believe was written in ${target.name} originally.${target.rtl ? " (Right-to-left language; just write the text normally.)" : ""}
-3. Keep register and tone from the brief. Keep the same formality throughout the page.
+3. Keep register and tone from the brief. Keep the same formality throughout the page. A translation is wrong if it is accurate but sounds like nobody talks that way.
 4. Follow the glossary exactly: "keep" terms stay byte-for-byte; "transliterate"/"translate" terms use the given rendering every time.
 5. Preserve numbers, dates, URLs, emails, code, @handles and #hashtags.
 6. Preserve line breaks (\\n) and leading/trailing punctuation such as bullets, arrows and emoji.
 7. Some segments contain markers like ⟦0⟧ ⟦1⟧. Each marker starts a piece of text with its own formatting (a link, bold word). Every marker in the source MUST appear exactly once in your translation, followed by the words that correspond to that piece. You may reorder markers when the target grammar requires it.
 8. If a segment is already in ${target.name}, or is a name/brand/term that should stay as-is, return it unchanged with action "unchanged".
 9. Never add explanations, notes, quotes or translator's commentary. Output only the translation in the tool call.
-10. Return one result for EVERY segment id you were given, with the same ids.`;
+10. Return one result for EVERY segment id you were given, with the same ids.${voiceSection(target, voice)}`;
 }
 
 /** When the target is the page's own language, everything sent is in some other language. */

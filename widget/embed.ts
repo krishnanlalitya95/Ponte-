@@ -13,12 +13,17 @@
  * data-source-language="en", data-position ("bottom-right" | "bottom-left" | "none"),
  * data-accent="#6F9C16" (picker colour; default from ponte.config.json → widget.accent),
  * data-fonts="off", data-auto="off" (don't switch to the visitor's device language),
+ * data-share="off" (hide "Share this page in …" in the menu),
+ * data-transition="off" (switch languages without the dust effect),
+ * data-words="off" (no popup when a visitor selects a word),
  * data-static="…" (published translations elsewhere),
  * data-do-not-translate, data-content-type, data-notes (server mode).
  * Add data-ponte-skip to any element Ponte should leave alone.
  */
 import { createPonte, initialLanguage, pageLanguage, preferredLanguage, type PonteController, type PonteOptions } from "./engine.js";
 import { LANGUAGES } from "../src/core/languages.js";
+import { snapSwap } from "./snap.js";
+import { mountWordLookup } from "./words.js";
 import type { ContentType } from "../src/core/types.js";
 
 declare global {
@@ -40,7 +45,9 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; brand?: Brand; logo?: Logo; position?: string; autoDetect?: boolean; callout?: Callout; about?: AboutLink };
+  /** Languages with word lookups (select a word → its meaning). */
+  words: string[];
+  widget: { words?: boolean; accent?: string; brand?: Brand; logo?: Logo; position?: string; autoDetect?: boolean; share?: boolean; transition?: "dust" | "none"; callout?: Callout; about?: AboutLink };
 }
 
 /** Logo images, as paths next to widget.js (or full URLs): white for the gradient note, colour for the menu. */
@@ -88,11 +95,12 @@ function publishedIndex(staticBase: string): Promise<PublishedIndex> {
   if (!p) {
     p = fetch(`${base}/t/index.json`)
       .then((r) => (r.ok ? r.json() : {}))
-      .then((idx: { languages?: Array<{ code: string }>; widget?: PublishedIndex["widget"] }) => ({
+      .then((idx: { languages?: Array<{ code: string }>; words?: string[]; widget?: PublishedIndex["widget"] }) => ({
         languages: (idx.languages ?? []).map((l) => l.code),
+        words: Array.isArray(idx.words) ? idx.words : [],
         widget: idx.widget ?? {},
       }))
-      .catch(() => ({ languages: [], widget: {} }));
+      .catch(() => ({ languages: [], words: [], widget: {} }));
     indexCache.set(base, p);
   }
   return p;
@@ -129,6 +137,12 @@ if (script && !script.hasAttribute("data-manual")) {
     const published = staticBase ? await publishedIndex(staticBase) : null;
     if (!codes && published && !endpoint) codes = published.languages;
     const accent = d.accent || published?.widget.accent;
+    // Dust when the visitor picks a language (data-transition="off" or widget.transition: "none" to switch it off).
+    const dust = d.transition ? d.transition !== "off" : published?.widget.transition !== "none";
+    if (dust) {
+      const green = published?.widget.brand?.from ?? accent;
+      opts.transition = (blocks, swap) => snapSwap(blocks, swap, { accent: green });
+    }
     const position = d.position ?? published?.widget.position ?? "bottom-right";
     if (position !== "none") {
       const callout = d.callout === "off" ? undefined : published?.widget.callout;
@@ -137,7 +151,14 @@ if (script && !script.hasAttribute("data-manual")) {
       const abs = (u?: string) => (u ? (/^https?:|^\//.test(u) ? u : `${base}/${u}`) : undefined);
       const logo = published?.widget.logo;
       const logos = logo ? { light: abs(logo.light), dark: abs(logo.dark), alt: logo.alt ?? "Gloss AI" } : undefined;
-      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about, published?.widget.brand, logos);
+      // "Share this page in …": on unless switched off (data-share="off" or widget.share: false).
+      const share = d.share ? d.share !== "off" : published?.widget.share !== false;
+      mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about, published?.widget.brand, logos, share);
+    }
+    // Select a word → its meaning in any language (data-words="off" or widget.words: false to switch off).
+    const wordsOn = d.words ? d.words !== "off" : published?.widget.words !== false;
+    if (wordsOn && staticBase && published && published.words.length > 1) {
+      mountWordLookup({ ponte, base: staticBase.replace(/\/+$/, ""), languages: published.words, source, accent: published.widget.brand?.from ?? accent });
     }
     // Visitor's choice, else their device language if we've published it (data-auto="off" to disable).
     const first = initialLanguage({
@@ -151,6 +172,8 @@ if (script && !script.hasAttribute("data-manual")) {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => void start());
   else void start();
 }
+
+const SHARE = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/><path d="M20 14v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5"/></svg>`;
 
 const ICON = `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>`;
 
@@ -203,6 +226,7 @@ function mountPicker(
   about?: AboutLink,
   brand?: Brand,
   logo?: Logo,
+  share = false,
 ) {
   // The page's language first, then every other offered language. No separate "Original":
   // the page language shows selected while the page is as written.
@@ -266,6 +290,12 @@ function mountPicker(
       .o[aria-selected="true"] .k{visibility:visible}
       .o[aria-selected="true"] .n{font-weight:600}
       .o:hover,.o.active{background:rgba(${a},.08)}
+      .s{display:flex;align-items:center;gap:10px;width:100%;margin:0;padding:12px 18px;border:0;border-top:1px solid rgba(0,0,0,.07);
+         background:#fff;color:rgb(${cardBg});font:600 14px/1.3 ${font};text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+      .s svg{flex:none}
+      .s .sn{font-weight:600;unicode-bidi:isolate}
+      .s:hover{background:rgba(${a},.06)}
+      .s:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:-4px;border-radius:8px}
       .about{display:block;margin:0;padding:14px 16px 16px;border-top:1px solid rgba(0,0,0,.07);
          text-decoration:none;color:inherit;background:rgba(${a},.05);-webkit-tap-highlight-color:transparent}
       .about:hover{background:rgba(${a},.10)}
@@ -319,6 +349,7 @@ function mountPicker(
           })
           .join("")}
       </ul>
+      ${share ? `<button class="s" type="button">${SHARE}<span class="sl"></span></button>` : ""}
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
         ${logo?.dark
           ? `<img class="logo" src="${esc(logo.dark)}" alt="${esc(about.title ?? logo.alt ?? "")}" width="77" height="28">`
@@ -338,8 +369,16 @@ function mountPicker(
   let current = ponte.language ?? source;
   let active = 0;
 
+  const shareBtn = shadow.querySelector(".s") as HTMLButtonElement | null;
+  const shareLabel = shareBtn?.querySelector(".sl") as HTMLElement | undefined;
+  let copiedTimer: ReturnType<typeof setTimeout> | undefined;
   const label = () => {
     const name = LANGUAGES.find((l) => l.code === current)?.name ?? current;
+    if (shareLabel && !copiedTimer) {
+      const l = LANGUAGES.find((x) => x.code === current);
+      shareLabel.innerHTML = `Share this page in <span class="sn" lang="${esc(current)}" dir="auto">${esc(l?.nativeName ?? name)}</span>`;
+      shareBtn!.setAttribute("aria-label", `Share a link to this page in ${name}`);
+    }
     btn.setAttribute("aria-label", `Translate this page. Current language: ${name}`);
     btn.title = `Translate · ${name}`;
     for (const o of options) o.setAttribute("aria-selected", String(o.dataset.code === current));
@@ -373,13 +412,39 @@ function mountPicker(
     if (code !== current) {
       current = code;
       label();
-      void ponte.translate(code);
+      void ponte.translate(code, { animate: true });
     }
   };
   const onOutside = (e: Event) => {
     if (!e.composedPath().includes(host)) close();
   };
 
+  shareBtn?.addEventListener("click", async () => {
+    const url = shareUrl(location.href, current);
+    const name = LANGUAGES.find((l) => l.code === current)?.name ?? current;
+    if (typeof navigator.share === "function") {
+      try {
+        await navigator.share({ title: document.title, url });
+        close(true);
+      } catch {
+        /* closed the share sheet: leave the menu as it was */
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      window.prompt("Copy this link:", url);
+      return;
+    }
+    clearTimeout(copiedTimer);
+    shareLabel!.textContent = "Link copied";
+    live.textContent = `Link to this page in ${name} copied`;
+    copiedTimer = setTimeout(() => {
+      copiedTimer = undefined;
+      label();
+    }, 2000);
+  });
   btn.addEventListener("click", () => (isOpen() ? close() : open()));
   btn.addEventListener("keydown", (e) => {
     if (e.key === "ArrowUp" || e.key === "ArrowDown") {
@@ -401,9 +466,10 @@ function mountPicker(
       else return;
     } else if (e.key === "Escape") close(true);
     else if (e.key === "Tab") {
-      // Let Tab reach the About link; Tab past it (or Shift+Tab out) closes.
-      const aboutLink = shadow.querySelector(".about");
-      if (!aboutLink || e.target === aboutLink || e.shiftKey) close();
+      // Let Tab reach Share and the About link; Tab past the last one (or Shift+Tab out of the list) closes.
+      const extras = [shareBtn, shadow.querySelector(".about")].filter(Boolean);
+      const last = extras[extras.length - 1];
+      if (!last || (e.target === last && !e.shiftKey) || (e.target === list && e.shiftKey)) close();
       return;
     } else return;
     e.preventDefault();
@@ -423,6 +489,14 @@ function mountPicker(
   const family = getComputedStyle(sample).fontFamily;
   if (family) host.style.setProperty("--ponte-font", `${family}, system-ui, sans-serif`);
   if (callout?.enabled) wireCallout(host, shadow, btn, callout);
+}
+
+/** This page's address, opening in `lang` (?lang=xx), with any other parameters kept. */
+export function shareUrl(href: string, lang: string): string {
+  const u = new URL(href);
+  u.searchParams.set("lang", lang);
+  u.hash = "";
+  return u.toString();
 }
 
 function esc(s: string): string {

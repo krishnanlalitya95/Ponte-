@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { normalizeLanguageCode } from "./languages.js";
-import type { Author, TranslateRequest } from "./types.js";
+import type { Author, TranslateRequest, Voice } from "./types.js";
 
 /**
  * Site-wide translation settings, kept in ponte.config.json at the repo root.
@@ -10,6 +10,7 @@ import type { Author, TranslateRequest } from "./types.js";
  *
  *   {
  *     "author": { "name": "…", "gender": "male", "notes": "…" },
+ *     "voice": "everyday",
  *     "doNotTranslate": ["CareOne"],
  *     "glossary": { "hi": { "Lalitya Krishnan": "लालित्य कृष्णन" } }
  *   }
@@ -24,6 +25,8 @@ export interface PonteConfig {
    */
   languages?: string[];
   author?: Author;
+  /** "everyday" (how people really talk), "standard" or "formal". Changing it re-translates saved text. */
+  voice?: Voice;
   /** Look of the visitor picker, published with the translations. */
   widget?: {
     accent?: string;
@@ -34,6 +37,12 @@ export interface PonteConfig {
     position?: "bottom-right" | "bottom-left";
     /** Open in the visitor's device language when it's offered. Off: always start in the page language. */
     autoDetect?: boolean;
+    /** "Share this page in …" in the language menu (native share sheet, or copy link). On unless false. */
+    share?: boolean;
+    /** Select a word on the site → popup with its meaning in any language. On unless false. */
+    words?: boolean;
+    /** Language switch effect: "dust" (default) or "none". */
+    transition?: "dust" | "none";
     /** Last item in the language list, linking to the Gloss case study. */
     about?: { title?: string; text?: string; linkLabel?: string; url?: string };
     /** Green note that opens around the picker on landing (see widget/embed.ts → Callout). */
@@ -77,6 +86,7 @@ export function withConfig(req: TranslateRequest, config: PonteConfig): Translat
     ...req,
     sourceLanguage: req.sourceLanguage ?? config.sourceLanguage,
     author: req.author ?? config.author,
+    voice: req.voice ?? config.voice,
     glossary: Object.keys(glossary).length ? glossary : undefined,
     doNotTranslate: dnt.length ? dnt : undefined,
   };

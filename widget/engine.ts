@@ -40,6 +40,12 @@ export interface PonteOptions {
    */
   persist?: boolean;
   onStatus?: (s: PonteStatus) => void;
+  /**
+   * Animates a language switch the visitor asked for (translate(lang, { animate: true })).
+   * Gets the affected blocks and a `swap` that puts the new text in; must call it right away.
+   * Read when a switch happens, so it can be set after createPonte.
+   */
+  transition?: (blocks: Element[], swap: () => void) => void;
 }
 
 export interface PonteStatus {
@@ -53,9 +59,15 @@ export interface PonteStatus {
 }
 
 export interface PonteController {
-  translate(language: string): Promise<void>;
+  /** `animate`: play the switch transition (for picks from the menu, not page loads). */
+  translate(language: string, options?: { animate?: boolean }): Promise<void>;
   restore(): void;
   readonly language: string | null;
+  /**
+   * The block of text a node belongs to, keyed like the published files (hash of its
+   * original text), or null for text Ponte doesn't handle (skipped areas, the widget).
+   */
+  lookup(node: Node): { key: string; source: string; element: Element } | null;
   destroy(): void;
 }
 
@@ -365,7 +377,7 @@ export function createPonte(opts: PonteOptions): PonteController {
     return p;
   }
 
-  async function run(lang: string, blocks: Block[], gen: number) {
+  async function run(lang: string, blocks: Block[], gen: number, animate = false) {
     if (staticBase) {
       // Static mode: apply published translations. Ask the server only for the rest, if there is one.
       if (!blocks.some((b) => cache.has(`${lang}\0${b.text}`))) status({ state: "translating", language: lang });
@@ -373,17 +385,31 @@ export function createPonte(opts: PonteOptions): PonteController {
       if (gen !== generation) return;
       const rest: Block[] = [];
       let hits = 0;
-      for (const b of blocks) {
-        const t = cache.get(`${lang}\0${b.text}`) ?? map[textHash(b.text.trim())];
-        if (t !== undefined) {
-          cache.set(`${lang}\0${b.text}`, t);
-          apply(b, t, lang);
-          hits++;
-        } else rest.push(b);
-      }
-      if (!endpoint || !rest.length) {
+      const swap = () => {
+        for (const b of blocks) {
+          const t = cache.get(`${lang}\0${b.text}`) ?? map[textHash(b.text.trim())];
+          if (t !== undefined) {
+            cache.set(`${lang}\0${b.text}`, t);
+            apply(b, t, lang);
+            hits++;
+          } else rest.push(b);
+        }
         // Nothing published for these: show them as written (not the previous language).
-        restoreBlocks(rest);
+        if (!endpoint) restoreBlocks(rest);
+      };
+      if (animate && opts.transition) {
+        let swapped = false;
+        try {
+          opts.transition(blocks.map((b) => b.el), () => {
+            swapped = true;
+            swap();
+          });
+        } catch {
+          /* a broken transition must never stop the switch */
+        }
+        if (!swapped) swap();
+      } else swap();
+      if (!endpoint || !rest.length) {
         status({ state: "done", language: lang, translated: hits, failed: 0, missing: rest.length });
         return;
       }
@@ -500,7 +526,15 @@ export function createPonte(opts: PonteOptions): PonteController {
     get language() {
       return language;
     },
-    async translate(lang: string) {
+    lookup(node: Node) {
+      const el = node.nodeType === 1 ? (node as Element) : node.parentElement;
+      if (!el || !root.contains(el) || el.closest(SKIP_SELECTOR) || SKIP_TAGS.has(el.tagName)) return null;
+      const block = blockFor(el);
+      const found = collect(block);
+      const b = found.find((x) => x.el === block || x.el.contains(el)) ?? found[0];
+      return b ? { key: textHash(b.text.trim()), source: b.text, element: b.el } : null;
+    },
+    async translate(lang: string, options?: { animate?: boolean }) {
       const gen = ++generation;
       failed.clear(); // an explicit pick retries anything that failed before
       const blocks = collect();
@@ -514,7 +548,7 @@ export function createPonte(opts: PonteOptions): PonteController {
       remember(lang);
       window.dispatchEvent(new CustomEvent("ponte:language", { detail: { language: lang } }));
       startObserver();
-      await run(lang, blocks, gen);
+      await run(lang, blocks, gen, options?.animate === true);
     },
     restore() {
       generation++;

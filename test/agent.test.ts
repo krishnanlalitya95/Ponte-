@@ -239,3 +239,24 @@ describe("text in another script is never silently kept", () => {
     expect(leftInOtherScript("Hello there my friend", "en")).toBe(false);
   });
 });
+
+describe("voice", () => {
+  it("leaves saved fingerprints alone when voice is unset or standard, and re-translates for everyday", async () => {
+    const { settingsKey } = await import("../src/core/agent.js");
+    const { hashKey } = await import("../src/core/cache.js");
+    const base = { targetLanguage: "hi", segments: [] };
+    const old = hashKey("settings-v2", "hi", "{}", "[]", "[]").slice(0, 12);
+    expect(settingsKey(base, "hi", "Hello")).toBe(old);
+    expect(settingsKey({ ...base, voice: "standard" }, "hi", "Hello")).toBe(old);
+    expect(settingsKey({ ...base, voice: "everyday" }, "hi", "Hello")).not.toBe(old);
+  });
+
+  it("puts everyday guidance and the language's own notes in the translator prompt", async () => {
+    const { translateSystem } = await import("../src/core/prompts.js");
+    const { getLanguage } = await import("../src/core/languages.js");
+    const hi = getLanguage("hi")!;
+    expect(translateSystem(hi, "everyday")).toContain("VOICE: EVERYDAY");
+    expect(translateSystem(hi, "everyday")).toContain("प्रयोक्ता");
+    expect(translateSystem(hi)).not.toContain("VOICE:");
+  });
+});

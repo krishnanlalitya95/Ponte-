@@ -31,6 +31,8 @@ export interface StoredTranslation {
   settings?: string;
   /** Set to true on entries you've edited by hand: Ponte will never replace them. */
   locked?: boolean;
+  /** Word lookups (only in translations/words-<lang>.json): see src/core/words.ts. */
+  words?: Array<{ s: string; t: string; c: string; d: string }>;
 }
 
 /** Whether a new entry may replace an existing one: only when settings changed and it isn't locked. */
