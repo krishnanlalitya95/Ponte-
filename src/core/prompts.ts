@@ -109,7 +109,7 @@ Write the way an educated native speaker actually talks and writes today: to a f
 };
 
 /** What "everyday" means in each language — where models most often drift into textbook register. */
-const EVERYDAY_NOTES: Record<string, string> = {
+export const EVERYDAY_NOTES: Record<string, string> = {
   hi: `Hindi: write spoken Hindustani as people in Mumbai/Delhi actually use it, not शुद्ध/सरकारी हिंदी. Prefer काम (not कार्य), मदद (not सहायता), ज़रूरी (not आवश्यक), शुरू (not प्रारंभ), इस्तेमाल (not उपयोग/प्रयोग), लोग (not व्यक्ति/जन), सोच/आइडिया (not विचारधारा), बेहतर (not उत्कृष्ट), आसान (not सरल/सुगम). Urdu-origin everyday words (ज़िंदगी, शौक़, ख़ास, दुनिया, वक़्त) are natural. Use English loanwords people say: डिज़ाइन, यूज़र, ऐप, प्रोजेक्ट, टीम, रिसर्च, फ़ीडबैक — never coinages like प्रयोक्ता, अनुप्रयोग, अभिकल्पना, अभिकल्पक.`,
   mr: `Marathi: everyday spoken-standard Marathi (as in Pune/Mumbai), not heavy Sanskritised or official Marathi. Use English loanwords people say: डिझाइन, युझर, ॲप, प्रोजेक्ट, टीम, रिसर्च. Prefer वापर (not उपयोजन), काम, मदत, गरज.`,
   gu: `Gujarati: everyday Gujarati as spoken in Ahmedabad/Mumbai, not literary or official. Keep English loanwords people use: ડિઝાઇન, યુઝર, એપ, પ્રોજેક્ટ, ટીમ.`,

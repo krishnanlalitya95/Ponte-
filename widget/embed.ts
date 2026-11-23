@@ -15,6 +15,7 @@
  * data-fonts="off", data-auto="off" (don't switch to the visitor's device language),
  * data-share="off" (hide "Share this page in …" in the menu),
  * data-transition="off" (switch languages without the dust effect),
+ * data-words="off" (no popup when a visitor selects a word),
  * data-static="…" (published translations elsewhere),
  * data-do-not-translate, data-content-type, data-notes (server mode).
  * Add data-ponte-skip to any element Ponte should leave alone.
@@ -22,6 +23,7 @@
 import { createPonte, initialLanguage, pageLanguage, preferredLanguage, type PonteController, type PonteOptions } from "./engine.js";
 import { LANGUAGES } from "../src/core/languages.js";
 import { snapSwap } from "./snap.js";
+import { mountWordLookup } from "./words.js";
 import type { ContentType } from "../src/core/types.js";
 
 declare global {
@@ -43,7 +45,9 @@ declare global {
 
 interface PublishedIndex {
   languages: string[];
-  widget: { accent?: string; brand?: Brand; logo?: Logo; position?: string; autoDetect?: boolean; share?: boolean; transition?: "dust" | "none"; callout?: Callout; about?: AboutLink };
+  /** Languages with word lookups (select a word → its meaning). */
+  words: string[];
+  widget: { words?: boolean; accent?: string; brand?: Brand; logo?: Logo; position?: string; autoDetect?: boolean; share?: boolean; transition?: "dust" | "none"; callout?: Callout; about?: AboutLink };
 }
 
 /** Logo images, as paths next to widget.js (or full URLs): white for the gradient note, colour for the menu. */
@@ -91,11 +95,12 @@ function publishedIndex(staticBase: string): Promise<PublishedIndex> {
   if (!p) {
     p = fetch(`${base}/t/index.json`)
       .then((r) => (r.ok ? r.json() : {}))
-      .then((idx: { languages?: Array<{ code: string }>; widget?: PublishedIndex["widget"] }) => ({
+      .then((idx: { languages?: Array<{ code: string }>; words?: string[]; widget?: PublishedIndex["widget"] }) => ({
         languages: (idx.languages ?? []).map((l) => l.code),
+        words: Array.isArray(idx.words) ? idx.words : [],
         widget: idx.widget ?? {},
       }))
-      .catch(() => ({ languages: [], widget: {} }));
+      .catch(() => ({ languages: [], words: [], widget: {} }));
     indexCache.set(base, p);
   }
   return p;
@@ -149,6 +154,11 @@ if (script && !script.hasAttribute("data-manual")) {
       // "Share this page in …": on unless switched off (data-share="off" or widget.share: false).
       const share = d.share ? d.share !== "off" : published?.widget.share !== false;
       mountPicker(ponte, codes?.length ? codes : undefined, source, position, accent, callout, about, published?.widget.brand, logos, share);
+    }
+    // Select a word → its meaning in any language (data-words="off" or widget.words: false to switch off).
+    const wordsOn = d.words ? d.words !== "off" : published?.widget.words !== false;
+    if (wordsOn && staticBase && published && published.words.length > 1) {
+      mountWordLookup({ ponte, base: staticBase.replace(/\/+$/, ""), languages: published.words, source, accent: published.widget.brand?.from ?? accent });
     }
     // Visitor's choice, else their device language if we've published it (data-auto="off" to disable).
     const first = initialLanguage({

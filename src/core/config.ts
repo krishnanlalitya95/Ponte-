@@ -39,6 +39,8 @@ export interface PonteConfig {
     autoDetect?: boolean;
     /** "Share this page in …" in the language menu (native share sheet, or copy link). On unless false. */
     share?: boolean;
+    /** Select a word on the site → popup with its meaning in any language. On unless false. */
+    words?: boolean;
     /** Language switch effect: "dust" (default) or "none". */
     transition?: "dust" | "none";
     /** Last item in the language list, linking to the Gloss case study. */

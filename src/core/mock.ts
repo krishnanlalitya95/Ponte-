@@ -26,6 +26,20 @@ export class MockModelClient implements ModelClient {
         outputTokens: 0,
       };
     }
+    if (call.toolName === "submit_words") {
+      const lang = /Word lookups in .*?\((\w+)\)/.exec(call.user)?.[1] ?? "xx";
+      const items = JSON.parse(/<segments>\n([\s\S]*?)\n<\/segments>/.exec(call.user)?.[1] ?? "[]") as Array<{ id: string; original: string }>;
+      return {
+        data: {
+          results: items.map((it) => ({
+            id: it.id,
+            words: (it.original.match(/\p{L}{4,}/gu) ?? []).map((w) => ({ s: w, t: "", c: `[${lang}] ${w}`, d: `[${lang}] ${w} (dictionary)` })),
+          })),
+        } as T,
+        inputTokens: 0,
+        outputTokens: 0,
+      };
+    }
     const lang = /Translate into .*?\((\w+)\)/.exec(call.user)?.[1] ?? "xx";
     const segs = JSON.parse(/<segments>\n([\s\S]*?)\n<\/segments>/.exec(call.user)?.[1] ?? "[]") as Array<{ id: string; text: string }>;
     return {

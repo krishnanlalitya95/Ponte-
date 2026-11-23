@@ -63,6 +63,11 @@ export interface PonteController {
   translate(language: string, options?: { animate?: boolean }): Promise<void>;
   restore(): void;
   readonly language: string | null;
+  /**
+   * The block of text a node belongs to, keyed like the published files (hash of its
+   * original text), or null for text Ponte doesn't handle (skipped areas, the widget).
+   */
+  lookup(node: Node): { key: string; source: string; element: Element } | null;
   destroy(): void;
 }
 
@@ -520,6 +525,14 @@ export function createPonte(opts: PonteOptions): PonteController {
   const controller: PonteController = {
     get language() {
       return language;
+    },
+    lookup(node: Node) {
+      const el = node.nodeType === 1 ? (node as Element) : node.parentElement;
+      if (!el || !root.contains(el) || el.closest(SKIP_SELECTOR) || SKIP_TAGS.has(el.tagName)) return null;
+      const block = blockFor(el);
+      const found = collect(block);
+      const b = found.find((x) => x.el === block || x.el.contains(el)) ?? found[0];
+      return b ? { key: textHash(b.text.trim()), source: b.text, element: b.el } : null;
     },
     async translate(lang: string, options?: { animate?: boolean }) {
       const gen = ++generation;
