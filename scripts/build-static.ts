@@ -58,7 +58,9 @@ export async function buildStatic(
       if (!e || typeof e.source !== "string" || typeof e.text !== "string") continue;
       // Don't publish translations made under older settings (wrong name or grammar). Those
       // lines show as written until Pre-translate redoes them. Hand-locked entries always publish.
-      if (req && !e.locked && e.settings !== settingsKey(req, code, e.source)) {
+      // A voice change alone (e.g. to everyday language) keeps the older wording visible until
+      // Pre-translate redoes it: still correct, just more formal.
+      if (req && !e.locked && e.settings !== settingsKey(req, code, e.source) && e.settings !== settingsKey({ ...req, voice: undefined }, code, e.source)) {
         stale++;
         continue;
       }

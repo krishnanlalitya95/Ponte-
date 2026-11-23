@@ -194,3 +194,19 @@ describe("the popup", () => {
     vi.useRealTimers();
   });
 });
+
+describe("turning on everyday voice", () => {
+  it("keeps publishing translations made before it until Pre-translate redoes them", async () => {
+    const { settingsKey } = await import("../src/core/agent.js");
+    const dir = await mkdtemp(join(tmpdir(), "ponte-voice-"));
+    await mkdir(join(dir, "translations"));
+    const req = { targetLanguage: "hi", segments: [] };
+    const file: LanguageFile = {
+      [fingerprint("Hello")]: { source: "Hello", text: "नमस्कार", status: "translated", sourceLanguage: "en", savedAt: "x", settings: settingsKey(req, "hi", "Hello") },
+      [fingerprint("Old")]: { source: "Old", text: "पुराना", status: "translated", sourceLanguage: "en", savedAt: "x", settings: "something-else" },
+    };
+    await writeFile(join(dir, "translations", "hi.json"), JSON.stringify(file));
+    const res = await buildStatic(join(dir, "translations"), join(dir, "public"), ["en", "hi"], {}, { voice: "everyday", languages: ["hi"] });
+    expect(res.languages[0]).toMatchObject({ code: "hi", entries: 1, waitingForRetranslation: 1 });
+  });
+});
