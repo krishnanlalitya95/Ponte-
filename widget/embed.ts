@@ -246,10 +246,14 @@ function mountPicker(
     `-4px 6px 14px -4px rgba(${a},${(0.24 * k).toFixed(2)}),` +
     `6px 16px 30px -8px rgba(${g},${(0.32 * k).toFixed(2)}),` +
     `0 30px 56px -14px rgba(${g},${(0.26 * k).toFixed(2)})`;
+  // Live gradients sit still for visitors who ask for less motion.
+  const calm = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
   const icon = brand
     ? ICON.replace('stroke="currentColor"', 'stroke="url(#ponte-grad)"').replace(
         "<path",
-        `<defs><linearGradient id="ponte-grad" x1="0" y1="0" x2="0" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${brand.from}"/><stop offset="1" stop-color="${brand.to}"/></linearGradient></defs><path`,
+        `<defs><linearGradient id="ponte-grad" x1="0" y1="0" x2="0" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${brand.from}"/><stop offset="1" stop-color="${brand.to}"/>${
+          calm ? "" : `<animateTransform attributeName="gradientTransform" type="rotate" values="0 12 12;360 12 12" dur="6s" repeatCount="indefinite"/>`
+        }</linearGradient></defs><path`,
       )
     : ICON;
   const host = document.createElement("div");
@@ -313,7 +317,7 @@ function mountPicker(
 
       /* Callout: grows out of the button, which sits in its bottom-${side} corner. */
       .c{position:absolute;${side}:-10px;bottom:-10px;width:min(320px, calc(100vw - 12px));
-         padding:18px 18px 58px;border-radius:24px;background:${cardFill};color:#fff;
+         padding:18px 18px 58px;border-radius:24px;background:${cardFill};color:#fff;isolation:isolate;
          text-shadow:${brand ? `0 1px 2px rgba(${rgb(brand.from)},.45)` : "none"};
          font:400 14px/1.45 ${font};-webkit-font-smoothing:antialiased;
          box-shadow:${glow(1.4)};
@@ -322,6 +326,16 @@ function mountPicker(
          transition:opacity .22s ease, transform .32s cubic-bezier(.2,.9,.25,1.1), visibility 0s linear .32s}
       .c.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;
          transition:opacity .22s ease, transform .38s cubic-bezier(.2,.9,.25,1.1), visibility 0s}
+      /* Live gradient: soft brand-colour glows drifting under the note's text. */
+      .live{position:absolute;inset:0;z-index:-1;border-radius:inherit;overflow:hidden;pointer-events:none}
+      .live i{position:absolute;border-radius:50%;filter:blur(26px);will-change:transform}
+      .live i:nth-child(1){width:80%;aspect-ratio:1;left:-22%;top:-30%;background:${brand?.from ?? `rgb(${cardBg})`};opacity:.95;animation:pd1 9s ease-in-out infinite alternate}
+      .live i:nth-child(2){width:85%;aspect-ratio:1;right:-28%;bottom:-38%;background:${brand?.to ?? `rgb(${cardBg})`};opacity:.95;animation:pd2 11s ease-in-out infinite alternate}
+      .live i:nth-child(3){width:60%;aspect-ratio:1;left:30%;top:20%;background:${brand?.from ?? `rgb(${cardBg})`};opacity:.7;animation:pd3 13s ease-in-out infinite alternate}
+      .c:not(.open) .live i{animation-play-state:paused}
+      @keyframes pd1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(38%,22%) scale(1.15)}100%{transform:translate(12%,48%) scale(.95)}}
+      @keyframes pd2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-34%,-26%) scale(1.1)}100%{transform:translate(-10%,-50%) scale(1.05)}}
+      @keyframes pd3{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-45%,-30%) scale(1.2)}100%{transform:translate(20%,15%) scale(.9)}}
       .c .logo{display:block;height:36px;width:auto;margin:0 0 14px}
       .about .logo{display:block;height:28px;width:auto;margin:0 0 8px}
       .c h2{margin:0 0 6px;font-size:16px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
@@ -333,9 +347,11 @@ function mountPicker(
       .c a:focus-visible{outline:2px solid #fff;outline-offset:3px}
       @media (prefers-reduced-motion:reduce){
         .b,.b:hover{transition:none;transform:none}.b.busy svg{animation-duration:2.4s}
-        .m,.m.open,.c,.c.open{transition:opacity .15s ease, visibility 0s linear .15s;transform:none}}
+        .m,.m.open,.c,.c.open{transition:opacity .15s ease, visibility 0s linear .15s;transform:none}
+        .live i{animation:none}}
     </style>
     ${callout?.enabled ? `<div class="c" role="note" aria-label="${esc(callout.title ?? "About this translator")}">
+      ${brand ? `<span class="live" aria-hidden="true"><i></i><i></i><i></i></span>` : ""}
       ${logo?.light ? `<img class="logo" src="${esc(logo.light)}" alt="${esc(logo.alt ?? "")}" width="99" height="36" style="width:auto">` : ""}
       ${callout.title ? `<h2>${esc(callout.title)}</h2>` : ""}
       ${callout.text ? `<p>${esc(callout.text)}</p>` : ""}
