@@ -236,8 +236,16 @@ function mountPicker(
   // Shadows and tints take the brand's lead colour; text accents a shade that reads on white.
   const lead = brand?.from ?? accent;
   const a = rgb(lead);
+  // Second stop of the brand gradient: shadows fade from the lead colour into it.
+  const g = rgb(brand?.to ?? lead);
   const cardBg = readableOn(lead);
-  const cardFill = brand ? `linear-gradient(155deg, ${brand.from} 0%, ${brand.to} 100%)` : `rgb(${cardBg})`;
+  const cardFill = brand ? `linear-gradient(153deg, ${brand.from} 31%, ${brand.to} 74%)` : `rgb(${cardBg})`;
+  // Gradient glow under the picker, menu and note: blue sits close, green spreads wide.
+  const glow = (k = 1) =>
+    `0 1px 2px rgba(${a},${(0.16 * k).toFixed(2)}),` +
+    `-4px 6px 14px -4px rgba(${a},${(0.24 * k).toFixed(2)}),` +
+    `6px 16px 30px -8px rgba(${g},${(0.32 * k).toFixed(2)}),` +
+    `0 30px 56px -14px rgba(${g},${(0.26 * k).toFixed(2)})`;
   const icon = brand
     ? ICON.replace('stroke="currentColor"', 'stroke="url(#ponte-grad)"').replace(
         "<path",
@@ -256,15 +264,11 @@ function mountPicker(
       *{box-sizing:border-box}
       .b{position:relative;z-index:2;width:48px;height:36px;border-radius:16px;border:0;padding:0;margin:0;background:#fff;color:rgb(${a});
          display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;
-         box-shadow:
-           0 1px 2px rgba(${a},.14),
-           0 4px 8px -2px rgba(${a},.18),
-           0 12px 24px -6px rgba(${a},.28),
-           0 24px 44px -12px rgba(${a},.22);
+         box-shadow:${glow()};
          transition:transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s ease}
       .b::before{content:"";position:absolute;inset:-6px}
       .b:hover{transform:translateY(-2px);
-         box-shadow:0 2px 3px rgba(${a},.14),0 6px 12px -2px rgba(${a},.20),0 16px 30px -6px rgba(${a},.30),0 30px 52px -12px rgba(${a},.24)}
+         box-shadow:${glow(1.25)}}
       .b:active{transform:translateY(0) scale(.96)}
       .b:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:3px}
       svg{display:block;pointer-events:none;flex:none}
@@ -276,7 +280,7 @@ function mountPicker(
       .m{position:absolute;${side}:0;bottom:48px;width:min(300px, calc(100vw - 32px));max-height:min(560px, calc(100vh - 120px));
          display:flex;flex-direction:column;background:#fff;border-radius:20px;overflow:hidden;
          font:400 15px/1.3 ${font};color:#1a1a1a;-webkit-font-smoothing:antialiased;
-         box-shadow:0 2px 4px rgba(${a},.10),0 12px 28px -6px rgba(${a},.24),0 32px 64px -16px rgba(${a},.28);
+         box-shadow:${glow(0.9)};
          transform-origin:${side === "right" ? "calc(100% - 24px)" : "24px"} 100%;
          opacity:0;transform:translateY(8px) scale(.96);visibility:hidden;pointer-events:none;
          transition:opacity .16s ease, transform .22s cubic-bezier(.2,.9,.25,1), visibility 0s linear .22s}
@@ -289,7 +293,7 @@ function mountPicker(
       .o .k{color:rgb(${a});visibility:hidden}
       .o[aria-selected="true"] .k{visibility:visible}
       .o[aria-selected="true"] .n{font-weight:600}
-      .o:hover,.o.active{background:rgba(${a},.08)}
+      .o:hover,.o.active{background:linear-gradient(100deg, rgba(${a},.09), rgba(${g},.09))}
       .s{display:flex;align-items:center;gap:10px;width:100%;margin:0;padding:12px 18px;border:0;border-top:1px solid rgba(0,0,0,.07);
          background:#fff;color:rgb(${cardBg});font:600 14px/1.3 ${font};text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
       .s svg{flex:none}
@@ -297,8 +301,8 @@ function mountPicker(
       .s:hover{background:rgba(${a},.06)}
       .s:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:-4px;border-radius:8px}
       .about{display:block;margin:0;padding:14px 16px 16px;border-top:1px solid rgba(0,0,0,.07);
-         text-decoration:none;color:inherit;background:rgba(${a},.05);-webkit-tap-highlight-color:transparent}
-      .about:hover{background:rgba(${a},.10)}
+         text-decoration:none;color:inherit;background:linear-gradient(153deg, rgba(${a},.05) 31%, rgba(${g},.07) 74%);-webkit-tap-highlight-color:transparent}
+      .about:hover{background:linear-gradient(153deg, rgba(${a},.10) 31%, rgba(${g},.12) 74%)}
       .about:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:-4px;border-radius:0 0 20px 20px}
       .about .t{flex:1;min-width:0}
       .about strong{display:block;font-size:13px;font-weight:600;color:rgb(${cardBg});margin-bottom:2px}
@@ -312,7 +316,7 @@ function mountPicker(
          padding:18px 18px 58px;border-radius:24px;background:${cardFill};color:#fff;
          text-shadow:${brand ? `0 1px 2px rgba(${rgb(brand.from)},.45)` : "none"};
          font:400 14px/1.45 ${font};-webkit-font-smoothing:antialiased;
-         box-shadow:0 2px 4px rgba(${a},.18),0 12px 28px -6px rgba(${a},.40),0 32px 60px -16px rgba(${a},.35);
+         box-shadow:${glow(1.4)};
          transform-origin:${side === "right" ? "calc(100% - 34px)" : "34px"} calc(100% - 28px);
          opacity:0;transform:scale(.4);visibility:hidden;pointer-events:none;
          transition:opacity .22s ease, transform .32s cubic-bezier(.2,.9,.25,1.1), visibility 0s linear .32s}
@@ -332,7 +336,7 @@ function mountPicker(
         .m,.m.open,.c,.c.open{transition:opacity .15s ease, visibility 0s linear .15s;transform:none}}
     </style>
     ${callout?.enabled ? `<div class="c" role="note" aria-label="${esc(callout.title ?? "About this translator")}">
-      ${logo?.light ? `<img class="logo" src="${esc(logo.light)}" alt="${esc(logo.alt ?? "")}" width="99" height="36">` : ""}
+      ${logo?.light ? `<img class="logo" src="${esc(logo.light)}" alt="${esc(logo.alt ?? "")}" width="99" height="36" style="width:auto">` : ""}
       ${callout.title ? `<h2>${esc(callout.title)}</h2>` : ""}
       ${callout.text ? `<p>${esc(callout.text)}</p>` : ""}
       ${callout.linkUrl ? `<a href="${esc(callout.linkUrl)}">${esc(callout.linkLabel ?? "See how I built it")} <span aria-hidden="true">${CHEVRON_SM}</span></a>` : ""}
@@ -352,7 +356,7 @@ function mountPicker(
       ${share ? `<button class="s" type="button">${SHARE}<span class="sl"></span></button>` : ""}
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
         ${logo?.dark
-          ? `<img class="logo" src="${esc(logo.dark)}" alt="${esc(about.title ?? logo.alt ?? "")}" width="77" height="28">`
+          ? `<img class="logo" src="${esc(logo.dark)}" alt="${esc(about.title ?? logo.alt ?? "")}" width="77" height="28" style="width:auto">`
           : `<strong>${esc(about.title ?? "About Gloss AI")}</strong>`}
         <span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span>
         <b class="cta">${esc(about.linkLabel ?? "See how I built it")} <i aria-hidden="true">${CHEVRON_SM}</i></b></a>` : ""}
