@@ -17,9 +17,9 @@
   ],
   "voice": "everyday",
   "widget": {
-    "accent": "#0067C7",
+    "accent": "#1E4D3A",
     "brand": {
-      "from": "#0067C7",
+      "from": "#1E4D3A",
       "to": "#7BA23F"
     },
     "logo": {
