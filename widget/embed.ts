@@ -320,7 +320,6 @@ function mountPicker(
          padding:18px 18px 58px;border-radius:24px;background:${cardFill};color:#fff;isolation:isolate;
          text-shadow:${brand ? `0 1px 2px rgba(${rgb(brand.from)},.45)` : "none"};
          font:400 14px/1.45 ${font};-webkit-font-smoothing:antialiased;
-         box-shadow:${glow(1.4)};
          transform-origin:${side === "right" ? "calc(100% - 34px)" : "34px"} calc(100% - 28px);
          opacity:0;transform:scale(.4);visibility:hidden;pointer-events:none;
          transition:opacity .22s ease, transform .32s cubic-bezier(.2,.9,.25,1.1), visibility 0s linear .32s}
