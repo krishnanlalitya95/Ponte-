@@ -256,6 +256,8 @@ function mountPicker(
         }</linearGradient></defs><path`,
       )
     : ICON;
+  // The about card wears the brand gradient, so it takes the white logo.
+  const aboutLogo = (brand ? logo?.light : undefined) ?? logo?.dark;
   const host = document.createElement("div");
   host.setAttribute("data-ponte-skip", "");
   const side = position === "bottom-left" ? "left" : "right";
@@ -305,13 +307,15 @@ function mountPicker(
       .s:hover{background:rgba(${a},.06)}
       .s:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:-4px;border-radius:8px}
       .about{display:block;margin:0;padding:14px 16px 16px;border-top:1px solid rgba(0,0,0,.07);
-         text-decoration:none;color:inherit;background:linear-gradient(153deg, rgba(${a},.05) 31%, rgba(${g},.07) 74%);-webkit-tap-highlight-color:transparent}
-      .about:hover{background:linear-gradient(153deg, rgba(${a},.10) 31%, rgba(${g},.12) 74%)}
-      .about:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:-4px;border-radius:0 0 20px 20px}
+         text-decoration:none;color:${brand ? "#fff" : "inherit"};-webkit-tap-highlight-color:transparent;
+         background:${brand ? cardFill : `linear-gradient(153deg, rgba(${a},.05) 31%, rgba(${g},.07) 74%)`};
+         ${brand ? `text-shadow:0 1px 2px rgba(${rgb(brand.from)},.35);` : ""}}
+      .about:hover{${brand ? "filter:brightness(1.06)" : `background:linear-gradient(153deg, rgba(${a},.10) 31%, rgba(${g},.12) 74%)`}}
+      .about:focus-visible{outline:2px solid ${brand ? "#fff" : `rgba(${a},.55)`};outline-offset:-4px;border-radius:0 0 20px 20px}
       .about .t{flex:1;min-width:0}
-      .about strong{display:block;font-size:13px;font-weight:600;color:rgb(${cardBg});margin-bottom:2px}
-      .about span{display:block;font-size:12px;line-height:1.45;color:#5f5f5f}
-      .about .cta{display:inline-flex;align-items:center;gap:2px;margin-top:10px;font-size:13px;font-weight:600;color:rgb(${cardBg})}
+      .about strong{display:block;font-size:13px;font-weight:600;color:${brand ? "#fff" : `rgb(${cardBg})`};margin-bottom:2px}
+      .about span{display:block;font-size:12px;line-height:1.45;color:${brand ? "rgba(255,255,255,.92)" : "#5f5f5f"}}
+      .about .cta{display:inline-flex;align-items:center;gap:2px;margin-top:10px;font-size:13px;font-weight:600;color:${brand ? "#fff" : `rgb(${cardBg})`}}
       .about .cta i{font-style:normal;display:inline-flex;transition:transform .18s ease}
       .about:hover .cta i{transform:translateX(3px)}
 
@@ -370,8 +374,8 @@ function mountPicker(
       </ul>
       ${share ? `<button class="s" type="button">${SHARE}<span class="sl"></span></button>` : ""}
       ${about?.url ? `<a class="about" href="${esc(about.url)}">
-        ${logo?.dark
-          ? `<img class="logo" src="${esc(logo.dark)}" alt="${esc(about.title ?? logo.alt ?? "")}" width="77" height="28" style="width:auto">`
+        ${aboutLogo
+          ? `<img class="logo" src="${esc(aboutLogo)}" alt="${esc(about.title ?? logo?.alt ?? "")}" width="77" height="28" style="width:auto">`
           : `<strong>${esc(about.title ?? "About Gloss AI")}</strong>`}
         <span>${esc(about.text ?? "An AI agent I built that translates with context, carrying meaning, tone and poetry across, not just words.")}</span>
         <b class="cta">${esc(about.linkLabel ?? "See how I built it")} <i aria-hidden="true">${CHEVRON_SM}</i></b></a>` : ""}
