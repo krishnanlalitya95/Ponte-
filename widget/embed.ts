@@ -240,11 +240,22 @@ function mountPicker(
   const g = rgb(brand?.to ?? lead);
   const cardBg = readableOn(lead);
   const cardFill = brand ? `linear-gradient(153deg, ${brand.from} 31%, ${brand.to} 74%)` : `rgb(${cardBg})`;
-  // No coloured glow: the menu keeps a quiet neutral shadow so it lifts off white pages.
-  const lift = `0 1px 2px rgba(0,0,0,.08),0 8px 24px -6px rgba(0,0,0,.16)`;
+  // Gradient glow under the picker, menu and note: blue sits close, green spreads wide.
+  const glow = (k = 1) =>
+    `0 1px 2px rgba(${a},${(0.16 * k).toFixed(2)}),` +
+    `-4px 6px 14px -4px rgba(${a},${(0.24 * k).toFixed(2)}),` +
+    `6px 16px 30px -8px rgba(${g},${(0.32 * k).toFixed(2)}),` +
+    `0 30px 56px -14px rgba(${g},${(0.26 * k).toFixed(2)})`;
   // Live gradients sit still for visitors who ask for less motion.
   const calm = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const icon = ICON;
+  const icon = brand
+    ? ICON.replace('stroke="currentColor"', 'stroke="url(#ponte-grad)"').replace(
+        "<path",
+        `<defs><linearGradient id="ponte-grad" x1="0" y1="0" x2="0" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${brand.from}"/><stop offset="1" stop-color="${brand.to}"/>${
+          calm ? "" : `<animateTransform attributeName="gradientTransform" type="rotate" values="0 12 12;360 12 12" dur="6s" repeatCount="indefinite"/>`
+        }</linearGradient></defs><path`,
+      )
+    : ICON;
   const host = document.createElement("div");
   host.setAttribute("data-ponte-skip", "");
   const side = position === "bottom-left" ? "left" : "right";
@@ -255,17 +266,13 @@ function mountPicker(
     <style>
       :host{all:initial}
       *{box-sizing:border-box}
-      .b{position:relative;z-index:2;width:48px;height:36px;border-radius:16px;border:0;padding:0;margin:0;background:${brand ? `linear-gradient(120deg, ${brand.from}, ${brand.to}, ${brand.from})` : "#fff"};
-         background-size:${brand ? "220% 220%" : "auto"};color:${brand ? "#fff" : `rgb(${a})`};
+      .b{position:relative;z-index:2;width:48px;height:36px;border-radius:16px;border:0;padding:0;margin:0;background:#fff;color:rgb(${a});
          display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;
-         ${brand && !calm ? "animation:drift 8s ease-in-out infinite alternate;" : ""}
-         ${brand ? "" : `box-shadow:${lift};`}
-         transition:transform .18s cubic-bezier(.2,.8,.2,1)}
-      @keyframes drift{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+         box-shadow:${glow()};
+         transition:transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s ease}
       .b::before{content:"";position:absolute;inset:-6px}
-      .b:hover{transform:translateY(-2px)}
-      /* While the landing note is open the pill sits on its gradient, so it turns white to stay visible. */
-      .c.open ~ .b{background:#fff;color:rgb(${a});animation:none}
+      .b:hover{transform:translateY(-2px);
+         box-shadow:${glow(1.25)}}
       .b:active{transform:translateY(0) scale(.96)}
       .b:focus-visible{outline:2px solid rgba(${a},.55);outline-offset:3px}
       svg{display:block;pointer-events:none;flex:none}
@@ -277,7 +284,7 @@ function mountPicker(
       .m{position:absolute;${side}:0;bottom:48px;width:min(300px, calc(100vw - 32px));max-height:min(560px, calc(100vh - 120px));
          display:flex;flex-direction:column;background:#fff;border-radius:20px;overflow:hidden;
          font:400 15px/1.3 ${font};color:#1a1a1a;-webkit-font-smoothing:antialiased;
-         box-shadow:${lift};
+         box-shadow:${glow(0.9)};
          transform-origin:${side === "right" ? "calc(100% - 24px)" : "24px"} 100%;
          opacity:0;transform:translateY(8px) scale(.96);visibility:hidden;pointer-events:none;
          transition:opacity .16s ease, transform .22s cubic-bezier(.2,.9,.25,1), visibility 0s linear .22s}
@@ -313,6 +320,7 @@ function mountPicker(
          padding:18px 18px 58px;border-radius:24px;background:${cardFill};color:#fff;isolation:isolate;
          text-shadow:${brand ? `0 1px 2px rgba(${rgb(brand.from)},.45)` : "none"};
          font:400 14px/1.45 ${font};-webkit-font-smoothing:antialiased;
+         box-shadow:${glow(1.4)};
          transform-origin:${side === "right" ? "calc(100% - 34px)" : "34px"} calc(100% - 28px);
          opacity:0;transform:scale(.4);visibility:hidden;pointer-events:none;
          transition:opacity .22s ease, transform .32s cubic-bezier(.2,.9,.25,1.1), visibility 0s linear .32s}
@@ -338,7 +346,7 @@ function mountPicker(
       .c a span{display:inline-flex;transition:transform .18s ease}
       .c a:focus-visible{outline:2px solid #fff;outline-offset:3px}
       @media (prefers-reduced-motion:reduce){
-        .b,.b:hover{transition:none;transform:none;animation:none}.b.busy svg{animation-duration:2.4s}
+        .b,.b:hover{transition:none;transform:none}.b.busy svg{animation-duration:2.4s}
         .m,.m.open,.c,.c.open{transition:opacity .15s ease, visibility 0s linear .15s;transform:none}
         .live i{animation:none}}
     </style>
